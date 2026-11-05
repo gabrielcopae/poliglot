@@ -48,7 +48,7 @@ function pickVoice(lang: string, gender?: 'f' | 'm'): SpeechSynthesisVoice | und
     if (match) return match
     // Nicio voce sigură pentru acest gen: luăm măcar o altă voce decât cea a celuilalt gen.
     const otherVoice = (saved && other.test(saved.name) ? saved : undefined) ?? list.find((v) => other.test(v.name))
-    const different = list.find((v) => v !== otherVoice && !other.test(v.name))
+    const different = list.find((v) => v !== otherVoice && !other.test(v.name)) ?? list.find((v) => v !== otherVoice)
     if (different) return different
   }
   return saved ?? list[0]
