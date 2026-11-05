@@ -20,10 +20,13 @@ export function onVoices(cb: () => void) {
   return () => { listeners.delete(cb) }
 }
 
+// Vocile de calitate (Apple „Îmbunătățită / Premium”, Microsoft „Natural / Neural”) au prioritate.
+const QUALITY = /premium|enhanced|mejorada|optimizada|migliorata|高品質|natural|neural|online/i
+
 export function voicesFor(lang: string): SpeechSynthesisVoice[] {
   return voices
     .filter((v) => v.lang.toLowerCase().replace('_', '-').startsWith(lang))
-    .sort((a, b) => Number(b.localService) - Number(a.localService))
+    .sort((a, b) => Number(QUALITY.test(b.name)) - Number(QUALITY.test(a.name)) || Number(b.localService) - Number(a.localService))
 }
 
 export function canSpeak() {
@@ -31,17 +34,22 @@ export function canSpeak() {
 }
 
 // Numele vocilor nu spun direct genul; ghicim după prenumele folosite de Windows, Android și Apple.
-const FEMALE = /elvira|helena|laura|sabina|dalia|ximena|paloma|elsa|isabella|monica|mónica|paulina|lucia|lucía|alice|federica|nanami|haruka|ayumi|mayu|sayaka|kyoko|o-ren|female|mujer|donna/i
-const MALE = /alvaro|álvaro|pablo|raul|raúl|jorge|diego|jaime|benigno|cosimo|giuseppe|luca|keita|ichiro|daichi|naoki|otoya|hattori|\bmale|hombre|uomo/i
+const FEMALE = /elvira|helena|laura|sabina|dalia|ximena|paloma|elsa|isabella|isabela|monica|mónica|paulina|marisol|angélica|angelica|francisca|soledad|lucia|lucía|alice|federica|paola|nanami|haruka|ayumi|mayu|sayaka|kyoko|o-ren|\bflo\b|sandy|shelley|grandma|female|mujer|donna|femenin|女性/i
+const MALE = /alvaro|álvaro|pablo|raul|raúl|jorge|juan|diego|jaime|carlos|benigno|cosimo|giuseppe|luca|keita|ichiro|daichi|naoki|otoya|hattori|\beddy\b|\breed\b|rocko|grandpa|\bmale|hombre|uomo|masculin|男性/i
 
 function pickVoice(lang: string, gender?: 'f' | 'm'): SpeechSynthesisVoice | undefined {
   const list = voicesFor(lang)
   const saved = list.find((v) => v.voiceURI === getSettings().voices[lang])
   if (gender) {
     const re = gender === 'f' ? FEMALE : MALE
-    const match = list.filter((v) => re.test(v.name))
+    const other = gender === 'f' ? MALE : FEMALE
     if (saved && re.test(saved.name)) return saved
-    if (match.length) return match.find((v) => v.localService) ?? match[0]
+    const match = list.find((v) => re.test(v.name))
+    if (match) return match
+    // Nicio voce sigură pentru acest gen: luăm măcar o altă voce decât cea a celuilalt gen.
+    const otherVoice = (saved && other.test(saved.name) ? saved : undefined) ?? list.find((v) => other.test(v.name))
+    const different = list.find((v) => v !== otherVoice && !other.test(v.name))
+    if (different) return different
   }
   return saved ?? list[0]
 }
