@@ -1,10 +1,11 @@
+declare const __BUILD__: string
 import { Flag } from '../components/Flag'
 import { useEffect, useRef, useState } from 'react'
 import { COURSES } from '../content'
 import { exportProgress, importProgress } from '../db'
 import { SEASONS, type Season } from '../season'
 import { setSettings, useSettings, type Settings } from '../settings'
-import { canListen, onVoices, speak, voicesFor } from '../speech'
+import { canListen, onVoices, speak, voiceFor, voicesFor } from '../speech'
 import { TopBar } from '../components/ui'
 
 export function SettingsScreen({ user, signOut }: { user: string; signOut: () => void }) {
@@ -93,6 +94,13 @@ export function SettingsScreen({ user, signOut }: { user: string; signOut: () =>
                   </select>
                   <button className="btn" onClick={() => speak(c.hello, c.lang, c.locale)}>▶</button>
                 </div>
+              ) : null}
+              {list.length ? (
+                <div className="muted small">
+                  {list.length} {list.length === 1 ? 'voce găsită' : 'voci găsite'} · personaje:{' '}
+                  <button className="btn" onClick={() => speak(c.hello, c.lang, c.locale, undefined, { gender: 'f' })}>👩 {voiceFor(c.lang, 'f')?.name ?? '—'} ▶</button>{' '}
+                  <button className="btn" onClick={() => speak(c.hello, c.lang, c.locale, undefined, { gender: 'm' })}>👨 {voiceFor(c.lang, 'm')?.name ?? '—'} ▶</button>
+                </div>
               ) : (
                 <div className="warn">Nicio voce instalată pentru {c.name.toLowerCase()}. Vezi instrucțiunile de mai jos.</div>
               )}
@@ -106,6 +114,7 @@ export function SettingsScreen({ user, signOut }: { user: string; signOut: () =>
           <p><b>iPhone:</b> Setări → Accesibilitate → Conținut vorbit → Voci → alege limba și descarcă o voce „Îmbunătățită”.</p>
           <p className="muted">În etapa următoare aplicația va avea propria voce descărcabilă (Kokoro), de calitate mai bună, identică pe toate dispozitivele.</p>
         </details>
+        <p className="muted small">Versiunea aplicației: {__BUILD__}</p>
         <p className="muted small">Verificarea pronunției prin microfon: {canListen() ? 'disponibilă (are nevoie de internet).' : 'indisponibilă în acest browser. Folosește Chrome sau Edge.'}</p>
       </article>
 

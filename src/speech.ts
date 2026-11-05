@@ -54,6 +54,11 @@ function pickVoice(lang: string, gender?: 'f' | 'm'): SpeechSynthesisVoice | und
   return saved ?? list[0]
 }
 
+/** Vocea pe care o folosește aplicația pentru un personaj (pentru testul din Setări). */
+export function voiceFor(lang: string, gender: 'f' | 'm') {
+  return pickVoice(lang, gender)
+}
+
 export interface SpeakOptions {
   gender?: 'f' | 'm'
   onEnd?: () => void
