@@ -801,16 +801,23 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .kanji-result { text-align: center; display: flex; flex-direction: column; gap: 6px; align-items: center; }
 .kanji-modes button { font-size: 0.8rem; padding: 9px 6px; white-space: normal; line-height: 1.15; }
 
-/* ——— Cartonașele pentru seria de zile ——— */
+/* ——— Cartonașele pentru seria de zile: orașe cu fotografie reală ——— */
 .reward-preview { margin-bottom: 16px; }
-.reward-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
-.reward-card { position: relative; border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 8px 20px rgba(40, 20, 10, 0.18); border: 3px solid #fff; color: #2b2420; }
-.reward-card.gold { border-color: #e2b33c; box-shadow: 0 8px 24px rgba(210, 160, 40, 0.45); }
-.reward-pic { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
-.reward-art { width: 88%; height: 88%; }
-.reward-name { padding: 8px 10px 4px; display: flex; flex-direction: column; text-align: center; }
-.reward-name b { font-family: var(--display); font-size: 1.05rem; }
-.reward-name small { font-size: 0.72rem; color: #7a6a58; }
-.reward-label { text-align: center; font-size: 0.7rem; font-weight: 800; color: #b0452a; padding: 0 0 8px; letter-spacing: 0.04em; text-transform: uppercase; }
-.reward-card.gold .reward-label { color: #b8860b; }
-.reward-card.gold::after { content: '★'; position: absolute; top: 6px; right: 8px; color: #e2b33c; font-size: 1.1rem; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+.reward-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+.city-card { border-radius: 14px; padding: 6px; background: linear-gradient(160deg, #f6ecd6, #e7d3a8); box-shadow: 0 8px 20px rgba(40, 20, 10, 0.22); }
+.city-card.gold { background: linear-gradient(160deg, #fbe38a, #d9a62a 55%, #f4d36b); box-shadow: 0 8px 24px rgba(210, 160, 40, 0.5); }
+.city-frame { position: relative; border-radius: 9px; border: 2px solid #8a6a3a; outline: 1px solid #fff8e6; outline-offset: -5px; background: #fffaf0; overflow: hidden; color: #2b2420; display: flex; flex-direction: column; }
+.city-card.gold .city-frame { border-color: #a07415; }
+.city-photo { aspect-ratio: 4 / 3; background-size: cover; background-position: center; margin: 6px 6px 0; border-radius: 4px; border: 1px solid #d8c49a; }
+.city-q { display: flex; align-items: center; justify-content: center; font-size: 2.4rem; font-weight: 900; color: #b9a678; background: repeating-linear-gradient(45deg, #f3ead6 0 8px, #ece0c4 8px 16px); }
+.city-text { padding: 6px 8px 2px; text-align: center; display: flex; flex-direction: column; }
+.city-text b { font-family: var(--display); font-size: 1.1rem; letter-spacing: 0.02em; }
+.city-text small { font-size: 0.72rem; color: #7a6a58; }
+.city-label { text-align: center; font-size: 0.68rem; font-weight: 800; color: #9c3d26; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 0 0; }
+.city-card.gold .city-label { color: #8a6210; }
+.city-credit { font-size: 0.5rem; color: #9a8a74; text-align: center; padding: 2px 6px 6px; line-height: 1.2; }
+.city-card.locked { opacity: 0.75; }
+.reward-pop { position: fixed; inset: 0; z-index: 50; background: rgba(20, 12, 6, 0.55); display: flex; align-items: center; justify-content: center; padding: 20px; animation: pop 0.25s ease both; }
+.reward-pop-box { background: var(--bg2); border-radius: 22px; padding: 18px; width: min(320px, 100%); text-align: center; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4); }
+.reward-pop-title { font-family: var(--display); font-size: 1.4rem; }
+.reward-pop .city-card { animation: pop 0.5s ease both; }

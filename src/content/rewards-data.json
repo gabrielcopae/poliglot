@@ -1,0 +1,425 @@
+[
+ {
+  "city": "Madrid",
+  "country": "Spania",
+  "landmark": "Puerta de Alcalá",
+  "img": "madrid.jpg",
+  "author": "Fernando Pascullo",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Puerta_de_Alcal%C3%A1_2025.jpg"
+ },
+ {
+  "city": "București",
+  "country": "România",
+  "landmark": "Ateneul Român",
+  "img": "bucuresti.jpg",
+  "author": "Diego Delso",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ateneo_Rumano,_Bucarest,_Ruman%C3%ADa,_2016-05-29,_DD_73.jpg"
+ },
+ {
+  "city": "Kyoto",
+  "country": "Japonia",
+  "landmark": "Fushimi Inari",
+  "img": "kyoto.jpg",
+  "author": "Basile Morin",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg"
+ },
+ {
+  "city": "Roma",
+  "country": "Italia",
+  "landmark": "Colosseumul",
+  "img": "roma.jpg",
+  "author": "FeaturedPics",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Colosseo_2020.jpg"
+ },
+ {
+  "city": "Barcelona",
+  "country": "Spania",
+  "landmark": "Sagrada Família",
+  "img": "barcelona.jpg",
+  "author": "Canaan",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:SF_maig_2_cropped.jpg"
+ },
+ {
+  "city": "Brașov",
+  "country": "România",
+  "landmark": "Biserica Neagră",
+  "img": "brasov.jpg",
+  "author": "Ebyabe",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bethel_African_American_Episcopal_Church_Palatka04.jpg"
+ },
+ {
+  "city": "Tokyo",
+  "country": "Japonia",
+  "landmark": "Tokyo Tower",
+  "img": "tokyo.jpg",
+  "author": "Akonnchiroll",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Tokyo_Tower_2023.jpg"
+ },
+ {
+  "city": "Paris",
+  "country": "Franța",
+  "landmark": "Turnul Eiffel",
+  "img": "paris.jpg",
+  "author": "Benh LIEU SONG",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons_(cropped).jpg"
+ },
+ {
+  "city": "Sevilla",
+  "country": "Spania",
+  "landmark": "Plaza de España",
+  "img": "sevilla.jpg",
+  "author": "Carlos Delgado",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Plaza_de_Espa%C3%B1a_(Sevilla)_-_01.jpg"
+ },
+ {
+  "city": "Osaka",
+  "country": "Japonia",
+  "landmark": "Castelul Osaka",
+  "img": "osaka.jpg",
+  "author": "663highland",
+  "license": "CC BY 2.5",
+  "source": "https://commons.wikimedia.org/wiki/File:Osaka_Castle_03bs3200.jpg"
+ },
+ {
+  "city": "Pisa",
+  "country": "Italia",
+  "landmark": "Turnul înclinat",
+  "img": "pisa.jpg",
+  "author": "Arne Müseler",
+  "license": "CC BY-SA 3.0 de",
+  "source": "https://commons.wikimedia.org/wiki/File:Italy_-_Pisa_-_Leaning_Tower.jpg"
+ },
+ {
+  "city": "Granada",
+  "country": "Spania",
+  "landmark": "Alhambra",
+  "img": "granada.jpg",
+  "author": "Jebulon",
+  "license": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg"
+ },
+ {
+  "city": "Bran",
+  "country": "România",
+  "landmark": "Castelul Bran",
+  "img": "bran.jpg",
+  "author": "Dobre Cezar",
+  "license": "CC BY-SA 3.0 ro",
+  "source": "https://commons.wikimedia.org/wiki/File:Castelul_Bran2.jpg"
+ },
+ {
+  "city": "Hiroshima",
+  "country": "Japonia",
+  "landmark": "Domul Păcii",
+  "img": "hiroshima.jpg",
+  "author": "Oilstreet",
+  "license": "CC BY 2.5",
+  "source": "https://commons.wikimedia.org/wiki/File:Genbaku_Dome04-r.JPG"
+ },
+ {
+  "city": "Londra",
+  "country": "Marea Britanie",
+  "landmark": "Big Ben",
+  "img": "londra.jpg",
+  "author": "Christian David",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Elizabeth_Tower_and_the_north_front_of_the_Palace_of_Westminster,_London.jpg"
+ },
+ {
+  "city": "Valencia",
+  "country": "Spania",
+  "landmark": "Orașul Artelor și Științelor",
+  "img": "valencia.png",
+  "author": "Unknown authorUnknown author",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Logo_Ciudad_de_las_Artes_y_de_las_Ciencias.svg"
+ },
+ {
+  "city": "Sinaia",
+  "country": "România",
+  "landmark": "Castelul Peleș",
+  "img": "sinaia.jpg",
+  "author": "Myrabella",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:01_Chateau_Peles.jpg"
+ },
+ {
+  "city": "Miyajima",
+  "country": "Japonia",
+  "landmark": "Sanctuarul Itsukushima",
+  "img": "miyajima.jpg",
+  "author": "redlegsfan21",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Itsukushima_Shrine_Torii_Gate_(13890465459).jpg"
+ },
+ {
+  "city": "Veneția",
+  "country": "Italia",
+  "landmark": "Bazilica San Marco",
+  "img": "venetia.jpg",
+  "author": "Zairon",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Venezia_Basilica_di_San_Marco_Fassade_2.jpg"
+ },
+ {
+  "city": "Toledo",
+  "country": "Spania",
+  "landmark": "Alcázarul",
+  "img": "toledo.jpg",
+  "author": "Fernando",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:FP_Toledo_Alcazar_2025_-_Views.jpg"
+ },
+ {
+  "city": "Cluj-Napoca",
+  "country": "România",
+  "landmark": "Biserica Sfântul Mihail",
+  "img": "cluj-napoca.jpg",
+  "author": "Igor Sirbu",
+  "license": "CC BY-SA 3.0 ro",
+  "source": "https://commons.wikimedia.org/wiki/File:Biserica_romano-catolica_sf._Mihai.jpg"
+ },
+ {
+  "city": "Nara",
+  "country": "Japonia",
+  "landmark": "Templul Tōdai-ji",
+  "img": "nara.jpg",
+  "author": "Wiiii",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:T%C5%8Ddai-ji_Kon-d%C5%8D.jpg"
+ },
+ {
+  "city": "Lisabona",
+  "country": "Portugalia",
+  "landmark": "Turnul Belém",
+  "img": "lisabona.jpg",
+  "author": "Alvesgaspar",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Torre_Bel%C3%A9m_April_2009-4a.jpg"
+ },
+ {
+  "city": "Salamanca",
+  "country": "Spania",
+  "landmark": "Plaza Mayor",
+  "img": "salamanca.jpg",
+  "author": "Stef Mec",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Plaza_Mayor,_Salamanca.JPG"
+ },
+ {
+  "city": "Himeji",
+  "country": "Japonia",
+  "landmark": "Castelul Himeji",
+  "img": "himeji.jpg",
+  "author": "Nikos Kitsakis",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Himeji_castle_in_may_2015.jpg"
+ },
+ {
+  "city": "Florența",
+  "country": "Italia",
+  "landmark": "Domul din Florența",
+  "img": "florenta.jpg",
+  "author": "Gary Campbell-Hall",
+  "license": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Cattedrale_di_Santa_Maria_del_Fiore_%E2%80%93_Il_Duomo_di_Firenze.jpg"
+ },
+ {
+  "city": "Bilbao",
+  "country": "Spania",
+  "landmark": "Muzeul Guggenheim",
+  "img": "bilbao.jpg",
+  "author": "Naotake Murayama",
+  "license": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Museo_Guggenheim,_Bilbao_(31273245344).jpg"
+ },
+ {
+  "city": "Iași",
+  "country": "România",
+  "landmark": "Palatul Culturii",
+  "img": "iasi.jpg",
+  "author": "Europeana EU",
+  "license": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Exposing_Online_the_European_Cultural_Heritage_The_impact_of_Cultural_Heritage_on_the_Digital_Transformation_of_The_Society_(32746944817).jpg"
+ },
+ {
+  "city": "Muntele Fuji",
+  "country": "Japonia",
+  "landmark": "Fuji-san",
+  "img": "muntele-fuji.jpg",
+  "author": "Suicasmo",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:View_of_Mount_Fuji_from_%C5%8Cwakudani_20211202.jpg"
+ },
+ {
+  "city": "Segovia",
+  "country": "Spania",
+  "landmark": "Apeductul roman",
+  "img": "segovia.jpg",
+  "author": "Bernard Gagnon",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Aqueduct_of_Segovia_08.jpg"
+ },
+ {
+  "city": "Nikkō",
+  "country": "Japonia",
+  "landmark": "Sanctuarul Tōshō-gū",
+  "img": "nikko.jpg",
+  "author": "663highland",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:200801_Nikko_Tosho-gu_Nikko_Japan03s3.jpg"
+ },
+ {
+  "city": "Milano",
+  "country": "Italia",
+  "landmark": "Domul din Milano",
+  "img": "milano.jpg",
+  "author": "Jiuguang Wang",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Milan_Cathedral_from_Piazza_del_Duomo.jpg"
+ },
+ {
+  "city": "Córdoba",
+  "country": "Spania",
+  "landmark": "Mezquita",
+  "img": "cordoba.jpg",
+  "author": "Toni Castillo Quero",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Mezquita_de_C%C3%B3rdoba_desde_el_aire_(C%C3%B3rdoba,_Espa%C3%B1a).jpg"
+ },
+ {
+  "city": "Constanța",
+  "country": "România",
+  "landmark": "Cazinoul",
+  "img": "constanta.jpg",
+  "author": "Dennis Sylvester Hurd",
+  "license": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Constan%C8%9Ba_Casino_2025_(54606449888).jpg"
+ },
+ {
+  "city": "Sapporo",
+  "country": "Japonia",
+  "landmark": "Turnul cu ceas",
+  "img": "sapporo.jpg",
+  "author": "Bjørn Christian Tørrissen",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Sapporo-Clock-Tower-2018.jpg"
+ },
+ {
+  "city": "Viena",
+  "country": "Austria",
+  "landmark": "Palatul Schönbrunn",
+  "img": "viena.jpg",
+  "author": "C.Stadler/Bwag",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Wien_-_Schloss_Sch%C3%B6nbrunn.JPG"
+ },
+ {
+  "city": "Porto",
+  "country": "Portugalia",
+  "landmark": "Podul Dom Luís I",
+  "img": "porto.jpg",
+  "author": "Deensel",
+  "license": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Dom_Lu%C3%ADs_I_Bridge_(36961760686).jpg"
+ },
+ {
+  "city": "Alba Iulia",
+  "country": "România",
+  "landmark": "Cetatea Alba Carolina",
+  "img": "alba-iulia.jpg",
+  "author": "Kiki Vasilescu",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Cetatea_Alba_Iulia_din_aer_toamna.jpg"
+ },
+ {
+  "city": "Verona",
+  "country": "Italia",
+  "landmark": "Arena",
+  "img": "verona.jpg",
+  "author": "Claconvr",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Arena-XE3F2406a.jpg"
+ },
+ {
+  "city": "Atena",
+  "country": "Grecia",
+  "landmark": "Partenonul",
+  "img": "atena.jpg",
+  "author": "Steve Swayne",
+  "license": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:The_Parthenon_in_Athens.jpg"
+ },
+ {
+  "city": "Napoli",
+  "country": "Italia",
+  "landmark": "Castel Nuovo",
+  "img": "napoli.jpg",
+  "author": "Little john at Italian Wikipedia",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Municip.jpg"
+ },
+ {
+  "city": "Ciudad de México",
+  "country": "Mexic",
+  "landmark": "Palacio de Bellas Artes",
+  "img": "ciudad-de-mexico.jpg",
+  "author": "Xavier Quetzalcoatl Contreras Castillo",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bellas_Artes_01.jpg"
+ },
+ {
+  "city": "Torino",
+  "country": "Italia",
+  "landmark": "Mole Antonelliana",
+  "img": "torino.jpg",
+  "author": "Gunnar Klack",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:2026-06-10-Mole-Antonelliana.jpg"
+ },
+ {
+  "city": "Buenos Aires",
+  "country": "Argentina",
+  "landmark": "Obeliscul",
+  "img": "buenos-aires.jpg",
+  "author": "Luis Santos",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Panorama_Obelisco_de_Buenos_Aires_2019.jpg"
+ },
+ {
+  "city": "Havana",
+  "country": "Cuba",
+  "landmark": "Capitoliul",
+  "img": "havana.jpg",
+  "author": "Nigel Pacquette",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:El_Capitolio_Havana_Cuba.jpg"
+ },
+ {
+  "city": "Cusco",
+  "country": "Peru",
+  "landmark": "Machu Picchu",
+  "img": "cusco.jpg",
+  "author": "Draceane",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Machu_Picchu,_2023_(012).jpg"
+ },
+ {
+  "city": "New York",
+  "country": "SUA",
+  "landmark": "Statuia Libertății",
+  "img": "new-york.jpg",
+  "author": "AskALotl",
+  "license": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Front_view_of_Statue_of_Liberty_(cropped).jpg"
+ }
+]

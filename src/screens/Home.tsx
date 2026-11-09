@@ -8,6 +8,9 @@ import { SEASONS, partOfDay, type Season } from '../season'
 import { Progress } from '../components/ui'
 import { buildSyllabus } from './CourseScreen'
 import { stamps } from '../journey'
+import { useState } from 'react'
+import { localGet, localSet } from '../settings'
+import { ALL_REWARDS, RewardCard, studyDays } from '../components/RewardCard'
 
 /** Limbile din planul zilnic. Italiana se adaugă după spaniola A2. */
 const PLAN_LANGS: LangCode[] = ['es', 'ja']
@@ -31,9 +34,24 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
   const totalDue = Object.values(dueByLang).reduce((a, b) => a + b, 0)
   const info = SEASONS[season]
   const stampCount = stamps(chapters, homework).length
+  const earned = studyDays(days)
+  const seenKey = `poliglot.rewardSeen.${user}`
+  const [seen, setSeen] = useState(() => Number(localGet(seenKey) ?? 0))
+  const fresh = earned.length > seen && earned.length <= ALL_REWARDS.length ? earned.length : 0
+  const closeFresh = () => { localSet(seenKey, String(earned.length)); setSeen(earned.length) }
 
   return (
     <div className="screen home">
+      {fresh > 0 && (
+        <div className="reward-pop" onClick={closeFresh}>
+          <div className="reward-pop-box" onClick={(e) => e.stopPropagation()}>
+            <div className="reward-pop-title">🎉 Cartonaș nou!</div>
+            <RewardCard reward={ALL_REWARDS[fresh - 1]} day={fresh} date={earned[fresh - 1]} />
+            <p className="muted small">Ai învățat azi și ai câștigat un oraș nou pentru colecție. Îl găsești în Album.</p>
+            <button className="btn primary" onClick={closeFresh}>Super!</button>
+          </div>
+        </div>
+      )}
       <section className="hero">
         <div className="hero-season">{info.emoji} {info.name} · {info.greeting}</div>
         <h1 className="hero-title">{partOfDay()}, {user}!</h1>

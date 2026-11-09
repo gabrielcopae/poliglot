@@ -7,7 +7,7 @@ import type { LangCode, Lesson } from '../content/types'
 import { db } from '../db'
 import { KEEPSAKES, stamps } from '../journey'
 import { speak } from '../speech'
-import { RewardCard, SAMPLE_REWARDS } from '../components/RewardCard'
+import { ALL_REWARDS, RewardCard, RewardLocked, studyDays } from '../components/RewardCard'
 
 /** Fraza de pe spatele cartonașului: obiectul special sau prima replică din dialogul capitolului. */
 function backOf(lesson: Lesson) {
@@ -23,6 +23,8 @@ export function AlbumScreen({ back }: { back: () => void }) {
   const homework = useLiveQuery(() => db.homework.toArray(), [], [])
   const [lang, setLang] = useState<LangCode>('es')
   const [open, setOpen] = useState<string | null>(null)
+  const days = useLiveQuery(() => db.days.toArray(), [], [])
+  const earned = studyDays(days)
   const course = getCourse(lang)
   const got = new Set(stamps(chapters, homework).map((s) => s.lesson.id))
   const all = course.units.flatMap((u) => u.lessons.filter((l) => l.chapter))
@@ -32,10 +34,12 @@ export function AlbumScreen({ back }: { back: () => void }) {
     <div className="screen">
       <TopBar title="🃏 Albumul cu amintiri" onBack={back} />
       <section className="reward-preview">
-        <h3>🐾 Cartonașe pentru seria de zile <span className="muted small">(previzualizare)</span></h3>
-        <p className="muted small">Exemple: în fiecare zi în care înveți vei primi un cartonaș nou, o pisică sau un oraș cu clădirea lui. Cele aurii sunt pentru zilele speciale ale seriei.</p>
+        <h3>🏙️ Orașele tale <span className="muted small">({Math.min(earned.length, ALL_REWARDS.length)} din {ALL_REWARDS.length})</span></h3>
+        <p className="muted small">În fiecare zi în care înveți câștigi un cartonaș nou: un oraș cu ceva special din el. La fiecare a 7-a zi, rama e aurie.</p>
         <div className="reward-grid">
-          {SAMPLE_REWARDS.map((r, i) => <RewardCard key={i} spec={r.spec} label={r.label} gold={r.gold} />)}
+          {earned.length === 0 && <RewardCard reward={ALL_REWARDS[0]} day={1} preview />}
+          {earned.slice(0, ALL_REWARDS.length).map((date, i) => <RewardCard key={date} reward={ALL_REWARDS[i]} day={i + 1} date={date} />)}
+          {earned.length < ALL_REWARDS.length && earned.length > 0 && <RewardLocked day={earned.length + 1} />}
         </div>
       </section>
       <div className="segmented">

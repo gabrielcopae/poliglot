@@ -33,6 +33,11 @@ export default defineConfig({
         // vocile înregistrate: salvate la prima redare; Safari cere fișierele „pe bucăți” (Range)
         runtimeCaching: [
           {
+            urlPattern: /\/rewards\/[a-z0-9-]+\.(jpg|png)$/,
+            handler: 'CacheFirst',
+            options: { cacheName: 'poliglot-rewards', cacheableResponse: { statuses: [200] } },
+          },
+          {
             urlPattern: /\/audio\/[a-z]+\/[0-9a-f]+\.mp3$/,
             handler: 'CacheFirst',
             options: { cacheName: 'poliglot-audio', rangeRequests: true, cacheableResponse: { statuses: [200] } },
