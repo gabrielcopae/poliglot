@@ -74,6 +74,15 @@ export interface TalkRow {
   at: number
 }
 
+/** Un kanji exersat cu degetul. memory = scris din memorie (fără contur). */
+export interface KanjiRow {
+  id: string
+  times: number
+  best: number
+  memory: boolean
+  at: number
+}
+
 class PoliglotDB extends Dexie {
   cards!: Table<CardRow, string>
   lessons!: Table<LessonRow, string>
@@ -82,6 +91,7 @@ class PoliglotDB extends Dexie {
   homework!: Table<HomeworkRow, string>
   exams!: Table<ExamRow, string>
   talks!: Table<TalkRow, string>
+  kanji!: Table<KanjiRow, string>
 
   constructor(name: string) {
     super(name)
@@ -97,6 +107,9 @@ class PoliglotDB extends Dexie {
     this.version(3).stores({
       exams: 'id, lang',
       talks: 'id, lang',
+    })
+    this.version(4).stores({
+      kanji: 'id',
     })
   }
 }
@@ -147,17 +160,17 @@ export function streakFrom(days: DayRow[]): number {
 }
 
 export async function exportProgress(): Promise<string> {
-  const [cards, lessons, days, chapters, homework, exams, talks] = await Promise.all([
-    db.cards.toArray(), db.lessons.toArray(), db.days.toArray(), db.chapters.toArray(), db.homework.toArray(), db.exams.toArray(), db.talks.toArray(),
+  const [cards, lessons, days, chapters, homework, exams, talks, kanji] = await Promise.all([
+    db.cards.toArray(), db.lessons.toArray(), db.days.toArray(), db.chapters.toArray(), db.homework.toArray(), db.exams.toArray(), db.talks.toArray(), db.kanji.toArray(),
   ])
-  return JSON.stringify({ app: 'poliglot', version: 3, exportedAt: new Date().toISOString(), cards, lessons, days, chapters, homework, exams, talks })
+  return JSON.stringify({ app: 'poliglot', version: 3, exportedAt: new Date().toISOString(), cards, lessons, days, chapters, homework, exams, talks, kanji })
 }
 
 export async function importProgress(json: string) {
   const data = JSON.parse(json)
   if (data?.app !== 'poliglot') throw new Error('Fișierul nu este un backup Poliglot.')
-  await db.transaction('rw', [db.cards, db.lessons, db.days, db.chapters, db.homework, db.exams, db.talks], async () => {
-    await Promise.all([db.cards.clear(), db.lessons.clear(), db.days.clear(), db.chapters.clear(), db.homework.clear(), db.exams.clear(), db.talks.clear()])
+  await db.transaction('rw', [db.cards, db.lessons, db.days, db.chapters, db.homework, db.exams, db.talks, db.kanji], async () => {
+    await Promise.all([db.cards.clear(), db.lessons.clear(), db.days.clear(), db.chapters.clear(), db.homework.clear(), db.exams.clear(), db.talks.clear(), db.kanji.clear()])
     await db.cards.bulkPut(data.cards ?? [])
     await db.lessons.bulkPut(data.lessons ?? [])
     await db.days.bulkPut(data.days ?? [])
@@ -165,5 +178,6 @@ export async function importProgress(json: string) {
     await db.homework.bulkPut(data.homework ?? [])
     await db.exams.bulkPut(data.exams ?? [])
     await db.talks.bulkPut(data.talks ?? [])
+    await db.kanji.bulkPut(data.kanji ?? [])
   })
 }

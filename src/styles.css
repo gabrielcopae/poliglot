@@ -772,3 +772,31 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .exam-badge { width: 74px; height: 74px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.5rem; background: var(--accent); color: var(--on-accent); }
 .visa-big { transform: rotate(-3deg); font-size: 1.05rem; padding: 12px 18px; }
 .exam-actions { justify-content: center; }
+
+/* ——— Kanji cu degetul ——— */
+.kanji-group h3 { margin: 16px 2px 8px; }
+.kanji-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 8px; }
+.kanji-cell { aspect-ratio: 1; border-radius: 14px; border: 1px solid var(--line); background: var(--card); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 4px; }
+.kanji-cell .jp { font-size: 1.7rem; line-height: 1; }
+.kanji-cell small { font-size: 0.62rem; color: var(--dim); text-align: center; line-height: 1.1; }
+.kanji-cell.practiced { border-color: var(--good); background: color-mix(in srgb, var(--good) 12%, var(--card)); }
+.kanji-cell.mastered { border-color: #d4a72c; background: linear-gradient(160deg, #fff6d6, #f3d98a); color: #4a3510; }
+.kanji-info { display: flex; flex-direction: column; gap: 10px; }
+.kanji-readings { display: flex; gap: 16px; flex-wrap: wrap; }
+.kanji-readings > div { display: flex; flex-direction: column; }
+.kanji-readings b { font-size: 1.15rem; }
+.kanji-example { border: 1px solid var(--line); background: var(--card); border-radius: 12px; padding: 8px 12px; text-align: left; font-weight: 700; }
+.kanji-pad { width: min(100%, 360px); margin: 6px auto 10px; aspect-ratio: 1; border-radius: 20px; background: #fffdf6; border: 2px solid #e6dcc3; box-shadow: var(--shadow); touch-action: none; overflow: hidden; }
+.kanji-pad svg { width: 100%; height: 100%; display: block; touch-action: none; }
+.kanji-cross { stroke: #e7dcc4; stroke-width: 0.6; stroke-dasharray: 2 2; }
+.kanji-guide { fill: none; stroke: #d8d2c4; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+.kanji-guide.hidden { stroke: transparent; }
+.kanji-done { fill: none; stroke: #2b2420; stroke-width: 3.6; stroke-linecap: round; stroke-linejoin: round; }
+.kanji-demo { fill: none; stroke: #2b2420; stroke-width: 3.6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: kanjiStroke 0.6s ease forwards; }
+.kanji-hint { fill: none; stroke: var(--bad); stroke-width: 3.6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: kanjiStroke 0.7s ease forwards; opacity: 0.8; }
+@keyframes kanjiStroke { to { stroke-dashoffset: 0; } }
+.kanji-start { fill: var(--accent); }
+.kanji-ink { fill: none; stroke: var(--accent); stroke-width: 3.6; stroke-linecap: round; stroke-linejoin: round; }
+.kanji-actions { justify-content: center; }
+.kanji-result { text-align: center; display: flex; flex-direction: column; gap: 6px; align-items: center; }
+.kanji-modes button { font-size: 0.8rem; padding: 9px 6px; white-space: normal; line-height: 1.15; }

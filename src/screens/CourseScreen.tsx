@@ -84,6 +84,7 @@ export function CourseScreen({ lang, go, back }: { lang: LangCode; go: Go; back:
         <button className="btn primary" disabled={!due} onClick={() => go({ name: 'review', lang })}>🔁 Repetă {due ? `(${due})` : ''}</button>
         <button className="btn" onClick={() => go({ name: 'dictionary', lang })}>📖 Dicționar</button>
         {lang === 'ja' && <button className="btn" onClick={() => go({ name: 'kana' })}>あ Kana</button>}
+        {lang === 'ja' && <button className="btn" onClick={() => go({ name: 'kanjiList' })}>🖌️ Kanji</button>}
       </div>
 
       <div className="segmented course-tabs">
