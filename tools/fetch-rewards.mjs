@@ -1,7 +1,7 @@
 // Descarcă fotografia principală (doar cu licență liberă) de pe Wikipedia / Wikimedia Commons pentru fiecare oraș,
 // micșorată la 480 px, în public/rewards/, și scrie src/content/rewards-data.json cu autorul și licența.
 // Rulare: node tools/fetch-rewards.mjs
-import { mkdirSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
 import { REWARDS } from './rewards-list.mjs'
 
 const UA = { 'User-Agent': 'Poliglot-learning-app/1.0 (personal, non-commercial; github.com/gabrielcopae/poliglot)' }
@@ -19,11 +19,11 @@ async function getJson(url) {
   }
   throw new Error('prea multe cereri')
 }
-const FREE = /^(cc[- ]by|cc[- ]by-sa|cc0|public domain|pd|gfdl|attribution)/i
+const FREE = /^(cc[- ]by|cc[- ]by-sa|cc0|public domain|pd|gfdl|attribution|fal|free art)/i
 
 mkdirSync('public/rewards', { recursive: true })
 const out = []
-for (const [city, country, landmark, title] of REWARDS) {
+for (const [city, country, landmark, title, lang, fact] of REWARDS) {
   try {
     const p = await getJson(`https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&piprop=name&redirects=1&titles=${encodeURIComponent(title)}`)
     const page = Object.values(p.query.pages)[0]
@@ -41,7 +41,7 @@ for (const [city, country, landmark, title] of REWARDS) {
     const ext = info.thumburl.toLowerCase().includes('.png') ? 'png' : 'jpg'
     const name = `${slug(city)}.${ext}`
     writeFileSync(`public/rewards/${name}`, Buffer.from(await img.arrayBuffer()))
-    out.push({ city, country, landmark, img: name, author: strip(md.Artist?.value) || 'Wikimedia Commons', license, source: info.descriptionurl })
+    out.push({ city, country, landmark, lang, fact, img: name, author: strip(md.Artist?.value) || 'Wikimedia Commons', license, source: info.descriptionurl })
     console.log('✓', city, '·', license)
   } catch (e) {
     console.log('eroare:', city, e.message)

@@ -153,7 +153,7 @@ function MainApp({ session, season, signOut }: { session: Session; season: Retur
         {route.name === 'dictionary' && <DictionaryScreen key={route.lang} lang={route.lang} back={back} />}
         {route.name === 'stats' && <StatsScreen />}
         {route.name === 'passport' && <PassportScreen go={go} back={back} />}
-        {route.name === 'album' && <AlbumScreen back={back} />}
+        {route.name === 'album' && <AlbumScreen back={back} user={session.name} />}
         {route.name === 'talks' && <TalksScreen go={go} back={back} />}
         {route.name === 'kanjiList' && <KanjiListScreen go={go} back={back} />}
         {route.name === 'kanjiOne' && <KanjiOneScreen key={route.char} char={route.char} go={go} back={back} />}

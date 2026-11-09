@@ -7,7 +7,7 @@ import type { LangCode, Lesson } from '../content/types'
 import { db } from '../db'
 import { KEEPSAKES, stamps } from '../journey'
 import { speak } from '../speech'
-import { ALL_REWARDS, RewardCard, RewardLocked, studyDays } from '../components/RewardCard'
+import { ALL_REWARDS, RewardCard, RewardLocked, isAdmin, studyDays } from '../components/RewardCard'
 
 /** Fraza de pe spatele cartonașului: obiectul special sau prima replică din dialogul capitolului. */
 function backOf(lesson: Lesson) {
@@ -18,7 +18,9 @@ function backOf(lesson: Lesson) {
   return { t: line?.t ?? lesson.title, ro: line?.ro ?? '', gender: line?.who ? d?.cast?.[line.who] : undefined }
 }
 
-export function AlbumScreen({ back }: { back: () => void }) {
+export function AlbumScreen({ back, user }: { back: () => void; user: string }) {
+  const admin = isAdmin(user)
+  const [cityLang, setCityLang] = useState<string>('all')
   const chapters = useLiveQuery(() => db.chapters.toArray(), [], [])
   const homework = useLiveQuery(() => db.homework.toArray(), [], [])
   const [lang, setLang] = useState<LangCode>('es')
@@ -27,6 +29,7 @@ export function AlbumScreen({ back }: { back: () => void }) {
   const earned = studyDays(days)
   const course = getCourse(lang)
   const got = new Set(stamps(chapters, homework).map((s) => s.lesson.id))
+  if (admin) course.units.forEach((u) => u.lessons.forEach((l) => got.add(l.id)))
   const all = course.units.flatMap((u) => u.lessons.filter((l) => l.chapter))
   const gold = all.filter((l) => KEEPSAKES[l.id])
 
@@ -34,12 +37,24 @@ export function AlbumScreen({ back }: { back: () => void }) {
     <div className="screen">
       <TopBar title="🃏 Albumul cu amintiri" onBack={back} />
       <section className="reward-preview">
-        <h3>🏙️ Orașele tale <span className="muted small">({Math.min(earned.length, ALL_REWARDS.length)} din {ALL_REWARDS.length})</span></h3>
-        <p className="muted small">În fiecare zi în care înveți câștigi un cartonaș nou: un oraș cu ceva special din el. La fiecare a 7-a zi, rama e aurie.</p>
+        {admin && <div className="admin-banner">👑 Mod admin: toate cartonașele sunt deblocate</div>}
+        <h3>🏙️ Locurile tale <span className="muted small">({admin ? ALL_REWARDS.length : Math.min(earned.length, ALL_REWARDS.length)} din {ALL_REWARDS.length})</span></h3>
+        <p className="muted small">În fiecare zi în care înveți câștigi un cartonaș nou: un loc unde se vorbește limba pe care o înveți, cu ceva special din el și un fun fact despre limbă (atinge cartonașul). La fiecare a 7-a zi, rama e aurie.</p>
+        {admin && (
+          <div className="segmented wrap">
+            {[['all', 'Toate'], ['es', '🇪🇸 Spaniolă'], ['ja', '🇯🇵 Japoneză'], ['it', '🇮🇹 Italiană'], ['ro', '🇷🇴 România']].map(([k, t]) => (
+              <button key={k} className={cityLang === k ? 'on' : ''} onClick={() => setCityLang(k)}>{t}</button>
+            ))}
+          </div>
+        )}
         <div className="reward-grid">
-          {earned.length === 0 && <RewardCard reward={ALL_REWARDS[0]} day={1} preview />}
-          {earned.slice(0, ALL_REWARDS.length).map((date, i) => <RewardCard key={date} reward={ALL_REWARDS[i]} day={i + 1} date={date} />)}
-          {earned.length < ALL_REWARDS.length && earned.length > 0 && <RewardLocked day={earned.length + 1} />}
+          {admin
+            ? ALL_REWARDS.map((r, i) => ({ r, i })).filter(({ r }) => cityLang === 'all' || r.lang === cityLang).map(({ r, i }) => <RewardCard key={r.img} reward={r} day={i + 1} />)
+            : <>
+              {earned.length === 0 && <RewardCard reward={ALL_REWARDS[0]} day={1} preview />}
+              {earned.slice(0, ALL_REWARDS.length).map((date, i) => <RewardCard key={date} reward={ALL_REWARDS[i]} day={i + 1} date={date} />)}
+              {earned.length < ALL_REWARDS.length && earned.length > 0 && <RewardLocked day={earned.length + 1} />}
+            </>}
         </div>
       </section>
       <div className="segmented">

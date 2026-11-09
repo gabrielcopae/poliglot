@@ -33,6 +33,8 @@ Dacă începi o conversație nouă cu Claude, spune-i:
 - **🛂 Pașaportul călătorului**: o ștampilă (loc + dată) pentru fiecare capitol terminat; o viză pentru fiecare test de nivel trecut.
 - **🃏 Albumul cu amintiri**: un cartonaș pentru fiecare capitol terminat; cele aurii sunt obiectele din povești (inelul lui Vasile, cocorul roșu, Leica lui Ion…).
 - **💬 Conversează cu personajele**: 6 scene interactive (spaniolă: Kenji, Madrid, interviul Cervantes; japoneză: gara, ramen, Sakura rătăcită), cu reacții la greșeli, explicații și stele.
+- **🏙️ Cartonașe pentru seria de zile**: în fiecare zi de învățat câștigi un loc unde se vorbește limba (Spania, America Latină, Japonia, Italia, Elveția, San Marino; România ca bonus): fotografie reală liberă (Wikimedia Commons), ramă (aurie la fiecare a 7-a zi), fun fact despre limbă pe spate. 62 de locuri; lista e în tools/rewards-list.mjs, pozele se refac cu node tools/fetch-rewards.mjs.
+- **👑 Contul admin**: utilizatorul „admin”, cu parolă fixă (în cod e doar amprenta ei, în src/accounts.ts). Vede toate cartonașele deblocate, cu filtru pe limbi.
 - **🖌️ Kanji cu degetul** (japoneză → butonul „Kanji”): 89 de kanji N5 pe teme, cu sens, citiri, exemplu cu 🔊, animația ordinii liniilor, scris cu contur și din memorie (verde = exersat, auriu = din memorie). Linii din KanjiVG (CC BY-SA 3.0); lista e în tools/kanji-list.mjs, datele se refac cu node tools/fetch-kanji.mjs.
 - **📝 Teste de nivel** (stil DELE / JLPT): 30 de întrebări din tot nivelul, 60% pentru trecere, viza apare în pașaport.
 

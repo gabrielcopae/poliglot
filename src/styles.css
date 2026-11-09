@@ -821,3 +821,12 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .reward-pop-box { background: var(--bg2); border-radius: 22px; padding: 18px; width: min(320px, 100%); text-align: center; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4); }
 .reward-pop-title { font-family: var(--display); font-size: 1.4rem; }
 .reward-pop .city-card { animation: pop 0.5s ease both; }
+.city-card { border: none; font: inherit; text-align: inherit; perspective: 900px; cursor: pointer; }
+.city-inner { display: grid; transition: transform 0.55s; transform-style: preserve-3d; }
+.city-card.flipped .city-inner { transform: rotateY(180deg); }
+.city-front, .city-back { grid-area: 1 / 1; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.city-back { transform: rotateY(180deg); padding: 10px 10px 6px; justify-content: space-between; }
+.city-fact-head { display: flex; align-items: center; justify-content: center; gap: 6px; font-family: var(--display); font-size: 1rem; }
+.city-fact { font-size: 0.8rem; line-height: 1.4; margin: 6px 0; text-align: center; color: #3b2f22; }
+.city-fact-lang { text-align: center; font-size: 0.66rem; font-weight: 800; color: #9c3d26; text-transform: uppercase; letter-spacing: 0.04em; }
+.admin-banner { background: linear-gradient(90deg, #3b2a6b, #6a3fa0); color: #fff; border-radius: 12px; padding: 8px 12px; font-weight: 800; margin-bottom: 10px; text-align: center; }
