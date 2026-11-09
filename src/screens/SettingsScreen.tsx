@@ -84,24 +84,28 @@ export function SettingsScreen({ user, signOut }: { user: string; signOut: () =>
         <input type="range" min={0.5} max={1.3} step={0.05} value={s.rate} onChange={(e) => setSettings({ rate: Number(e.target.value) })} />
         {COURSES.map((c) => {
           const list = voicesFor(c.lang)
-          const cur = list.find((v) => voiceId(v) === s.voices[c.lang]) ?? list.find((v) => v.voiceURI === s.voices[c.lang]) ?? list[0]
           return (
             <div key={c.lang} className="voice-row">
               <label className="field-label"><Flag lang={c.lang} size={18} /> {c.name}</label>
               {list.length ? (
-                <div className="voice-pick">
-                  <select value={cur ? voiceId(cur) : ''} onChange={(e) => setSettings({ voices: { ...s.voices, [c.lang]: e.target.value } })}>
-                    {list.map((v, i) => <option key={`${voiceId(v)}-${i}`} value={voiceId(v)}>{v.name}{v.localService ? ' · offline' : ' · online'}</option>)}
-                  </select>
-                  <button className="btn" onClick={() => speak(c.hello, c.lang, c.locale)}>▶</button>
-                </div>
-              ) : null}
-              {list.length ? (
-                <div className="muted small">
-                  {list.length} {list.length === 1 ? 'voce găsită' : 'voci găsite'} · personaje:{' '}
-                  <button className="btn" onClick={() => speak(c.hello, c.lang, c.locale, undefined, { gender: 'f' })}>👩 {voiceFor(c.lang, 'f')?.name ?? '—'} ▶</button>{' '}
-                  <button className="btn" onClick={() => speak(c.hello, c.lang, c.locale, undefined, { gender: 'm' })}>👨 {voiceFor(c.lang, 'm')?.name ?? '—'} ▶</button>
-                </div>
+                <>
+                  {([['', '🔤 Voce pentru cuvinte', undefined], [':f', '👩 Voce pentru femei', 'f'], [':m', '👨 Voce pentru bărbați', 'm']] as const).map(([suffix, label, gender]) => {
+                    const key = c.lang + suffix
+                    const cur = gender ? voiceFor(c.lang, gender) : list.find((v) => voiceId(v) === s.voices[key]) ?? list.find((v) => v.voiceURI === s.voices[key]) ?? list[0]
+                    return (
+                      <div key={key} className="voice-line">
+                        <span className="muted small">{label}</span>
+                        <div className="voice-pick">
+                          <select value={cur ? voiceId(cur) : ''} onChange={(e) => setSettings({ voices: { ...s.voices, [key]: e.target.value } })}>
+                            {list.map((v, i) => <option key={`${voiceId(v)}-${i}`} value={voiceId(v)}>{v.name}{v.localService ? ' · offline' : ' · online'}</option>)}
+                          </select>
+                          <button className="btn" onClick={() => speak(c.hello, c.lang, c.locale, undefined, gender ? { gender } : {})}>▶</button>
+                        </div>
+                      </div>
+                    )
+                  })}
+                  <div className="muted small">{list.length} {list.length === 1 ? 'voce găsită' : 'voci găsite'} pe acest aparat.</div>
+                </>
               ) : (
                 <div className="warn">Nicio voce instalată pentru {c.name.toLowerCase()}. Vezi instrucțiunile de mai jos.</div>
               )}

@@ -664,3 +664,6 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .ch-dots .dot.st-progress { background: var(--accent); }
 .syl-toc { display: block; margin: 4px 12px 0 auto; border: none; background: none; color: var(--accent); font-weight: 800; font-size: 0.85rem; padding: 4px 0; }
 .syl-short { margin-bottom: 6px; }
+
+.voice-line { margin: 6px 0; }
+.voice-line .voice-pick { margin-top: 2px; }

@@ -51,6 +51,9 @@ function pickVoice(lang: string, gender?: 'f' | 'm'): SpeechSynthesisVoice | und
   const pref = getSettings().voices[lang]
   const saved = list.find((v) => voiceId(v) === pref) ?? list.find((v) => v.voiceURI === pref)
   if (gender) {
+    const chosen = getSettings().voices[`${lang}:${gender}`]
+    const byUser = chosen ? list.find((v) => voiceId(v) === chosen) : undefined
+    if (byUser) return byUser
     const re = gender === 'f' ? FEMALE : MALE
     const other = gender === 'f' ? MALE : FEMALE
     if (saved && re.test(saved.name)) return saved
@@ -100,16 +103,26 @@ export function speak(text: string, lang: string, locale: string, rate?: number,
         silent.add(voiceId(v))
         replaced = true
         synth.cancel()
-        setTimeout(() => say(false), 80)
+        say(false)
       }, 1500)
     }
   }
 
-  // Pe iPhone, „speak” imediat după „cancel” e uneori ignorat; lăsăm o pauză scurtă.
-  if (synth.speaking || synth.pending) {
-    synth.cancel()
-    setTimeout(() => say(true), 80)
-  } else say(true)
+  // Pe iPhone vocea pornește doar dacă „speak” e apelat chiar în momentul atingerii (fără pauze).
+  if (synth.speaking || synth.pending) synth.cancel()
+  say(true)
+  synth.resume()
+}
+
+// iPhone: prima atingere din aplicație „deblochează” vorbirea, cu o replică goală.
+if (synth && IOS) {
+  const unlock = () => {
+    const u = new SpeechSynthesisUtterance(' ')
+    u.volume = 0
+    synth.speak(u)
+    document.removeEventListener('touchend', unlock)
+  }
+  document.addEventListener('touchend', unlock)
 }
 
 export function stopSpeaking() {
