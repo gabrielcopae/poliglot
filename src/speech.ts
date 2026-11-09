@@ -13,6 +13,15 @@ function loadVoices() {
 if (synth) {
   loadVoices()
   synth.addEventListener?.('voiceschanged', loadVoices)
+  // Safari pe iPhone încarcă vocile treptat și nu anunță mereu „voiceschanged”: mai întrebăm de câteva ori.
+  let tries = 0
+  const poll = setInterval(() => {
+    const before = voices.length
+    voices = synth.getVoices()
+    if (voices.length !== before) listeners.forEach((l) => l())
+    if (++tries >= 20) clearInterval(poll)
+  }, 1000)
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) loadVoices() })
 }
 
 export function onVoices(cb: () => void) {
@@ -24,6 +33,9 @@ export function onVoices(cb: () => void) {
 const QUALITY = /premium|enhanced|mejorada|optimizada|migliorata|高品質|natural|neural|online/i
 
 export function voicesFor(lang: string): SpeechSynthesisVoice[] {
+  // listă proaspătă de fiecare dată (pe iPhone pot apărea voci noi după pornire)
+  const fresh = synth?.getVoices()
+  if (fresh && fresh.length >= voices.length) voices = fresh
   return voices
     .filter((v) => v.lang.toLowerCase().replace('_', '-').startsWith(lang))
     .sort((a, b) => Number(QUALITY.test(b.name)) - Number(QUALITY.test(a.name)) || Number(b.localService) - Number(a.localService))
