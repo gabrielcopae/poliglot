@@ -830,3 +830,14 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .city-fact { font-size: 0.8rem; line-height: 1.4; margin: 6px 0; text-align: center; color: #3b2f22; }
 .city-fact-lang { text-align: center; font-size: 0.66rem; font-weight: 800; color: #9c3d26; text-transform: uppercase; letter-spacing: 0.04em; }
 .admin-banner { background: linear-gradient(90deg, #3b2a6b, #6a3fa0); color: #fff; border-radius: 12px; padding: 8px 12px; font-weight: 800; margin-bottom: 10px; text-align: center; }
+.album-row { margin: 10px 0 16px; }
+.album-row-title { font-weight: 800; margin: 0 2px 8px; font-size: 0.95rem; }
+.album-row-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.album-row-grid .album-card { aspect-ratio: auto; min-height: 100%; }
+.album-row-grid .album-card .album-face { position: relative; inset: auto; height: 100%; }
+.album-row-grid .album-card .album-inner { position: relative; height: 100%; display: grid; }
+.album-row-grid .album-card .album-inner > .album-face { grid-area: 1 / 1; }
+.album-row-grid .city-text b { font-size: 0.85rem; }
+.album-row-grid .city-text small, .album-row-grid .city-label { font-size: 0.58rem; }
+.album-row-grid .city-credit { display: none; }
+.album-row-grid .city-fact { font-size: 0.66rem; }

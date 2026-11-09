@@ -5,9 +5,11 @@ import { TopBar } from '../components/ui'
 import { COURSES, getCourse } from '../content'
 import type { LangCode, Lesson } from '../content/types'
 import { db } from '../db'
-import { KEEPSAKES, stamps } from '../journey'
+import { KEEPSAKES } from '../journey'
 import { speak } from '../speech'
-import { ALL_REWARDS, RewardCard, RewardLocked, isAdmin, studyDays } from '../components/RewardCard'
+import { ALL_REWARDS, RewardCard, RewardLocked, isAdmin, studyDays, type Reward } from '../components/RewardCard'
+import SESSION_PLACES from '../content/session-places.json'
+import { buildSyllabus } from './CourseScreen'
 
 /** Fraza de pe spatele cartonașului: obiectul special sau prima replică din dialogul capitolului. */
 function backOf(lesson: Lesson) {
@@ -26,12 +28,9 @@ export function AlbumScreen({ back, user }: { back: () => void; user: string }) 
   const [lang, setLang] = useState<LangCode>('es')
   const [open, setOpen] = useState<string | null>(null)
   const days = useLiveQuery(() => db.days.toArray(), [], [])
+  const doneLessons = useLiveQuery(() => db.lessons.toArray(), [], [])
   const earned = studyDays(days)
   const course = getCourse(lang)
-  const got = new Set(stamps(chapters, homework).map((s) => s.lesson.id))
-  if (admin) course.units.forEach((u) => u.lessons.forEach((l) => got.add(l.id)))
-  const all = course.units.flatMap((u) => u.lessons.filter((l) => l.chapter))
-  const gold = all.filter((l) => KEEPSAKES[l.id])
 
   return (
     <div className="screen">
@@ -57,45 +56,67 @@ export function AlbumScreen({ back, user }: { back: () => void; user: string }) 
             </>}
         </div>
       </section>
+      <h3 className="section-title">📚 Cartonașele ședințelor</h3>
+      <p className="muted small">Fiecare ședință terminată îți aduce un loc din lumea limbii respective. Ultima ședință din capitol (Temele) îți aduce un cartonaș special, auriu, cu povestea capitolului.</p>
       <div className="segmented">
-        {COURSES.filter((c) => c.units.some((u) => u.lessons.some((l) => l.chapter))).map((c) => (
+        {COURSES.map((c) => (
           <button key={c.lang} className={c.lang === lang ? 'on' : ''} onClick={() => { setLang(c.lang); setOpen(null) }}><Flag lang={c.lang} size={16} /> {c.name}</button>
         ))}
       </div>
-      <p className="muted small">
-        {all.filter((l) => got.has(l.id)).length} din {all.length} cartonașe · {gold.filter((l) => got.has(l.id)).length} din {gold.length} aurii. Primești cartonașul când termini capitolul. Atinge-l ca să-l întorci.
-      </p>
-      <div className="album-grid">
-        {all.map((lesson) => {
-          const has = got.has(lesson.id)
-          const k = KEEPSAKES[lesson.id]
-          const flipped = open === lesson.id
-          const b = backOf(lesson)
-          if (!has) {
-            return (
-              <div key={lesson.id} className={`album-card locked ${k ? 'gold' : ''}`}>
-                <div className="album-face"><span className="album-q">?</span><small>Cap. {lesson.chapter!.number}</small></div>
-              </div>
-            )
-          }
-          return (
-            <button key={lesson.id} className={`album-card ${k ? 'gold' : ''} ${flipped ? 'flipped' : ''}`} onClick={() => setOpen(flipped ? null : lesson.id)}>
-              <div className="album-inner">
-                <div className="album-face">
-                  <span className="album-emoji">{k?.emoji ?? lesson.emoji}</span>
-                  <b>{k?.name ?? lesson.title}</b>
-                  <small>Cap. {lesson.chapter!.number}</small>
+      {(() => {
+        const places = (SESSION_PLACES as Reward[]).filter((p) => p.lang === lang)
+        const syl = buildSyllabus(lang, chapters.filter((c) => c.lang === lang), homework, new Set(doneLessons.map((l) => l.id)))
+        let k = 0
+        const rows = syl.flatMap((u) => u.lessons).map(({ lesson, items }) => ({
+          lesson,
+          cards: items.map((it, i) => {
+            const special = !!lesson.chapter && i === items.length - 1
+            return { it, special, place: special ? undefined : places[k++] }
+          }),
+        }))
+        const all = rows.flatMap((r) => r.cards)
+        const have = all.filter((c) => admin || c.it.status === 'done').length
+        return (
+          <>
+            <p className="muted small">{have} din {all.length} cartonașe la {course.name.toLowerCase()}.</p>
+            {rows.map(({ lesson, cards }) => (
+              <section key={lesson.id} className="album-row">
+                <div className="album-row-title">{lesson.emoji} {lesson.chapter ? `Cap. ${lesson.chapter.number} · ${lesson.title}` : lesson.title}</div>
+                <div className="reward-grid album-row-grid">
+                  {cards.map(({ it, special, place }) => {
+                    const owned = admin || it.status === 'done'
+                    const label = special ? `⭐ Teme · Ședința ${it.n}` : `Ședința ${it.n}`
+                    if (special) {
+                      const kk = KEEPSAKES[lesson.id]
+                      const b = backOf(lesson)
+                      const flipped = open === lesson.id
+                      if (!owned) return <div key={it.n} className="album-card locked gold"><div className="album-face"><span className="album-q">⭐</span><small>{label}</small></div></div>
+                      return (
+                        <button key={it.n} className={`album-card gold ${flipped ? 'flipped' : ''}`} onClick={() => setOpen(flipped ? null : lesson.id)}>
+                          <div className="album-inner">
+                            <div className="album-face">
+                              <span className="album-emoji">{kk?.emoji ?? lesson.emoji}</span>
+                              <b>{kk?.name ?? lesson.title}</b>
+                              <small>{label}</small>
+                            </div>
+                            <div className="album-face album-back">
+                              <span className={lang === 'ja' ? 'jp' : ''}>{b.t}</span>
+                              <small>{b.ro}</small>
+                              <span className="album-play" onClick={(e) => { e.stopPropagation(); speak(b.t, lang, course.locale, undefined, b.gender ? { gender: b.gender } : {}) }}>🔊</span>
+                            </div>
+                          </div>
+                        </button>
+                      )
+                    }
+                    if (!place) return <RewardLocked key={it.n} day={it.n} label={label} title="Loc nou, în curând" />
+                    return owned ? <RewardCard key={it.n} reward={place} day={it.n} label={label} gold={false} /> : <RewardLocked key={it.n} day={it.n} label={label} />
+                  })}
                 </div>
-                <div className="album-face album-back">
-                  <span className={lang === 'ja' ? 'jp' : ''}>{b.t}</span>
-                  <small>{b.ro}</small>
-                  <span className="album-play" onClick={(e) => { e.stopPropagation(); speak(b.t, lang, course.locale, undefined, b.gender ? { gender: b.gender } : {}) }}>🔊</span>
-                </div>
-              </div>
-            </button>
-          )
-        })}
-      </div>
+              </section>
+            ))}
+          </>
+        )
+      })()}
     </div>
   )
 }

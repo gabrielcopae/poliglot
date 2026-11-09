@@ -1,8 +1,16 @@
 // Descarcă fotografia principală (doar cu licență liberă) de pe Wikipedia / Wikimedia Commons pentru fiecare oraș,
 // micșorată la 480 px, în public/rewards/, și scrie src/content/rewards-data.json cu autorul și licența.
 // Rulare: node tools/fetch-rewards.mjs
-import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { REWARDS } from './rewards-list.mjs'
+import { SESSION_PLACES } from './session-places-list.mjs'
+
+// node tools/fetch-rewards.mjs          → cartonașele zilnice
+// node tools/fetch-rewards.mjs session  → cartonașele ședințelor
+const SESSION = process.argv[2] === 'session'
+const LIST = SESSION ? SESSION_PLACES : REWARDS
+const OUT_JSON = SESSION ? 'src/content/session-places.json' : 'src/content/rewards-data.json'
+const PREFIX = SESSION ? 's-' : ''
 
 const UA = { 'User-Agent': 'Poliglot-learning-app/1.0 (personal, non-commercial; github.com/gabrielcopae/poliglot)' }
 const strip = (s = '') => s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
@@ -23,12 +31,23 @@ const FREE = /^(cc[- ]by|cc[- ]by-sa|cc0|public domain|pd|gfdl|attribution|fal|f
 
 mkdirSync('public/rewards', { recursive: true })
 const out = []
-for (const [city, country, landmark, title, lang, fact] of REWARDS) {
+// ce am descărcat deja rămâne (doar locurile noi sau fără poză se caută din nou)
+const prev = existsSync(OUT_JSON) ? JSON.parse(readFileSync(OUT_JSON, 'utf8')) : []
+const have = new Map(prev.filter((p) => existsSync(`public/rewards/${p.img}`)).map((p) => [p.city, p]))
+for (const [city, country, landmark, title, lang, fact] of LIST) {
+  const old = have.get(city)
+  if (old && process.argv[3] !== 'all') { out.push({ ...old, country, landmark, lang, fact }); continue }
   try {
     const p = await getJson(`https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&piprop=name&redirects=1&titles=${encodeURIComponent(title)}`)
     const page = Object.values(p.query.pages)[0]
-    if (!page.pageimage) { console.log('fără imagine:', city); continue }
-    const file = 'File:' + page.pageimage
+    let file = page.pageimage ? 'File:' + page.pageimage : ''
+    if (!file) {
+      // fără poză pe Wikipedia: căutăm direct în Wikimedia Commons o fotografie a locului
+      const sr = await getJson(`https://commons.wikimedia.org/w/api.php?action=query&format=json&list=search&srnamespace=6&srlimit=10&srsearch=${encodeURIComponent(title.replace(/_/g, ' ').replace(/[(),]/g, ' ') + ' filetype:bitmap')}`)
+      file = sr.query.search.map((x) => x.title).find((t) => /.(jpe?g)$/i.test(t)) ?? ''
+      if (!file) { console.log('fără imagine:', city); continue }
+      console.log('  (din Commons)', city, file)
+    }
     const q = await getJson(`https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=480&titles=${encodeURIComponent(file)}`)
     const info = Object.values(q.query.pages)[0]?.imageinfo?.[0]
     if (!info) { console.log('nu e pe Commons (probabil neliberă):', city); continue }
@@ -39,7 +58,7 @@ for (const [city, country, landmark, title, lang, fact] of REWARDS) {
     const img = await fetch(info.thumburl, { headers: UA })
     if (!img.ok || !(img.headers.get('content-type') ?? '').startsWith('image')) { console.log('imaginea nu s-a descărcat:', city); continue }
     const ext = info.thumburl.toLowerCase().includes('.png') ? 'png' : 'jpg'
-    const name = `${slug(city)}.${ext}`
+    const name = `${PREFIX}${slug(city)}.${ext}`
     writeFileSync(`public/rewards/${name}`, Buffer.from(await img.arrayBuffer()))
     out.push({ city, country, landmark, lang, fact, img: name, author: strip(md.Artist?.value) || 'Wikimedia Commons', license, source: info.descriptionurl })
     console.log('✓', city, '·', license)
@@ -47,5 +66,5 @@ for (const [city, country, landmark, title, lang, fact] of REWARDS) {
     console.log('eroare:', city, e.message)
   }
 }
-writeFileSync('src/content/rewards-data.json', JSON.stringify(out, null, 1))
+writeFileSync(OUT_JSON, JSON.stringify(out, null, 1))
 console.log(out.length, 'cartonașe salvate')
