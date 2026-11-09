@@ -11,6 +11,7 @@ import { stamps } from '../journey'
 import { useState } from 'react'
 import { localGet, localSet } from '../settings'
 import { ALL_REWARDS, RewardCard, studyDays } from '../components/RewardCard'
+import { MILESTONES, StreakCard, longestStreak } from '../components/StreakCard'
 
 /** Limbile din planul zilnic. Italiana se adaugă după spaniola A2. */
 const PLAN_LANGS: LangCode[] = ['es', 'ja']
@@ -39,10 +40,26 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
   const [seen, setSeen] = useState(() => Number(localGet(seenKey) ?? 0))
   const fresh = earned.length > seen && earned.length <= ALL_REWARDS.length ? earned.length : 0
   const closeFresh = () => { localSet(seenKey, String(earned.length)); setSeen(earned.length) }
+  // zilele speciale ale seriei: cartonaș holografic
+  const msKey = `poliglot.milestoneSeen.${user}`
+  const [msSeen, setMsSeen] = useState(() => Number(localGet(msKey) ?? 0))
+  const reached = MILESTONES.filter((n) => n <= longestStreak(days)).pop() ?? 0
+  const freshMs = reached > msSeen ? reached : 0
+  const closeMs = () => { localSet(msKey, String(reached)); setMsSeen(reached) }
 
   return (
     <div className="screen home">
-      {fresh > 0 && (
+      {freshMs > 0 && (
+        <div className="reward-pop" onClick={closeMs}>
+          <div className="reward-pop-box" onClick={(e) => e.stopPropagation()}>
+            <div className="reward-pop-title">✨ Cartonaș special!</div>
+            <StreakCard n={freshMs} />
+            <p className="muted small">Ai învățat {freshMs} zile la rând. Continuă tot așa!</p>
+            <button className="btn primary" onClick={closeMs}>Super!</button>
+          </div>
+        </div>
+      )}
+      {!freshMs && fresh > 0 && (
         <div className="reward-pop" onClick={closeFresh}>
           <div className="reward-pop-box" onClick={(e) => e.stopPropagation()}>
             <div className="reward-pop-title">🎉 Cartonaș nou!</div>
@@ -80,6 +97,11 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
           <span className="journey-emoji">💬</span>
           <b>Conversații</b>
           <small>vorbește cu personajele</small>
+        </button>
+        <button className="card journey-tile" onClick={() => go({ name: 'pairs' })}>
+          <span className="journey-emoji">🧩</span>
+          <b>Perechi</b>
+          <small>joc de memorie</small>
         </button>
         <button className="card journey-tile" onClick={() => go({ name: 'album' })}>
           <span className="journey-emoji">🃏</span>

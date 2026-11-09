@@ -21,11 +21,12 @@ export const isGold = (n: number) => n % 7 === 0
 const LANG_NAME: Record<string, string> = { es: 'spaniolă', ja: 'japoneză', it: 'italiană', ro: 'română' }
 const shortAuthor = (a: string) => (a.length > 34 ? a.slice(0, 32) + '…' : a)
 
-export function RewardCard({ reward, day, date, preview, label, gold: goldProp }: { reward: Reward; day: number; date?: string; preview?: boolean; label?: string; gold?: boolean }) {
+export function RewardCard({ reward, day, date, preview, label, gold: goldProp, onOpen }: { reward: Reward; day: number; date?: string; preview?: boolean; label?: string; gold?: boolean; onOpen?: () => void }) {
   const gold = goldProp ?? isGold(day)
   const [back, setBack] = useState(false)
+  // în grilă, atingerea deschide prim-planul; în prim-plan, întoarce cartonașul
   return (
-    <button className={`city-card ${gold ? 'gold' : ''} ${back ? 'flipped' : ''}`} onClick={() => setBack(!back)}>
+    <button className={`city-card ${gold ? 'gold' : ''} ${back ? 'flipped' : ''}`} onClick={() => (onOpen ? onOpen() : setBack(!back))}>
       <div className="city-inner">
         <div className="city-frame city-front">
           <div className="city-photo" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}rewards/${reward.img})` }} />

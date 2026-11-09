@@ -25,6 +25,7 @@ import { AlbumScreen } from './screens/AlbumScreen'
 import { TalkScreen, TalksScreen } from './screens/TalkScreen'
 import { ExamScreen } from './screens/ExamScreen'
 import { KanjiListScreen, KanjiOneScreen } from './screens/KanjiDrawScreen'
+import { PairsScreen } from './screens/PairsScreen'
 
 function shouldShowIntro(mode: string) {
   if (mode === 'never') return false
@@ -152,9 +153,10 @@ function MainApp({ session, season, signOut }: { session: Session; season: Retur
         {route.name === 'kana' && <KanaScreen back={back} />}
         {route.name === 'dictionary' && <DictionaryScreen key={route.lang} lang={route.lang} back={back} />}
         {route.name === 'stats' && <StatsScreen />}
-        {route.name === 'passport' && <PassportScreen go={go} back={back} />}
+        {route.name === 'passport' && <PassportScreen go={go} back={back} user={session.name} />}
         {route.name === 'album' && <AlbumScreen back={back} user={session.name} />}
         {route.name === 'talks' && <TalksScreen go={go} back={back} />}
+        {route.name === 'pairs' && <PairsScreen back={back} />}
         {route.name === 'kanjiList' && <KanjiListScreen go={go} back={back} />}
         {route.name === 'kanjiOne' && <KanjiOneScreen key={route.char} char={route.char} go={go} back={back} />}
         {route.name === 'exam' && <ExamScreen key={route.lang + route.level} lang={route.lang} level={route.level} back={back} />}

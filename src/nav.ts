@@ -17,6 +17,7 @@ export type Route =
   | { name: 'talk'; id: string }
   | { name: 'exam'; lang: LangCode; level: string }
   | { name: 'kanjiList' }
+  | { name: 'pairs' }
   | { name: 'kanjiOne'; char: string }
 
 export type Go = (r: Route) => void

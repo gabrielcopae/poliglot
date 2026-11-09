@@ -4,13 +4,19 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { REWARDS } from './rewards-list.mjs'
 import { SESSION_PLACES } from './session-places-list.mjs'
+import { SESSION_PLACES_ES2 } from './session-places-es2.mjs'
+import { PEOPLE } from './people-list.mjs'
 
 // node tools/fetch-rewards.mjs          → cartonașele zilnice
 // node tools/fetch-rewards.mjs session  → cartonașele ședințelor
-const SESSION = process.argv[2] === 'session'
-const LIST = SESSION ? SESSION_PLACES : REWARDS
-const OUT_JSON = SESSION ? 'src/content/session-places.json' : 'src/content/rewards-data.json'
-const PREFIX = SESSION ? 's-' : ''
+// node tools/fetch-rewards.mjs people   → personalitățile de pe ștampile
+const MODE = process.argv[2] ?? 'daily'
+const SESSION = MODE === 'session'
+const PEOPLE_MODE = MODE === 'people'
+// rândurile personalităților au în plus „cine a fost”; le aducem la forma [nume, loc, țară, titlu, limbă, fapt] + rol
+const LIST = PEOPLE_MODE ? PEOPLE.map(([n, place, country, role, t, l, f]) => [n, country, place, t, l, f, role]) : SESSION ? [...SESSION_PLACES, ...SESSION_PLACES_ES2] : REWARDS
+const OUT_JSON = PEOPLE_MODE ? 'src/content/people-data.json' : SESSION ? 'src/content/session-places.json' : 'src/content/rewards-data.json'
+const PREFIX = PEOPLE_MODE ? 'p-' : SESSION ? 's-' : ''
 
 const UA = { 'User-Agent': 'Poliglot-learning-app/1.0 (personal, non-commercial; github.com/gabrielcopae/poliglot)' }
 const strip = (s = '') => s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
@@ -33,10 +39,10 @@ mkdirSync('public/rewards', { recursive: true })
 const out = []
 // ce am descărcat deja rămâne (doar locurile noi sau fără poză se caută din nou)
 const prev = existsSync(OUT_JSON) ? JSON.parse(readFileSync(OUT_JSON, 'utf8')) : []
-const have = new Map(prev.filter((p) => existsSync(`public/rewards/${p.img}`)).map((p) => [p.city, p]))
-for (const [city, country, landmark, title, lang, fact] of LIST) {
-  const old = have.get(city)
-  if (old && process.argv[3] !== 'all') { out.push({ ...old, country, landmark, lang, fact }); continue }
+const have = new Map(prev.filter((p) => existsSync(`public/rewards/${p.img}`)).map((p) => [`${p.city}|${p.country}`, p]))
+for (const [city, country, landmark, title, lang, fact, role] of LIST) {
+  const old = have.get(`${city}|${country}`) ?? (PEOPLE_MODE ? undefined : have.get(`${city}|undefined`))
+  if (old && process.argv[3] !== 'all') { out.push({ ...old, country, landmark, lang, fact, ...(role ? { role } : {}) }); continue }
   try {
     const p = await getJson(`https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&piprop=name&redirects=1&titles=${encodeURIComponent(title)}`)
     const page = Object.values(p.query.pages)[0]
@@ -58,9 +64,9 @@ for (const [city, country, landmark, title, lang, fact] of LIST) {
     const img = await fetch(info.thumburl, { headers: UA })
     if (!img.ok || !(img.headers.get('content-type') ?? '').startsWith('image')) { console.log('imaginea nu s-a descărcat:', city); continue }
     const ext = info.thumburl.toLowerCase().includes('.png') ? 'png' : 'jpg'
-    const name = `${PREFIX}${slug(city)}.${ext}`
+    const name = `${PREFIX}${slug(city)}${out.some((o) => o.city === city) || LIST.filter((r) => r[0] === city).length > 1 ? '-' + slug(country) : ''}.${ext}`
     writeFileSync(`public/rewards/${name}`, Buffer.from(await img.arrayBuffer()))
-    out.push({ city, country, landmark, lang, fact, img: name, author: strip(md.Artist?.value) || 'Wikimedia Commons', license, source: info.descriptionurl })
+    out.push({ city, country, landmark, lang, fact, ...(role ? { role } : {}), img: name, author: strip(md.Artist?.value) || 'Wikimedia Commons', license, source: info.descriptionurl })
     console.log('✓', city, '·', license)
   } catch (e) {
     console.log('eroare:', city, e.message)

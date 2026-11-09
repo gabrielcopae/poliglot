@@ -841,3 +841,103 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .album-row-grid .city-text small, .album-row-grid .city-label { font-size: 0.58rem; }
 .album-row-grid .city-credit { display: none; }
 .album-row-grid .city-fact { font-size: 0.66rem; }
+
+/* ——— Cartonașele holografice pentru zilele speciale ale seriei ——— */
+.holo-card { position: relative; border-radius: 18px; padding: 4px; background: conic-gradient(from var(--holo-a, 0deg), #ff5f6d, #ffc371, #f9f871, #7afcff, #a18cd1, #fbc2eb, #ff5f6d); animation: holoSpin 4s linear infinite; box-shadow: 0 10px 28px rgba(160, 90, 220, 0.45); }
+@property --holo-a { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+@keyframes holoSpin { to { --holo-a: 360deg; } }
+.holo-inner { position: relative; overflow: hidden; border-radius: 14px; aspect-ratio: 3 / 4; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; color: #fff; text-align: center;
+  background: linear-gradient(135deg, #2b1055 0%, #7597de 35%, #e96bb4 65%, #f6c86b 100%); background-size: 200% 200%; animation: holoBg 6s ease-in-out infinite alternate; }
+@keyframes holoBg { from { background-position: 0% 0%; } to { background-position: 100% 100%; } }
+.holo-shine { position: absolute; inset: -40%; background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.65) 50%, transparent 60%); animation: holoShine 2.8s ease-in-out infinite; }
+@keyframes holoShine { from { transform: translateX(-60%); } to { transform: translateX(60%); } }
+.holo-fire { font-size: 1.6rem; position: relative; }
+.holo-num { font-family: var(--display); font-size: 3rem; font-weight: 800; line-height: 1; position: relative; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35); }
+.holo-sub { font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.72rem; position: relative; }
+.holo-phrases { display: flex; flex-direction: column; gap: 1px; font-size: 0.66rem; margin-top: 6px; position: relative; opacity: 0.95; }
+.holo-card.locked { background: #d9d2c4; animation: none; box-shadow: none; }
+.holo-card.locked .holo-inner { background: repeating-linear-gradient(45deg, #efe8da 0 8px, #e6dccb 8px 16px); color: #a8997e; animation: none; }
+.holo-lock { font-size: 1.1rem; margin-top: 4px; }
+@media (prefers-reduced-motion: reduce) { .holo-card, .holo-inner, .holo-shine { animation: none; } }
+
+/* ——— Ștampilele cu personalități ——— */
+.stamp-grid:has(.pstamp) { grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 14px; }
+.pstamp { border: none; background: none; padding: 0; perspective: 800px; transform: rotate(var(--tilt, 0deg)); cursor: pointer; font: inherit; }
+.pstamp-inner { display: grid; transition: transform 0.55s; transform-style: preserve-3d; }
+.pstamp.flipped .pstamp-inner { transform: rotateY(180deg); }
+.pstamp-face { grid-area: 1 / 1; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 10px; padding: 7px 6px 6px; display: flex; flex-direction: column; align-items: center; gap: 3px; text-align: center;
+  background: radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--stamp) 10%, #fff8ea), #fbf1dc);
+  border: 3px dashed var(--stamp); outline: 2px solid color-mix(in srgb, var(--stamp) 45%, transparent); outline-offset: -8px; color: var(--stamp);
+  box-shadow: 0 4px 10px rgba(60, 40, 10, 0.18); }
+.pstamp-place { font-size: 0.56rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.1; min-height: 1.2em; }
+.pstamp-photo { width: 64px; height: 64px; border-radius: 50%; background-size: cover; background-position: center 20%; border: 3px solid var(--stamp); box-shadow: 0 0 0 3px #fff8ea, 0 0 0 5px color-mix(in srgb, var(--stamp) 50%, transparent); filter: saturate(0.9) contrast(1.05); }
+.pstamp-name { font-family: var(--display); font-size: 0.78rem; font-weight: 800; line-height: 1.15; color: #3b2f22; }
+.pstamp-ch { font-size: 0.55rem; font-weight: 800; letter-spacing: 0.04em; }
+.pstamp-back { transform: rotateY(180deg); color: #3b2f22; justify-content: center; }
+.pstamp-back b { font-family: var(--display); font-size: 0.8rem; color: var(--stamp); }
+.pstamp-back small { font-size: 0.58rem; color: #7a6a58; }
+.pstamp-back p { font-size: 0.64rem; line-height: 1.35; margin: 4px 0; }
+.pstamp-credit { font-size: 0.45rem; color: #9a8a74; }
+
+/* ——— Perechi ——— */
+.journey-tiles { grid-template-columns: repeat(2, 1fr); }
+.pairs-stats { display: flex; justify-content: space-between; gap: 8px; font-weight: 800; font-size: 0.85rem; margin: 4px 2px 10px; color: var(--dim); }
+.pairs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.pair-tile { position: relative; aspect-ratio: 1 / 1.05; border-radius: 16px; border: none; padding: 0; perspective: 600px; background: none; font: inherit; }
+.pair-back, .pair-front { position: absolute; inset: 0; border-radius: 16px; display: flex; align-items: center; justify-content: center; padding: 6px; text-align: center; backface-visibility: hidden; -webkit-backface-visibility: hidden; transition: transform 0.4s; box-shadow: var(--shadow); }
+.pair-back { background: linear-gradient(150deg, var(--accent), var(--accent2)); color: var(--on-accent); font-size: 1.8rem; font-weight: 900; }
+.pair-front { background: var(--card); border: 2px solid var(--line); transform: rotateY(180deg); font-weight: 800; font-size: 0.95rem; line-height: 1.2; overflow-wrap: anywhere; }
+.pair-front.ro { font-size: 0.82rem; color: var(--dim); }
+.pair-front.jp.word { font-size: 1.25rem; }
+.pair-tile.shown .pair-back { transform: rotateY(180deg); }
+.pair-tile.shown .pair-front { transform: rotateY(360deg); }
+.pair-tile.matched .pair-front { border-color: var(--good); background: color-mix(in srgb, var(--good) 15%, var(--card)); }
+.pairs-won { text-align: center; display: flex; flex-direction: column; gap: 6px; align-items: center; margin-top: 14px; }
+
+/* ——— Calendarul ——— */
+.calendar-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; text-transform: capitalize; }
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+.calendar-wd { text-align: center; font-size: 0.7rem; font-weight: 800; color: var(--dim); }
+.calendar-day { aspect-ratio: 1; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; background: color-mix(in srgb, var(--text) 6%, transparent); }
+.calendar-day.lvl1 { background: color-mix(in srgb, var(--good) 30%, transparent); }
+.calendar-day.lvl2 { background: color-mix(in srgb, var(--good) 55%, transparent); color: #fff; }
+.calendar-day.lvl3 { background: color-mix(in srgb, var(--good) 78%, transparent); color: #fff; }
+.calendar-day.lvl4 { background: var(--good); color: #fff; }
+.calendar-day.today { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* ——— Prim-planul: cartonașul mărit, cu ramă animată ——— */
+.spot { position: fixed; inset: 0; z-index: 60; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 20px;
+  background: radial-gradient(circle at 50% 45%, rgba(40, 20, 60, 0.55), rgba(10, 6, 16, 0.85)); animation: pop 0.25s ease both; }
+.spot-close { position: absolute; top: max(14px, env(safe-area-inset-top)); right: 16px; width: 42px; height: 42px; border-radius: 50%; border: none; background: rgba(255, 255, 255, 0.18); color: #fff; font-size: 1.2rem; }
+.spot-frame { position: relative; width: min(78vw, 330px); border-radius: 22px; padding: 6px; animation: spotIn 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+  background: conic-gradient(from var(--holo-a, 0deg), #ff5f6d, #ffc371, #f9f871, #7afcff, #a18cd1, #fbc2eb, #ff5f6d); box-shadow: 0 0 40px rgba(255, 220, 140, 0.55), 0 0 90px rgba(170, 120, 255, 0.45); }
+.spot-frame { animation: spotIn 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.2) both, holoSpin 3.5s linear infinite; }
+@keyframes spotIn { from { transform: scale(0.6) rotate(-4deg); opacity: 0; } to { transform: none; opacity: 1; } }
+.spot-glow { position: absolute; inset: 0; border-radius: 22px; overflow: hidden; pointer-events: none; z-index: 2; }
+.spot-glow::after { content: ''; position: absolute; inset: -50%; background: linear-gradient(115deg, transparent 42%, rgba(255, 255, 255, 0.55) 50%, transparent 58%); animation: holoShine 2.6s ease-in-out infinite; }
+.spot-content { position: relative; border-radius: 17px; overflow: hidden; background: #fffaf0; }
+.spot-content > * { width: 100%; margin: 0; transform: none !important; }
+.spot-content .city-card, .spot-content .pstamp, .spot-content .album-card, .spot-content .holo-card { width: 100%; }
+.spot-content .city-text b { font-size: 1.5rem; }
+.spot-content .city-text small, .spot-content .city-label { font-size: 0.85rem; }
+.spot-content .city-credit { font-size: 0.65rem; }
+.spot-content .city-fact { font-size: 1rem; }
+.spot-content .city-fact-head { font-size: 1.3rem; }
+.spot-content .pstamp-face { padding: 18px 14px 14px; gap: 8px; }
+.spot-content .pstamp-photo { width: 160px; height: 160px; }
+.spot-content .pstamp-place { font-size: 0.85rem; }
+.spot-content .pstamp-name { font-size: 1.35rem; }
+.spot-content .pstamp-ch { font-size: 0.8rem; }
+.spot-content .pstamp-back b { font-size: 1.3rem; }
+.spot-content .pstamp-back small { font-size: 0.8rem; }
+.spot-content .pstamp-back p { font-size: 0.95rem; }
+.spot-content .pstamp-credit { font-size: 0.6rem; }
+.spot-content .album-card { aspect-ratio: 3 / 4; }
+.spot-content .album-face { font-size: 1.1rem; }
+.spot-content .album-emoji { font-size: 4.5rem; }
+.spot-content .holo-num { font-size: 5.5rem; }
+.spot-content .holo-sub { font-size: 1rem; }
+.spot-content .holo-phrases { font-size: 0.95rem; }
+.spot-hint { color: rgba(255, 255, 255, 0.75); font-size: 0.78rem; text-align: center; }
+@media (prefers-reduced-motion: reduce) { .spot-frame, .spot-glow::after { animation: none; } }
+.holo-btn { border: none; background: none; padding: 0; font: inherit; color: inherit; cursor: pointer; }

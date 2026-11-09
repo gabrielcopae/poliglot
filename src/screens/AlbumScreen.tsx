@@ -1,5 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks'
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
+import { Spotlight } from '../components/Spotlight'
 import { Flag } from '../components/Flag'
 import { TopBar } from '../components/ui'
 import { COURSES, getCourse } from '../content'
@@ -9,6 +10,7 @@ import { KEEPSAKES } from '../journey'
 import { speak } from '../speech'
 import { ALL_REWARDS, RewardCard, RewardLocked, isAdmin, studyDays, type Reward } from '../components/RewardCard'
 import SESSION_PLACES from '../content/session-places.json'
+import { MILESTONES, StreakCard, longestStreak } from '../components/StreakCard'
 import { buildSyllabus } from './CourseScreen'
 
 /** Fraza de pe spatele cartonașului: obiectul special sau prima replică din dialogul capitolului. */
@@ -20,13 +22,37 @@ function backOf(lesson: Lesson) {
   return { t: line?.t ?? lesson.title, ro: line?.ro ?? '', gender: line?.who ? d?.cast?.[line.who] : undefined }
 }
 
+/** Cartonașul special de la Teme: obiectul sau scena din povestea capitolului; se întoarce la atingere. */
+function SpecialCard({ lesson, lang, label, onOpen }: { lesson: Lesson; lang: LangCode; label: string; onOpen?: () => void }) {
+  const [flipped, setFlipped] = useState(false)
+  const kk = KEEPSAKES[lesson.id]
+  const b = backOf(lesson)
+  const locale = getCourse(lang).locale
+  return (
+    <button className={'album-card gold ' + (flipped ? 'flipped' : '')} onClick={() => (onOpen ? onOpen() : setFlipped(!flipped))}>
+      <div className="album-inner">
+        <div className="album-face">
+          <span className="album-emoji">{kk?.emoji ?? lesson.emoji}</span>
+          <b>{kk?.name ?? lesson.title}</b>
+          <small>{label}</small>
+        </div>
+        <div className="album-face album-back">
+          <span className={lang === 'ja' ? 'jp' : ''}>{b.t}</span>
+          <small>{b.ro}</small>
+          <span className="album-play" onClick={(e) => { e.stopPropagation(); speak(b.t, lang, locale, undefined, b.gender ? { gender: b.gender } : {}) }}>🔊</span>
+        </div>
+      </div>
+    </button>
+  )
+}
+
 export function AlbumScreen({ back, user }: { back: () => void; user: string }) {
   const admin = isAdmin(user)
   const [cityLang, setCityLang] = useState<string>('all')
   const chapters = useLiveQuery(() => db.chapters.toArray(), [], [])
   const homework = useLiveQuery(() => db.homework.toArray(), [], [])
   const [lang, setLang] = useState<LangCode>('es')
-  const [open, setOpen] = useState<string | null>(null)
+  const [spot, setSpot] = useState<ReactNode>(null)
   const days = useLiveQuery(() => db.days.toArray(), [], [])
   const doneLessons = useLiveQuery(() => db.lessons.toArray(), [], [])
   const earned = studyDays(days)
@@ -48,19 +74,28 @@ export function AlbumScreen({ back, user }: { back: () => void; user: string }) 
         )}
         <div className="reward-grid">
           {admin
-            ? ALL_REWARDS.map((r, i) => ({ r, i })).filter(({ r }) => cityLang === 'all' || r.lang === cityLang).map(({ r, i }) => <RewardCard key={r.img} reward={r} day={i + 1} />)
+            ? ALL_REWARDS.map((r, i) => ({ r, i })).filter(({ r }) => cityLang === 'all' || r.lang === cityLang).map(({ r, i }) => <RewardCard key={r.img} reward={r} day={i + 1} onOpen={() => setSpot(<RewardCard reward={r} day={i + 1} />)} />)
             : <>
-              {earned.length === 0 && <RewardCard reward={ALL_REWARDS[0]} day={1} preview />}
-              {earned.slice(0, ALL_REWARDS.length).map((date, i) => <RewardCard key={date} reward={ALL_REWARDS[i]} day={i + 1} date={date} />)}
+              {earned.length === 0 && <RewardCard reward={ALL_REWARDS[0]} day={1} preview onOpen={() => setSpot(<RewardCard reward={ALL_REWARDS[0]} day={1} preview />)} />}
+              {earned.slice(0, ALL_REWARDS.length).map((date, i) => <RewardCard key={date} reward={ALL_REWARDS[i]} day={i + 1} date={date} onOpen={() => setSpot(<RewardCard reward={ALL_REWARDS[i]} day={i + 1} date={date} />)} />)}
               {earned.length < ALL_REWARDS.length && earned.length > 0 && <RewardLocked day={earned.length + 1} />}
             </>}
+        </div>
+      </section>
+      <section className="reward-preview">
+        <h3>✨ Cartonașe speciale pentru serie</h3>
+        <p className="muted small">La 3, 7, 10, 20, 30… zile la rând primești un cartonaș holografic. Cea mai lungă serie a ta: <b>{longestStreak(days)}</b> {longestStreak(days) === 1 ? 'zi' : 'zile'}.</p>
+        <div className="reward-grid">
+          {MILESTONES.map((n) => (!admin && longestStreak(days) < n
+            ? <StreakCard key={n} n={n} locked />
+            : <button key={n} className="holo-btn" onClick={() => setSpot(<StreakCard n={n} />)}><StreakCard n={n} /></button>))}
         </div>
       </section>
       <h3 className="section-title">📚 Cartonașele ședințelor</h3>
       <p className="muted small">Fiecare ședință terminată îți aduce un loc din lumea limbii respective. Ultima ședință din capitol (Temele) îți aduce un cartonaș special, auriu, cu povestea capitolului.</p>
       <div className="segmented">
         {COURSES.map((c) => (
-          <button key={c.lang} className={c.lang === lang ? 'on' : ''} onClick={() => { setLang(c.lang); setOpen(null) }}><Flag lang={c.lang} size={16} /> {c.name}</button>
+          <button key={c.lang} className={c.lang === lang ? 'on' : ''} onClick={() => setLang(c.lang)}><Flag lang={c.lang} size={16} /> {c.name}</button>
         ))}
       </div>
       {(() => {
@@ -87,29 +122,11 @@ export function AlbumScreen({ back, user }: { back: () => void; user: string }) 
                     const owned = admin || it.status === 'done'
                     const label = special ? `⭐ Teme · Ședința ${it.n}` : `Ședința ${it.n}`
                     if (special) {
-                      const kk = KEEPSAKES[lesson.id]
-                      const b = backOf(lesson)
-                      const flipped = open === lesson.id
                       if (!owned) return <div key={it.n} className="album-card locked gold"><div className="album-face"><span className="album-q">⭐</span><small>{label}</small></div></div>
-                      return (
-                        <button key={it.n} className={`album-card gold ${flipped ? 'flipped' : ''}`} onClick={() => setOpen(flipped ? null : lesson.id)}>
-                          <div className="album-inner">
-                            <div className="album-face">
-                              <span className="album-emoji">{kk?.emoji ?? lesson.emoji}</span>
-                              <b>{kk?.name ?? lesson.title}</b>
-                              <small>{label}</small>
-                            </div>
-                            <div className="album-face album-back">
-                              <span className={lang === 'ja' ? 'jp' : ''}>{b.t}</span>
-                              <small>{b.ro}</small>
-                              <span className="album-play" onClick={(e) => { e.stopPropagation(); speak(b.t, lang, course.locale, undefined, b.gender ? { gender: b.gender } : {}) }}>🔊</span>
-                            </div>
-                          </div>
-                        </button>
-                      )
+                      return <SpecialCard key={it.n} lesson={lesson} lang={lang} label={label} onOpen={() => setSpot(<SpecialCard lesson={lesson} lang={lang} label={label} />)} />
                     }
                     if (!place) return <RewardLocked key={it.n} day={it.n} label={label} title="Loc nou, în curând" />
-                    return owned ? <RewardCard key={it.n} reward={place} day={it.n} label={label} gold={false} /> : <RewardLocked key={it.n} day={it.n} label={label} />
+                    return owned ? <RewardCard key={it.n} reward={place} day={it.n} label={label} gold={false} onOpen={() => setSpot(<RewardCard reward={place} day={it.n} label={label} gold={false} />)} /> : <RewardLocked key={it.n} day={it.n} label={label} />
                   })}
                 </div>
               </section>
@@ -117,6 +134,7 @@ export function AlbumScreen({ back, user }: { back: () => void; user: string }) 
           </>
         )
       })()}
+      {spot && <Spotlight onClose={() => setSpot(null)}>{spot}</Spotlight>}
     </div>
   )
 }

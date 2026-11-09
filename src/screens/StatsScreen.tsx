@@ -5,6 +5,7 @@ import { db, streakFrom } from '../db'
 import { isMature } from '../srs'
 import { today } from '../util'
 import { TopBar } from '../components/ui'
+import { StudyCalendar } from '../components/StudyCalendar'
 
 export function StatsScreen() {
   const days = useLiveQuery(() => db.days.toArray(), [], [])
@@ -25,6 +26,7 @@ export function StatsScreen() {
   return (
     <div className="screen">
       <TopBar title="Progresul tău" />
+      <StudyCalendar days={days} />
       <div className="stat-grid">
         <div className="card stat"><span>🔥</span><b>{streakFrom(days)}</b><small>zile la rând</small></div>
         <div className="card stat"><span>⭐</span><b>{totalXp}</b><small>puncte XP</small></div>
