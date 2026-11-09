@@ -23,6 +23,7 @@ import { DictionaryScreen } from './screens/DictionaryScreen'
 import { PassportScreen } from './screens/PassportScreen'
 import { AlbumScreen } from './screens/AlbumScreen'
 import { TalkScreen, TalksScreen } from './screens/TalkScreen'
+import { ExamScreen } from './screens/ExamScreen'
 
 function shouldShowIntro(mode: string) {
   if (mode === 'never') return false
@@ -124,7 +125,7 @@ function MainApp({ session, season, signOut }: { session: Session; season: Retur
   }, [])
 
   const due = useLiveQuery(() => db.cards.where('due').belowOrEqual(Date.now()).count(), [route], 0)
-  const showNav = !['lesson', 'session', 'homework', 'dictionary', 'talk'].includes(route.name)
+  const showNav = !['lesson', 'session', 'homework', 'dictionary', 'talk', 'exam'].includes(route.name)
 
   return (
     <>
@@ -150,9 +151,10 @@ function MainApp({ session, season, signOut }: { session: Session; season: Retur
         {route.name === 'kana' && <KanaScreen back={back} />}
         {route.name === 'dictionary' && <DictionaryScreen key={route.lang} lang={route.lang} back={back} />}
         {route.name === 'stats' && <StatsScreen />}
-        {route.name === 'passport' && <PassportScreen back={back} />}
+        {route.name === 'passport' && <PassportScreen go={go} back={back} />}
         {route.name === 'album' && <AlbumScreen back={back} />}
         {route.name === 'talks' && <TalksScreen go={go} back={back} />}
+        {route.name === 'exam' && <ExamScreen key={route.lang + route.level} lang={route.lang} level={route.level} back={back} />}
         {route.name === 'talk' && <TalkScreen key={route.id} id={route.id} back={back} />}
         {route.name === 'settings' && <SettingsScreen user={session.name} signOut={signOut} />}
       </main>

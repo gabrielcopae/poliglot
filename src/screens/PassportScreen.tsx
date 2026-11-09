@@ -6,10 +6,11 @@ import { COURSES } from '../content'
 import type { LangCode } from '../content/types'
 import { db } from '../db'
 import { levelChapters, placeOf, stamps, tilt } from '../journey'
+import type { Go } from '../nav'
 
 const fmt = (t: number) => new Date(t).toLocaleDateString('ro-RO', { day: '2-digit', month: 'short', year: 'numeric' })
 
-export function PassportScreen({ back }: { back: () => void }) {
+export function PassportScreen({ go, back }: { go: Go; back: () => void }) {
   const chapters = useLiveQuery(() => db.chapters.toArray(), [], [])
   const homework = useLiveQuery(() => db.homework.toArray(), [], [])
   const exams = useLiveQuery(() => db.exams.toArray(), [], [])
@@ -51,6 +52,7 @@ export function PassportScreen({ back }: { back: () => void }) {
                 <div className="visa-body">Test de nivel trecut cu <b>{exam.best}%</b> · {fmt(exam.passedAt ?? exam.at)}</div>
               </div>
             )}
+            {!exam?.passed && <button className="exam-link" onClick={() => go({ name: 'exam', lang, level: p.level })}>📝 Dă testul de nivel {p.level} pentru viză</button>}
             <div className="stamp-grid">
               {list.map(({ unitId, lesson }) => {
                 const s = byId.get(lesson.id)

@@ -27,6 +27,13 @@ Dacă începi o conversație nouă cu Claude, spune-i:
 - **Cititor de texte**: rând cu rând, cu evidențiere, voci de bărbat și femeie, traducere la cerere și explicație la atingerea unui cuvânt. Poveștile apar ca o carte, pe paragrafe.
 - **Japoneză**: lecții de hiragana și katakana, romaji la fiecare rând, cuvinte separate prin spații.
 - **Regula textelor**: fiecare capitol are dialog **și** o poveste narativă, iar poveștile sunt tot mai lungi de la un capitol la altul.
+- **Online, pe telefon**: https://gabrielcopae.github.io/poliglot/ (GitHub Pages, gratuit). Se instalează pe ecranul telefonului. Fiecare modificare verificată e publicată automat.
+- **Voci înregistrate pentru telefon** (Kokoro, generate pe laptop): spaniolă Dora / Alex, japoneză Alpha / Kumo, italiană Sara / Nicola. Pe laptop rămân vocile Windows. În Setări: comutator și „Descarcă pentru offline”, plus alegerea vocii pentru cuvinte, femei și bărbați și un panou de diagnostic.
+- **Ecran de start aerisit**: repetiția, cele 3 butoane (Pașaport, Conversații, Album) și limbile. În fiecare limbă: filele „În desfășurare” și „Lecții” (niveluri, unități, capitole cu bulinuțe).
+- **🛂 Pașaportul călătorului**: o ștampilă (loc + dată) pentru fiecare capitol terminat; o viză pentru fiecare test de nivel trecut.
+- **🃏 Albumul cu amintiri**: un cartonaș pentru fiecare capitol terminat; cele aurii sunt obiectele din povești (inelul lui Vasile, cocorul roșu, Leica lui Ion…).
+- **💬 Conversează cu personajele**: 6 scene interactive (spaniolă: Kenji, Madrid, interviul Cervantes; japoneză: gara, ramen, Sakura rătăcită), cu reacții la greșeli, explicații și stele.
+- **📝 Teste de nivel** (stil DELE / JLPT): 30 de întrebări din tot nivelul, 60% pentru trecere, viza apare în pașaport.
 
 ---
 

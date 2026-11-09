@@ -203,6 +203,9 @@ export function CourseScreen({ lang, go, back }: { lang: LangCode; go: Go; back:
                 </details>
               )
             })}
+            {written > 0 && (
+              <button className="exam-link" onClick={() => go({ name: 'exam', lang, level: p.level })}>📝 Test de nivel {p.level} <span>(30 de întrebări · viză în pașaport)</span></button>
+            )}
             {written < p.chapters && (
               <div className="syl-planned">
                 🔒 {written ? `Capitolele ${written + 1}–${p.chapters}` : `Cele ${p.chapters} capitole`} ale nivelului {p.level} ({(p.chapters - written) * 3} ședințe) sunt în pregătire și se adaugă pe parcurs.

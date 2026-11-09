@@ -15,5 +15,6 @@ export type Route =
   | { name: 'album' }
   | { name: 'talks' }
   | { name: 'talk'; id: string }
+  | { name: 'exam'; lang: LangCode; level: string }
 
 export type Go = (r: Route) => void
