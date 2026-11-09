@@ -669,3 +669,5 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .voice-line .voice-pick { margin-top: 2px; }
 .voice-diag { margin: 4px 0 10px; padding-left: 18px; font-size: 0.85rem; line-height: 1.5; }
 .voice-diag-group { margin-top: 8px; }
+.recorded-box { margin: 4px 0 12px; }
+.recorded-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin: 6px 0; font-size: 0.88rem; }

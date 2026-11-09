@@ -4,9 +4,10 @@ import { useEffect, useRef, useState } from 'react'
 import { COURSES } from '../content'
 import { exportProgress, importProgress } from '../db'
 import { SEASONS, type Season } from '../season'
-import { setSettings, useSettings, type Settings } from '../settings'
+import { setSettings, recordedVoicesOn, useSettings, type Settings } from '../settings'
 import { allVoices, canListen, onVoices, speak, voiceFor, voiceId, voicesFor } from '../speech'
 import { TopBar } from '../components/ui'
+import { audioLessons, downloadLang, downloadedCount, loadAudioIndex } from '../audio'
 
 export function SettingsScreen({ user, signOut }: { user: string; signOut: () => void }) {
   const s = useSettings()
@@ -78,6 +79,7 @@ export function SettingsScreen({ user, signOut }: { user: string; signOut: () =>
 
       <article className="card">
         <h3>🔊 Voce și pronunție</h3>
+        <RecordedVoices on={recordedVoicesOn(s)} />
         <label className="toggle"><input type="checkbox" checked={s.autoplay} onChange={(e) => setSettings({ autoplay: e.target.checked })} /> Redă automat pronunția</label>
         <label className="toggle"><input type="checkbox" checked={s.romaji} onChange={(e) => setSettings({ romaji: e.target.checked })} /> Arată romaji la japoneză</label>
         <label className="field-label">Viteza vocii: {s.rate.toFixed(2)}×</label>
@@ -162,6 +164,46 @@ export function SettingsScreen({ user, signOut }: { user: string; signOut: () =>
         <h3>ℹ️ Despre</h3>
         <p className="muted small">Poliglot v0.1 · funcționează complet offline după prima deschidere. Surse deschise folosite în etapele următoare: Tatoeba (CC BY 2.0 FR), JMdict/EDRDG (CC BY-SA 4.0), KanjiVG (CC BY-SA 3.0).</p>
       </article>
+    </div>
+  )
+}
+
+/** Vocile înregistrate dinainte: comutator și descărcare pentru offline. */
+function RecordedVoices({ on }: { on: boolean }) {
+  const [, force] = useState(0)
+  const [saved, setSaved] = useState<Record<string, number>>({})
+  const [busy, setBusy] = useState<Record<string, string>>({})
+  useEffect(() => {
+    let alive = true
+    Promise.all(COURSES.map((c) => loadAudioIndex(c.lang))).then(async () => {
+      const m: Record<string, number> = {}
+      for (const c of COURSES) m[c.lang] = await downloadedCount(c.lang)
+      if (alive) { setSaved(m); force((x) => x + 1) }
+    })
+    return () => { alive = false }
+  }, [])
+  const total = (lang: string) => new Set(Object.values(audioLessons(lang)).flat()).size
+  const langs = COURSES.filter((c) => total(c.lang) > 0)
+  return (
+    <div className="recorded-box">
+      <label className="toggle"><input type="checkbox" checked={on} onChange={(e) => setSettings({ recorded: e.target.checked })} /> Folosește vocile înregistrate (voce de femeie și de bărbat, la fel pe orice telefon)</label>
+      {on && langs.map((c) => {
+        const t = total(c.lang)
+        const have = saved[c.lang] ?? 0
+        return (
+          <div key={c.lang} className="recorded-row">
+            <span><Flag lang={c.lang} size={16} /> {c.name}: {Math.min(have, t)} / {t} replici salvate pe telefon</span>
+            <button className="btn" disabled={!!busy[c.lang] || have >= t} onClick={async () => {
+              setBusy((b) => ({ ...b, [c.lang]: '0%' }))
+              await downloadLang(c.lang, (d, n) => setBusy((b) => ({ ...b, [c.lang]: Math.round((d / n) * 100) + '%' })))
+              const n = await downloadedCount(c.lang)
+              setSaved((m) => ({ ...m, [c.lang]: n }))
+              setBusy((b) => ({ ...b, [c.lang]: '' }))
+            }}>{busy[c.lang] ? `⬇ ${busy[c.lang]}` : have >= t ? '✓ Descărcat' : '⬇ Descarcă pentru offline'}</button>
+          </div>
+        )
+      })}
+      {on && !langs.length && <p className="muted small">Vocile înregistrate se încarcă… (au nevoie de internet prima dată).</p>}
     </div>
   )
 }

@@ -1,4 +1,5 @@
-import { getSettings } from './settings'
+import { getSettings, recordedVoicesOn } from './settings'
+import { audioUrl, loadAudioIndex, playRecorded, stopRecorded } from './audio'
 
 let voices: SpeechSynthesisVoice[] = []
 const listeners = new Set<() => void>()
@@ -90,7 +91,20 @@ export interface SpeakOptions {
 }
 
 export function speak(text: string, lang: string, locale: string, rate?: number, opts: SpeakOptions = {}) {
+  // Înregistrare făcută dinainte (voce de femeie / bărbat), dacă există pentru acest text
+  const url = recordedVoicesOn() ? audioUrl(lang, opts.gender ?? 'n', text) : undefined
+  if (!url) loadAudioIndex(lang)
+  if (url) {
+    synth?.cancel()
+    playRecorded(url, rate ?? getSettings().rate, () => opts.onEnd?.(), () => speakTTS(text, lang, locale, rate, opts))
+    return
+  }
+  speakTTS(text, lang, locale, rate, opts)
+}
+
+function speakTTS(text: string, lang: string, locale: string, rate?: number, opts: SpeakOptions = {}) {
   if (!synth) { opts.onEnd?.(); return }
+  stopRecorded()
   let finished = false
   const end = () => { if (!finished) { finished = true; opts.onEnd?.() } }
 
@@ -126,6 +140,9 @@ export function speak(text: string, lang: string, locale: string, rate?: number,
   synth.resume()
 }
 
+// indexurile vocilor înregistrate, încărcate din timp (sunt mici)
+;['es', 'ja', 'it'].forEach((l) => { loadAudioIndex(l) })
+
 // iPhone: prima atingere din aplicație „deblochează” vorbirea, cu o replică goală.
 if (synth && IOS) {
   const unlock = () => {
@@ -138,6 +155,7 @@ if (synth && IOS) {
 }
 
 export function stopSpeaking() {
+  stopRecorded()
   synth?.cancel()
 }
 

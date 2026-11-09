@@ -4,3 +4,5 @@ dev-dist/
 *.log
 *.tsbuildinfo
 .vite/
+tools/.venv/
+tools/out/

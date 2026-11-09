@@ -30,6 +30,14 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,woff2,json}'],
         maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
+        // vocile înregistrate: salvate la prima redare; Safari cere fișierele „pe bucăți” (Range)
+        runtimeCaching: [
+          {
+            urlPattern: /\/audio\/[a-z]+\/[0-9a-f]+\.mp3$/,
+            handler: 'CacheFirst',
+            options: { cacheName: 'poliglot-audio', rangeRequests: true, cacheableResponse: { statuses: [200] } },
+          },
+        ],
       },
     }),
   ],

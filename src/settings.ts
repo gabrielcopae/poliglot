@@ -10,6 +10,8 @@ export interface Settings {
   voices: Partial<Record<string, string>>
   romaji: boolean
   autoplay: boolean
+  /** vocile înregistrate dinainte; nesetat = pornite doar pe telefon / tabletă */
+  recorded?: boolean
 }
 
 const DEFAULTS: Settings = {
@@ -67,4 +69,10 @@ export function localGet(key: string): string | null {
 
 export function localSet(key: string, value: string) {
   try { localStorage.setItem(key, value) } catch { /* ignore */ }
+}
+
+/** Vocile înregistrate: implicit doar pe telefon / tabletă (pe laptop rămân vocile sistemului, de ex. Windows). */
+export function recordedVoicesOn(s: Settings = getSettings()): boolean {
+  if (s.recorded !== undefined) return s.recorded
+  return typeof window !== 'undefined' && !!window.matchMedia?.('(pointer: coarse)').matches
 }
