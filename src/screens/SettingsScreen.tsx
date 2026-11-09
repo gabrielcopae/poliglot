@@ -5,7 +5,7 @@ import { COURSES } from '../content'
 import { exportProgress, importProgress } from '../db'
 import { SEASONS, type Season } from '../season'
 import { setSettings, useSettings, type Settings } from '../settings'
-import { canListen, onVoices, speak, voiceFor, voicesFor } from '../speech'
+import { canListen, onVoices, speak, voiceFor, voiceId, voicesFor } from '../speech'
 import { TopBar } from '../components/ui'
 
 export function SettingsScreen({ user, signOut }: { user: string; signOut: () => void }) {
@@ -84,13 +84,14 @@ export function SettingsScreen({ user, signOut }: { user: string; signOut: () =>
         <input type="range" min={0.5} max={1.3} step={0.05} value={s.rate} onChange={(e) => setSettings({ rate: Number(e.target.value) })} />
         {COURSES.map((c) => {
           const list = voicesFor(c.lang)
+          const cur = list.find((v) => voiceId(v) === s.voices[c.lang]) ?? list.find((v) => v.voiceURI === s.voices[c.lang]) ?? list[0]
           return (
             <div key={c.lang} className="voice-row">
               <label className="field-label"><Flag lang={c.lang} size={18} /> {c.name}</label>
               {list.length ? (
                 <div className="voice-pick">
-                  <select value={s.voices[c.lang] ?? list[0].voiceURI} onChange={(e) => setSettings({ voices: { ...s.voices, [c.lang]: e.target.value } })}>
-                    {list.map((v) => <option key={v.voiceURI} value={v.voiceURI}>{v.name}{v.localService ? ' · offline' : ' · online'}</option>)}
+                  <select value={cur ? voiceId(cur) : ''} onChange={(e) => setSettings({ voices: { ...s.voices, [c.lang]: e.target.value } })}>
+                    {list.map((v, i) => <option key={`${voiceId(v)}-${i}`} value={voiceId(v)}>{v.name}{v.localService ? ' · offline' : ' · online'}</option>)}
                   </select>
                   <button className="btn" onClick={() => speak(c.hello, c.lang, c.locale)}>▶</button>
                 </div>

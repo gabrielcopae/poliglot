@@ -37,9 +37,19 @@ export function canSpeak() {
 const FEMALE = /elvira|helena|laura|sabina|dalia|ximena|paloma|elsa|isabella|isabela|monica|mónica|paulina|marisol|angélica|angelica|francisca|soledad|lucia|lucía|alice|federica|paola|nanami|haruka|ayumi|mayu|sayaka|kyoko|o-ren|\bflo\b|sandy|shelley|grandma|female|mujer|donna|femenin|女性/i
 const MALE = /alvaro|álvaro|pablo|raul|raúl|jorge|juan|diego|jaime|carlos|benigno|cosimo|giuseppe|luca|keita|ichiro|daichi|naoki|otoya|hattori|\beddy\b|\breed\b|rocko|grandpa|\bmale|hombre|uomo|masculin|男性/i
 
+/** Identificator stabil: pe iPhone, mai multe voci pot avea același voiceURI. */
+export function voiceId(v: SpeechSynthesisVoice) {
+  return `${v.voiceURI}|${v.name}`
+}
+
+/** Vocile care pe acest aparat nu pornesc (iOS arată unele voci pe care paginile web nu le pot folosi). */
+const silent = new Set<string>()
+const IOS = typeof navigator !== 'undefined' && (/iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1))
+
 function pickVoice(lang: string, gender?: 'f' | 'm'): SpeechSynthesisVoice | undefined {
-  const list = voicesFor(lang)
-  const saved = list.find((v) => v.voiceURI === getSettings().voices[lang])
+  const list = voicesFor(lang).filter((v) => !silent.has(voiceId(v)))
+  const pref = getSettings().voices[lang]
+  const saved = list.find((v) => voiceId(v) === pref) ?? list.find((v) => v.voiceURI === pref)
   if (gender) {
     const re = gender === 'f' ? FEMALE : MALE
     const other = gender === 'f' ? MALE : FEMALE
@@ -66,21 +76,40 @@ export interface SpeakOptions {
 
 export function speak(text: string, lang: string, locale: string, rate?: number, opts: SpeakOptions = {}) {
   if (!synth) { opts.onEnd?.(); return }
-  synth.cancel()
-  const u = new SpeechSynthesisUtterance(text)
-  const v = pickVoice(lang, opts.gender)
-  if (v) u.voice = v
-  u.lang = v?.lang ?? locale
-  u.rate = rate ?? getSettings().rate
-  // dacă nu am găsit o voce potrivită genului, schimbăm puțin tonul
-  if (opts.gender && v && !(opts.gender === 'f' ? FEMALE : MALE).test(v.name)) u.pitch = opts.gender === 'f' ? 1.2 : 0.8
-  if (opts.onEnd) {
-    let fired = false
-    const end = () => { if (!fired) { fired = true; opts.onEnd!() } }
-    u.onend = end
-    u.onerror = end
+  let finished = false
+  const end = () => { if (!finished) { finished = true; opts.onEnd?.() } }
+
+  const say = (withVoice: boolean) => {
+    const u = new SpeechSynthesisUtterance(text)
+    const v = withVoice ? pickVoice(lang, opts.gender) : undefined
+    if (v) u.voice = v
+    u.lang = v?.lang ?? locale
+    u.rate = rate ?? getSettings().rate
+    // dacă nu am găsit o voce potrivită genului, schimbăm puțin tonul
+    if (opts.gender && !(v && (opts.gender === 'f' ? FEMALE : MALE).test(v.name))) u.pitch = opts.gender === 'f' ? 1.2 : 0.8
+    let started = false
+    let replaced = false
+    u.onstart = () => { started = true }
+    u.onend = () => { if (!replaced) end() }
+    u.onerror = () => { if (!replaced) end() }
+    synth.speak(u)
+    // Pe iPhone unele voci tac fără nicio eroare: dacă nu pornește, reîncercăm cu vocea de bază.
+    if (IOS && v) {
+      setTimeout(() => {
+        if (started || finished) return
+        silent.add(voiceId(v))
+        replaced = true
+        synth.cancel()
+        setTimeout(() => say(false), 80)
+      }, 1500)
+    }
   }
-  synth.speak(u)
+
+  // Pe iPhone, „speak” imediat după „cancel” e uneori ignorat; lăsăm o pauză scurtă.
+  if (synth.speaking || synth.pending) {
+    synth.cancel()
+    setTimeout(() => say(true), 80)
+  } else say(true)
 }
 
 export function stopSpeaking() {
