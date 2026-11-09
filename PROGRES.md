@@ -33,6 +33,7 @@ Dacă începi o conversație nouă cu Claude, spune-i:
 - **🛂 Pașaportul călătorului**: o ștampilă (loc + dată) pentru fiecare capitol terminat; o viză pentru fiecare test de nivel trecut.
 - **🃏 Albumul cu amintiri**: un cartonaș pentru fiecare capitol terminat; cele aurii sunt obiectele din povești (inelul lui Vasile, cocorul roșu, Leica lui Ion…).
 - **💬 Conversează cu personajele**: 6 scene interactive (spaniolă: Kenji, Madrid, interviul Cervantes; japoneză: gara, ramen, Sakura rătăcită), cu reacții la greșeli, explicații și stele.
+- **🖌️ Kanji cu degetul** (japoneză → butonul „Kanji”): 89 de kanji N5 pe teme, cu sens, citiri, exemplu cu 🔊, animația ordinii liniilor, scris cu contur și din memorie (verde = exersat, auriu = din memorie). Linii din KanjiVG (CC BY-SA 3.0); lista e în tools/kanji-list.mjs, datele se refac cu node tools/fetch-kanji.mjs.
 - **📝 Teste de nivel** (stil DELE / JLPT): 30 de întrebări din tot nivelul, 60% pentru trecere, viza apare în pașaport.
 
 ---
