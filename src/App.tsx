@@ -164,7 +164,7 @@ function MainApp({ session, season, signOut }: { session: Session; season: Retur
         {route.name === 'museum' && <MuseumScreen back={back} user={session.name} />}
         {route.name === 'train' && <TrainScreen back={back} user={session.name} />}
         {route.name === 'holidays' && <HolidaysScreen back={back} />}
-        {route.name === 'island' && <IslandScreen back={back} user={session.name} />}
+        {route.name === 'island' && <IslandScreen back={back} go={go} user={session.name} />}
         {route.name === 'kanjiList' && <KanjiListScreen go={go} back={back} />}
         {route.name === 'kanjiOne' && <KanjiOneScreen key={route.char} char={route.char} go={go} back={back} />}
         {route.name === 'exam' && <ExamScreen key={route.lang + route.level} lang={route.lang} level={route.level} back={back} />}

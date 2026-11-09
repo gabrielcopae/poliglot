@@ -2,7 +2,7 @@ import { useEffect, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 
 /** Cartonașul sau ștampila atinsă, mărită în mijlocul ecranului, cu ramă animată strălucitoare. */
-export function Spotlight({ children, onClose }: { children: ReactNode; onClose: () => void }) {
+export function Spotlight({ children, onClose, hint = 'Atinge cartonașul ca să-l întorci · atinge în afară ca să închizi' }: { children: ReactNode; onClose: () => void; hint?: string }) {
   useEffect(() => {
     const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
     window.addEventListener('keydown', esc)
@@ -16,7 +16,7 @@ export function Spotlight({ children, onClose }: { children: ReactNode; onClose:
         <div className="spot-glow" />
         <div className="spot-content">{children}</div>
       </div>
-      <div className="spot-hint">Atinge cartonașul ca să-l întorci · atinge în afară ca să închizi</div>
+      <div className="spot-hint">{hint}</div>
     </div>,
     document.body,
   )
