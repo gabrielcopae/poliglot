@@ -2,6 +2,7 @@
 import { COURSES, allLessons } from '../src/content'
 import type { Drill, Reading } from '../src/content/types'
 import { audioKey } from '../src/audioKey'
+import { TALKS } from '../src/content/talks'
 
 export interface Item { lesson: string; lang: string; gender: 'f' | 'm' | 'n'; text: string; key: string }
 
@@ -42,6 +43,22 @@ export function collect(): Item[] {
         if (h.kind === 'drills') drills(h.drills)
       })
     }
+  }
+  // Conversațiile cu personajele: replicile personajului cu vocea lui, ale tale cu vocea neutră
+  for (const talk of TALKS) {
+    const add = (text: string | undefined, gender: 'f' | 'm' | 'n') => {
+      if (!text) return
+      const key = audioKey(talk.lang, gender, text)
+      if (seen.has(key)) return
+      seen.add(key)
+      out.push({ lesson: talk.id, lang: talk.lang, gender, text: text.trim(), key })
+    }
+    const g = talk.npc.gender
+    for (const node of Object.values(talk.nodes)) {
+      add(node.npc.t, g)
+      node.choices.forEach((c) => { add(c.t, 'n'); add(c.react?.t, g) })
+    }
+    add(talk.end.t, g)
   }
   return out
 }

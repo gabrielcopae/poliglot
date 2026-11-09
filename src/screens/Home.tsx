@@ -58,6 +58,11 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
           <b>Pașaport</b>
           <small>{stampCount} {stampCount === 1 ? 'ștampilă' : 'ștampile'}</small>
         </button>
+        <button className="card journey-tile" onClick={() => go({ name: 'talks' })}>
+          <span className="journey-emoji">💬</span>
+          <b>Conversații</b>
+          <small>vorbește cu personajele</small>
+        </button>
         <button className="card journey-tile" onClick={() => go({ name: 'album' })}>
           <span className="journey-emoji">🃏</span>
           <b>Album</b>

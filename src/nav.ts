@@ -13,5 +13,7 @@ export type Route =
   | { name: 'settings' }
   | { name: 'passport' }
   | { name: 'album' }
+  | { name: 'talks' }
+  | { name: 'talk'; id: string }
 
 export type Go = (r: Route) => void
