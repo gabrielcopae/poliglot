@@ -145,7 +145,7 @@ export function CourseScreen({ lang, go, back }: { lang: LangCode; go: Go; back:
         const written = units.reduce((k, u) => k + u.lessons.filter((l) => l.lesson.chapter).length, 0)
         const total = Math.max(p.chapters * 3, items.length)
         const levelDone = items.filter((x) => x.status === 'done').length
-        const open = items.length > 0 && (levelDone < items.length || p === course.plan[0])
+        const open = next ? items.includes(next) : p === course.plan[0]
         return (
           <details key={p.level} className="card level-card" open={open}>
             <summary>
@@ -156,32 +156,53 @@ export function CourseScreen({ lang, go, back }: { lang: LangCode; go: Go; back:
               </span>
             </summary>
             <Progress value={levelDone / total} />
-            {units.map(({ unit, lessons: ls }) => (
-              <div key={unit.id} className="syl-unit">
-                <div className="syl-unit-title">{unit.title}</div>
-                {ls.map(({ lesson, items: its }) => (
-                  <div key={lesson.id} className="syl-chapter">
-                    {lesson.chapter && (
-                      <button className="syl-ch-head" onClick={() => go({ name: 'lesson', lang, lessonId: lesson.id })}>
-                        <span>{lesson.emoji}</span>
-                        <b>Capitolul {lesson.chapter.number}: {lesson.title}</b>
-                        <span className="toc-go">cuprins →</span>
-                      </button>
-                    )}
-                    {its.map((it) => (
-                      <button key={it.n} className={`syl-row st-${it.status}`} onClick={() => go(it.route)}>
-                        <span className="syl-n">{it.status === 'done' ? '✓' : it.n}</span>
-                        <span className="session-body">
-                          <b>Ședința {it.n} · {it.title}</b>
-                          <small>{it.note ?? it.detail}</small>
-                        </span>
-                        <span className="syl-state">{it.status === 'done' ? 'gata' : it.status === 'progress' ? 'în curs' : ''}</span>
-                      </button>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            ))}
+            {units.map(({ unit, lessons: ls }) => {
+              const unitItems = ls.flatMap((l) => l.items)
+              const chDone = ls.filter((l) => l.items.every((x) => x.status === 'done')).length
+              const isCurrentUnit = !!next && ls.some((l) => l.lesson.id === next.lesson.id)
+              return (
+                <details key={unit.id} className="syl-unit" open={isCurrentUnit}>
+                  <summary>
+                    <span className="syl-unit-title">{unit.title}</span>
+                    <span className="syl-unit-count">{chDone} / {ls.length} {ls[0]?.lesson.chapter ? 'capitole' : 'lecții'}</span>
+                  </summary>
+                  {ls.map(({ lesson, items: its }) => {
+                    const allDone = its.every((x) => x.status === 'done')
+                    const isCurrent = next?.lesson.id === lesson.id
+                    if (!lesson.chapter) {
+                      const it = its[0]
+                      return (
+                        <button key={lesson.id} className={`syl-row syl-short st-${it.status}`} onClick={() => go(it.route)}>
+                          <span className="syl-n">{it.status === 'done' ? '✓' : lesson.emoji}</span>
+                          <span className="session-body"><b>{lesson.title}</b><small>{it.detail}</small></span>
+                        </button>
+                      )
+                    }
+                    return (
+                      <details key={lesson.id} className={`syl-chapter ${allDone ? 'ch-done' : ''} ${isCurrent ? 'ch-current' : ''}`} open={isCurrent}>
+                        <summary>
+                          <span className="ch-emoji">{allDone ? '✅' : lesson.emoji}</span>
+                          <span className="ch-title"><b>Cap. {lesson.chapter.number} · {lesson.title}</b></span>
+                          <span className="ch-dots">{its.map((it) => <i key={it.n} className={`dot st-${it.status}`} />)}</span>
+                        </summary>
+                        {its.map((it) => (
+                          <button key={it.n} className={`syl-row st-${it.status}`} onClick={() => go(it.route)}>
+                            <span className="syl-n">{it.status === 'done' ? '✓' : it.n}</span>
+                            <span className="session-body">
+                              <b>Ședința {it.n} · {it.title}</b>
+                              <small>{it.note ?? it.detail}</small>
+                            </span>
+                            <span className="syl-state">{it.status === 'done' ? 'gata' : it.status === 'progress' ? 'în curs' : ''}</span>
+                          </button>
+                        ))}
+                        <button className="syl-toc" onClick={() => go({ name: 'lesson', lang, lessonId: lesson.id })}>Cuprinsul capitolului →</button>
+                      </details>
+                    )
+                  })}
+                  {unitItems.length === 0 && <p className="muted small">În pregătire.</p>}
+                </details>
+              )
+            })}
             {written < p.chapters && (
               <div className="syl-planned">
                 🔒 {written ? `Capitolele ${written + 1}–${p.chapters}` : `Cele ${p.chapters} capitole`} ale nivelului {p.level} ({(p.chapters - written) * 3} ședințe) sunt în pregătire și se adaugă pe parcurs.

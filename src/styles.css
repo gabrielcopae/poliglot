@@ -640,3 +640,27 @@ input[type='range'] { width: 100%; accent-color: var(--accent); }
 .review-strip:disabled { opacity: 0.85; }
 .course-tabs { margin-top: 14px; }
 .now-chapter { padding: 12px 14px; }
+
+/* ——— Cuprinsul pe unități și capitole ——— */
+details.syl-unit { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 8px; }
+details.syl-unit > summary { display: flex; align-items: center; gap: 10px; cursor: pointer; list-style: none; padding: 6px 2px; }
+details.syl-unit > summary::-webkit-details-marker, details.syl-chapter > summary::-webkit-details-marker { display: none; }
+details.syl-unit > summary::after { content: '▾'; color: var(--dim); transition: transform 0.2s; }
+details.syl-unit:not([open]) > summary::after { transform: rotate(-90deg); }
+details.syl-unit .syl-unit-title { flex: 1; margin: 0; }
+.syl-unit-count { font-size: 0.8rem; color: var(--dim); font-weight: 700; white-space: nowrap; }
+details.syl-chapter { margin: 0 0 6px; border-radius: 14px; border: 1px solid var(--line); background: color-mix(in srgb, var(--card) 70%, transparent); }
+details.syl-chapter > summary { display: flex; align-items: center; gap: 10px; cursor: pointer; list-style: none; padding: 10px 12px; }
+details.syl-chapter[open] > summary { border-bottom: 1px solid var(--line); margin-bottom: 6px; }
+details.syl-chapter[open] { padding-bottom: 6px; }
+details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: calc(100% - 16px); }
+.syl-chapter.ch-current { border-color: var(--accent); }
+.syl-chapter.ch-done .ch-title b { color: var(--dim); }
+.ch-emoji { font-size: 1.15rem; }
+.ch-title { flex: 1; min-width: 0; font-size: 0.93rem; line-height: 1.3; }
+.ch-dots { display: flex; gap: 4px; flex-shrink: 0; }
+.ch-dots .dot { width: 9px; height: 9px; border-radius: 50%; background: color-mix(in srgb, var(--text) 18%, transparent); }
+.ch-dots .dot.st-done { background: var(--good); }
+.ch-dots .dot.st-progress { background: var(--accent); }
+.syl-toc { display: block; margin: 4px 12px 0 auto; border: none; background: none; color: var(--accent); font-weight: 800; font-size: 0.85rem; padding: 4px 0; }
+.syl-short { margin-bottom: 6px; }
