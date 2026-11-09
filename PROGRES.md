@@ -37,6 +37,12 @@ Dacă începi o conversație nouă cu Claude, spune-i:
 - **📚 Cartonașele ședințelor** (colecție separată, pe fiecare limbă): Ședința 1 și 2 din fiecare capitol → câte un loc din lumea limbii, cu fotografie și fun fact; Temele (ultima ședință) → cartonaș special auriu cu povestea capitolului. Lecțiile scurte → câte un loc. Locuri: 199 (es 132 = toate capitolele A1–B1, ja 61, it 6); listele: tools/session-places-list.mjs și tools/session-places-es2.mjs, pozele: node tools/fetch-rewards.mjs session. Pentru B2 și C1 se adaugă locuri noi odată cu capitolele.
 - **👑 Contul admin**: utilizatorul „admin”, cu parolă fixă (în cod e doar amprenta ei, în src/accounts.ts). Vede toate cartonașele deblocate, cu filtru pe limbi.
 - **🖌️ Kanji cu degetul** (japoneză → butonul „Kanji”): 89 de kanji N5 pe teme, cu sens, citiri, exemplu cu 🔊, animația ordinii liniilor, scris cu contur și din memorie (verde = exersat, auriu = din memorie). Linii din KanjiVG (CC BY-SA 3.0); lista e în tools/kanji-list.mjs, datele se refac cu node tools/fetch-kanji.mjs.
+- **🏝️ Insula ta**: desen care crește din progres (case = capitole, copaci = cuvinte, locuitori = zile, bărci = conversații, far = test de nivel, moară = 10 kanji, soare = serie de 3 zile).
+- **🚂 Trenul limbilor**: gările sunt locurile ședințelor, trenul înaintează cu fiecare ședință terminată.
+- **🏛️ Muzeul personalităților**: portretele de pe ștampile, într-o galerie pe limbi.
+- **🎎 Calendarul sărbătorilor**: 28 de sărbători (Spania, America Latină, Japonia, Italia), cu obiceiuri și cuvinte; anunț pe ecranul de start în ziua respectivă.
+- **🧩 Perechi**, **📅 Calendarul** zilelor de învățat (fila Progres), **✨ cartonașe holografice** pentru serie, **🔍 prim-plan** cu ramă animată la atingerea oricărui cartonaș sau ștampile.
+- **🛂 Ștampilele** au acum personalități (66 la spaniolă, 25 la japoneză): portret, oraș natal, fun fact (tools/people-list.mjs; pozele cu node tools/fetch-rewards.mjs people).
 - **📝 Teste de nivel** (stil DELE / JLPT): 30 de întrebări din tot nivelul, 60% pentru trecere, viza apare în pașaport.
 
 ---

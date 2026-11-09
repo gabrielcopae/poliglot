@@ -18,6 +18,10 @@ export type Route =
   | { name: 'exam'; lang: LangCode; level: string }
   | { name: 'kanjiList' }
   | { name: 'pairs' }
+  | { name: 'museum' }
+  | { name: 'train' }
+  | { name: 'holidays' }
+  | { name: 'island' }
   | { name: 'kanjiOne'; char: string }
 
 export type Go = (r: Route) => void

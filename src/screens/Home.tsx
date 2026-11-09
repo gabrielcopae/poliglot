@@ -12,6 +12,7 @@ import { useState } from 'react'
 import { localGet, localSet } from '../settings'
 import { ALL_REWARDS, RewardCard, studyDays } from '../components/RewardCard'
 import { MILESTONES, StreakCard, longestStreak } from '../components/StreakCard'
+import { holidayToday } from './HolidaysScreen'
 
 /** Limbile din planul zilnic. Italiana se adaugă după spaniola A2. */
 const PLAN_LANGS: LangCode[] = ['es', 'ja']
@@ -35,6 +36,7 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
   const totalDue = Object.values(dueByLang).reduce((a, b) => a + b, 0)
   const info = SEASONS[season]
   const stampCount = stamps(chapters, homework).length
+  const today = holidayToday()
   const earned = studyDays(days)
   const seenKey = `poliglot.rewardSeen.${user}`
   const [seen, setSeen] = useState(() => Number(localGet(seenKey) ?? 0))
@@ -87,27 +89,31 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
         {totalDue ? <span className="due-go">▶</span> : null}
       </button>
 
+      {today && (
+        <button className="card holiday-banner" onClick={() => go({ name: 'holidays' })}>
+          <span>{today.emoji}</span>
+          <span className="session-body"><b>Azi: {today.name}</b><small>{today.where} · atinge ca să afli obiceiurile</small></span>
+        </button>
+      )}
+
+      <h2 className="section-title">Explorează</h2>
       <div className="journey-tiles">
-        <button className="card journey-tile" onClick={() => go({ name: 'passport' })}>
-          <span className="journey-emoji">🛂</span>
-          <b>Pașaport</b>
-          <small>{stampCount} {stampCount === 1 ? 'ștampilă' : 'ștampile'}</small>
-        </button>
-        <button className="card journey-tile" onClick={() => go({ name: 'talks' })}>
-          <span className="journey-emoji">💬</span>
-          <b>Conversații</b>
-          <small>vorbește cu personajele</small>
-        </button>
-        <button className="card journey-tile" onClick={() => go({ name: 'pairs' })}>
-          <span className="journey-emoji">🧩</span>
-          <b>Perechi</b>
-          <small>joc de memorie</small>
-        </button>
-        <button className="card journey-tile" onClick={() => go({ name: 'album' })}>
-          <span className="journey-emoji">🃏</span>
-          <b>Album</b>
-          <small>{stampCount} {stampCount === 1 ? 'cartonaș' : 'cartonașe'}</small>
-        </button>
+        {([
+          ['passport', '🛂', 'Pașaport', `${stampCount} ștampile`],
+          ['album', '🃏', 'Album', 'cartonașe'],
+          ['island', '🏝️', 'Insula ta', 'crește cu tine'],
+          ['train', '🚂', 'Trenul', 'gară cu gară'],
+          ['talks', '💬', 'Conversații', 'cu personajele'],
+          ['pairs', '🧩', 'Perechi', 'joc de memorie'],
+          ['museum', '🏛️', 'Muzeul', 'personalităților'],
+          ['holidays', '🎎', 'Sărbători', 'calendar'],
+        ] as const).map(([name, emoji, title, sub]) => (
+          <button key={name} className="card journey-tile" onClick={() => go({ name })}>
+            <span className="journey-emoji">{emoji}</span>
+            <b>{title}</b>
+            <small>{sub}</small>
+          </button>
+        ))}
       </div>
 
       <h2 className="section-title">Limbile tale</h2>

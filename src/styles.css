@@ -941,3 +941,85 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .spot-hint { color: rgba(255, 255, 255, 0.75); font-size: 0.78rem; text-align: center; }
 @media (prefers-reduced-motion: reduce) { .spot-frame, .spot-glow::after { animation: none; } }
 .holo-btn { border: none; background: none; padding: 0; font: inherit; color: inherit; cursor: pointer; }
+
+/* ——— Muzeul personalităților ——— */
+.museum-wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 14px; padding: 14px; border-radius: 18px;
+  background: linear-gradient(180deg, #6b2737, #4a1a26); box-shadow: inset 0 6px 20px rgba(0, 0, 0, 0.35); }
+.museum-frame { border: none; padding: 7px 7px 6px; border-radius: 6px; font: inherit; color: #3b2f22; display: flex; flex-direction: column; align-items: center; gap: 5px;
+  background: linear-gradient(145deg, #e8c46a, #b88a2e 45%, #f2d78a); box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45); }
+.museum-frame .museum-photo { width: 100%; aspect-ratio: 3 / 4; border: 3px solid #5a3e12; background-color: #2a2018; }
+.museum-photo { background-size: cover; background-position: center 20%; }
+.museum-name { font-size: 0.62rem; font-weight: 800; line-height: 1.15; text-align: center; color: #3a2508; background: #f6e7c1; padding: 2px 4px; border-radius: 3px; }
+.museum-frame.empty { background: linear-gradient(145deg, #8a7a5a, #6a5a3c); opacity: 0.75; }
+.museum-photo.silhouette { display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #9a8a6a; background: #3a3024; }
+.museum-plaque { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 16px 14px 12px; text-align: center; color: #3b2f22; background: #fbf3e2; }
+.museum-plaque .museum-photo { width: 70%; aspect-ratio: 3 / 4; border: 6px solid #c99a3a; box-shadow: 0 0 0 2px #7a5512, 0 8px 18px rgba(0, 0, 0, 0.3); margin-bottom: 6px; }
+.museum-plaque b { font-family: var(--display); font-size: 1.35rem; }
+.museum-plaque small { color: #7a6a58; }
+.museum-plaque p { font-size: 0.95rem; line-height: 1.45; margin: 6px 0; }
+.museum-credit { font-size: 0.6rem; color: #9a8a74; }
+
+/* ——— Trenul limbilor ——— */
+.track { position: relative; padding: 6px 0 6px 6px; }
+.track::before { content: ''; position: absolute; left: 25px; top: 10px; bottom: 10px; width: 6px; border-radius: 3px;
+  background: repeating-linear-gradient(180deg, #7a5a3a 0 6px, #c9a878 6px 12px); }
+.station { position: relative; display: flex; align-items: center; gap: 10px; margin: 0 0 10px; }
+.station-dot { position: relative; z-index: 1; width: 40px; height: 40px; flex-shrink: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  background: var(--card); border: 3px solid var(--line); font-size: 0.9rem; color: var(--dim); }
+.station.passed .station-dot { background: var(--good); border-color: #fff; color: #fff; }
+.station.special.passed .station-dot { background: linear-gradient(145deg, #f4d36b, #d9a62a); }
+.station.here .station-dot { width: 48px; height: 48px; margin-left: -4px; font-size: 1.6rem; background: var(--accent); border-color: #fff; box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 30%, transparent); animation: pulse 2s ease-in-out infinite; }
+.station-body { flex: 1; display: flex; align-items: center; gap: 10px; border: 1px solid var(--line); background: var(--card); border-radius: 14px; padding: 8px 10px; text-align: left; font: inherit; color: inherit; box-shadow: var(--shadow); }
+.station:not(.passed) .station-body { opacity: 0.6; box-shadow: none; }
+.station-thumb { width: 54px; height: 42px; flex-shrink: 0; border-radius: 8px; background-size: cover; background-position: center; }
+.station-text { display: flex; flex-direction: column; min-width: 0; }
+.station-text b { font-size: 0.95rem; }
+.station-text small { font-size: 0.72rem; color: var(--dim); }
+.station.more { justify-content: center; color: var(--dim); font-size: 0.85rem; font-weight: 700; padding-left: 40px; }
+
+/* ——— Calendarul sărbătorilor ——— */
+.holiday-row { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; margin: 0 0 10px; }
+.holiday-row.today { border: 2px solid var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 20%, transparent); }
+.holiday-row-emoji { font-size: 2rem; }
+.holiday-when { display: flex; flex-direction: column; align-items: flex-end; text-align: right; flex-shrink: 0; }
+.holiday-when b { font-size: 0.85rem; }
+.holiday-when small { font-size: 0.72rem; color: var(--accent); font-weight: 800; }
+.holiday-card { padding: 18px 16px 14px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px; color: #3b2f22; background: #fffaf0; }
+.holiday-emoji { font-size: 3.6rem; }
+.holiday-card > b { font-family: var(--display); font-size: 1.35rem; }
+.holiday-card > small { color: #7a6a58; }
+.holiday-date { font-weight: 800; color: #b0452a; font-size: 0.85rem; margin-top: 2px; }
+.holiday-card p { font-size: 0.95rem; line-height: 1.45; margin: 8px 0; }
+.holiday-words { display: flex; flex-direction: column; gap: 6px; width: 100%; }
+.holiday-words button { border: 1px solid #e3d3a8; background: #fbf1dc; border-radius: 12px; padding: 8px 10px; text-align: left; font: inherit; color: #3b2f22; font-weight: 700; }
+.holiday-words small { color: #7a6a58; font-weight: 600; }
+
+/* ——— Insula ta ——— */
+.island-wrap { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); border: 3px solid #fff; margin-bottom: 12px; }
+.island { display: block; width: 100%; height: auto; }
+.island-clouds { animation: cloudDrift 18s ease-in-out infinite alternate; }
+@keyframes cloudDrift { to { transform: translateX(40px); } }
+.island-waves { animation: waves 3s ease-in-out infinite alternate; }
+@keyframes waves { to { transform: translateX(8px); } }
+.island-boat { animation: bob 2.6s ease-in-out infinite alternate; }
+@keyframes bob { to { transform: translateY(2px); } }
+.island-mill { animation: spin 6s linear infinite; transform-origin: 0 0; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.island-beam { animation: beam 2s ease-in-out infinite alternate; }
+@keyframes beam { from { opacity: 0.2; } to { opacity: 0.65; } }
+.island-sun { animation: sunPulse 3s ease-in-out infinite alternate; transform-origin: 300px 40px; }
+@keyframes sunPulse { to { transform: scale(1.06); } }
+.island-house { animation: pop 0.5s ease both; }
+.island-goals { display: flex; flex-direction: column; gap: 8px; }
+.island-goal { display: grid; grid-template-columns: 28px 1fr; column-gap: 8px; align-items: center; }
+.island-goal span { font-size: 1.3rem; grid-row: span 2; }
+.island-goal b { font-size: 0.92rem; }
+.island-goal small { color: var(--dim); font-size: 0.78rem; }
+@media (prefers-reduced-motion: reduce) { .island-clouds, .island-waves, .island-boat, .island-mill, .island-beam, .island-sun { animation: none; } }
+.journey-tiles { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.journey-tile { align-items: center; text-align: center; padding: 10px 4px; gap: 1px; }
+.journey-tile .journey-emoji { font-size: 1.6rem; }
+.journey-tile b { font-size: 0.74rem; line-height: 1.15; }
+.journey-tile small { font-size: 0.6rem; line-height: 1.15; }
+.holiday-banner { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; border: 2px solid var(--accent); }
+.holiday-banner > span:first-child { font-size: 2rem; }
