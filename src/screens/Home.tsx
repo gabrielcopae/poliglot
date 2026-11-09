@@ -7,6 +7,7 @@ import type { Go } from '../nav'
 import { SEASONS, partOfDay, type Season } from '../season'
 import { Progress } from '../components/ui'
 import { buildSyllabus } from './CourseScreen'
+import { stamps } from '../journey'
 
 /** Limbile din planul zilnic. Italiana se adaugă după spaniola A2. */
 const PLAN_LANGS: LangCode[] = ['es', 'ja']
@@ -29,6 +30,7 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
   const streak = streakFrom(days)
   const totalDue = Object.values(dueByLang).reduce((a, b) => a + b, 0)
   const info = SEASONS[season]
+  const stampCount = stamps(chapters, homework).length
 
   return (
     <div className="screen home">
@@ -49,6 +51,19 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
         </span>
         {totalDue ? <span className="due-go">▶</span> : null}
       </button>
+
+      <div className="journey-tiles">
+        <button className="card journey-tile" onClick={() => go({ name: 'passport' })}>
+          <span className="journey-emoji">🛂</span>
+          <b>Pașaport</b>
+          <small>{stampCount} {stampCount === 1 ? 'ștampilă' : 'ștampile'}</small>
+        </button>
+        <button className="card journey-tile" onClick={() => go({ name: 'album' })}>
+          <span className="journey-emoji">🃏</span>
+          <b>Album</b>
+          <small>{stampCount} {stampCount === 1 ? 'cartonaș' : 'cartonașe'}</small>
+        </button>
+      </div>
 
       <h2 className="section-title">Limbile tale</h2>
       <div className="lang-grid">

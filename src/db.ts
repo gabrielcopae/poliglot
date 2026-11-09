@@ -54,12 +54,34 @@ export interface HomeworkRow {
   at: number
 }
 
+/** Testul de nivel (DELE / JLPT) al unui nivel: id = <lang>-<nivel>. */
+export interface ExamRow {
+  id: string
+  lang: string
+  level: string
+  best: number
+  passed: boolean
+  at: number
+  passedAt?: number
+}
+
+/** O conversație cu personajele: id = scena. */
+export interface TalkRow {
+  id: string
+  lang: string
+  best: number
+  times: number
+  at: number
+}
+
 class PoliglotDB extends Dexie {
   cards!: Table<CardRow, string>
   lessons!: Table<LessonRow, string>
   days!: Table<DayRow, string>
   chapters!: Table<ChapterRow, string>
   homework!: Table<HomeworkRow, string>
+  exams!: Table<ExamRow, string>
+  talks!: Table<TalkRow, string>
 
   constructor(name: string) {
     super(name)
@@ -71,6 +93,10 @@ class PoliglotDB extends Dexie {
     this.version(2).stores({
       chapters: 'id, lang',
       homework: 'id, lessonId',
+    })
+    this.version(3).stores({
+      exams: 'id, lang',
+      talks: 'id, lang',
     })
   }
 }
@@ -121,21 +147,23 @@ export function streakFrom(days: DayRow[]): number {
 }
 
 export async function exportProgress(): Promise<string> {
-  const [cards, lessons, days, chapters, homework] = await Promise.all([
-    db.cards.toArray(), db.lessons.toArray(), db.days.toArray(), db.chapters.toArray(), db.homework.toArray(),
+  const [cards, lessons, days, chapters, homework, exams, talks] = await Promise.all([
+    db.cards.toArray(), db.lessons.toArray(), db.days.toArray(), db.chapters.toArray(), db.homework.toArray(), db.exams.toArray(), db.talks.toArray(),
   ])
-  return JSON.stringify({ app: 'poliglot', version: 2, exportedAt: new Date().toISOString(), cards, lessons, days, chapters, homework })
+  return JSON.stringify({ app: 'poliglot', version: 3, exportedAt: new Date().toISOString(), cards, lessons, days, chapters, homework, exams, talks })
 }
 
 export async function importProgress(json: string) {
   const data = JSON.parse(json)
   if (data?.app !== 'poliglot') throw new Error('Fișierul nu este un backup Poliglot.')
-  await db.transaction('rw', [db.cards, db.lessons, db.days, db.chapters, db.homework], async () => {
-    await Promise.all([db.cards.clear(), db.lessons.clear(), db.days.clear(), db.chapters.clear(), db.homework.clear()])
+  await db.transaction('rw', [db.cards, db.lessons, db.days, db.chapters, db.homework, db.exams, db.talks], async () => {
+    await Promise.all([db.cards.clear(), db.lessons.clear(), db.days.clear(), db.chapters.clear(), db.homework.clear(), db.exams.clear(), db.talks.clear()])
     await db.cards.bulkPut(data.cards ?? [])
     await db.lessons.bulkPut(data.lessons ?? [])
     await db.days.bulkPut(data.days ?? [])
     await db.chapters.bulkPut(data.chapters ?? [])
     await db.homework.bulkPut(data.homework ?? [])
+    await db.exams.bulkPut(data.exams ?? [])
+    await db.talks.bulkPut(data.talks ?? [])
   })
 }

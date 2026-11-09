@@ -20,6 +20,8 @@ import { StatsScreen } from './screens/StatsScreen'
 import { SettingsScreen } from './screens/SettingsScreen'
 import { LoginScreen } from './screens/LoginScreen'
 import { DictionaryScreen } from './screens/DictionaryScreen'
+import { PassportScreen } from './screens/PassportScreen'
+import { AlbumScreen } from './screens/AlbumScreen'
 
 function shouldShowIntro(mode: string) {
   if (mode === 'never') return false
@@ -147,6 +149,8 @@ function MainApp({ session, season, signOut }: { session: Session; season: Retur
         {route.name === 'kana' && <KanaScreen back={back} />}
         {route.name === 'dictionary' && <DictionaryScreen key={route.lang} lang={route.lang} back={back} />}
         {route.name === 'stats' && <StatsScreen />}
+        {route.name === 'passport' && <PassportScreen back={back} />}
+        {route.name === 'album' && <AlbumScreen back={back} />}
         {route.name === 'settings' && <SettingsScreen user={session.name} signOut={signOut} />}
       </main>
       {showNav && <BottomNav current={route.name} go={go} due={due} />}

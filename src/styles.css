@@ -671,3 +671,62 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .voice-diag-group { margin-top: 8px; }
 .recorded-box { margin: 4px 0 12px; }
 .recorded-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin: 6px 0; font-size: 0.88rem; }
+
+/* ——— Pașaport și album ——— */
+.journey-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 4px 0 2px; }
+.journey-tile { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; margin: 0; text-align: left; }
+.journey-emoji { font-size: 1.8rem; }
+.journey-tile small { color: var(--dim); }
+
+.passport-cover {
+  border-radius: 18px; padding: 26px 18px; margin: 4px 0 16px; text-align: center; color: #f3e3b5;
+  background: linear-gradient(160deg, #1f3b5c, #13263d); box-shadow: 0 12px 30px rgba(10, 20, 40, 0.35);
+  border: 2px solid #c9a95a33;
+}
+.passport-emblem { font-size: 2.6rem; filter: sepia(1) saturate(2) hue-rotate(5deg); }
+.passport-title { font-family: var(--display); letter-spacing: 0.4em; font-size: 1.5rem; margin-top: 6px; }
+.passport-sub { opacity: 0.85; margin-top: 2px; }
+.passport-count { margin-top: 12px; font-size: 0.9rem; opacity: 0.9; }
+
+.passport-page {
+  border-radius: 16px; padding: 14px; margin: 0 0 14px; color: #3b2f22;
+  background: repeating-linear-gradient(0deg, #f7efd9 0 26px, #f2e8cd 26px 27px);
+  box-shadow: 0 6px 18px rgba(60, 40, 10, 0.18); border: 1px solid #e3d3a8;
+}
+.passport-page-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.passport-page-head b { flex: 1; font-family: var(--display); }
+.stamp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); gap: 12px; }
+.stamp {
+  aspect-ratio: 1; border-radius: 50%; border: 3px double var(--stamp); color: var(--stamp);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  font-weight: 800; padding: 6px; background: color-mix(in srgb, var(--stamp) 6%, transparent); opacity: 0.88;
+}
+.stamp-place { font-size: 0.58rem; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.1; }
+.stamp-emoji { font-size: 1.4rem; line-height: 1.2; }
+.stamp-ch { font-size: 0.7rem; }
+.stamp-date { font-size: 0.55rem; font-weight: 700; opacity: 0.85; }
+.stamp.empty { border: 2px dashed #cbb98d; color: #b9a678; background: none; opacity: 1; }
+.visa {
+  border: 3px solid #2f7a4a; color: #2f7a4a; border-radius: 10px; padding: 8px 12px; margin: 0 0 12px;
+  transform: rotate(-2deg); background: #2f7a4a10;
+}
+.visa-title { font-weight: 900; letter-spacing: 0.25em; }
+.visa-body { font-size: 0.85rem; }
+
+.album-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin-top: 10px; }
+.album-card { position: relative; aspect-ratio: 3 / 4; border: none; padding: 0; background: none; perspective: 900px; text-align: center; }
+.album-inner { position: absolute; inset: 0; transition: transform 0.5s; transform-style: preserve-3d; }
+.album-card.flipped .album-inner { transform: rotateY(180deg); }
+.album-face {
+  position: absolute; inset: 0; border-radius: 14px; padding: 10px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 6px; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  background: var(--card); border: 2px solid var(--line); box-shadow: var(--shadow); font-size: 0.85rem;
+}
+.album-back { transform: rotateY(180deg); font-size: 0.92rem; }
+.album-back small { color: var(--dim); }
+.album-emoji { font-size: 2.6rem; }
+.album-play { font-size: 1.3rem; padding: 4px; }
+.album-card.gold .album-face { border-color: #d4a72c; background: linear-gradient(160deg, #fff6d6, #f3d98a); color: #4a3510; }
+.album-card.gold .album-back small { color: #6b5420; }
+.album-card.locked .album-face { position: relative; height: 100%; opacity: 0.55; border-style: dashed; }
+.album-q { font-size: 2.2rem; font-weight: 900; color: var(--dim); }

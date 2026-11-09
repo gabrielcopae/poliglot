@@ -11,5 +11,7 @@ export type Route =
   | { name: 'kana' }
   | { name: 'stats' }
   | { name: 'settings' }
+  | { name: 'passport' }
+  | { name: 'album' }
 
 export type Go = (r: Route) => void
