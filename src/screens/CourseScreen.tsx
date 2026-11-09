@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { Flag } from '../components/Flag'
 import { getCourse } from '../content'
@@ -5,6 +6,7 @@ import type { LangCode, Lesson } from '../content/types'
 import { db, type ChapterRow, type HomeworkRow } from '../db'
 import type { Go, Route } from '../nav'
 import { Progress, TopBar } from '../components/ui'
+import { localGet, localSet } from '../settings'
 
 type Status = 'done' | 'progress' | 'todo'
 
@@ -70,6 +72,10 @@ export function CourseScreen({ lang, go, back }: { lang: LangCode; go: Go; back:
   const all = syllabus.flatMap((u) => u.lessons.flatMap((l) => l.items))
   const next = all.find((x) => x.status === 'progress') ?? all.find((x) => x.status === 'todo')
   const doneCount = all.filter((x) => x.status === 'done').length
+  const started = syllabus.flatMap((u) => u.lessons).filter(({ items }) => items.some((x) => x.status !== 'todo') && items.some((x) => x.status !== 'done'))
+  const tabKey = `poliglot.courseTab.${lang}`
+  const [tab, setTabState] = useState<'now' | 'all'>(() => (localGet(tabKey) === 'all' ? 'all' : 'now'))
+  const setTab = (t: 'now' | 'all') => { setTabState(t); localSet(tabKey, t) }
 
   return (
     <div className="screen">
@@ -80,7 +86,12 @@ export function CourseScreen({ lang, go, back }: { lang: LangCode; go: Go; back:
         {lang === 'ja' && <button className="btn" onClick={() => go({ name: 'kana' })}>あ Kana</button>}
       </div>
 
-      {next && (
+      <div className="segmented course-tabs">
+        <button className={tab === 'now' ? 'on' : ''} onClick={() => setTab('now')}>▶ În desfășurare</button>
+        <button className={tab === 'all' ? 'on' : ''} onClick={() => setTab('all')}>📚 Lecții</button>
+      </div>
+
+      {tab === 'now' && next && (
         <button className="card continue-card" onClick={() => go(next.route)}>
           <span className="continue-n">{next.n}</span>
           <span className="session-body">
@@ -92,6 +103,37 @@ export function CourseScreen({ lang, go, back }: { lang: LangCode; go: Go; back:
         </button>
       )}
 
+      {tab === 'now' && (
+        <>
+          <h2 className="section-title">Capitole începute</h2>
+          {started.length ? started.map(({ lesson, items: its }) => (
+            <article key={lesson.id} className="card syl-chapter now-chapter">
+              <button className="syl-ch-head" onClick={() => go({ name: 'lesson', lang, lessonId: lesson.id })}>
+                <span>{lesson.emoji}</span>
+                <b>{lesson.chapter ? `Capitolul ${lesson.chapter.number}: ` : ''}{lesson.title}</b>
+                <span className="toc-go">cuprins →</span>
+              </button>
+              {its.map((it) => (
+                <button key={it.n} className={`syl-row st-${it.status}`} onClick={() => go(it.route)}>
+                  <span className="syl-n">{it.status === 'done' ? '✓' : it.n}</span>
+                  <span className="session-body">
+                    <b>Ședința {it.n} · {it.title}</b>
+                    <small>{it.note ?? it.detail}</small>
+                  </span>
+                  <span className="syl-state">{it.status === 'done' ? 'gata' : it.status === 'progress' ? 'în curs' : ''}</span>
+                </button>
+              ))}
+            </article>
+          )) : (
+            <p className="muted syl-intro">
+              {doneCount ? 'Niciun capitol început și neterminat. Apasă mai sus ca să treci la următoarea ședință.' : 'Încă n-ai început nimic. Apasă mai sus pe prima ședință sau deschide fila „Lecții”.'}
+            </p>
+          )}
+          <p className="muted small syl-intro">{doneCount} din {all.length} ședințe terminate în total.</p>
+        </>
+      )}
+
+      {tab === 'all' && <>
       <h2 className="section-title">📋 Desfășurătorul cursului</h2>
       <p className="muted small syl-intro">
         {doneCount} din {all.length} ședințe terminate. Poți deschide oricare ședință, oricând. Drumul complet: {course.plan.map((p) => p.level).join(' → ')} (examen {course.exam}).
@@ -148,6 +190,7 @@ export function CourseScreen({ lang, go, back }: { lang: LangCode; go: Go; back:
           </details>
         )
       })}
+      </>}
     </div>
   )
 }

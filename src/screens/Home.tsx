@@ -1,12 +1,12 @@
 import { Flag } from '../components/Flag'
 import { useLiveQuery } from 'dexie-react-hooks'
-import { COURSES, allLessons, getCourse } from '../content'
+import { COURSES, getCourse } from '../content'
 import type { LangCode } from '../content/types'
-import { nextStep } from '../progress'
 import { db, streakFrom } from '../db'
 import type { Go } from '../nav'
 import { SEASONS, partOfDay, type Season } from '../season'
 import { Progress } from '../components/ui'
+import { buildSyllabus } from './CourseScreen'
 
 /** Limbile din planul zilnic. Italiana se adaugă după spaniola A2. */
 const PLAN_LANGS: LangCode[] = ['es', 'ja']
@@ -41,39 +41,24 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
         </div>
       </section>
 
-      <article className="card plan">
-        <h2 className="plan-title">📋 Planul de azi <span className="muted small">(~1 oră și jumătate)</span></h2>
-        <button className={`plan-row ${totalDue ? '' : 'ok'}`} onClick={() => go({ name: 'review' })} disabled={!totalDue}>
-          <span className="plan-icon">🔁</span>
-          <span className="plan-body">
-            <b>Repetiție</b>
-            <small>{totalDue ? `${totalDue} ${totalDue === 1 ? 'cuvânt' : 'cuvinte'} de repetat` : 'Nimic de repetat acum ✓'}</small>
-          </span>
-          <span className="plan-min">~10 min</span>
-        </button>
-        {PLAN_LANGS.map((lang) => {
-          const course = getCourse(lang)
-          const step = nextStep(course, { lessons, chapters, homework })
-          return (
-            <button key={lang} className="plan-row" disabled={!step} onClick={() => step && go(step.route)}>
-              <span className="plan-icon"><Flag lang={lang} size={28} /></span>
-              <span className="plan-body">
-                <b>{step ? step.label : `${course.name}: ai terminat tot ce există acum 🎉`}</b>
-                <small>{step?.detail}</small>
-              </span>
-              {step && <span className="plan-min">~{step.minutes} min</span>}
-            </button>
-          )
-        })}
-        <p className="muted small">Ritmul recomandat: un capitol în 2–3 zile pentru fiecare limbă. Italiana începe după ce termini spaniola A2.</p>
-      </article>
+      <button className={`card review-strip ${totalDue ? '' : 'ok'}`} onClick={() => go({ name: 'review' })} disabled={!totalDue}>
+        <span className="plan-icon">🔁</span>
+        <span className="plan-body">
+          <b>Repetiție</b>
+          <small>{totalDue ? `${totalDue} ${totalDue === 1 ? 'cuvânt' : 'cuvinte'} de repetat azi` : 'Nimic de repetat acum ✓'}</small>
+        </span>
+        {totalDue ? <span className="due-go">▶</span> : null}
+      </button>
 
       <h2 className="section-title">Limbile tale</h2>
       <div className="lang-grid">
         {COURSES.map((c) => {
-          const ls = allLessons(c)
-          const n = ls.filter((l) => done.has(l.id)).length
-          const next = ls.find((l) => !done.has(l.id))
+          const all = buildSyllabus(c.lang, chapters.filter((x) => x.lang === c.lang), homework, done)
+            .flatMap((u) => u.lessons.flatMap((l) => l.items))
+          const n = all.filter((x) => x.status === 'done').length
+          const next = all.find((x) => x.status === 'progress') ?? all.find((x) => x.status === 'todo')
+          const started = all.some((x) => x.status !== 'todo')
+          const course = getCourse(c.lang)
           return (
             <button key={c.lang} className={`card lang-card lang-${c.lang}`} onClick={() => go({ name: 'course', lang: c.lang })}>
               <div className="lang-head">
@@ -85,23 +70,19 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
                 {dueByLang[c.lang] ? <span className="chip">{dueByLang[c.lang]} de repetat</span> : null}
                 {!PLAN_LANGS.includes(c.lang) && !dueByLang[c.lang] ? <span className="chip later">după spaniolă A2</span> : null}
               </div>
-              <Progress value={n / ls.length} />
+              <Progress value={all.length ? n / all.length : 0} />
               <div className="lang-foot">
-                <span className="muted">{n} / {ls.length} lecții</span>
-                <span className="lang-next">{next ? `Următoarea: ${next.title}` : 'Toate lecțiile terminate 🎉'}</span>
+                <span className="muted">{n} / {all.length} ședințe</span>
+                <span className="lang-next">
+                  {next
+                    ? `${started ? '▶ ' : ''}${next.lesson.chapter ? `Cap. ${next.lesson.chapter.number}` : next.lesson.title} · Ședința ${next.n}`
+                    : `${course.name}: totul e gata 🎉`}
+                </span>
               </div>
             </button>
           )
         })}
       </div>
-
-      <button className="card kana-link" onClick={() => go({ name: 'kana' })}>
-        <span className="kana-glyph">あ</span>
-        <div>
-          <div className="lang-name">Tabelul hiragana și katakana</div>
-          <div className="muted">Atinge orice semn ca să-l auzi</div>
-        </div>
-      </button>
     </div>
   )
 }

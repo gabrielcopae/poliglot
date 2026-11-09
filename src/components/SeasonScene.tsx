@@ -24,7 +24,7 @@ export function SeasonScene({ season, night, particles }: Props) {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
     let w = 0, h = 0, raf = 0
-    const dpr = Math.min(window.devicePixelRatio || 1, 2)
+    const dpr = Math.min(window.devicePixelRatio || 1, window.matchMedia?.('(pointer: coarse)').matches ? 1.5 : 2)
     let list: P[] = []
 
     const fireflies = season === 'summer' && night
@@ -50,7 +50,8 @@ export function SeasonScene({ season, night, particles }: Props) {
       canvas.width = w * dpr
       canvas.height = h * dpr
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-      const target = Math.round(Math.min(55, Math.max(18, (w * h) / 22000)))
+      const touch = window.matchMedia?.('(pointer: coarse)').matches
+      const target = Math.round(Math.min(touch ? 24 : 55, Math.max(touch ? 12 : 18, (w * h) / (touch ? 30000 : 22000))))
       list = Array.from({ length: target }, () => spawn(true))
     }
 

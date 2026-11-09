@@ -5,7 +5,7 @@
   --hill1: #e3a065; --hill2: #c46d34; --hill3: #94502a;
   --accent: #c2552d; --accent2: #e3a030; --on-accent: #fff;
   --text: #3b2418; --dim: #7a5a48;
-  --card: rgba(255, 250, 244, 0.72); --line: rgba(255, 255, 255, 0.75);
+  --card0: rgba(255, 250, 244, 0.72); --line: rgba(255, 255, 255, 0.75);
   --sun: #ffcf7a; --trunk: #6b3d22;
 }
 :root[data-season='autumn'][data-time='night'] {
@@ -13,7 +13,7 @@
   --hill1: #3b2620; --hill2: #2c1c18; --hill3: #1f1411;
   --accent: #f0a35e; --accent2: #e3a030; --on-accent: #2b1a10;
   --text: #fbeee2; --dim: #c9ad9a;
-  --card: rgba(40, 24, 26, 0.6); --line: rgba(255, 255, 255, 0.12);
+  --card0: rgba(40, 24, 26, 0.6); --line: rgba(255, 255, 255, 0.12);
   --sun: #fff2d6; --trunk: #5a3a2c;
 }
 :root[data-season='spring'][data-time='day'] {
@@ -21,7 +21,7 @@
   --hill1: #bfe0a7; --hill2: #93c47d; --hill3: #6fa65a;
   --accent: #d24d78; --accent2: #7bb35f; --on-accent: #fff;
   --text: #3a2a30; --dim: #7b6470;
-  --card: rgba(255, 255, 255, 0.7); --line: rgba(255, 255, 255, 0.8);
+  --card0: rgba(255, 255, 255, 0.7); --line: rgba(255, 255, 255, 0.8);
   --sun: #fff1b8; --trunk: #6e4a3a;
 }
 :root[data-season='spring'][data-time='night'] {
@@ -29,7 +29,7 @@
   --hill1: #3c4660; --hill2: #2f3850; --hill3: #232a3e;
   --accent: #f29bb8; --accent2: #a6d98c; --on-accent: #2a1622;
   --text: #f6eaf0; --dim: #c4b0c0;
-  --card: rgba(36, 28, 56, 0.58); --line: rgba(255, 255, 255, 0.12);
+  --card0: rgba(36, 28, 56, 0.58); --line: rgba(255, 255, 255, 0.12);
   --sun: #fdf3ff; --trunk: #5d4a5e;
 }
 :root[data-season='summer'][data-time='day'] {
@@ -37,7 +37,7 @@
   --hill1: #86c98a; --hill2: #55a865; --hill3: #2f8048;
   --accent: #0b8a86; --accent2: #f2a516; --on-accent: #fff;
   --text: #13303a; --dim: #4c6a72;
-  --card: rgba(255, 255, 255, 0.68); --line: rgba(255, 255, 255, 0.8);
+  --card0: rgba(255, 255, 255, 0.68); --line: rgba(255, 255, 255, 0.8);
   --sun: #ffe066; --trunk: #5c4026;
 }
 :root[data-season='summer'][data-time='night'] {
@@ -45,7 +45,7 @@
   --hill1: #163650; --hill2: #0f2a40; --hill3: #0a1d2c;
   --accent: #ffd166; --accent2: #7fe0c0; --on-accent: #1a1a10;
   --text: #eef6ff; --dim: #a9bdd0;
-  --card: rgba(14, 32, 58, 0.58); --line: rgba(255, 255, 255, 0.12);
+  --card0: rgba(14, 32, 58, 0.58); --line: rgba(255, 255, 255, 0.12);
   --sun: #fffbe8; --trunk: #3a4a5a;
 }
 :root[data-season='winter'][data-time='day'] {
@@ -53,7 +53,7 @@
   --hill1: #ffffff; --hill2: #e3ecf5; --hill3: #cbd9e8;
   --accent: #3b6ea8; --accent2: #7aa7d6; --on-accent: #fff;
   --text: #1d2b3a; --dim: #5b6d80;
-  --card: rgba(255, 255, 255, 0.7); --line: rgba(255, 255, 255, 0.9);
+  --card0: rgba(255, 255, 255, 0.7); --line: rgba(255, 255, 255, 0.9);
   --sun: #fff8e0; --trunk: #4a3a32;
 }
 :root[data-season='winter'][data-time='night'] {
@@ -61,11 +61,12 @@
   --hill1: #3a4d6d; --hill2: #2b3b58; --hill3: #1d2a42;
   --accent: #9cc7ff; --accent2: #c9e0ff; --on-accent: #0f1a2e;
   --text: #eaf2ff; --dim: #a6b6cc;
-  --card: rgba(20, 32, 54, 0.6); --line: rgba(255, 255, 255, 0.12);
+  --card0: rgba(20, 32, 54, 0.6); --line: rgba(255, 255, 255, 0.12);
   --sun: #f4f7ff; --trunk: #56677f;
 }
 
 :root {
+  --card: var(--card0);
   --good: #2f9e5b; --bad: #d64545;
   --radius: 20px;
   --shadow: 0 10px 30px rgba(40, 20, 10, 0.12);
@@ -616,3 +617,26 @@ input[type='range'] { width: 100%; accent-color: var(--accent); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
+
+/* ——— Telefoane și tablete: mai fluid ———
+   Efectul de „sticlă mată” (backdrop-filter) e scump pe telefon, mai ales la derulare.
+   Îl scoatem și facem cardurile puțin mai opace, ca textul să rămână lizibil. */
+@media (hover: none) and (pointer: coarse) {
+  :root { --card: color-mix(in srgb, var(--card0), var(--bg2) 45%); }
+  *, *::before, *::after { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+  button, a, input, select, textarea, .rline, .rword, .sline { touch-action: manipulation; }
+  .stars { animation: none; }
+  .sun { box-shadow: 0 0 40px 12px color-mix(in srgb, var(--sun) 45%, transparent); }
+}
+
+/* Cine a cerut „Reducere mișcare” din sistem primește animații aproape instantanee. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* ——— Ecranul de start și filele limbii ——— */
+.review-strip { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; border-left: 5px solid var(--accent); }
+.review-strip.ok { border-left-color: var(--good); }
+.review-strip:disabled { opacity: 0.85; }
+.course-tabs { margin-top: 14px; }
+.now-chapter { padding: 12px 14px; }
