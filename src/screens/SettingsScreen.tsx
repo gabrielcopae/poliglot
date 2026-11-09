@@ -5,7 +5,7 @@ import { COURSES } from '../content'
 import { exportProgress, importProgress } from '../db'
 import { SEASONS, type Season } from '../season'
 import { setSettings, useSettings, type Settings } from '../settings'
-import { canListen, onVoices, speak, voiceFor, voiceId, voicesFor } from '../speech'
+import { allVoices, canListen, onVoices, speak, voiceFor, voiceId, voicesFor } from '../speech'
 import { TopBar } from '../components/ui'
 
 export function SettingsScreen({ user, signOut }: { user: string; signOut: () => void }) {
@@ -118,6 +118,15 @@ export function SettingsScreen({ user, signOut }: { user: string; signOut: () =>
           <p><b>Android:</b> Setări → Sistem → Limbi → Ieșire text în vorbire → Serviciul Google → Instalează date vocale → descarcă spaniolă, italiană, japoneză.</p>
           <p><b>iPhone:</b> Setări → Accesibilitate → Conținut vorbit → Voci → alege limba și descarcă o voce „Îmbunătățită”.</p>
           <p className="muted">În etapa următoare aplicația va avea propria voce descărcabilă (Kokoro), de calitate mai bună, identică pe toate dispozitivele.</p>
+        </details>
+        <details className="help">
+          <summary>🔍 Diagnostic: toate vocile primite de la browser ({allVoices().length})</summary>
+          <p className="muted small">Lista brută, fără niciun filtru. Dacă o voce descărcată nu apare aici, browserul nu o dă aplicației.</p>
+          <ul className="voice-diag">
+            {[...allVoices()].sort((a, b) => a.lang.localeCompare(b.lang) || a.name.localeCompare(b.name)).map((v, i) => (
+              <li key={i}><b>{v.lang}</b> · {v.name}{v.localService ? '' : ' (online)'}{v.default ? ' · implicită' : ''}</li>
+            ))}
+          </ul>
         </details>
         <p className="muted small">Versiunea aplicației: {__BUILD__}</p>
         <p className="muted small">Verificarea pronunției prin microfon: {canListen() ? 'disponibilă (are nevoie de internet).' : 'indisponibilă în acest browser. Folosește Chrome sau Edge.'}</p>

@@ -190,3 +190,8 @@ export function listen(locale: string): { promise: Promise<string[]>; stop: () =
   rec.start()
   return { promise, stop: () => rec.stop() }
 }
+
+/** Toate vocile pe care browserul le dă aplicației, fără niciun filtru (pentru diagnostic). */
+export function allVoices(): SpeechSynthesisVoice[] {
+  return synth?.getVoices() ?? []
+}
