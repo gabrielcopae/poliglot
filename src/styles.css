@@ -800,3 +800,17 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .kanji-actions { justify-content: center; }
 .kanji-result { text-align: center; display: flex; flex-direction: column; gap: 6px; align-items: center; }
 .kanji-modes button { font-size: 0.8rem; padding: 9px 6px; white-space: normal; line-height: 1.15; }
+
+/* ——— Cartonașele pentru seria de zile ——— */
+.reward-preview { margin-bottom: 16px; }
+.reward-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.reward-card { position: relative; border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 8px 20px rgba(40, 20, 10, 0.18); border: 3px solid #fff; color: #2b2420; }
+.reward-card.gold { border-color: #e2b33c; box-shadow: 0 8px 24px rgba(210, 160, 40, 0.45); }
+.reward-pic { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
+.reward-art { width: 88%; height: 88%; }
+.reward-name { padding: 8px 10px 4px; display: flex; flex-direction: column; text-align: center; }
+.reward-name b { font-family: var(--display); font-size: 1.05rem; }
+.reward-name small { font-size: 0.72rem; color: #7a6a58; }
+.reward-label { text-align: center; font-size: 0.7rem; font-weight: 800; color: #b0452a; padding: 0 0 8px; letter-spacing: 0.04em; text-transform: uppercase; }
+.reward-card.gold .reward-label { color: #b8860b; }
+.reward-card.gold::after { content: '★'; position: absolute; top: 6px; right: 8px; color: #e2b33c; font-size: 1.1rem; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }

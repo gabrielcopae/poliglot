@@ -7,6 +7,7 @@ import type { LangCode, Lesson } from '../content/types'
 import { db } from '../db'
 import { KEEPSAKES, stamps } from '../journey'
 import { speak } from '../speech'
+import { RewardCard, SAMPLE_REWARDS } from '../components/RewardCard'
 
 /** Fraza de pe spatele cartonașului: obiectul special sau prima replică din dialogul capitolului. */
 function backOf(lesson: Lesson) {
@@ -30,6 +31,13 @@ export function AlbumScreen({ back }: { back: () => void }) {
   return (
     <div className="screen">
       <TopBar title="🃏 Albumul cu amintiri" onBack={back} />
+      <section className="reward-preview">
+        <h3>🐾 Cartonașe pentru seria de zile <span className="muted small">(previzualizare)</span></h3>
+        <p className="muted small">Exemple: în fiecare zi în care înveți vei primi un cartonaș nou, o pisică sau un oraș cu clădirea lui. Cele aurii sunt pentru zilele speciale ale seriei.</p>
+        <div className="reward-grid">
+          {SAMPLE_REWARDS.map((r, i) => <RewardCard key={i} spec={r.spec} label={r.label} gold={r.gold} />)}
+        </div>
+      </section>
       <div className="segmented">
         {COURSES.filter((c) => c.units.some((u) => u.lessons.some((l) => l.chapter))).map((c) => (
           <button key={c.lang} className={c.lang === lang ? 'on' : ''} onClick={() => { setLang(c.lang); setOpen(null) }}><Flag lang={c.lang} size={16} /> {c.name}</button>
