@@ -122,11 +122,19 @@ export function SettingsScreen({ user, signOut }: { user: string; signOut: () =>
         <details className="help">
           <summary>🔍 Diagnostic: toate vocile primite de la browser ({allVoices().length})</summary>
           <p className="muted small">Lista brută, fără niciun filtru. Dacă o voce descărcată nu apare aici, browserul nu o dă aplicației.</p>
-          <ul className="voice-diag">
-            {[...allVoices()].sort((a, b) => a.lang.localeCompare(b.lang) || a.name.localeCompare(b.name)).map((v, i) => (
-              <li key={i}><b>{v.lang}</b> · {v.name}{v.localService ? '' : ' (online)'}{v.default ? ' · implicită' : ''}</li>
-            ))}
-          </ul>
+          {(['es', 'ja', 'it'] as const).map((code) => {
+            const vs = allVoices().filter((v) => v.lang.toLowerCase().startsWith(code))
+            return (
+              <div key={code} className="voice-diag-group">
+                <b>{code === 'es' ? 'Spaniolă' : code === 'ja' ? 'Japoneză' : 'Italiană'} ({vs.length})</b>
+                <ul className="voice-diag">
+                  {vs.map((v, i) => <li key={i}>{v.name} · {v.lang}{v.localService ? '' : ' (online)'}{v.default ? ' · implicită' : ''}</li>)}
+                  {!vs.length && <li>nicio voce</li>}
+                </ul>
+              </div>
+            )
+          })}
+          <p className="muted small">Alte limbi: {allVoices().filter((v) => !/^(es|ja|it)/i.test(v.lang)).length} voci.</p>
         </details>
         <p className="muted small">Versiunea aplicației: {__BUILD__}</p>
         <p className="muted small">Verificarea pronunției prin microfon: {canListen() ? 'disponibilă (are nevoie de internet).' : 'indisponibilă în acest browser. Folosește Chrome sau Edge.'}</p>
