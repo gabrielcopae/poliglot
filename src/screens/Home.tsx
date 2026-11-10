@@ -12,7 +12,7 @@ import { useState } from 'react'
 import { localGet, localSet } from '../settings'
 import { ALL_REWARDS, RewardCard, studyDays } from '../components/RewardCard'
 import { MILESTONES, StreakCard, longestStreak } from '../components/StreakCard'
-import { holidayToday } from './HolidaysScreen'
+import { dayInfo } from './HolidaysScreen'
 
 /** Limbile din planul zilnic. Italiana se adaugă după spaniola A2. */
 const PLAN_LANGS: LangCode[] = ['es', 'ja']
@@ -36,7 +36,7 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
   const totalDue = Object.values(dueByLang).reduce((a, b) => a + b, 0)
   const info = SEASONS[season]
   const stampCount = stamps(chapters, homework).length
-  const today = holidayToday()
+  const today = dayInfo(new Date())
   const earned = studyDays(days)
   const seenKey = `poliglot.rewardSeen.${user}`
   const [seen, setSeen] = useState(() => Number(localGet(seenKey) ?? 0))
@@ -89,12 +89,14 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
         {totalDue ? <span className="due-go">▶</span> : null}
       </button>
 
-      {today && (
-        <button className="card holiday-banner" onClick={() => go({ name: 'holidays' })}>
-          <span>{today.emoji}</span>
-          <span className="session-body"><b>Azi: {today.name}</b><small>{today.where} · atinge ca să afli obiceiurile</small></span>
-        </button>
-      )}
+      <button className="card holiday-banner" onClick={() => go({ name: 'holidays' })}>
+        <span>{today.holiday?.emoji ?? (today.born.length ? '🎂' : '📅')}</span>
+        <span className="session-body">
+          <small className="today-label">Azi în lumea limbilor tale</small>
+          <b>{today.holiday ? today.holiday.name : today.esRo}</b>
+          <small>{today.holiday ? today.esRo : `Japonia: ${today.jaRo}`}{today.born.length ? ` · 🎂 ${today.born[0].city}` : ''}</small>
+        </span>
+      </button>
 
       <h2 className="section-title">Explorează</h2>
       <div className="journey-tiles">

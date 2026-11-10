@@ -1069,3 +1069,16 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .town-row small { color: var(--dim); font-size: 0.72rem; text-align: right; }
 .town-row.locked b { color: var(--dim); }
 @media (prefers-reduced-motion: reduce) { .town *, .town-wrap * { animation: none !important; } }
+
+/* ——— Calendarul zi de zi ——— */
+.day-card { display: flex; flex-direction: column; gap: 10px; }
+.day-nav { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.day-nav b { font-family: var(--display); font-size: 1.15rem; text-align: center; }
+.day-panel { display: flex; flex-direction: column; gap: 6px; }
+.day-line { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: center; text-align: left; border: none; background: var(--soft, rgba(0, 0, 0, 0.03)); border-radius: 12px; padding: 8px 10px; font: inherit; color: inherit; }
+.day-line > span:first-child { font-size: 1.3rem; text-align: center; }
+.day-line b { display: block; }
+.day-line small { display: block; color: var(--dim); line-height: 1.35; }
+.day-line.big { background: linear-gradient(135deg, #fff1d6, #ffe0e8); }
+.day-today { align-self: center; }
+.today-label { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.66rem; opacity: 0.8; }
