@@ -8,8 +8,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 async function wikitext(host, page) {
   for (let i = 0; i < 5; i++) {
     await sleep(1200)
-    const r = await fetch(`https://${host}/w/api.php?action=parse&format=json&prop=wikitext&redirects=1&page=${encodeURIComponent(page)}`, { headers: UA })
-    const t = await r.text()
+    // la o cădere de rețea așteptăm și reîncercăm
+    const t = await fetch(`https://${host}/w/api.php?action=parse&format=json&prop=wikitext&redirects=1&page=${encodeURIComponent(page)}`, { headers: UA })
+      .then((r) => r.text()).catch(() => '')
     if (t.startsWith('{')) return JSON.parse(t).parse?.wikitext?.['*'] ?? ''
     await sleep(15000)
   }

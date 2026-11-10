@@ -9,7 +9,8 @@
   "img": "p-miguel-de-cervantes.jpg",
   "author": "Attributed to Juan de Jáuregui",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Cervantes_J%C3%A1uregui.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Cervantes_J%C3%A1uregui.jpg",
+  "born": "1547-09-29"
  },
  {
   "city": "Antonio de Nebrija",
@@ -33,7 +34,8 @@
   "img": "p-isabel-i-a-castiliei.jpg",
   "author": "anonymous",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:IsabellaofCastile03.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:IsabellaofCastile03.jpg",
+  "born": "1451-04-22"
  },
  {
   "city": "Alfonso X cel Înțelept",
@@ -45,7 +47,8 @@
   "img": "p-alfonso-x-cel-intelept.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Alfonso_X_el_Sabio_en_El_libro_de_los_juegos.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Alfonso_X_el_Sabio_en_El_libro_de_los_juegos.jpg",
+  "born": "1221-11-23"
  },
  {
   "city": "Lope de Vega",
@@ -57,7 +60,8 @@
   "img": "p-lope-de-vega.jpg",
   "author": "Attributed to Eugenio Caxés",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:LopedeVega.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:LopedeVega.jpg",
+  "born": "1562-11-25"
  },
  {
   "city": "Santa Teresa de Ávila",
@@ -69,7 +73,8 @@
   "img": "p-santa-teresa-de-avila.jpg",
   "author": "Eduardo Balaca",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Santa_Teresa_de_Jes%C3%BAs_(Museo_del_Prado).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Santa_Teresa_de_Jes%C3%BAs_(Museo_del_Prado).jpg",
+  "born": "1515-03-28"
  },
  {
   "city": "San Juan de la Cruz",
@@ -81,7 +86,8 @@
   "img": "p-san-juan-de-la-cruz.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Zurbar%C3%A1n_(atribuido)-John_of_the_Cross-1656.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Zurbar%C3%A1n_(atribuido)-John_of_the_Cross-1656.jpg",
+  "born": "1542-06-24"
  },
  {
   "city": "Diego Velázquez",
@@ -105,7 +111,8 @@
   "img": "p-francisco-de-goya.jpg",
   "author": "Vicente López Portaña",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Vicente_L%C3%B3pez_Porta%C3%B1a_-_el_pintor_Francisco_de_Goya.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Vicente_L%C3%B3pez_Porta%C3%B1a_-_el_pintor_Francisco_de_Goya.jpg",
+  "born": "1746-03-30"
  },
  {
   "city": "Hernán Cortés",
@@ -129,7 +136,8 @@
   "img": "p-francisco-pizarro.jpg",
   "author": "Amable-Paul Coutan",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Francisco_Pizarro.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Francisco_Pizarro.jpg",
+  "born": "1478-03-16"
  },
  {
   "city": "Juan Sebastián Elcano",
@@ -141,7 +149,8 @@
   "img": "p-juan-sebastian-elcano.jpg",
   "author": "AnonymousUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Juan_Sebasti%C3%A1n_Elcano,_anonymous_19th_century_painting.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Juan_Sebasti%C3%A1n_Elcano,_anonymous_19th_century_painting.jpg",
+  "born": "1476-11-30"
  },
  {
   "city": "Ignacio de Loyola",
@@ -153,7 +162,8 @@
   "img": "p-ignacio-de-loyola.jpg",
   "author": "AnonymousUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Ignatius_Loyola.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Ignatius_Loyola.jpg",
+  "born": "1491-10-23"
  },
  {
   "city": "Felipe II",
@@ -165,7 +175,8 @@
   "img": "p-felipe-ii.jpg",
   "author": "Sofonisba Anguissola",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Philip_II_of_Spain_by_Sofonisba_Anguissola_-_002b.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Philip_II_of_Spain_by_Sofonisba_Anguissola_-_002b.jpg",
+  "born": "1527-05-21"
  },
  {
   "city": "Francisco de Quevedo",
@@ -177,7 +188,8 @@
   "img": "p-francisco-de-quevedo.jpg",
   "author": "Attributed to Juan van der Hamen",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Quevedo_(copia_de_Vel%C3%A1zquez).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Quevedo_(copia_de_Vel%C3%A1zquez).jpg",
+  "born": "1584-09-14"
  },
  {
   "city": "Luis de Góngora",
@@ -189,7 +201,8 @@
   "img": "p-luis-de-gongora.jpg",
   "author": "Diego Velázquez",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Diego_Rodr%C3%ADguez_de_Silva_y_Vel%C3%A1zquez_-_Luis_de_G%C3%B3ngora_y_Argote_-_Google_Art_Project.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Diego_Rodr%C3%ADguez_de_Silva_y_Vel%C3%A1zquez_-_Luis_de_G%C3%B3ngora_y_Argote_-_Google_Art_Project.jpg",
+  "born": "1561-07-11"
  },
  {
   "city": "Pedro Calderón de la Barca",
@@ -201,7 +214,8 @@
   "img": "p-pedro-calderon-de-la-barca.jpg",
   "author": "Fondo Antiguo de la Biblioteca de la Universidad de Sevilla from Sevilla, España",
   "license": "CC BY 2.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Las_Glorias_Nacionales,_1852_%22D._Pedro_Calder%C3%B3n_de_la_Barca%22_(4013195639).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Las_Glorias_Nacionales,_1852_%22D._Pedro_Calder%C3%B3n_de_la_Barca%22_(4013195639).jpg",
+  "born": "1600-01-17"
  },
  {
   "city": "Bartolomé Esteban Murillo",
@@ -225,7 +239,8 @@
   "img": "p-blas-de-lezo.jpg",
   "author": "Unidentified painter",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Don_Blas_de_Lezo_-Museo_Naval-.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Don_Blas_de_Lezo_-Museo_Naval-.jpg",
+  "born": "1689-02-03"
  },
  {
   "city": "Gustavo Adolfo Bécquer",
@@ -237,7 +252,8 @@
   "img": "p-gustavo-adolfo-becquer.jpg",
   "author": "Valeriano Bécquer",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Gustavo_Adolfo_B%C3%A9cquer,_by_his_brother_Valeriano_(1862).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Gustavo_Adolfo_B%C3%A9cquer,_by_his_brother_Valeriano_(1862).jpg",
+  "born": "1836-02-17"
  },
  {
   "city": "Rosalía de Castro",
@@ -249,7 +265,8 @@
   "img": "p-rosalia-de-castro.jpg",
   "author": "Luis Sellier",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Rosal%C3%ADa_Castro_de_Murgu%C3%ADa_por_Luis_Sellier.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Rosal%C3%ADa_Castro_de_Murgu%C3%ADa_por_Luis_Sellier.jpg",
+  "born": "1837-02-23"
  },
  {
   "city": "Benito Pérez Galdós",
@@ -261,7 +278,8 @@
   "img": "p-benito-perez-galdos.jpg",
   "author": "Pau Audouard Deglaire",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Photo_of_Benito_P%C3%A9rez_Gald%C3%B3s.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Photo_of_Benito_P%C3%A9rez_Gald%C3%B3s.jpg",
+  "born": "1843-05-10"
  },
  {
   "city": "Emilia Pardo Bazán",
@@ -273,7 +291,8 @@
   "img": "p-emilia-pardo-bazan.jpg",
   "author": "Joaquín Vaamonde Cornide",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Emilia_Pardo_Bazan_(1896).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Emilia_Pardo_Bazan_(1896).jpg",
+  "born": "1851-09-16"
  },
  {
   "city": "Concepción Arenal",
@@ -285,7 +304,8 @@
   "img": "p-concepcion-arenal.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Concepcion_Arenal_1.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Concepcion_Arenal_1.jpg",
+  "born": "1820-01-31"
  },
  {
   "city": "Agustina de Aragón",
@@ -297,7 +317,8 @@
   "img": "p-agustina-de-aragon.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Agustina_de_Arag%C3%B3n.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Agustina_de_Arag%C3%B3n.jpg",
+  "born": "1786-03-04"
  },
  {
   "city": "Santiago Ramón y Cajal",
@@ -309,7 +330,8 @@
   "img": "p-santiago-ramon-y-cajal.jpg",
   "author": "Original photo is anonymous although published by Clark University in 1899. Restoration by Garrondo",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Santiago_Ram%C3%B3n_y_Cajal_(1852-1934)_portrait_(restored).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Santiago_Ram%C3%B3n_y_Cajal_(1852-1934)_portrait_(restored).jpg",
+  "born": "1852-05-01"
  },
  {
   "city": "Antoni Gaudí",
@@ -321,7 +343,8 @@
   "img": "p-antoni-gaudi.jpg",
   "author": "Pau Audouard Deglaire",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Antoni_Gaudi_1878.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Antoni_Gaudi_1878.jpg",
+  "born": "1852-06-25"
  },
  {
   "city": "Isaac Albéniz",
@@ -333,7 +356,8 @@
   "img": "p-isaac-albeniz.jpg",
   "author": "Napoleón",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Isaac_Alb%C3%A9niz,_de_Napoleon.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Isaac_Alb%C3%A9niz,_de_Napoleon.jpg",
+  "born": "1860-05-29"
  },
  {
   "city": "Manuel de Falla",
@@ -345,7 +369,8 @@
   "img": "p-manuel-de-falla.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:ManuelDeFalla.JPG"
+  "source": "https://commons.wikimedia.org/wiki/File:ManuelDeFalla.JPG",
+  "born": "1876-11-23"
  },
  {
   "city": "Joaquín Sorolla",
@@ -357,7 +382,8 @@
   "img": "p-joaquin-sorolla.jpg",
   "author": "Gertrude Käsebier",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Joaquin_Sorolla_by_Gertrude_K%C3%A4sebier,_1908.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Joaquin_Sorolla_by_Gertrude_K%C3%A4sebier,_1908.jpg",
+  "born": "1863-02-27"
  },
  {
   "city": "Miguel de Unamuno",
@@ -369,7 +395,8 @@
   "img": "p-miguel-de-unamuno.jpg",
   "author": "Agence de presse Meurisse",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Miguel_de_Unamuno_Meurisse_c_1925.JPG"
+  "source": "https://commons.wikimedia.org/wiki/File:Miguel_de_Unamuno_Meurisse_c_1925.JPG",
+  "born": "1864-09-29"
  },
  {
   "city": "Antonio Machado",
@@ -381,7 +408,8 @@
   "img": "p-antonio-machado.jpg",
   "author": "Unknow. El material gráfico André mas nah MACHADO del libro Historia de la Literatura Argentina proviene del Archivo Gráfico de la Nación, de la Biblioteca Nacional, del Instituto de Literatura Argentina de la Facultad de Filosofía y Letras de Buenos Aires, del Museo Histórico Nacional, del Diario \"El Día\" de la Plata, de la Sociedad Argentina de Escritores, del Museo de Arte Español Enrique Larreta, del Museo Gauchesco Ricardo Güiraldes. Y de las colecciones particulares de Alejandro A. Storni, Enrique Banchs, María Elena Gaviola de Gálvez, Horacio Jorge Becco, Juan Carlos Griffin, Carlos Mastronardi, Sergio Provenzano, Norah Lange, Antonio Zamora, Julio F. Payró, María Elena Bravo de Quiroga, Luis Ordaz y Adolfo de Obleta. Uploader: Claudio Elias. No obstante la foto es muy similar, si no igual que una de las que el fotógrafo Alfonso Sánchez García hizo de Antonio Machado.",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:AntonioMachado.JPG"
+  "source": "https://commons.wikimedia.org/wiki/File:AntonioMachado.JPG",
+  "born": "1875-07-26"
  },
  {
   "city": "Juan Ramón Jiménez",
@@ -393,7 +421,8 @@
   "img": "p-juan-ramon-jimenez.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:JRJimenez.JPG"
+  "source": "https://commons.wikimedia.org/wiki/File:JRJimenez.JPG",
+  "born": "1881-12-23"
  },
  {
   "city": "Federico García Lorca",
@@ -405,7 +434,8 @@
   "img": "p-federico-garcia-lorca.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Lorca_(1914).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Lorca_(1914).jpg",
+  "born": "1898-06-05"
  },
  {
   "city": "Mariano José de Larra",
@@ -417,7 +447,8 @@
   "img": "p-mariano-jose-de-larra.jpg",
   "author": "José Gutiérrez de la Vega",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Mariano_Jos%C3%A9_de_Larra,_por_Jos%C3%A9_Gutierrez_de_la_Vega.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Mariano_Jos%C3%A9_de_Larra,_por_Jos%C3%A9_Gutierrez_de_la_Vega.jpg",
+  "born": "1809-03-24"
  },
  {
   "city": "Inca Garcilaso de la Vega",
@@ -429,7 +460,8 @@
   "img": "p-inca-garcilaso-de-la-vega.jpg",
   "author": "Carlos Penoso Sc.[1]",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Inca_Garcilaso_1879.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Inca_Garcilaso_1879.jpg",
+  "born": "1539-04-12"
  },
  {
   "city": "Sor Juana Inés de la Cruz",
@@ -441,7 +473,8 @@
   "img": "p-sor-juana-ines-de-la-cruz.jpg",
   "author": "Miguel Cabrera",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Sor_Juana_by_Miguel_Cabrera_(cropped).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Sor_Juana_by_Miguel_Cabrera_(cropped).jpg",
+  "born": "1651-11-12"
  },
  {
   "city": "Miguel Hidalgo",
@@ -453,7 +486,8 @@
   "img": "p-miguel-hidalgo.png",
   "author": "Joaquín Ramírez",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:General%C3%ADsimo_Miguel_Hidalgo_y_Costilla.png"
+  "source": "https://commons.wikimedia.org/wiki/File:General%C3%ADsimo_Miguel_Hidalgo_y_Costilla.png",
+  "born": "1753-05-08"
  },
  {
   "city": "Benito Juárez",
@@ -465,7 +499,8 @@
   "img": "p-benito-juarez.jpg",
   "author": "Unknown photographer",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Photograph_of_Benito_Juarez.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Photograph_of_Benito_Juarez.jpg",
+  "born": "1806-03-21"
  },
  {
   "city": "Emiliano Zapata",
@@ -477,7 +512,8 @@
   "img": "p-emiliano-zapata.jpg",
   "author": "Agustín Casasola",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Emiliano_Zapata4.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Emiliano_Zapata4.jpg",
+  "born": "1879-08-08"
  },
  {
   "city": "Pancho Villa",
@@ -489,7 +525,8 @@
   "img": "p-pancho-villa.jpg",
   "author": "D.W. Hoffman, an El Paso photographer",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:General_Francisco_Villa_(cropped).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:General_Francisco_Villa_(cropped).jpg",
+  "born": "1878-06-05"
  },
  {
   "city": "Diego Rivera",
@@ -501,7 +538,8 @@
   "img": "p-diego-rivera.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Diego_Rivera_-_Google_Art_Project_(cropped).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Diego_Rivera_-_Google_Art_Project_(cropped).jpg",
+  "born": "1886-12-08"
  },
  {
   "city": "Frida Kahlo",
@@ -513,7 +551,8 @@
   "img": "p-frida-kahlo.jpg",
   "author": "Guillermo Kahlo",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Frida_Kahlo,_by_Guillermo_Kahlo.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Frida_Kahlo,_by_Guillermo_Kahlo.jpg",
+  "born": "1907-07-06"
  },
  {
   "city": "Simón Bolívar",
@@ -525,7 +564,8 @@
   "img": "p-simon-bolivar.png",
   "author": "Luis Enrique Toro Moreno (1897-1933)",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Sim%C3%B3n_Bol%C3%ADvar._Toro_Moreno,_Luis._1922,_Legislative_Palace,_La_Paz.png"
+  "source": "https://commons.wikimedia.org/wiki/File:Sim%C3%B3n_Bol%C3%ADvar._Toro_Moreno,_Luis._1922,_Legislative_Palace,_La_Paz.png",
+  "born": "1783-07-24"
  },
  {
   "city": "Andrés Bello",
@@ -537,7 +577,8 @@
   "img": "p-andres-bello.jpg",
   "author": "Raymond Monvoisin",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:AndresBello.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:AndresBello.jpg",
+  "born": "1781-11-29"
  },
  {
   "city": "José de San Martín",
@@ -549,7 +590,8 @@
   "img": "p-jose-de-san-martin.jpg",
   "author": "The exact author is disputed. Some sources attribute it to Jean Baptiste Madou, others to the art teacher of San Martin's daughter, and others suspect it to be the work of many different people.",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_de_San_Mart%C3%ADn_(retrato,_c.1828).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_de_San_Mart%C3%ADn_(retrato,_c.1828).jpg",
+  "born": "1778-02-25"
  },
  {
   "city": "Domingo Faustino Sarmiento",
@@ -561,7 +603,8 @@
   "img": "p-domingo-faustino-sarmiento.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Sarmiento.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Sarmiento.jpg",
+  "born": "1811-02-15"
  },
  {
   "city": "José Hernández",
@@ -573,7 +616,8 @@
   "img": "p-jose-hernandez.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Hern%C3%A1ndez.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Hern%C3%A1ndez.jpg",
+  "born": "1834-11-10"
  },
  {
   "city": "Eva Perón",
@@ -585,7 +629,8 @@
   "img": "p-eva-peron.jpg",
   "author": "Pinélides Fusco",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Evita_(cropped).JPG"
+  "source": "https://commons.wikimedia.org/wiki/File:Evita_(cropped).JPG",
+  "born": "1919-05-07"
  },
  {
   "city": "Ernesto „Che” Guevara",
@@ -597,7 +642,8 @@
   "img": "p-ernesto-che-guevara.jpg",
   "author": "Alberto Korda, restored by Adam Cuerden",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Che_Guevara_-_Guerrillero_Heroico_by_Alberto_Korda.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Che_Guevara_-_Guerrillero_Heroico_by_Alberto_Korda.jpg",
+  "born": "1928-06-14"
  },
  {
   "city": "Horacio Quiroga",
@@ -609,7 +655,8 @@
   "img": "p-horacio-quiroga.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Horacio_Quiroga.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Horacio_Quiroga.jpg",
+  "born": "1878-12-31"
  },
  {
   "city": "José Gervasio Artigas",
@@ -621,7 +668,8 @@
   "img": "p-jose-gervasio-artigas.jpg",
   "author": "Juan Manuel Blanes",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Juan_Manuel_Blanes_-_Artigas_en_la_Ciudadela.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Juan_Manuel_Blanes_-_Artigas_en_la_Ciudadela.jpg",
+  "born": "1764-06-19"
  },
  {
   "city": "Gabriela Mistral",
@@ -633,7 +681,8 @@
   "img": "p-gabriela-mistral.jpg",
   "author": "Anna Riwkin-Brick",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Gabriela_Mistral_1945.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Gabriela_Mistral_1945.jpg",
+  "born": "1889-04-07"
  },
  {
   "city": "Bernardo O'Higgins",
@@ -645,7 +694,8 @@
   "img": "p-bernardo-o-higgins.jpg",
   "author": "José Gil de Castro",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Ohiggins.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Ohiggins.jpg",
+  "born": "1778-08-20"
  },
  {
   "city": "César Vallejo",
@@ -657,7 +707,8 @@
   "img": "p-cesar-vallejo.jpg",
   "author": "Juan Domingo Córdoba",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Cesar_vallejo_1929.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Cesar_vallejo_1929.jpg",
+  "born": "1892-03-16"
  },
  {
   "city": "Ricardo Palma",
@@ -669,7 +720,8 @@
   "img": "p-ricardo-palma.jpg",
   "author": "Manuel Moral y Vega",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Palma1.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Palma1.jpg",
+  "born": "1833-02-07"
  },
  {
   "city": "Túpac Amaru II",
@@ -681,7 +733,8 @@
   "img": "p-tupac-amaru-ii.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:TupacAmaruII.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:TupacAmaruII.jpg",
+  "born": "1738-03-10"
  },
  {
   "city": "José Martí",
@@ -693,7 +746,8 @@
   "img": "p-jose-marti.jpg",
   "author": "Cuba. Secretaría de Instrucción Pública y Bellas Artes.",
   "license": "CC0",
-  "source": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Mart%C3%AD_retrato_hecho_en_M%C3%A9xico_1875.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Mart%C3%AD_retrato_hecho_en_M%C3%A9xico_1875.jpg",
+  "born": "1853-01-28"
  },
  {
   "city": "Rubén Darío",
@@ -705,7 +759,8 @@
   "img": "p-ruben-dario.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Rub%C3%A9n_Dar%C3%ADo.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Rub%C3%A9n_Dar%C3%ADo.jpg",
+  "born": "1867-01-18"
  },
  {
   "city": "Juan Pablo Duarte",
@@ -717,7 +772,8 @@
   "img": "p-juan-pablo-duarte.jpg",
   "author": "Abelardo Rodríguez Urdaneta (1870-1933).",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Juan_pablo_duarte_diez.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Juan_pablo_duarte_diez.jpg",
+  "born": "1813-01-26"
  },
  {
   "city": "Ramón Emeterio Betances",
@@ -729,7 +785,8 @@
   "img": "p-ramon-emeterio-betances.jpg",
   "author": "Félix Ojeda",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Ram%C3%B3n_Betances,_c.1860s.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Ram%C3%B3n_Betances,_c.1860s.jpg",
+  "born": "1827-04-08"
  },
  {
   "city": "Pablo Sarasate",
@@ -741,7 +798,8 @@
   "img": "p-pablo-sarasate.jpg",
   "author": "Unknown photographerUnknown photographer",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Pablo_de_Sarasate_(Newberry_Library,_Milward_Adams_Coll)_crop2.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Pablo_de_Sarasate_(Newberry_Library,_Milward_Adams_Coll)_crop2.jpg",
+  "born": "1844-03-10"
  },
  {
   "city": "Mariana Pineda",
@@ -753,7 +811,8 @@
   "img": "p-mariana-pineda.jpg",
   "author": "Not stated. (Lit. Ml Sanchez. Huertas, 16 y 18)",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:1855,_Historia_de_la_milicia_nacional,_desde_su_creaci%C3%B3n_hasta_nuestros_d%C3%ADas,_Mariana_Pineda_(cropped).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:1855,_Historia_de_la_milicia_nacional,_desde_su_creaci%C3%B3n_hasta_nuestros_d%C3%ADas,_Mariana_Pineda_(cropped).jpg",
+  "born": "1804-09-01"
  },
  {
   "city": "Ramón del Valle-Inclán",
@@ -765,7 +824,8 @@
   "img": "p-ramon-del-valle-inclan.jpg",
   "author": "Pau Audouard Deglaire",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Ram%C3%B3n_Mar%C3%ADa_del_Valle_Incl%C3%A1n,_de_Audouard.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Ram%C3%B3n_Mar%C3%ADa_del_Valle_Incl%C3%A1n,_de_Audouard.jpg",
+  "born": "1866-10-28"
  },
  {
   "city": "Policarpa Salavarrieta",
@@ -777,7 +837,8 @@
   "img": "p-policarpa-salavarrieta.jpg",
   "author": "José María Espinosa Prieto",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Policarpa_Salabarrieta.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Policarpa_Salabarrieta.jpg",
+  "born": "1795-01-26"
  },
  {
   "city": "Juana Azurduy",
@@ -789,7 +850,8 @@
   "img": "p-juana-azurduy.jpg",
   "author": "AnonymousUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Juana_Azurduy.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Juana_Azurduy.jpg",
+  "born": "1780-07-12"
  },
  {
   "city": "Murasaki Shikibu",
@@ -813,7 +875,8 @@
   "img": "p-printul-shotoku.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Sh%C5%8Dtoku_Taishi_Sh%C5%8Dmanky%C5%8D_K%C5%8Dsan.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Sh%C5%8Dtoku_Taishi_Sh%C5%8Dmanky%C5%8D_K%C5%8Dsan.jpg",
+  "born": "0574-02-07"
  },
  {
   "city": "Kūkai",
@@ -873,7 +936,8 @@
   "img": "p-oda-nobunaga.jpg",
   "author": "狩野宗秀 (Kanō Sōshū, 1551 - 1601)",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Odanobunaga.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Odanobunaga.jpg",
+  "born": "1534-06-23"
  },
  {
   "city": "Toyotomi Hideyoshi",
@@ -885,7 +949,8 @@
   "img": "p-toyotomi-hideyoshi.png",
   "author": "Kanō Mitsunobu (狩野 光信, 1565–1608)",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Toyotomi_Hideyoshi_c1598_Kodai-ji_Temple.png"
+  "source": "https://commons.wikimedia.org/wiki/File:Toyotomi_Hideyoshi_c1598_Kodai-ji_Temple.png",
+  "born": "1536-02-02"
  },
  {
   "city": "Tokugawa Ieyasu",
@@ -897,7 +962,8 @@
   "img": "p-tokugawa-ieyasu.jpg",
   "author": "Kanō Tan'yū",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Tokugawa_Ieyasu2.JPG"
+  "source": "https://commons.wikimedia.org/wiki/File:Tokugawa_Ieyasu2.JPG",
+  "born": "1543-01-31"
  },
  {
   "city": "Miyamoto Musashi",
@@ -921,7 +987,8 @@
   "img": "p-date-masamune.jpg",
   "author": "Kanō Yasunobu",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_DATE_Masamune.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_DATE_Masamune.jpg",
+  "born": "1567-09-05"
  },
  {
   "city": "Katsushika Hokusai",
@@ -933,7 +1000,8 @@
   "img": "p-katsushika-hokusai.jpg",
   "author": "missing name",
   "license": "CC0",
-  "source": "https://commons.wikimedia.org/wiki/File:Hokusai_as_an_old_man.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Hokusai_as_an_old_man.jpg",
+  "born": "1760-10-31"
  },
  {
   "city": "Utagawa Hiroshige",
@@ -957,7 +1025,8 @@
   "img": "p-sakamoto-ryoma.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Sakamoto_Ryoma.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Sakamoto_Ryoma.jpg",
+  "born": "1836-01-03"
  },
  {
   "city": "Saigō Takamori",
@@ -969,7 +1038,8 @@
   "img": "p-saigo-takamori.jpg",
   "author": "C. Nakagawa (from signature)",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Saigo_Takamori_(b).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Saigo_Takamori_(b).jpg",
+  "born": "1828-01-23"
  },
  {
   "city": "Fukuzawa Yukichi",
@@ -981,7 +1051,8 @@
   "img": "p-fukuzawa-yukichi.jpg",
   "author": "Fukuzawa Research Center",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Fukuzawa_Yukichi_1891_(cropped).jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Fukuzawa_Yukichi_1891_(cropped).jpg",
+  "born": "1835-01-10"
  },
  {
   "city": "Itō Hirobumi",
@@ -993,7 +1064,8 @@
   "img": "p-ito-hirobumi.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:IT%C5%8C_Hirobumi.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:IT%C5%8C_Hirobumi.jpg",
+  "born": "1841-10-16"
  },
  {
   "city": "Natsume Sōseki",
@@ -1005,7 +1077,8 @@
   "img": "p-natsume-soseki.jpg",
   "author": "Ogawa Kazumasa",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Natsume_Soseki_photo.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Natsume_Soseki_photo.jpg",
+  "born": "1867-02-09"
  },
  {
   "city": "Higuchi Ichiyō",
@@ -1017,7 +1090,8 @@
   "img": "p-higuchi-ichiyo.png",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Higuchi_Ichiyou.png"
+  "source": "https://commons.wikimedia.org/wiki/File:Higuchi_Ichiyou.png",
+  "born": "1872-05-02"
  },
  {
   "city": "Noguchi Hideyo",
@@ -1029,7 +1103,8 @@
   "img": "p-noguchi-hideyo.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Noguchi_Hideyo.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Noguchi_Hideyo.jpg",
+  "born": "1876-11-09"
  },
  {
   "city": "Kanō Jigorō",
@@ -1041,7 +1116,8 @@
   "img": "p-kano-jigoro.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_late_Mr._Kano.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_late_Mr._Kano.jpg",
+  "born": "1860-12-10"
  },
  {
   "city": "Tsuda Umeko",
@@ -1053,7 +1129,8 @@
   "img": "p-tsuda-umeko.png",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Tsuda_Umeko_Portrait_c1900.png"
+  "source": "https://commons.wikimedia.org/wiki/File:Tsuda_Umeko_Portrait_c1900.png",
+  "born": "1864-12-31"
  },
  {
   "city": "Yosano Akiko",
@@ -1065,7 +1142,8 @@
   "img": "p-yosano-akiko.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Akiko_Yosano_posing_by_window.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Akiko_Yosano_posing_by_window.jpg",
+  "born": "1878-12-07"
  },
  {
   "city": "Miyazawa Kenji",
@@ -1077,7 +1155,8 @@
   "img": "p-miyazawa-kenji.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Miyazawa_Kenji.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Miyazawa_Kenji.jpg",
+  "born": "1896-08-27"
  },
  {
   "city": "Akutagawa Ryūnosuke",
@@ -1089,6 +1168,7 @@
   "img": "p-akutagawa-ryunosuke.jpg",
   "author": "Unknown authorUnknown author",
   "license": "Public domain",
-  "source": "https://commons.wikimedia.org/wiki/File:Akutagawa_portrait_Akutagawa_Sakuhinshu_6.jpg"
+  "source": "https://commons.wikimedia.org/wiki/File:Akutagawa_portrait_Akutagawa_Sakuhinshu_6.jpg",
+  "born": "1892-03-01"
  }
 ]
