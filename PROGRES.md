@@ -44,6 +44,7 @@ Dacă începi o conversație nouă cu Claude, spune-i:
 - **🧩 Perechi**, **📅 Calendarul** zilelor de învățat (fila Progres), **✨ cartonașe holografice** pentru serie, **🔍 prim-plan** cu ramă animată la atingerea oricărui cartonaș sau ștampile.
 - **🛂 Ștampilele** au acum personalități (66 la spaniolă, 25 la japoneză): portret, oraș natal, fun fact (tools/people-list.mjs; pozele cu node tools/fetch-rewards.mjs people).
 - **📝 Teste de nivel** (stil DELE / JLPT): 30 de întrebări din tot nivelul, 60% pentru trecere, viza apare în pașaport.
+- **🌐 Interfața în 7 limbi** (Setări → limba interfeței): română, engleză, spaniolă, italiană, franceză, germană, japoneză. Lecțiile, explicațiile și poveștile sunt adaptate pentru fiecare limbă, nu traduse cuvânt cu cuvânt. Complet pentru toate 7. Încă lipsesc capitolele cursului de spaniolă (es-cap) în spaniolă, italiană, franceză, germană și japoneză (acolo apar deocamdată în engleză), plus cursul de japoneză în interfața japoneză (nu e nevoie de el).
 
 ---
 
