@@ -1,3 +1,4 @@
+import { t, tc } from '../i18n'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Flag } from '../components/Flag'
@@ -35,32 +36,32 @@ export function TrainScreen({ back, user }: { back: () => void; user: string }) 
 
   return (
     <div className="screen">
-      <TopBar title="🚂 Trenul limbilor" onBack={back} />
+      <TopBar title={`🚂 ${t('Trenul limbilor')}`} onBack={back} />
       <div className="segmented">
         {COURSES.map((c) => (
-          <button key={c.lang} className={c.lang === lang ? 'on' : ''} onClick={() => setLang(c.lang)}><Flag lang={c.lang} size={16} /> {c.name}</button>
+          <button key={c.lang} className={c.lang === lang ? 'on' : ''} onClick={() => setLang(c.lang)}><Flag lang={c.lang} size={16} /> {t(c.name)}</button>
         ))}
       </div>
-      <p className="muted small">Ai trecut prin {done} din {stations.length} gări. Fiecare ședință terminată duce trenul mai departe; la fiecare gară descoperi un loc și o curiozitate despre {getCourse(lang).name.toLowerCase()}.</p>
+      <p className="muted small">{t('Ai trecut prin {n} din {all} gări. Fiecare ședință terminată duce trenul mai departe; la fiecare gară descoperi un loc și o curiozitate despre limba ei.', { n: done, all: stations.length })}</p>
       <div className="track">
         {visible.map((s, i) => {
           const passed = admin || s.it.status === 'done'
           const isHere = i === pos && (passed || i === 0)
-          const label = s.special ? `⭐ Cap. ${s.lesson.chapter!.number} terminat` : s.place?.city ?? 'Gară nouă, în curând'
+          const label = s.special ? `⭐ ${t('Cap. {n} terminat', { n: s.lesson.chapter!.number })}` : s.place ? tc(s.place.city) : t('Gară nouă, în curând')
           return (
             <div key={s.it.n} ref={isHere ? here : undefined} className={`station ${passed ? 'passed' : ''} ${s.special ? 'special' : ''} ${isHere ? 'here' : ''}`}>
               <div className="station-dot">{isHere ? '🚂' : passed ? (s.special ? '⭐' : '●') : '○'}</div>
-              <button className="station-body" disabled={!passed || !s.place} onClick={() => s.place && setSpot(<RewardCard reward={s.place} day={s.it.n} label={`Gara ${i + 1} · Ședința ${s.it.n}`} gold={false} />)}>
+              <button className="station-body" disabled={!passed || !s.place} onClick={() => s.place && setSpot(<RewardCard reward={s.place} day={s.it.n} label={`${t('Gara {n}', { n: i + 1 })} · ${t('Ședința {n}', { n: s.it.n })}`} gold={false} />)}>
                 {s.place && passed && <span className="station-thumb" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}rewards/${s.place.img})` }} />}
                 <span className="station-text">
                   <b>{passed || i <= pos + 1 ? label : '???'}</b>
-                  <small>{s.place ? `${s.place.landmark} · ${s.place.country}` : s.lesson.title} · Ședința {s.it.n}</small>
+                  <small>{s.place ? `${tc(s.place.landmark)} · ${tc(s.place.country)}` : tc(s.lesson.title)} · {t('Ședința {n}', { n: s.it.n })}</small>
                 </span>
               </button>
             </div>
           )
         })}
-        {visible.length < stations.length && <div className="station more">… încă {stations.length - visible.length} gări până la capătul liniei</div>}
+        {visible.length < stations.length && <div className="station more">… {t('încă {n} gări până la capătul liniei', { n: stations.length - visible.length })}</div>}
       </div>
       {spot && <Spotlight onClose={() => setSpot(null)}>{spot}</Spotlight>}
     </div>

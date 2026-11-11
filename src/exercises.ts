@@ -1,6 +1,7 @@
 import type { Course, Drill, Lesson, Word } from './content/types'
 import { allLessons } from './content'
 import { norm, sample, shuffle } from './util'
+import { t, tc, langWord } from './i18n'
 
 type Base = { label: string; explain?: string }
 
@@ -18,16 +19,16 @@ export type Exercise = Base & (
 export function drillToExercise(d: Drill, course: Course): Exercise {
   switch (d.kind) {
     case 'choice':
-      return { kind: 'choice', label: 'Alege răspunsul corect', prompt: d.q, speak: d.speak, options: shuffle(d.options), answer: d.answer, optionsTarget: false, explain: d.explain }
+      return { kind: 'choice', label: t('Alege răspunsul corect'), prompt: tc(d.q), speak: d.speak, options: shuffle(d.options.map(tc)), answer: tc(d.answer), optionsTarget: false, explain: d.explain && tc(d.explain) }
     case 'fill':
       return {
-        kind: 'fill', label: 'Completează', before: d.before, after: d.after, ro: d.ro, hint: d.hint,
-        accepted: d.answers, answer: d.answers[0], speak: `${d.before} ${d.answers[0]} ${d.after}`.replace(/\s+([?!.,])/g, '$1').replace('¿ ', '¿'), explain: d.explain,
+        kind: 'fill', label: t('Completează'), before: d.before, after: d.after, ro: d.ro && tc(d.ro), hint: d.hint && tc(d.hint),
+        accepted: d.answers, answer: d.answers[0], speak: `${d.before} ${d.answers[0]} ${d.after}`.replace(/\s+([?!.,])/g, '$1').replace('¿ ', '¿'), explain: d.explain && tc(d.explain),
       }
     case 'translate':
-      return { kind: 'type', label: `Tradu în ${course.name.toLowerCase()}`, prompt: d.ro, accepted: d.answers, answer: d.answers[0], speak: d.answers[0], explain: d.explain }
+      return { kind: 'type', label: t('Tradu în {lang}', { lang: langWord(course.name) }), prompt: tc(d.ro), accepted: d.answers, answer: d.answers[0], speak: d.answers[0], explain: d.explain && tc(d.explain) }
     case 'order':
-      return { kind: 'order', label: 'Formează propoziția', prompt: d.ro, tokens: shuffle(d.parts), answer: d.parts, joiner: course.lang === 'ja' ? '' : ' ', speak: d.parts.join(course.lang === 'ja' ? '' : ' '), explain: d.explain }
+      return { kind: 'order', label: t('Formează propoziția'), prompt: tc(d.ro), tokens: shuffle(d.parts), answer: d.parts, joiner: course.lang === 'ja' ? '' : ' ', speak: d.parts.join(course.lang === 'ja' ? '' : ' '), explain: d.explain && tc(d.explain) }
   }
 }
 
@@ -62,19 +63,19 @@ export function buildExercises(course: Course, lesson: Lesson, opts: { canListen
     if (pick === 'toRo') {
       wordEx.push({
         kind: 'choice',
-        label: kanaChar ? 'Cum se citește?' : 'Ce înseamnă?',
+        label: kanaChar ? t('Cum se citește?') : t('Ce înseamnă?'),
         prompt: word.t,
         sub,
         speak: word.t,
-        answer: word.ro,
-        options: shuffle([word.ro, ...distractors(pool, word, 'ro')]),
+        answer: tc(word.ro),
+        options: shuffle([word.ro, ...distractors(pool, word, 'ro')].map(tc)),
         optionsTarget: false,
       })
     } else if (pick === 'toTarget') {
       wordEx.push({
         kind: 'choice',
-        label: kanaChar ? 'Care semn se citește așa?' : `Cum se spune în ${course.name.toLowerCase()}?`,
-        prompt: word.ro,
+        label: kanaChar ? t('Care semn se citește așa?') : t('Cum se spune în {lang}?', { lang: langWord(course.name) }),
+        prompt: tc(word.ro),
         answer: word.t,
         options: shuffle([word.t, ...distractors(pool, word, 't')]),
         optionsTarget: true,
@@ -82,7 +83,7 @@ export function buildExercises(course: Course, lesson: Lesson, opts: { canListen
     } else {
       wordEx.push({
         kind: 'listen',
-        label: 'Ce ai auzit?',
+        label: t('Ce ai auzit?'),
         speak: word.t,
         answer: word.t,
         options: shuffle([word.t, ...distractors(pool, word, 't')]),
@@ -92,11 +93,11 @@ export function buildExercises(course: Course, lesson: Lesson, opts: { canListen
 
   const typeEx: Exercise[] = sample(lesson.words, 3).map((word) =>
     isKanaChar(lesson, word)
-      ? { kind: 'type', label: 'Scrie citirea în litere latine', prompt: word.t, accepted: [word.ro], answer: word.ro, speak: word.t }
+      ? { kind: 'type', label: t('Scrie citirea în litere latine'), prompt: word.t, accepted: [word.ro], answer: word.ro, speak: word.t }
       : {
           kind: 'type',
-          label: course.lang === 'ja' ? 'Scrie în japoneză (kana sau romaji)' : `Scrie în ${course.name.toLowerCase()}`,
-          prompt: word.ro,
+          label: course.lang === 'ja' ? t('Scrie în japoneză (kana sau romaji)') : t('Scrie în {lang}', { lang: langWord(course.name) }),
+          prompt: tc(word.ro),
           accepted: [word.t, ...(word.r ? [word.r] : []), ...(word.alt ?? [])],
           answer: word.r ? `${word.t} (${word.r})` : word.t,
           speak: word.t,
@@ -107,8 +108,8 @@ export function buildExercises(course: Course, lesson: Lesson, opts: { canListen
     const parts = sn.parts ?? sn.t.split(' ')
     return {
       kind: 'order',
-      label: 'Formează propoziția',
-      prompt: sn.ro,
+      label: t('Formează propoziția'),
+      prompt: tc(sn.ro),
       tokens: shuffle(parts),
       answer: parts,
       joiner: sn.parts ? '' : ' ',
@@ -120,7 +121,7 @@ export function buildExercises(course: Course, lesson: Lesson, opts: { canListen
   if (opts.canListen) {
     const src = lesson.sentences.length ? lesson.sentences : lesson.words.filter((w) => !isKanaChar(lesson, w))
     const item = sample(src, 1)[0]
-    if (item) speakEx.push({ kind: 'speak', label: 'Spune cu voce tare', text: item.t, sub: opts.romaji ? item.r : undefined, ro: item.ro })
+    if (item) speakEx.push({ kind: 'speak', label: t('Spune cu voce tare'), text: item.t, sub: opts.romaji ? item.r : undefined, ro: tc(item.ro) })
   }
 
   return [...shuffle(wordEx), ...typeEx, ...orderEx, ...speakEx]

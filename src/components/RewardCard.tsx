@@ -1,3 +1,4 @@
+import { t, tc, tk, uiLocale } from '../i18n'
 import { useState } from 'react'
 import REWARDS from '../content/rewards-data.json'
 import type { DayRow } from '../db'
@@ -18,7 +19,7 @@ export function studyDays(days: DayRow[]) {
 /** La fiecare a 7-a zi, cartonașul are ramă aurie. */
 export const isGold = (n: number) => n % 7 === 0
 
-const LANG_NAME: Record<string, string> = { es: 'spaniolă', ja: 'japoneză', it: 'italiană', ro: 'română' }
+const LANG_NAME: Record<string, string> = { es: tk('despre limba spaniolă'), ja: tk('despre limba japoneză'), it: tk('despre limba italiană'), fr: tk('despre limba franceză'), de: tk('despre limba germană'), ro: tk('despre limba română') }
 const shortAuthor = (a: string) => (a.length > 34 ? a.slice(0, 32) + '…' : a)
 
 export function RewardCard({ reward, day, date, preview, label, gold: goldProp, onOpen }: { reward: Reward; day: number; date?: string; preview?: boolean; label?: string; gold?: boolean; onOpen?: () => void }) {
@@ -31,17 +32,17 @@ export function RewardCard({ reward, day, date, preview, label, gold: goldProp, 
         <div className="city-frame city-front">
           <div className="city-photo" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}rewards/${reward.img})` }} />
           <div className="city-text">
-            <b>{reward.city}</b>
-            <small>{reward.landmark} · {reward.country}</small>
+            <b>{tc(reward.city)}</b>
+            <small>{tc(reward.landmark)} · {tc(reward.country)}</small>
           </div>
-          <div className="city-label">{label ?? (preview ? 'Previzualizare' : `Ziua ${day}${date ? ' · ' + new Date(date).toLocaleDateString('ro-RO', { day: 'numeric', month: 'short' }) : ''}`)}</div>
-          <div className="city-credit">atinge pentru fun fact ↻</div>
+          <div className="city-label">{label ?? (preview ? t('Previzualizare') : `${t('Ziua {n}', { n: day })}${date ? ' · ' + new Date(date).toLocaleDateString(uiLocale(), { day: 'numeric', month: 'short' }) : ''}`)}</div>
+          <div className="city-credit">{t('atinge pentru fun fact ↻')}</div>
         </div>
         <div className="city-frame city-back">
-          <div className="city-fact-head">{reward.lang !== 'ro' ? <Flag lang={reward.lang} size={18} /> : '🇷🇴'} <b>Știai că…?</b></div>
-          <p className="city-fact">{reward.fact}</p>
-          <div className="city-fact-lang">despre limba {LANG_NAME[reward.lang] ?? reward.lang}</div>
-          <div className="city-credit">Foto: {shortAuthor(reward.author)} · {reward.license} · Wikimedia Commons</div>
+          <div className="city-fact-head">{reward.lang !== 'ro' ? <Flag lang={reward.lang} size={18} /> : '🇷🇴'} <b>{t('Știai că…?')}</b></div>
+          <p className="city-fact">{tc(reward.fact)}</p>
+          <div className="city-fact-lang">{LANG_NAME[reward.lang] ? t(LANG_NAME[reward.lang]) : reward.lang}</div>
+          <div className="city-credit">{t('Foto')}: {shortAuthor(reward.author)} · {reward.license} · Wikimedia Commons</div>
         </div>
       </div>
     </button>
@@ -54,8 +55,8 @@ export function RewardLocked({ day, label, title }: { day: number; label?: strin
     <div className={`city-card locked ${!label && isGold(day) ? 'gold' : ''}`}>
       <div className="city-frame">
         <div className="city-photo city-q">?</div>
-        <div className="city-text"><b>{title ?? 'Următorul loc'}</b><small>se câștigă învățând</small></div>
-        <div className="city-label">{label ?? `Ziua ${day}`}</div>
+        <div className="city-text"><b>{title ?? t('Următorul loc')}</b><small>{t('se câștigă învățând')}</small></div>
+        <div className="city-label">{label ?? t('Ziua {n}', { n: day })}</div>
       </div>
     </div>
   )

@@ -1,3 +1,4 @@
+import { t, tc } from '../i18n'
 import { Flag } from '../components/Flag'
 import { useEffect, useState } from 'react'
 import { getCourse, lookupWord } from '../content'
@@ -37,7 +38,7 @@ export function ReviewScreen({ lang, back }: { lang?: LangCode; back?: () => voi
     if (card && entry && settings.autoplay) speak(entry.word.t, card.lang, entry.course.locale)
   }, [card?.id]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const title = lang ? <><Flag lang={lang} size={26} /> Repetiție {getCourse(lang).name.toLowerCase()}</> : 'Repetiție'
+  const title = lang ? <><Flag lang={lang} size={26} /> {t('Repetiție')} · {t(getCourse(lang).name)}</> : t('Repetiție')
 
   if (!queue) return <div className="screen"><TopBar title={title} onBack={back} /></div>
 
@@ -47,8 +48,8 @@ export function ReviewScreen({ lang, back }: { lang?: LangCode; back?: () => voi
         <TopBar title={title} onBack={back} />
         <div className="card empty">
           <div className="done-emoji">{doneCount ? '✨' : '🌿'}</div>
-          <h2>{doneCount ? `Gata! Ai repetat ${doneCount} cuvinte.` : 'Nimic de repetat acum'}</h2>
-          <p className="muted">Fă o lecție nouă sau revino mai târziu. Aplicația îți arată fiecare cuvânt chiar înainte să-l uiți.</p>
+          <h2>{doneCount ? t('Gata! Ai repetat {n} cuvinte.', { n: doneCount }) : t('Nimic de repetat acum')}</h2>
+          <p className="muted">{t('Fă o lecție nouă sau revino mai târziu. Aplicația îți arată fiecare cuvânt chiar înainte să-l uiți.')}</p>
         </div>
       </div>
     )
@@ -70,29 +71,29 @@ export function ReviewScreen({ lang, back }: { lang?: LangCode; back?: () => voi
 
   return (
     <div className="screen review">
-      <TopBar title={title} onBack={back} right={<span className="muted small">{queue.length - pos} rămase</span>} />
+      <TopBar title={title} onBack={back} right={<span className="muted small">{t('{n} rămase', { n: queue.length - pos })}</span>} />
       <Progress value={pos / queue.length} />
       <div className="card flash review-card" onClick={() => !shown && setShown(true)}>
-        <div className="muted small"><Flag lang={course.lang} size={18} /> {course.name}</div>
+        <div className="muted small"><Flag lang={course.lang} size={18} /> {t(course.name)}</div>
         <div className={`flash-word ${course.lang === 'ja' ? 'jp' : ''}`}>{word.t}</div>
         <SpeakButton text={word.t} lang={course.lang} />
         {shown ? (
           <div className="reveal">
             {word.r && settings.romaji && <div className="romaji">{word.r}</div>}
-            <div className="flash-ro">{word.ro}</div>
+            <div className="flash-ro">{tc(word.ro)}</div>
           </div>
         ) : (
-          <div className="muted">Îți amintești ce înseamnă? Atinge ca să vezi.</div>
+          <div className="muted">{t('Îți amintești ce înseamnă? Atinge ca să vezi.')}</div>
         )}
       </div>
       <div className="sticky-actions">
         {!shown ? (
-          <button className="btn primary big" onClick={() => setShown(true)}>Arată răspunsul</button>
+          <button className="btn primary big" onClick={() => setShown(true)}>{t('Arată răspunsul')}</button>
         ) : (
           <div className="grades">
             {GRADES.map((g) => (
               <button key={g.label} className={`grade ${g.cls}`} onClick={() => rate(g.rating)}>
-                <b>{g.label}</b>
+                <b>{t(g.label)}</b>
                 <small>{formatInterval(preview(card, g.rating))}</small>
               </button>
             ))}

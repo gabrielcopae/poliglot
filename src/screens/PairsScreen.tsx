@@ -1,3 +1,4 @@
+import { t, tc } from '../i18n'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { useEffect, useMemo, useState } from 'react'
 import { Flag } from '../components/Flag'
@@ -16,11 +17,11 @@ interface Tile { id: number; pair: number; text: string; side: 'word' | 'ro'; sa
 
 /** Perechile: cuvintele din capitolele începute (sau primele lecții), ori kanji ↔ sens la japoneză. */
 function pool(lang: LangCode, mode: 'words' | 'kanji', started: Set<string>) {
-  if (mode === 'kanji') return (KANJI as { char: string; meaning: string; ex: string }[]).map((k) => ({ t: k.char, ro: k.meaning.split(';')[0], say: k.ex }))
+  if (mode === 'kanji') return (KANJI as { char: string; meaning: string; ex: string }[]).map((k) => ({ t: k.char, ro: tc(k.meaning.split(';')[0]), say: k.ex }))
   const lessons = getCourse(lang).units.flatMap((u) => u.lessons)
   const seen = lessons.filter((l) => started.has(l.id))
   const use = seen.length ? seen : lessons.slice(0, 2)
-  return use.flatMap((l) => l.words).filter((w) => w.t.length <= 22 && w.ro.length <= 26).map((w) => ({ t: w.t, ro: w.ro, say: w.t }))
+  return use.flatMap((l) => l.words).filter((w) => w.t.length <= 22 && w.ro.length <= 26).map((w) => ({ t: w.t, ro: tc(w.ro), say: w.t }))
 }
 
 function deal(lang: LangCode, mode: 'words' | 'kanji', started: Set<string>): Tile[] {
@@ -51,8 +52,8 @@ export function PairsScreen({ back }: { back: () => void }) {
   useEffect(() => { setOpen([]); setDone(new Set()); setMoves(0); setT0(Date.now()); setSecs(0) }, [lang, mode, round])
   useEffect(() => {
     if (won) return
-    const t = setInterval(() => setSecs(Math.round((Date.now() - t0) / 1000)), 500)
-    return () => clearInterval(t)
+    const timer = setInterval(() => setSecs(Math.round((Date.now() - t0) / 1000)), 500)
+    return () => clearInterval(timer)
   }, [t0, won])
   useEffect(() => {
     if (won && (!best || moves < best)) localSet(key, String(moves))
@@ -77,20 +78,20 @@ export function PairsScreen({ back }: { back: () => void }) {
   const jp = lang === 'ja' || mode === 'kanji'
   return (
     <div className="screen">
-      <TopBar title="🧩 Perechi" onBack={back} />
+      <TopBar title={`🧩 ${t('Perechi')}`} onBack={back} />
       <div className="segmented">
         {COURSES.map((c) => (
-          <button key={c.lang} className={c.lang === lang ? 'on' : ''} onClick={() => { setLang(c.lang); if (c.lang !== 'ja') setMode('words') }}><Flag lang={c.lang} size={16} /> {c.name}</button>
+          <button key={c.lang} className={c.lang === lang ? 'on' : ''} onClick={() => { setLang(c.lang); if (c.lang !== 'ja') setMode('words') }}><Flag lang={c.lang} size={16} /> {t(c.name)}</button>
         ))}
       </div>
       {lang === 'ja' && (
         <div className="segmented">
-          <button className={mode === 'words' ? 'on' : ''} onClick={() => setMode('words')}>Cuvinte</button>
-          <button className={mode === 'kanji' ? 'on' : ''} onClick={() => setMode('kanji')}>Kanji ↔ sens</button>
+          <button className={mode === 'words' ? 'on' : ''} onClick={() => setMode('words')}>{t('Cuvinte')}</button>
+          <button className={mode === 'kanji' ? 'on' : ''} onClick={() => setMode('kanji')}>{t('Kanji ↔ sens')}</button>
         </div>
       )}
       <div className="pairs-stats">
-        <span>🔁 {moves} mutări</span><span>⏱️ {secs} s</span><span>🏆 record: {best || '—'}</span>
+        <span>🔁 {t('{n} mutări', { n: moves })}</span><span>⏱️ {secs} s</span><span>🏆 {t('record')}: {best || '—'}</span>
       </div>
       <div className="pairs-grid">
         {tiles.map((tile) => {
@@ -105,12 +106,12 @@ export function PairsScreen({ back }: { back: () => void }) {
       </div>
       {won && (
         <div className="card pairs-won">
-          <b>🎉 Bravo! Ai găsit toate perechile în {moves} mutări și {secs} secunde.</b>
-          {(!best || moves < best) && <small>Record nou!</small>}
-          <button className="btn primary" onClick={() => setRound((r) => r + 1)}>↻ Încă o rundă</button>
+          <b>🎉 {t('Bravo! Ai găsit toate perechile în {n} mutări și {s} secunde.', { n: moves, s: secs })}</b>
+          {(!best || moves < best) && <small>{t('Record nou!')}</small>}
+          <button className="btn primary" onClick={() => setRound((r) => r + 1)}>↻ {t('Încă o rundă')}</button>
         </div>
       )}
-      <p className="muted small center">Cuvintele vin din capitolele pe care le-ai început. Atinge două cartonașe: cuvântul și traducerea lui.</p>
+      <p className="muted small center">{t('Cuvintele vin din capitolele pe care le-ai început. Atinge două cartonașe: cuvântul și traducerea lui.')}</p>
     </div>
   )
 }

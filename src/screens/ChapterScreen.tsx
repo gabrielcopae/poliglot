@@ -1,3 +1,4 @@
+import { t, tc, langWord } from '../i18n'
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { allLessons, findLesson, getCourse } from '../content'
@@ -30,7 +31,7 @@ function makeSteps(
   if (earlier.length) {
     const review = session === 1 ? buildWordReview(course, earlier) : buildGrammarReview(course, earlier)
     warmup.push({
-      title: session === 1 ? 'Încălzire: cuvinte din capitolele trecute' : 'Încălzire: gramatica din capitolele trecute',
+      title: session === 1 ? t('Încălzire: cuvinte din capitolele trecute') : t('Încălzire: gramatica din capitolele trecute'),
       icon: '🔄', own: true,
       render: (next) => <Practice course={course} exercises={review} back={back} onDone={() => next()} />,
     })
@@ -39,15 +40,15 @@ function makeSteps(
     const wordEx = buildWordExercises(course, lesson)
     const dictation = buildDictation(ch)
     return [
-      { title: 'Ce vei învăța', icon: '🎯', render: (next) => <Goals ch={ch} session={1} next={next} /> },
+      { title: t('Ce vei învăța'), icon: '🎯', render: (next) => <Goals ch={ch} session={1} next={next} /> },
       ...warmup,
-      { title: 'Dialogul capitolului', icon: '💬', render: (next) => <DialogueStep ch={ch} course={course} next={next} /> },
-      { title: 'Cuvinte noi', icon: '📚', own: true, render: (next) => <Learn course={course} lesson={lesson} back={back} onDone={next} /> },
-      { title: 'Exerciții cu cuvintele', icon: '✏️', own: true, render: (next) => <Practice course={course} exercises={wordEx} back={back} onDone={() => next()} /> },
-      { title: 'Pronunție', icon: '👄', render: (next) => <PronStep ch={ch} course={course} next={next} /> },
-      { title: 'Dictare din dialog', icon: '🎧', own: true, render: (next) => <Practice course={course} exercises={dictation} back={back} onDone={() => next()} /> },
+      { title: t('Dialogul capitolului'), icon: '💬', render: (next) => <DialogueStep ch={ch} course={course} next={next} /> },
+      { title: t('Cuvinte noi'), icon: '📚', own: true, render: (next) => <Learn course={course} lesson={lesson} back={back} onDone={next} /> },
+      { title: t('Exerciții cu cuvintele'), icon: '✏️', own: true, render: (next) => <Practice course={course} exercises={wordEx} back={back} onDone={() => next()} /> },
+      { title: t('Pronunție'), icon: '👄', render: (next) => <PronStep ch={ch} course={course} next={next} /> },
+      { title: t('Dictare din dialog'), icon: '🎧', own: true, render: (next) => <Practice course={course} exercises={dictation} back={back} onDone={() => next()} /> },
       ...storySteps(course, ch, back),
-      { title: 'Dialogul, în rolul tău', icon: '🎭', render: (next) => <DialogueReplay ch={ch} course={course} next={next} /> },
+      { title: t('Dialogul, în rolul tău'), icon: '🎭', render: (next) => <DialogueReplay ch={ch} course={course} next={next} /> },
     ]
   }
   const drills = ch.drills.map((d) => drillToExercise(d, course))
@@ -55,22 +56,22 @@ function makeSteps(
   const quiz = ch.quiz.map((d) => drillToExercise(d, course))
   const reading: Step[] = ch.reading
     ? [
-        { title: `Lectură: ${ch.reading.reading.title}`, icon: '📰', render: (next) => <ReadingStep reading={ch.reading!.reading} course={course} next={next} /> },
+        { title: `${t('Lectură')}: ${tc(ch.reading.reading.title)}`, icon: '📰', render: (next) => <ReadingStep reading={ch.reading!.reading} course={course} next={next} /> },
         {
-          title: 'Întrebări la lectură', icon: '❓', own: true,
+          title: t('Întrebări la lectură'), icon: '❓', own: true,
           render: (next) => <Practice course={course} exercises={ch.reading!.questions.map((d) => drillToExercise(d, course))} back={back} onDone={() => next()} />,
         },
       ]
     : []
   return [
-    { title: 'Ce vei învăța', icon: '🎯', render: (next) => <Goals ch={ch} session={2} next={next} /> },
+    { title: t('Ce vei învăța'), icon: '🎯', render: (next) => <Goals ch={ch} session={2} next={next} /> },
     ...warmup,
-    ...ch.explain.map((ex): Step => ({ title: ex.title, icon: '📖', render: (next) => <ExplainStep ex={ex} course={course} next={next} /> })),
-    { title: 'Exerciții de gramatică', icon: '✏️', own: true, render: (next) => <Practice course={course} exercises={drills} back={back} onDone={() => next()} /> },
+    ...ch.explain.map((ex): Step => ({ title: tc(ex.title), icon: '📖', render: (next) => <ExplainStep ex={ex} course={course} next={next} /> })),
+    { title: t('Exerciții de gramatică'), icon: '✏️', own: true, render: (next) => <Practice course={course} exercises={drills} back={back} onDone={() => next()} /> },
     ...reading,
-    { title: 'Tradu replicile din dialog', icon: '💬', own: true, render: (next) => <Practice course={course} exercises={dialogueEx} back={back} onDone={() => next()} /> },
-    { title: 'Mini-test', icon: '📝', render: (next) => <QuizIntro next={next} /> },
-    { title: 'Mini-test: întrebările', icon: '📝', own: true, render: () => <Practice course={course} exercises={quiz} back={back} onDone={finishQuiz} /> },
+    { title: t('Tradu replicile din dialog'), icon: '💬', own: true, render: (next) => <Practice course={course} exercises={dialogueEx} back={back} onDone={() => next()} /> },
+    { title: t('Mini-test'), icon: '📝', render: (next) => <QuizIntro next={next} /> },
+    { title: t('Mini-test: întrebările'), icon: '📝', own: true, render: () => <Practice course={course} exercises={quiz} back={back} onDone={finishQuiz} /> },
   ]
 }
 
@@ -91,56 +92,56 @@ export function ChapterOverview({ lang, lessonId, go, back }: { lang: LangCode; 
 
   const reset = async () => {
     const ok = window.confirm(
-      `Sigur iei Capitolul ${ch.number} de la capăt?\n\nSe șterg: ședințele bifate, scorul mini-testului, temele (inclusiv compunerile) și cuvintele acestui capitol din repetiție.`,
+      t('Sigur iei Capitolul {n} de la capăt?\n\nSe șterg: ședințele bifate, scorul mini-testului, temele (inclusiv compunerile) și cuvintele acestui capitol din repetiție.', { n: ch.number }),
     )
     if (ok) await resetChapter(lang, lessonId)
   }
 
   return (
     <div className="screen">
-      <TopBar title={`Capitolul ${ch.number}`} onBack={back} />
+      <TopBar title={t('Capitolul {n}', { n: ch.number })} onBack={back} />
       <div className="card lesson-hero">
         <div className="lesson-emoji">{lesson.emoji}</div>
-        <h2>{lesson.title}</h2>
-        <p>{lesson.goal}</p>
-        <p className="muted small">≈ 1 oră și 20 de minute: două ședințe de câte ~40 de minute, plus teme (~30 min)</p>
+        <h2>{tc(lesson.title)}</h2>
+        <p>{tc(lesson.goal)}</p>
+        <p className="muted small">{t('≈ 1 oră și 20 de minute: două ședințe de câte ~40 de minute, plus teme (~30 min)')}</p>
       </div>
 
       <article className="card">
-        <h3>🎯 La finalul capitolului vei ști:</h3>
-        <ul className="goals">{ch.goals.map((g) => <li key={g}>{g}</li>)}</ul>
+        <h3>🎯 {t('La finalul capitolului vei ști:')}</h3>
+        <ul className="goals">{ch.goals.map((g) => <li key={g}>{tc(g)}</li>)}</ul>
       </article>
 
       <div className="session-list">
         <SessionCard
-          n="1" title="Ședința 1" detail="Dialog cu audio · cuvinte noi · exerciții · pronunție · dictare · joc de rol" minutes={40}
+          n="1" title={t('Ședința {n}', { n: 1 })} detail={t('Dialog cu audio · cuvinte noi · exerciții · pronunție · dictare · joc de rol')} minutes={40}
           done={!!state?.s1}
           onClick={() => go({ name: 'session', lang, lessonId, session: 1, fromChapter: true })}
         />
         <SessionCard
-          n="2" title="Ședința 2" detail="Gramatica pe înțelesul tuturor · exerciții · traduceri din dialog · mini-test" minutes={40}
+          n="2" title={t('Ședința {n}', { n: 2 })} detail={t('Gramatica pe înțelesul tuturor · exerciții · traduceri din dialog · mini-test')} minutes={40}
           done={!!state?.s2}
-          extra={lessonRow ? `Mini-test: ${Math.round(lessonRow.best * 100)}%` : undefined}
+          extra={lessonRow ? `${t('Mini-test')}: ${Math.round(lessonRow.best * 100)}%` : undefined}
           onClick={() => go({ name: 'session', lang, lessonId, session: 2, fromChapter: true })}
         />
         <SessionCard
-          n="✎" title="Teme pentru acasă" detail={`${ch.homework.length} teme · exerciții, traduceri, text de citit cu audio, compunere`} minutes={30}
+          n="✎" title={t('Teme pentru acasă')} detail={t('{n} teme · exerciții, traduceri, text de citit cu audio, compunere', { n: ch.homework.length })} minutes={30}
           done={hwDone === ch.homework.length}
-          extra={`${hwDone} / ${ch.homework.length} făcute`}
+          extra={t('{n} / {all} făcute', { n: hwDone, all: ch.homework.length })}
           onClick={() => go({ name: 'homework', lang, lessonId })}
         />
       </div>
 
       <article className="card toc">
-        <h3>📑 Cuprins</h3>
-        <p className="muted small">După ce termini o ședință, poți sări direct la orice parte a ei.</p>
+        <h3>📑 {t('Cuprins')}</h3>
+        <p className="muted small">{t('După ce termini o ședință, poți sări direct la orice parte a ei.')}</p>
         {([1, 2] as const).map((s) => {
           const done = s === 1 ? !!state?.s1 : !!state?.s2
           return (
             <div key={s} className="toc-group">
-              <div className="toc-head">Ședința {s} {done ? '✓' : '· se deblochează după ce o termini'}</div>
+              <div className="toc-head">{t('Ședința {n}', { n: s })} {done ? '✓' : `· ${t('se deblochează după ce o termini')}`}</div>
               {toc[s - 1].map((st, k) =>
-                k === 0 || st.title === 'Mini-test' ? null : (
+                k === 0 || st.title === t('Mini-test') ? null : (
                   <button key={k} className="toc-item" disabled={!done} onClick={() => go({ name: 'session', lang, lessonId, session: s, step: k, fromChapter: true })}>
                     <span>{done ? st.icon : '🔒'}</span>
                     <span className="toc-title">{st.title}</span>
@@ -154,9 +155,9 @@ export function ChapterOverview({ lang, lessonId, go, back }: { lang: LangCode; 
       </article>
 
       {started && (
-        <button className="btn danger" onClick={reset}>↺ Ia capitolul de la capăt (șterge progresul)</button>
+        <button className="btn danger" onClick={reset}>↺ {t('Ia capitolul de la capăt (șterge progresul)')}</button>
       )}
-      <p className="muted small center">Recomandat: Ședința 1 → Ședința 2 → Teme, în 2–3 zile.</p>
+      <p className="muted small center">{t('Recomandat: Ședința 1 → Ședința 2 → Teme, în 2–3 zile.')}</p>
     </div>
   )
 }
@@ -235,17 +236,17 @@ export function SessionScreen({ lang, lessonId, session, startStep, back, toChap
     return (
       <div className="screen done">
         <div className="done-emoji">{session === 1 ? '🎧' : (finished.score ?? 0) >= 0.75 ? '🏆' : '💪'}</div>
-        <h2>Ședința {session} terminată!</h2>
+        <h2>{t('Ședința {n} terminată!', { n: session })}</h2>
         {session === 1 ? (
-          <p>Cele {lesson.words.length} cuvinte noi sunt în repetiție. Mâine (sau după o pauză) continuă cu <b>Ședința 2</b>: gramatica.</p>
+          <p>{t('Cele {n} cuvinte noi sunt în repetiție. Mâine (sau după o pauză) continuă cu Ședința 2: gramatica.', { n: lesson.words.length })}</p>
         ) : finished.score !== undefined ? (
           <>
-            <p className="done-score">Mini-test: {Math.round(finished.score * 100)}%</p>
-            <p className="muted">{finished.score >= 0.75 ? 'Foarte bine! Acum fă temele, apoi treci la capitolul următor.' : 'E în regulă! Recitește gramatica și fă temele. Le poți relua oricând.'}</p>
+            <p className="done-score">{t('Mini-test')}: {Math.round(finished.score * 100)}%</p>
+            <p className="muted">{finished.score >= 0.75 ? t('Foarte bine! Acum fă temele, apoi treci la capitolul următor.') : t('E în regulă! Recitește gramatica și fă temele. Le poți relua oricând.')}</p>
           </>
         ) : null}
         <div className="sticky-actions">
-          <button className="btn primary big" onClick={toChapter}>Înapoi la capitol →</button>
+          <button className="btn primary big" onClick={toChapter}>{t('Înapoi la capitol →')}</button>
         </div>
       </div>
     )
@@ -255,7 +256,7 @@ export function SessionScreen({ lang, lessonId, session, startStep, back, toChap
   return (
     <div className="screen session" key={i}>
       {!step.own && <TopBar title={<Progress value={(i + 1) / steps.length} />} onBack={back} />}
-      {!step.own && <div className="learn-label">Ședința {session} · pasul {i + 1} din {steps.length} · {step.title}</div>}
+      {!step.own && <div className="learn-label">{t('Ședința {n}', { n: session })} · {t('pasul {n} din {all}', { n: i + 1, all: steps.length })} · {step.title}</div>}
       {step.render(next)}
     </div>
   )
@@ -266,8 +267,8 @@ function storySteps(course: Course, ch: ChapterData, back: () => void): Step[] {
   if (!ch.story) return []
   const story = ch.story
   return [
-    { title: `Povestea capitolului: ${story.reading.title}`, icon: '📖', render: (next) => <ReadingStep reading={story.reading} course={course} next={next} /> },
-    { title: 'Întrebări la poveste', icon: '❓', own: true, render: (next) => <Practice course={course} exercises={story.questions.map((d) => drillToExercise(d, course))} back={back} onDone={() => next()} /> },
+    { title: `${t('Povestea capitolului')}: ${tc(story.reading.title)}`, icon: '📖', render: (next) => <ReadingStep reading={story.reading} course={course} next={next} /> },
+    { title: t('Întrebări la poveste'), icon: '❓', own: true, render: (next) => <Practice course={course} exercises={story.questions.map((d) => drillToExercise(d, course))} back={back} onDone={() => next()} /> },
   ]
 }
 
@@ -285,8 +286,8 @@ function buildWordReview(course: Course, earlier: Lesson[]): Exercise[] {
   return shuffle(picked).map((w, k) => {
     const others = shuffle(pool.filter((x) => x.ro !== w.ro)).slice(0, 3)
     return k % 3 === 2
-      ? { kind: 'type', label: `Îți amintești? Scrie în ${course.name.toLowerCase()}`, prompt: w.ro, accepted: [w.t, ...(w.alt ?? [])], answer: w.t, speak: w.t }
-      : { kind: 'choice', label: 'Îți amintești? Ce înseamnă?', prompt: w.t, speak: w.t, options: shuffle([w.ro, ...others.map((o) => o.ro)]), answer: w.ro, optionsTarget: false }
+      ? { kind: 'type', label: t('Îți amintești? Scrie în {lang}', { lang: langWord(course.name) }), prompt: tc(w.ro), accepted: [w.t, ...(w.alt ?? [])], answer: w.t, speak: w.t }
+      : { kind: 'choice', label: t('Îți amintești? Ce înseamnă?'), prompt: w.t, speak: w.t, options: shuffle([w.ro, ...others.map((o) => o.ro)].map(tc)), answer: tc(w.ro), optionsTarget: false }
   })
 }
 
@@ -294,19 +295,19 @@ function buildWordReview(course: Course, earlier: Lesson[]): Exercise[] {
 function buildGrammarReview(course: Course, earlier: Lesson[]): Exercise[] {
   const recent = earlier[earlier.length - 1].chapter!
   const older = earlier.slice(0, -1).flatMap((l) => [...l.chapter!.drills, ...l.chapter!.quiz])
-  return [...shuffle(recent.drills).slice(0, 3), ...shuffle(older).slice(0, 4)].map((d) => ({ ...drillToExercise(d, course), label: `Recapitulare · ${drillToExercise(d, course).label}` }))
+  return [...shuffle(recent.drills).slice(0, 3), ...shuffle(older).slice(0, 4)].map((d) => ({ ...drillToExercise(d, course), label: `${t('Recapitulare')} · ${drillToExercise(d, course).label}` }))
 }
 
 function ReadingStep({ reading, course, next }: { reading: Reading; course: Course; next: () => void }) {
   return (
     <>
       <article className="card">
-        <h3>{reading.kind === 'story' ? '📖' : '📰'} {reading.title}</h3>
-        {reading.intro && <p className="muted">{reading.intro}</p>}
-        <p className="small"><b>Cum lucrezi:</b> 1) ascultă tot textul fără traducere; 2) citește-l cu voce tare; 3) atinge cuvintele necunoscute; 4) abia apoi verifică traducerea. Urmează întrebări despre text.</p>
+        <h3>{reading.kind === 'story' ? '📖' : '📰'} {tc(reading.title)}</h3>
+        {reading.intro && <p className="muted">{tc(reading.intro)}</p>}
+        <p className="small"><b>{t('Cum lucrezi:')}</b> {t('1) ascultă tot textul fără traducere; 2) citește-l cu voce tare; 3) atinge cuvintele necunoscute; 4) abia apoi verifică traducerea. Urmează întrebări despre text.')}</p>
       </article>
       <Reader reading={reading} course={course} />
-      <div className="sticky-actions"><button className="btn primary big" onClick={next}>Am citit → Întrebări</button></div>
+      <div className="sticky-actions"><button className="btn primary big" onClick={next}>{t('Am citit → Întrebări')}</button></div>
     </>
   )
 }
@@ -315,15 +316,15 @@ function ReadingStep({ reading, course, next }: { reading: Reading; course: Cour
 function buildWordExercises(course: Course, lesson: Lesson): Exercise[] {
   const ex: Exercise[] = shuffle(lesson.words).map((w, k) => {
     const others = shuffle(lesson.words.filter((x) => x.id !== w.id)).slice(0, 3)
-    if (k % 3 === 0) return { kind: 'listen', label: 'Ce ai auzit?', speak: w.t, options: shuffle([w.t, ...others.map((o) => o.t)]), answer: w.t }
-    if (k % 3 === 1) return { kind: 'choice', label: 'Ce înseamnă?', prompt: w.t, speak: w.t, options: shuffle([w.ro, ...others.map((o) => o.ro)]), answer: w.ro, optionsTarget: false }
-    return { kind: 'choice', label: `Cum se spune în ${course.name.toLowerCase()}?`, prompt: w.ro, options: shuffle([w.t, ...others.map((o) => o.t)]), answer: w.t, optionsTarget: true }
+    if (k % 3 === 0) return { kind: 'listen', label: t('Ce ai auzit?'), speak: w.t, options: shuffle([w.t, ...others.map((o) => o.t)]), answer: w.t }
+    if (k % 3 === 1) return { kind: 'choice', label: t('Ce înseamnă?'), prompt: w.t, speak: w.t, options: shuffle([w.ro, ...others.map((o) => o.ro)].map(tc)), answer: tc(w.ro), optionsTarget: false }
+    return { kind: 'choice', label: t('Cum se spune în {lang}?', { lang: langWord(course.name) }), prompt: tc(w.ro), options: shuffle([w.t, ...others.map((o) => o.t)]), answer: w.t, optionsTarget: true }
   })
   for (const w of shuffle(lesson.words).slice(0, 5)) {
-    ex.push({ kind: 'type', label: `Scrie în ${course.name.toLowerCase()}`, prompt: w.ro, accepted: [w.t, ...(w.r ? [w.r] : []), ...(w.alt ?? [])], answer: w.t, speak: w.t })
+    ex.push({ kind: 'type', label: t('Scrie în {lang}', { lang: langWord(course.name) }), prompt: tc(w.ro), accepted: [w.t, ...(w.r ? [w.r] : []), ...(w.alt ?? [])], answer: w.t, speak: w.t })
   }
   for (const sn of shuffle(lesson.sentences).slice(0, 3)) {
-    ex.push({ kind: 'order', label: 'Formează propoziția', prompt: sn.ro, tokens: shuffle(sn.t.split(' ')), answer: sn.t.split(' '), joiner: ' ', speak: sn.t })
+    ex.push({ kind: 'order', label: t('Formează propoziția'), prompt: tc(sn.ro), tokens: shuffle(sn.t.split(' ')), answer: sn.t.split(' '), joiner: ' ', speak: sn.t })
   }
   return ex
 }
@@ -339,8 +340,8 @@ const shortLines = (ch: ChapterData, max: number) => {
 /** Dictare: asculți o replică din dialog și o scrii. */
 function buildDictation(ch: ChapterData): Exercise[] {
   return shuffle(shortLines(ch, 7)).slice(0, 5).map((l) => ({
-    kind: 'dictation', label: 'Dictare: scrie ce auzi', speak: l.t, accepted: [l.t, ...(l.r ? [l.r] : [])], answer: l.r ? `${l.t} (${l.r})` : l.t, ro: l.ro,
-    explain: `Traducere: ${l.ro}`,
+    kind: 'dictation', label: t('Dictare: scrie ce auzi'), speak: l.t, accepted: [l.t, ...(l.r ? [l.r] : [])], answer: l.r ? `${l.t} (${l.r})` : l.t, ro: tc(l.ro),
+    explain: `${t('Traducere')}: ${tc(l.ro)}`,
   }))
 }
 
@@ -348,14 +349,14 @@ function buildDictation(ch: ChapterData): Exercise[] {
 function buildDialogueTranslation(course: Course, ch: ChapterData): Exercise[] {
   const lines = shuffle(shortLines(ch, 7))
   const ex: Exercise[] = lines.slice(0, 5).map((l) => ({
-    kind: 'type', label: 'Tradu replica din dialog', prompt: l.ro, accepted: [l.t, ...(l.r ? [l.r] : [])], answer: l.r ? `${l.t} (${l.r})` : l.t, speak: l.t,
+    kind: 'type', label: t('Tradu replica din dialog'), prompt: tc(l.ro), accepted: [l.t, ...(l.r ? [l.r] : [])], answer: l.r ? `${l.t} (${l.r})` : l.t, speak: l.t,
   }))
   for (const l of lines.slice(5, 8)) {
     const parts = l.t.split(' ')
-    if (parts.length > 2) ex.push({ kind: 'order', label: 'Refă replica din dialog', prompt: l.ro, tokens: shuffle(parts), answer: parts, joiner: ' ', speak: l.t })
+    if (parts.length > 2) ex.push({ kind: 'order', label: t('Refă replica din dialog'), prompt: tc(l.ro), tokens: shuffle(parts), answer: parts, joiner: ' ', speak: l.t })
   }
   const line = shuffle(shortLines(ch, 6))[0]
-  if (line && canListen()) ex.push({ kind: 'speak', label: 'Spune replica cu voce tare', text: line.t, ro: line.ro })
+  if (line && canListen()) ex.push({ kind: 'speak', label: t('Spune replica cu voce tare'), text: line.t, ro: tc(line.ro) })
   return course.lang === 'ja' ? ex.filter((e) => e.kind !== 'order') : ex
 }
 
@@ -364,12 +365,12 @@ function DialogueReplay({ ch, course, next }: { ch: ChapterData; course: Course;
   return (
     <>
       <article className="card">
-        <h3>🎭 Joc de rol</h3>
-        <p>Acum dialogul e al tău. Alege un personaj{roles.length ? ` (${roles.join(' sau ')})` : ''} și citește-i replicile cu voce tare, imitând intonația. Atinge replica celuilalt personaj ca s-o auzi și răspunde-i.</p>
-        <p className="muted small">Fă exercițiul de două ori, câte o dată cu fiecare rol. Încearcă să nu te mai uiți la traducere.</p>
+        <h3>🎭 {t('Joc de rol')}</h3>
+        <p>{t('Acum dialogul e al tău. Alege un personaj și citește-i replicile cu voce tare, imitând intonația. Atinge replica celuilalt personaj ca s-o auzi și răspunde-i.')}{roles.length ? ` (${roles.join(' / ')})` : ''}</p>
+        <p className="muted small">{t('Fă exercițiul de două ori, câte o dată cu fiecare rol. Încearcă să nu te mai uiți la traducere.')}</p>
       </article>
       <Reader reading={ch.dialogue} course={course} />
-      <div className="sticky-actions"><button className="btn primary big" onClick={next}>Am terminat ședința ✓</button></div>
+      <div className="sticky-actions"><button className="btn primary big" onClick={next}>{t('Am terminat ședința ✓')}</button></div>
     </>
   )
 }
@@ -378,28 +379,28 @@ function Goals({ ch, session, next }: { ch: ChapterData; session: 1 | 2; next: (
   return (
     <>
       <article className="card">
-        <h3>{session === 1 ? '🎧 Ședința 1 (~40 min)' : '📖 Ședința 2 (~40 min)'}</h3>
+        <h3>{session === 1 ? '🎧' : '📖'} {t('Ședința {n}', { n: session })} (~40 min)</h3>
         {session === 1 ? (
           <ol className="steps-list">
-            <li><b>Dialogul</b>: îl asculți și îl citești, ca pe un CD. Nu trebuie să înțelegi totul din prima.</li>
-            <li><b>Cuvintele noi</b> din dialog, fiecare cu sunet.</li>
-            <li><b>Exerciții</b> cu toate cuvintele: ascultare, traducere, scriere.</li>
-            <li><b>Pronunția</b>: sunetele noi, explicate pentru un vorbitor de română.</li>
-            <li><b>Dictare</b>: asculți replici din dialog și le scrii.</li>
-            {ch.story && <li><b>Povestea capitolului</b>: un text narativ mai lung, cu audio și întrebări.</li>}
-            <li><b>Joc de rol</b>: citești dialogul cu voce tare, în rolul personajelor.</li>
+            <li>{t('Dialogul: îl asculți și îl citești, ca pe un CD. Nu trebuie să înțelegi totul din prima.')}</li>
+            <li>{t('Cuvintele noi din dialog, fiecare cu sunet.')}</li>
+            <li>{t('Exerciții cu toate cuvintele: ascultare, traducere, scriere.')}</li>
+            <li>{t('Pronunția: sunetele noi, explicate pentru un vorbitor de română.')}</li>
+            <li>{t('Dictare: asculți replici din dialog și le scrii.')}</li>
+            {ch.story && <li>{t('Povestea capitolului: un text narativ mai lung, cu audio și întrebări.')}</li>}
+            <li>{t('Joc de rol: citești dialogul cu voce tare, în rolul personajelor.')}</li>
           </ol>
         ) : (
           <ol className="steps-list">
-            <li><b>Gramatica</b> în {ch.explain.length} pași mici, explicată de la zero și comparată cu româna.</li>
-            <li><b>Exerciții</b> pe fiecare regulă, cu explicație la fiecare răspuns.</li>
-            <li><b>Traduceri</b>: refaci replicile dialogului din română.</li>
-            <li><b>Mini-test</b> de {ch.quiz.length} întrebări.</li>
+            <li>{t('Gramatica în {n} pași mici, explicată de la zero și comparată cu româna.', { n: ch.explain.length })}</li>
+            <li>{t('Exerciții pe fiecare regulă, cu explicație la fiecare răspuns.')}</li>
+            <li>{t('Traduceri: refaci replicile dialogului din română.')}</li>
+            <li>{t('Mini-test de {n} întrebări.', { n: ch.quiz.length })}</li>
           </ol>
         )}
-        <p className="muted small">Sfat: ia-ți un caiet. Ce scrii de mână reții mult mai bine.</p>
+        <p className="muted small">{t('Sfat: ia-ți un caiet. Ce scrii de mână reții mult mai bine.')}</p>
       </article>
-      <div className="sticky-actions"><button className="btn primary big" onClick={next}>Începe →</button></div>
+      <div className="sticky-actions"><button className="btn primary big" onClick={next}>{t('Începe →')}</button></div>
     </>
   )
 }
@@ -408,12 +409,12 @@ function DialogueStep({ ch, course, next }: { ch: ChapterData; course: Course; n
   return (
     <>
       <article className="card">
-        <h3>💬 {ch.dialogue.title}</h3>
-        {ch.dialogue.intro && <p className="muted">{ch.dialogue.intro}</p>}
-        <p className="small"><b>Cum lucrezi:</b> 1) ascultă tot o dată, fără traducere; 2) ascultă din nou și atinge cuvintele pe care nu le știi; 3) abia apoi uită-te la traducere.</p>
+        <h3>💬 {tc(ch.dialogue.title)}</h3>
+        {ch.dialogue.intro && <p className="muted">{tc(ch.dialogue.intro)}</p>}
+        <p className="small"><b>{t('Cum lucrezi:')}</b> {t('1) ascultă tot o dată, fără traducere; 2) ascultă din nou și atinge cuvintele pe care nu le știi; 3) abia apoi uită-te la traducere.')}</p>
       </article>
       <Reader reading={ch.dialogue} course={course} />
-      <div className="sticky-actions"><button className="btn primary big" onClick={next}>Am ascultat → Cuvinte noi</button></div>
+      <div className="sticky-actions"><button className="btn primary big" onClick={next}>{t('Am ascultat → Cuvinte noi')}</button></div>
     </>
   )
 }
@@ -425,7 +426,7 @@ function PronStep({ ch, course, next }: { ch: ChapterData; course: Course; next:
       {ch.pron.map((p) => (
         <article className="card pron" key={p.sound}>
           <h3><span className="pron-sound">{p.sound}</span></h3>
-          <p>{p.how}</p>
+          <p>{tc(p.how)}</p>
           <div className="pron-words">
             {p.words.map((w) => (
               <button key={w} className={`token ${sel === w ? 'on' : ''}`} onClick={() => setSel(w)}>
@@ -442,8 +443,8 @@ function PronStep({ ch, course, next }: { ch: ChapterData; course: Course; next:
           )}
         </article>
       ))}
-      <p className="muted small center">Atinge un cuvânt, ascultă-l, apoi repetă-l cu voce tare{canListen() ? ' sau apasă 🎤 ca să fii verificat' : ''}.</p>
-      <div className="sticky-actions"><button className="btn primary big" onClick={next}>Continuă → Exerciții</button></div>
+      <p className="muted small center">{canListen() ? t('Atinge un cuvânt, ascultă-l, apoi repetă-l cu voce tare sau apasă 🎤 ca să fii verificat.') : t('Atinge un cuvânt, ascultă-l, apoi repetă-l cu voce tare.')}</p>
+      <div className="sticky-actions"><button className="btn primary big" onClick={next}>{t('Continuă → Exerciții')}</button></div>
     </>
   )
 }
@@ -452,24 +453,24 @@ function ExplainStep({ ex, course, next }: { ex: Explain; course: Course; next: 
   return (
     <>
       <article className="card grammar">
-        <h3>{ex.title}</h3>
+        <h3>{tc(ex.title)}</h3>
         {ex.blocks.map((b, i) => <BlockView key={i} b={b} course={course} />)}
       </article>
-      <div className="sticky-actions"><button className="btn primary big" onClick={next}>Am înțeles →</button></div>
+      <div className="sticky-actions"><button className="btn primary big" onClick={next}>{t('Am înțeles →')}</button></div>
     </>
   )
 }
 
 function BlockView({ b, course }: { b: Block; course: Course }) {
-  if ('p' in b) return <p>{b.p}</p>
-  if ('tip' in b) return <div className="callout tip">💡 {b.tip}</div>
-  if ('warn' in b) return <div className="callout warn">⚠️ {b.warn}</div>
+  if ('p' in b) return <p>{tc(b.p)}</p>
+  if ('tip' in b) return <div className="callout tip">💡 {tc(b.tip)}</div>
+  if ('warn' in b) return <div className="callout warn">⚠️ {tc(b.warn)}</div>
   if ('table' in b) {
     return (
       <div className="table-wrap">
         <table>
-          <thead><tr>{b.table[0].map((c, i) => <th key={i}>{c}</th>)}</tr></thead>
-          <tbody>{b.table.slice(1).map((row, i) => <tr key={i}>{row.map((c, j) => <td key={j}>{c}</td>)}</tr>)}</tbody>
+          <thead><tr>{b.table[0].map((c, i) => <th key={i}>{tc(c)}</th>)}</tr></thead>
+          <tbody>{b.table.slice(1).map((row, i) => <tr key={i}>{row.map((c, j) => <td key={j}>{tc(c)}</td>)}</tr>)}</tbody>
         </table>
       </div>
     )
@@ -483,7 +484,7 @@ function ExampleList({ lines, course }: { lines: Line[]; course: Course }) {
       {lines.map((l) => (
         <li key={l.t}>
           <SpeakButton text={l.t} lang={course.lang} small />
-          <div><div className="target">{l.t}</div>{l.r && <div className="romaji">{l.r}</div>}<div className="muted">{l.ro}</div></div>
+          <div><div className="target">{l.t}</div>{l.r && <div className="romaji">{l.r}</div>}<div className="muted">{tc(l.ro)}</div></div>
         </li>
       ))}
     </ul>
@@ -495,10 +496,10 @@ function QuizIntro({ next }: { next: () => void }) {
     <>
       <div className="card lesson-hero">
         <div className="lesson-emoji">📝</div>
-        <h2>Mini-test</h2>
-        <p>Câteva întrebări despre dialog și despre gramatică. Fără grabă: nu e notă, e doar ca să vezi ce ai reținut.</p>
+        <h2>{t('Mini-test')}</h2>
+        <p>{t('Câteva întrebări despre dialog și despre gramatică. Fără grabă: nu e notă, e doar ca să vezi ce ai reținut.')}</p>
       </div>
-      <div className="sticky-actions"><button className="btn primary big" onClick={next}>Începe testul →</button></div>
+      <div className="sticky-actions"><button className="btn primary big" onClick={next}>{t('Începe testul →')}</button></div>
     </>
   )
 }
@@ -529,17 +530,17 @@ export function HomeworkScreen({ lang, lessonId, back }: { lang: LangCode; lesso
   const icons: Record<Homework['kind'], string> = { drills: '✏️', reading: '📖', writing: '📝', task: '🎧' }
   return (
     <div className="screen">
-      <TopBar title={`Teme · Capitolul ${ch.number}`} onBack={back} />
-      <p className="muted">Fă-le în ordine, ideal a doua zi după ședințe: așa le fixezi în memoria de lungă durată.</p>
-      {ch.homework.map((t, k) => {
+      <TopBar title={`${t('Teme')} · ${t('Capitolul {n}', { n: ch.number })}`} onBack={back} />
+      <p className="muted">{t('Fă-le în ordine, ideal a doua zi după ședințe: așa le fixezi în memoria de lungă durată.')}</p>
+      {ch.homework.map((task, k) => {
         const r = byId.get(id(k))
         return (
           <button key={k} className={`card session-card ${r?.done ? 'done' : ''}`} onClick={() => setOpen(k)}>
-            <span className="session-n">{r?.done ? '✓' : icons[t.kind]}</span>
+            <span className="session-n">{r?.done ? '✓' : icons[task.kind]}</span>
             <span className="session-body">
-              <b>{t.title}</b>
-              <small>{t.instructions.slice(0, 90)}{t.instructions.length > 90 ? '…' : ''}</small>
-              {r?.score !== undefined && <small className="session-extra">Scor: {Math.round(r.score * 100)}%</small>}
+              <b>{tc(task.title)}</b>
+              <small>{tc(task.instructions).slice(0, 90)}{tc(task.instructions).length > 90 ? '…' : ''}</small>
+              {r?.score !== undefined && <small className="session-extra">{t('Scor')}: {Math.round(r.score * 100)}%</small>}
             </span>
           </button>
         )
@@ -571,11 +572,11 @@ function HomeworkTask({ task, course, ch, row, save, close }: {
     return (
       <div className="screen done">
         <div className="done-emoji">{(score ?? 0) >= 0.75 ? '🌟' : '👍'}</div>
-        <h2>Temă terminată!</h2>
-        <p className="done-score">{Math.round((score ?? 0) * 100)}% corect din prima</p>
+        <h2>{t('Temă terminată!')}</h2>
+        <p className="done-score">{t('{p}% corect din prima', { p: Math.round((score ?? 0) * 100) })}</p>
         <div className="sticky-actions">
-          <button className="btn" onClick={() => setStage('practice')}>Încă o dată</button>
-          <button className="btn primary big" onClick={close}>Înapoi la teme</button>
+          <button className="btn" onClick={() => setStage('practice')}>{t('Încă o dată')}</button>
+          <button className="btn primary big" onClick={close}>{t('Înapoi la teme')}</button>
         </div>
       </div>
     )
@@ -583,18 +584,18 @@ function HomeworkTask({ task, course, ch, row, save, close }: {
 
   return (
     <div className="screen">
-      <TopBar title={task.title} onBack={close} />
+      <TopBar title={tc(task.title)} onBack={close} />
       <article className="card">
-        <p>{task.instructions}</p>
+        <p>{tc(task.instructions)}</p>
       </article>
       {task.kind === 'drills' && (
-        <div className="sticky-actions"><button className="btn primary big" onClick={() => setStage('practice')}>Începe ({task.drills.length} exerciții) →</button></div>
+        <div className="sticky-actions"><button className="btn primary big" onClick={() => setStage('practice')}>{t('Începe ({n} exerciții) →', { n: task.drills.length })}</button></div>
       )}
       {task.kind === 'reading' && (
         <>
-          <article className="card"><h3>📖 {task.reading.title}</h3></article>
+          <article className="card"><h3>📖 {tc(task.reading.title)}</h3></article>
           <Reader reading={task.reading} course={course} />
-          <div className="sticky-actions"><button className="btn primary big" onClick={() => setStage('practice')}>Răspunde la întrebări →</button></div>
+          <div className="sticky-actions"><button className="btn primary big" onClick={() => setStage('practice')}>{t('Răspunde la întrebări →')}</button></div>
         </>
       )}
       {task.kind === 'writing' && <WritingTask task={task} course={course} row={row} save={save} close={close} />}
@@ -602,7 +603,7 @@ function HomeworkTask({ task, course, ch, row, save, close }: {
         <>
           <ChecklistTask steps={task.steps} />
           <Reader reading={ch.dialogue} course={course} />
-          <div className="sticky-actions"><button className="btn primary big" onClick={async () => { await save({ done: true }); close() }}>✓ Am făcut tema</button></div>
+          <div className="sticky-actions"><button className="btn primary big" onClick={async () => { await save({ done: true }); close() }}>✓ {t('Am făcut tema')}</button></div>
         </>
       )}
     </div>
@@ -616,7 +617,7 @@ function ChecklistTask({ steps }: { steps: string[] }) {
       {steps.map((s, i) => (
         <label key={i} className="toggle">
           <input type="checkbox" checked={checked.has(i)} onChange={() => setChecked((c) => { const n = new Set(c); if (n.has(i)) n.delete(i); else n.add(i); return n })} />
-          {s}
+          {tc(s)}
         </label>
       ))}
     </article>
@@ -645,20 +646,20 @@ function WritingTask({ task, course, row, save, close }: {
           spellCheck={false}
         />
         <div className="special">
-          {SPECIAL_CHARS[course.lang].map((c) => <button type="button" key={c} onClick={() => setText((t) => t + c)}>{c}</button>)}
+          {SPECIAL_CHARS[course.lang].map((c) => <button type="button" key={c} onClick={() => setText((x) => x + c)}>{c}</button>)}
         </div>
-        <p className={`small ${enough ? '' : 'muted'}`}>{words} cuvinte {enough ? '✓' : `(minim ${task.minWords})`}</p>
+        <p className={`small ${enough ? '' : 'muted'}`}>{t('{n} cuvinte', { n: words })} {enough ? '✓' : `(${t('minim {n}', { n: task.minWords })})`}</p>
       </article>
       <article className="card">
-        <h3>✅ Verifică-te singur</h3>
+        <h3>✅ {t('Verifică-te singur')}</h3>
         <ChecklistTask steps={task.tips} />
-        <button className="btn" onClick={() => setShowModel((x) => !x)}>{showModel ? 'Ascunde modelul' : 'Arată un model de răspuns'}</button>
+        <button className="btn" onClick={() => setShowModel((x) => !x)}>{showModel ? t('Ascunde modelul') : t('Arată un model de răspuns')}</button>
         {showModel && <ExampleList lines={task.model} course={course} />}
-        <p className="muted small">Corectarea automată cu AI (gratuit) va veni într-o etapă următoare. Textul tău rămâne salvat aici.</p>
+        <p className="muted small">{t('Textul tău rămâne salvat aici.')}</p>
       </article>
       <div className="sticky-actions">
-        <button className="btn" onClick={() => save({ text })}>Salvează</button>
-        <button className="btn primary big" disabled={!enough} onClick={async () => { await save({ text, done: true }); close() }}>✓ Gata</button>
+        <button className="btn" onClick={() => save({ text })}>{t('Salvează')}</button>
+        <button className="btn primary big" disabled={!enough} onClick={async () => { await save({ text, done: true }); close() }}>✓ {t('Gata')}</button>
       </div>
     </>
   )

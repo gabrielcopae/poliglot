@@ -1,3 +1,4 @@
+import { t, tc, uiLocale } from '../i18n'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { useMemo, useState } from 'react'
 import { TopBar } from '../components/ui'
@@ -57,18 +58,18 @@ export function ExamScreen({ lang, level, back }: { lang: LangCode; level: strin
 
   return (
     <div className="screen">
-      <TopBar title={`📝 Test de nivel ${level}`} onBack={back} />
+      <TopBar title={`📝 ${t('Test de nivel {level}', { level })}`} onBack={back} />
       {phase === 'intro' ? (
         <article className="card exam-card">
           <div className="exam-badge">{level}</div>
-          <h2>{plan?.title}</h2>
+          <h2>{plan ? tc(plan.title) : ''}</h2>
           <p>
-            {exercises.length} întrebări din cele {written} capitole ale nivelului {level}, în stilul examenului {course.exam}.
-            Trebuie să răspunzi corect din prima la cel puțin <b>{PASS}%</b> ca să primești <b>viza {level}</b> în pașaport.
+            {t('{n} întrebări din cele {ch} capitole ale nivelului {level}, în stilul examenului {exam}.', { n: exercises.length, ch: written, level, exam: course.exam })}{' '}
+            {t('Trebuie să răspunzi corect din prima la cel puțin {p}% ca să primești viza {level} în pașaport.', { p: PASS, level })}
           </p>
-          {plan && written < plan.chapters && <p className="muted small">Nivelul e încă în lucru ({written} din {plan.chapters} capitole). Testul conține doar capitolele scrise până acum.</p>}
-          {exam && <p className="muted">Cel mai bun rezultat: <b>{exam.best}%</b>{exam.passed ? ' · viză obținută ✅' : ''}</p>}
-          <button className="btn primary big" onClick={() => setPhase('run')}>Începe testul</button>
+          {plan && written < plan.chapters && <p className="muted small">{t('Nivelul e încă în lucru ({n} din {all} capitole). Testul conține doar capitolele scrise până acum.', { n: written, all: plan.chapters })}</p>}
+          {exam && <p className="muted">{t('Cel mai bun rezultat:')} <b>{exam.best}%</b>{exam.passed ? ` · ${t('viză obținută ✅')}` : ''}</p>}
+          <button className="btn primary big" onClick={() => setPhase('run')}>{t('Începe testul')}</button>
         </article>
       ) : (
         <article className="card exam-card">
@@ -76,19 +77,19 @@ export function ExamScreen({ lang, level, back }: { lang: LangCode; level: strin
           <h2>{score}%</h2>
           {score >= PASS ? (
             <>
-              <p><b>Felicitări! Ai trecut testul de nivel {level}.</b></p>
+              <p><b>{t('Felicitări! Ai trecut testul de nivel {level}.', { level })}</b></p>
               <div className="visa visa-big">
-                <div className="visa-title">VIZĂ {level}</div>
-                <div className="visa-body">{course.name} · {plan?.title} · {new Date().toLocaleDateString('ro-RO')}</div>
+                <div className="visa-title">{t('VIZĂ {level}', { level })}</div>
+                <div className="visa-body">{t(course.name)} · {plan ? tc(plan.title) : ''} · {new Date().toLocaleDateString(uiLocale())}</div>
               </div>
-              <p className="muted small">Viza a fost pusă în pașaport.</p>
+              <p className="muted small">{t('Viza a fost pusă în pașaport.')}</p>
             </>
           ) : (
-            <p>Ai nevoie de {PASS}% ca să treci. Recitește capitolele la care ai greșit și încearcă din nou: întrebările se schimbă la fiecare încercare.</p>
+            <p>{t('Ai nevoie de {p}% ca să treci. Recitește capitolele la care ai greșit și încearcă din nou: întrebările se schimbă la fiecare încercare.', { p: PASS })}</p>
           )}
           <div className="course-actions exam-actions">
-            <button className="btn primary" onClick={() => { setAttempt((a) => a + 1); setPhase('run') }}>↻ Încă o încercare</button>
-            <button className="btn" onClick={back}>Înapoi</button>
+            <button className="btn primary" onClick={() => { setAttempt((a) => a + 1); setPhase('run') }}>↻ {t('Încă o încercare')}</button>
+            <button className="btn" onClick={back}>{t('Înapoi')}</button>
           </div>
         </article>
       )}

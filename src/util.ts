@@ -1,3 +1,4 @@
+import { t, tn } from './i18n'
 export function shuffle<T>(arr: readonly T[]): T[] {
   const a = arr.slice()
   for (let i = a.length - 1; i > 0; i--) {
@@ -55,8 +56,8 @@ export function formatInterval(ms: number): string {
   const h = min / 60
   if (h < 24) return `${Math.round(h)} h`
   const d = Math.round(h / 24)
-  if (d < 30) return `${d} ${d === 1 ? 'zi' : 'zile'}`
+  if (d < 30) return tn(d, '{n} zi', '{n} zile')
   const mo = Math.round(d / 30)
-  if (mo < 12) return `${mo} ${mo === 1 ? 'lună' : 'luni'}`
-  return `${(d / 365).toFixed(1)} ani`
+  if (mo < 12) return tn(mo, '{n} lună', '{n} luni')
+  return t('{n} ani', { n: (d / 365).toFixed(1) })
 }

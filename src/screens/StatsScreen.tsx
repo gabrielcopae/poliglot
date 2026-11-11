@@ -1,3 +1,4 @@
+import { t, uiLocale } from '../i18n'
 import { Flag } from '../components/Flag'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { COURSES, allLessons, wordCount } from '../content'
@@ -18,24 +19,24 @@ export function StatsScreen() {
     d.setDate(d.getDate() - (13 - i))
     const key = today(d)
     const row = byDate.get(key)
-    return { key, label: d.toLocaleDateString('ro-RO', { weekday: 'narrow' }), value: (row?.reviews ?? 0) + (row?.lessons ?? 0) * 10 }
+    return { key, label: d.toLocaleDateString(uiLocale(), { weekday: 'narrow' }), value: (row?.reviews ?? 0) + (row?.lessons ?? 0) * 10 }
   })
   const max = Math.max(10, ...last14.map((d) => d.value))
   const totalXp = days.reduce((n, d) => n + d.xp, 0)
 
   return (
     <div className="screen">
-      <TopBar title="Progresul tău" />
+      <TopBar title={t('Progresul tău')} />
       <StudyCalendar days={days} />
       <div className="stat-grid">
-        <div className="card stat"><span>🔥</span><b>{streakFrom(days)}</b><small>zile la rând</small></div>
-        <div className="card stat"><span>⭐</span><b>{totalXp}</b><small>puncte XP</small></div>
-        <div className="card stat"><span>📚</span><b>{cards.length}</b><small>cuvinte învățate</small></div>
-        <div className="card stat"><span>🧠</span><b>{cards.filter(isMature).length}</b><small>bine memorate</small></div>
+        <div className="card stat"><span>🔥</span><b>{streakFrom(days)}</b><small>{t('zile la rând')}</small></div>
+        <div className="card stat"><span>⭐</span><b>{totalXp}</b><small>{t('puncte XP')}</small></div>
+        <div className="card stat"><span>📚</span><b>{cards.length}</b><small>{t('cuvinte învățate')}</small></div>
+        <div className="card stat"><span>🧠</span><b>{cards.filter(isMature).length}</b><small>{t('bine memorate')}</small></div>
       </div>
 
       <article className="card">
-        <h3>Ultimele 14 zile</h3>
+        <h3>{t('Ultimele 14 zile')}</h3>
         <div className="bars">
           {last14.map((d) => (
             <div key={d.key} className="bar-col" title={`${d.key}: ${d.value}`}>
@@ -44,7 +45,7 @@ export function StatsScreen() {
             </div>
           ))}
         </div>
-        <p className="muted small">Repetări + lecții (o lecție = 10).</p>
+        <p className="muted small">{t('Repetări + lecții (o lecție = 10).')}</p>
       </article>
 
       {COURSES.map((c) => {
@@ -53,11 +54,11 @@ export function StatsScreen() {
         const words = cards.filter((x) => x.lang === c.lang)
         return (
           <article key={c.lang} className="card lang-stat">
-            <h3><Flag lang={c.lang} size={24} /> {c.name}</h3>
+            <h3><Flag lang={c.lang} size={24} /> {t(c.name)}</h3>
             <div className="lang-stat-row">
-              <div><b>{done}</b>/{ls.length}<small>lecții</small></div>
-              <div><b>{words.length}</b>/{wordCount(c)}<small>cuvinte</small></div>
-              <div><b>{words.filter(isMature).length}</b><small>memorate</small></div>
+              <div><b>{done}</b>/{ls.length}<small>{t('lecții')}</small></div>
+              <div><b>{words.length}</b>/{wordCount(c)}<small>{t('cuvinte')}</small></div>
+              <div><b>{words.filter(isMature).length}</b><small>{t('memorate')}</small></div>
             </div>
           </article>
         )

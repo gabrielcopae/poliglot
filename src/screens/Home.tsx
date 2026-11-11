@@ -13,6 +13,7 @@ import { localGet, localSet } from '../settings'
 import { ALL_REWARDS, RewardCard, studyDays } from '../components/RewardCard'
 import { MILESTONES, StreakCard, longestStreak } from '../components/StreakCard'
 import { dayInfo } from './HolidaysScreen'
+import { t, tc, tk, tn } from '../i18n'
 
 /** Limbile din planul zilnic. Italiana se adaugă după spaniola A2. */
 const PLAN_LANGS: LangCode[] = ['es', 'ja']
@@ -54,37 +55,37 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
       {freshMs > 0 && (
         <div className="reward-pop" onClick={closeMs}>
           <div className="reward-pop-box" onClick={(e) => e.stopPropagation()}>
-            <div className="reward-pop-title">✨ Cartonaș special!</div>
+            <div className="reward-pop-title">✨ {t('Cartonaș special!')}</div>
             <StreakCard n={freshMs} />
-            <p className="muted small">Ai învățat {freshMs} zile la rând. Continuă tot așa!</p>
-            <button className="btn primary" onClick={closeMs}>Super!</button>
+            <p className="muted small">{t('Ai învățat {n} zile la rând. Continuă tot așa!', { n: freshMs })}</p>
+            <button className="btn primary" onClick={closeMs}>{t('Super!')}</button>
           </div>
         </div>
       )}
       {!freshMs && fresh > 0 && (
         <div className="reward-pop" onClick={closeFresh}>
           <div className="reward-pop-box" onClick={(e) => e.stopPropagation()}>
-            <div className="reward-pop-title">🎉 Cartonaș nou!</div>
+            <div className="reward-pop-title">🎉 {t('Cartonaș nou!')}</div>
             <RewardCard reward={ALL_REWARDS[fresh - 1]} day={fresh} date={earned[fresh - 1]} />
-            <p className="muted small">Ai învățat azi și ai câștigat un oraș nou pentru colecție. Îl găsești în Album.</p>
-            <button className="btn primary" onClick={closeFresh}>Super!</button>
+            <p className="muted small">{t('Ai învățat azi și ai câștigat un oraș nou pentru colecție. Îl găsești în Album.')}</p>
+            <button className="btn primary" onClick={closeFresh}>{t('Super!')}</button>
           </div>
         </div>
       )}
       <section className="hero">
-        <div className="hero-season">{info.emoji} {info.name} · {info.greeting}</div>
+        <div className="hero-season">{info.emoji} {t(info.name)} · {t(info.greeting)}</div>
         <h1 className="hero-title">{partOfDay()}, {user}!</h1>
         <div className="hero-stats">
-          <div className="pill"><span>🔥</span><b>{streak}</b> {streak === 1 ? 'zi' : 'zile'} la rând</div>
-          <div className="pill"><span>📚</span><b>{cardCount}</b> cuvinte</div>
+          <div className="pill"><span>🔥</span><b>{streak}</b> {tn(streak, 'zi la rând', 'zile la rând')}</div>
+          <div className="pill"><span>📚</span><b>{cardCount}</b> {t('cuvinte')}</div>
         </div>
       </section>
 
       <button className={`card review-strip ${totalDue ? '' : 'ok'}`} onClick={() => go({ name: 'review' })} disabled={!totalDue}>
         <span className="plan-icon">🔁</span>
         <span className="plan-body">
-          <b>Repetiție</b>
-          <small>{totalDue ? `${totalDue} ${totalDue === 1 ? 'cuvânt' : 'cuvinte'} de repetat azi` : 'Nimic de repetat acum ✓'}</small>
+          <b>{t('Repetiție')}</b>
+          <small>{totalDue ? tn(totalDue, '{n} cuvânt de repetat azi', '{n} cuvinte de repetat azi') : t('Nimic de repetat acum ✓')}</small>
         </span>
         {totalDue ? <span className="due-go">▶</span> : null}
       </button>
@@ -92,33 +93,33 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
       <button className="card holiday-banner" onClick={() => go({ name: 'holidays' })}>
         <span>{today.holiday?.emoji ?? (today.born.length ? '🎂' : '📅')}</span>
         <span className="session-body">
-          <small className="today-label">Azi în lumea limbilor tale</small>
-          <b>{today.holiday ? today.holiday.name : today.esRo}</b>
-          <small>{today.holiday ? today.esRo : `Japonia: ${today.jaRo}`}{today.born.length ? ` · 🎂 ${today.born[0].city}` : ''}</small>
+          <small className="today-label">{t('Azi în lumea limbilor tale')}</small>
+          <b>{today.holiday ? tc(today.holiday.name) : tc(today.esRo)}</b>
+          <small>{today.holiday ? tc(today.esRo) : `${t('Japonia')}: ${tc(today.jaRo)}`}{today.born.length ? ` · 🎂 ${today.born[0].city}` : ''}</small>
         </span>
       </button>
 
-      <h2 className="section-title">Explorează</h2>
+      <h2 className="section-title">{t('Explorează')}</h2>
       <div className="journey-tiles">
         {([
-          ['passport', '🛂', 'Pașaport', `${stampCount} ștampile`],
-          ['album', '🃏', 'Album', 'cartonașe'],
-          ['island', '🏝️', 'Insula ta', 'crește cu tine'],
-          ['train', '🚂', 'Trenul', 'gară cu gară'],
-          ['talks', '💬', 'Conversații', 'cu personajele'],
-          ['pairs', '🧩', 'Perechi', 'joc de memorie'],
-          ['museum', '🏛️', 'Muzeul', 'personalităților'],
-          ['holidays', '🎎', 'Sărbători', 'calendar'],
+          ['passport', '🛂', tk('Pașaport'), tn(stampCount, '{n} ștampilă', '{n} ștampile')],
+          ['album', '🃏', tk('Album'), t('cartonașe')],
+          ['island', '🏝️', tk('Orașul tău'), t('crește cu tine')],
+          ['train', '🚂', tk('Trenul'), t('gară cu gară')],
+          ['talks', '💬', tk('Conversații'), t('cu personajele')],
+          ['pairs', '🧩', tk('Perechi'), t('joc de memorie')],
+          ['museum', '🏛️', tk('Muzeul'), t('personalităților')],
+          ['holidays', '🎎', tk('Sărbători'), t('calendar')],
         ] as const).map(([name, emoji, title, sub]) => (
           <button key={name} className="card journey-tile" onClick={() => go({ name })}>
             <span className="journey-emoji">{emoji}</span>
-            <b>{title}</b>
+            <b>{t(title)}</b>
             <small>{sub}</small>
           </button>
         ))}
       </div>
 
-      <h2 className="section-title">Limbile tale</h2>
+      <h2 className="section-title">{t('Limbile tale')}</h2>
       <div className="lang-grid">
         {COURSES.map((c) => {
           const all = buildSyllabus(c.lang, chapters.filter((x) => x.lang === c.lang), homework, done)
@@ -132,19 +133,19 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
               <div className="lang-head">
                 <span className="lang-flag"><Flag lang={c.lang} size={44} /></span>
                 <div>
-                  <div className="lang-name">{c.name}</div>
+                  <div className="lang-name">{t(c.name)}</div>
                   <div className="lang-native">{c.native} · {c.hello}</div>
                 </div>
-                {dueByLang[c.lang] ? <span className="chip">{dueByLang[c.lang]} de repetat</span> : null}
-                {!PLAN_LANGS.includes(c.lang) && !dueByLang[c.lang] ? <span className="chip later">după spaniolă A2</span> : null}
+                {dueByLang[c.lang] ? <span className="chip">{t('{n} de repetat', { n: dueByLang[c.lang] })}</span> : null}
+                {!PLAN_LANGS.includes(c.lang) && !dueByLang[c.lang] ? <span className="chip later">{t('după spaniolă A2')}</span> : null}
               </div>
               <Progress value={all.length ? n / all.length : 0} />
               <div className="lang-foot">
-                <span className="muted">{n} / {all.length} ședințe</span>
+                <span className="muted">{t('{n} / {all} ședințe', { n, all: all.length })}</span>
                 <span className="lang-next">
                   {next
-                    ? `${started ? '▶ ' : ''}${next.lesson.chapter ? `Cap. ${next.lesson.chapter.number}` : next.lesson.title} · Ședința ${next.n}`
-                    : `${course.name}: totul e gata 🎉`}
+                    ? `${started ? '▶ ' : ''}${next.lesson.chapter ? t('Cap. {n}', { n: next.lesson.chapter.number }) : tc(next.lesson.title)} · ${t('Ședința {n}', { n: next.n })}`
+                    : `${t(course.name)}: ${t('totul e gata 🎉')}`}
                 </span>
               </div>
             </button>

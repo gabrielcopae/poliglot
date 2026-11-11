@@ -1,3 +1,4 @@
+import { t, tk, tn } from '../i18n'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { useEffect, useState, type ReactNode } from 'react'
 import { TopBar } from '../components/ui'
@@ -146,17 +147,17 @@ export function IslandScreen({ back, go, user }: { back: () => void; go: Go; use
   const ok = (cond: boolean) => admin || cond
 
   const buildings: Building[] = [
-    { id: 'school', name: 'Școala', emoji: '🏫', x: 200, y: 256, desc: 'Aici înveți: lecțiile, ședințele și temele tuturor limbilor.', need: 'deschisă de la început', route: { name: 'course', lang: 'es' }, open: true, draw: SCHOOL },
-    { id: 'market', name: 'Piața cu fântână', emoji: '🎎', x: 200, y: 330, desc: 'Inima orașului. Aici afli ce sărbătoare e azi în lumea limbilor tale.', need: 'deschisă de la început', route: { name: 'holidays' }, open: true, draw: MARKET },
-    { id: 'post', name: 'Poșta', emoji: '📮', x: 120, y: 392, desc: 'Aici sosesc cartonașele tale: locurile câștigate zi de zi și cele ale ședințelor.', need: 'învață o zi', route: { name: 'album' }, open: ok(nDays >= 1), draw: POST },
-    { id: 'hall', name: 'Primăria', emoji: '🛂', x: 280, y: 392, desc: 'Aici îți ștampilezi pașaportul cu personalitățile fiecărui capitol.', need: 'termină primul capitol', route: { name: 'passport' }, open: ok(nStamps >= 1), draw: HALL },
-    { id: 'ramen', name: 'Restaurantul lui Kenji', emoji: '🍜', x: 96, y: 330, desc: 'Kenji te așteaptă cu un ramen și o conversație. Aici vorbești cu personajele.', need: 'termină 3 ședințe', route: { name: 'talks' }, open: ok(sessionsDone >= 3), draw: RAMEN },
-    { id: 'library', name: 'Biblioteca doamnei Suzuki', emoji: '📚', x: 306, y: 330, desc: 'Doamna Suzuki (și pisica Tama) te provoacă la jocul de Perechi.', need: 'învață 30 de cuvinte', route: { name: 'pairs' }, open: ok(cardCount >= 30), draw: LIBRARY },
-    { id: 'station', name: 'Gara', emoji: '🚉', x: 200, y: 424, desc: 'De aici pleacă Trenul limbilor, gară cu gară, ședință cu ședință.', need: 'termină 6 ședințe', route: { name: 'train' }, open: ok(sessionsDone >= 6), draw: STATION },
-    { id: 'museum', name: 'Muzeul', emoji: '🏛️', x: 128, y: 266, desc: 'Portretele personalităților de pe ștampilele tale.', need: 'câștigă 3 ștampile', route: { name: 'museum' }, open: ok(nStamps >= 3), draw: MUSEUM },
-    { id: 'temple', name: 'Templul', emoji: '⛩️', x: 274, y: 268, desc: 'Un loc liniștit unde exersezi kanji cu degetul.', need: 'începe japoneza', route: { name: 'kanjiList' }, open: ok(startedJa), draw: TEMPLE },
-    { id: 'lighthouse', name: 'Farul', emoji: '🗼', x: 364, y: 410, desc: 'Farul se aprinde când treci primul test de nivel și primești o viză.', need: 'trece un test de nivel', route: { name: 'passport' }, open: ok(exams.some((e) => e.passed)), draw: LIGHTHOUSE },
-    { id: 'windmill', name: 'Moara de vânt', emoji: '🌬️', x: 40, y: 300, desc: 'Moara se învârte de fiecare dată când exersezi kanji.', need: 'exersează 10 kanji', route: { name: 'kanjiList' }, open: ok(kanji.length >= 10), draw: () => WINDMILL() },
+    { id: 'school', name: tk('Școala'), emoji: '🏫', x: 200, y: 256, desc: tk('Aici înveți: lecțiile, ședințele și temele tuturor limbilor.'), need: tk('deschisă de la început'), route: { name: 'course', lang: 'es' }, open: true, draw: SCHOOL },
+    { id: 'market', name: tk('Piața cu fântână'), emoji: '🎎', x: 200, y: 330, desc: tk('Inima orașului. Aici afli ce sărbătoare e azi în lumea limbilor tale.'), need: tk('deschisă de la început'), route: { name: 'holidays' }, open: true, draw: MARKET },
+    { id: 'post', name: tk('Poșta'), emoji: '📮', x: 120, y: 392, desc: tk('Aici sosesc cartonașele tale: locurile câștigate zi de zi și cele ale ședințelor.'), need: tk('învață o zi'), route: { name: 'album' }, open: ok(nDays >= 1), draw: POST },
+    { id: 'hall', name: tk('Primăria'), emoji: '🛂', x: 280, y: 392, desc: tk('Aici îți ștampilezi pașaportul cu personalitățile fiecărui capitol.'), need: tk('termină primul capitol'), route: { name: 'passport' }, open: ok(nStamps >= 1), draw: HALL },
+    { id: 'ramen', name: tk('Restaurantul lui Kenji'), emoji: '🍜', x: 96, y: 330, desc: tk('Kenji te așteaptă cu un ramen și o conversație. Aici vorbești cu personajele.'), need: tk('termină 3 ședințe'), route: { name: 'talks' }, open: ok(sessionsDone >= 3), draw: RAMEN },
+    { id: 'library', name: tk('Biblioteca doamnei Suzuki'), emoji: '📚', x: 306, y: 330, desc: tk('Doamna Suzuki (și pisica Tama) te provoacă la jocul de Perechi.'), need: tk('învață 30 de cuvinte'), route: { name: 'pairs' }, open: ok(cardCount >= 30), draw: LIBRARY },
+    { id: 'station', name: tk('Gara'), emoji: '🚉', x: 200, y: 424, desc: tk('De aici pleacă Trenul limbilor, gară cu gară, ședință cu ședință.'), need: tk('termină 6 ședințe'), route: { name: 'train' }, open: ok(sessionsDone >= 6), draw: STATION },
+    { id: 'museum', name: tk('Muzeul'), emoji: '🏛️', x: 128, y: 266, desc: tk('Portretele personalităților de pe ștampilele tale.'), need: tk('câștigă 3 ștampile'), route: { name: 'museum' }, open: ok(nStamps >= 3), draw: MUSEUM },
+    { id: 'temple', name: tk('Templul'), emoji: '⛩️', x: 274, y: 268, desc: tk('Un loc liniștit unde exersezi kanji cu degetul.'), need: tk('începe japoneza'), route: { name: 'kanjiList' }, open: ok(startedJa), draw: TEMPLE },
+    { id: 'lighthouse', name: tk('Farul'), emoji: '🗼', x: 364, y: 410, desc: tk('Farul se aprinde când treci primul test de nivel și primești o viză.'), need: tk('trece un test de nivel'), route: { name: 'passport' }, open: ok(exams.some((e) => e.passed)), draw: LIGHTHOUSE },
+    { id: 'windmill', name: tk('Moara de vânt'), emoji: '🌬️', x: 40, y: 300, desc: tk('Moara se învârte de fiecare dată când exersezi kanji.'), need: tk('exersează 10 kanji'), route: { name: 'kanjiList' }, open: ok(kanji.length >= 10), draw: () => WINDMILL() },
   ]
 
   const houses = admin ? HOUSE_SLOTS.length : Math.min(HOUSE_SLOTS.length, nStamps)
@@ -169,12 +170,12 @@ export function IslandScreen({ back, go, user }: { back: () => void; go: Go; use
   const tap = (b: Building) => setSpot(
     <div className="town-info">
       <div className="town-info-emoji">{b.emoji}</div>
-      <b>{b.name}</b>
-      <p>{b.desc}</p>
+      <b>{t(b.name)}</b>
+      <p>{t(b.desc)}</p>
       {b.open ? (
-        <button className="btn primary" onClick={() => { setSpot(null); go(b.route) }}>Intră →</button>
+        <button className="btn primary" onClick={() => { setSpot(null); go(b.route) }}>{t('Intră →')}</button>
       ) : (
-        <div className="town-locked">🔒 În construcție · se deschide când: <b>{b.need}</b></div>
+        <div className="town-locked">🔒 {t('În construcție · se deschide când:')} <b>{t(b.need)}</b></div>
       )}
     </div>,
   )
@@ -182,8 +183,8 @@ export function IslandScreen({ back, go, user }: { back: () => void; go: Go; use
   const openCount = buildings.filter((b) => b.open).length
   return (
     <div className="screen">
-      <TopBar title="🏝️ Orașul tău" onBack={back} />
-      <p className="muted small">Atinge clădirile ca să intri. Orașul crește când înveți: {openCount} din {buildings.length} clădiri deschise, {houses} case, {trees} copaci, {walkers} locuitori.</p>
+      <TopBar title={`🏝️ ${t('Orașul tău')}`} onBack={back} />
+      <p className="muted small">{t('Atinge clădirile ca să intri. Orașul crește când înveți: {open} din {all} clădiri deschise, {houses} case, {trees} copaci, {walkers} locuitori.', { open: openCount, all: buildings.length, houses, trees, walkers })}</p>
       <div className={`town-wrap ${night ? 'night' : ''}`}>
         <svg viewBox="0 0 400 520" className="town">
           <defs>
@@ -241,8 +242,8 @@ export function IslandScreen({ back, go, user }: { back: () => void; go: Go; use
               <ellipse cx="0" cy="1" rx="30" ry="5" fill="#000" opacity="0.12" />
               {b.open ? b.draw(night) : SCAFFOLD()}
               <g className="town-label" transform="translate(0 12)">
-                <rect x={-b.name.length * 2.2 - 6} y="-6" width={b.name.length * 4.4 + 12} height="11" rx="5.5" fill={b.open ? 'rgba(255,255,255,0.88)' : 'rgba(80,60,30,0.75)'} />
-                <text y="2" fontSize="6.5" textAnchor="middle" fill={b.open ? '#3b2f22' : '#fff'}>{b.emoji} {b.name}</text>
+                <rect x={-t(b.name).length * 2.2 - 6} y="-6" width={t(b.name).length * 4.4 + 12} height="11" rx="5.5" fill={b.open ? 'rgba(255,255,255,0.88)' : 'rgba(80,60,30,0.75)'} />
+                <text y="2" fontSize="6.5" textAnchor="middle" fill={b.open ? '#3b2f22' : '#fff'}>{b.emoji} {t(b.name)}</text>
               </g>
               {b.id === 'school' && b.open && smoke(-20, -44)}
             </g>
@@ -263,14 +264,14 @@ export function IslandScreen({ back, go, user }: { back: () => void; go: Go; use
         </svg>
       </div>
       <article className="card town-legend">
-        <div className="muted small">{night ? '🌙 E noapte în oraș: luminile sunt aprinse.' : '☀️ E zi în oraș.'} Serie: {streak} {streak === 1 ? 'zi' : 'zile'} la rând.</div>
+        <div className="muted small">{night ? `🌙 ${t('E noapte în oraș: luminile sunt aprinse.')}` : `☀️ ${t('E zi în oraș.')}`} {t('Serie:')} {streak} {tn(streak, 'zi la rând', 'zile la rând')}.</div>
         {buildings.map((b) => (
           <button key={b.id} className={`town-row ${b.open ? '' : 'locked'}`} onClick={() => tap(b)}>
-            <span>{b.emoji}</span><b>{b.name}</b><small>{b.open ? 'deschis · atinge ca să intri' : `🔒 ${b.need}`}</small>
+            <span>{b.emoji}</span><b>{t(b.name)}</b><small>{b.open ? t('deschis · atinge ca să intri') : `🔒 ${t(b.need)}`}</small>
           </button>
         ))}
       </article>
-      {spot && <Spotlight onClose={() => setSpot(null)} hint="Atinge în afară ca să închizi">{spot}</Spotlight>}
+      {spot && <Spotlight onClose={() => setSpot(null)} hint={t('Atinge în afară ca să închizi')}>{spot}</Spotlight>}
     </div>
   )
 }

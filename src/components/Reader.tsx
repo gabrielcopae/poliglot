@@ -1,3 +1,4 @@
+import { t, tc } from '../i18n'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Course, Reading } from '../content/types'
 import { allLessons } from '../content'
@@ -86,16 +87,16 @@ export function Reader({ reading, course }: { reading: Reading; course: Course }
     <div className="reader">
       <div className="reader-controls">
         {playing === null ? (
-          <button className="btn primary" onClick={() => play(0, true)}>▶ Ascultă tot</button>
+          <button className="btn primary" onClick={() => play(0, true)}>▶ {t('Ascultă tot')}</button>
         ) : (
-          <button className="btn primary" onClick={stop}>■ Oprește</button>
+          <button className="btn primary" onClick={stop}>■ {t('Oprește')}</button>
         )}
-        <button className={`btn ${slow ? 'on' : ''}`} onClick={() => setSlow((x) => !x)}>🐢 {slow ? 'Rar' : 'Normal'}</button>
-        <button className={`btn ${showAllRo ? 'on' : ''}`} onClick={() => setShowAllRo((x) => !x)}>🇷🇴 {showAllRo ? 'Ascunde' : 'Traducere'}</button>
+        <button className={`btn ${slow ? 'on' : ''}`} onClick={() => setSlow((x) => !x)}>🐢 {slow ? t('Rar') : t('Normal')}</button>
+        <button className={`btn ${showAllRo ? 'on' : ''}`} onClick={() => setShowAllRo((x) => !x)}>🌐 {showAllRo ? t('Ascunde') : t('Traducere')}</button>
       </div>
       {reading.kind === 'story' ? (
         <>
-          <p className="muted small">~{countWords(reading)} de cuvinte. Atinge o propoziție ca s-o asculți, sau un cuvânt ca să vezi ce înseamnă.</p>
+          <p className="muted small">{t('~{n} de cuvinte. Atinge o propoziție ca s-o asculți, sau un cuvânt ca să vezi ce înseamnă.', { n: countWords(reading) })}</p>
           <div className={`story ${course.lang === 'ja' ? 'jp' : ''}`}>
             {paragraphs(reading).map((para, pi) => (
               <div key={pi} className="story-para">
@@ -118,14 +119,14 @@ export function Reader({ reading, course }: { reading: Reading; course: Course }
                   ))}
                 </p>
                 {settings.romaji && para.some(({ line }) => line.r) && <p className="romaji">{para.map(({ line }) => line.r).join(' ')}</p>}
-                {showAllRo && <p className="story-ro">{para.map(({ line }) => line.ro).join(' ')}</p>}
+                {showAllRo && <p className="story-ro">{para.map(({ line }) => tc(line.ro)).join(' ')}</p>}
               </div>
             ))}
           </div>
         </>
       ) : (
       <>
-      <p className="muted small">Atinge o replică ca s-o asculți. Atinge un cuvânt ca să vezi ce înseamnă.</p>
+      <p className="muted small">{t('Atinge o replică ca s-o asculți. Atinge un cuvânt ca să vezi ce înseamnă.')}</p>
       <div className="reader-lines">
         {reading.lines.map((line, i) => {
           const parts = line.t.split(WORD)
@@ -149,9 +150,9 @@ export function Reader({ reading, course }: { reading: Reading; course: Course }
               </div>
               {line.r && settings.romaji && <div className="romaji">{line.r}</div>}
               {showAllRo || openRo.has(i) ? (
-                <div className="rro">{line.ro}</div>
+                <div className="rro">{tc(line.ro)}</div>
               ) : (
-                <button className="rro-btn" onClick={(e) => { e.stopPropagation(); toggleRo(i) }}>traducere</button>
+                <button className="rro-btn" onClick={(e) => { e.stopPropagation(); toggleRo(i) }}>{t('traducere')}</button>
               )}
             </div>
           )
@@ -164,7 +165,7 @@ export function Reader({ reading, course }: { reading: Reading; course: Course }
           <SpeakButton text={gloss.word} lang={course.lang} small />
           <div>
             <b>{gloss.word}</b>
-            <div>{gloss.meaning ?? 'Cuvânt nou. Vezi traducerea replicii.'}</div>
+            <div>{gloss.meaning ? tc(gloss.meaning) : t('Cuvânt nou. Vezi traducerea replicii.')}</div>
           </div>
           <span className="gloss-x">✕</span>
         </div>

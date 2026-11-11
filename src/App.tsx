@@ -30,6 +30,7 @@ import { MuseumScreen } from './screens/MuseumScreen'
 import { TrainScreen } from './screens/TrainScreen'
 import { HolidaysScreen } from './screens/HolidaysScreen'
 import { IslandScreen } from './screens/IslandScreen'
+import { loadContent } from './i18n'
 
 function shouldShowIntro(mode: string) {
   if (mode === 'never') return false
@@ -63,6 +64,13 @@ export default function App() {
   const night = settings.time === 'auto' ? isNight(now) : settings.time === 'night'
   const [intro, setIntro] = useState(() => shouldShowIntro(settings.intro))
   const [session, setSession] = useState<Session | null>(initialSession)
+  // traducerile de conținut ale limbii alese se încarcă la cerere; apoi redesenăm
+  const [, setContentReady] = useState('')
+  const ui = settings.ui ?? 'ro'
+  useEffect(() => {
+    document.documentElement.lang = ui
+    loadContent(ui).then(() => setContentReady(ui))
+  }, [ui])
 
   useEffect(() => {
     document.documentElement.dataset.season = season

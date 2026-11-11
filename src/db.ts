@@ -1,3 +1,4 @@
+import { t } from './i18n'
 import Dexie, { type Table } from 'dexie'
 import { today } from './util'
 
@@ -168,7 +169,7 @@ export async function exportProgress(): Promise<string> {
 
 export async function importProgress(json: string) {
   const data = JSON.parse(json)
-  if (data?.app !== 'poliglot') throw new Error('Fișierul nu este un backup Poliglot.')
+  if (data?.app !== 'poliglot') throw new Error(t('Fișierul nu este un backup Poliglot.'))
   await db.transaction('rw', [db.cards, db.lessons, db.days, db.chapters, db.homework, db.exams, db.talks, db.kanji], async () => {
     await Promise.all([db.cards.clear(), db.lessons.clear(), db.days.clear(), db.chapters.clear(), db.homework.clear(), db.exams.clear(), db.talks.clear(), db.kanji.clear()])
     await db.cards.bulkPut(data.cards ?? [])

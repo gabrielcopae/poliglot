@@ -1,3 +1,4 @@
+import { t, tc } from '../i18n'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { useState, type ReactNode } from 'react'
 import { Flag } from '../components/Flag'
@@ -17,11 +18,11 @@ function Portrait({ p, chapter }: { p: Person; chapter: number }) {
   return (
     <div className="museum-plaque">
       <div className="museum-photo" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}rewards/${p.img})` }} />
-      <b>{p.city}</b>
-      <small>{p.role}</small>
-      <small>📍 {p.landmark}, {p.country}</small>
-      <p>{p.fact}</p>
-      <span className="museum-credit">Capitolul {chapter} · Foto: {p.author.slice(0, 30)} · {p.license}</span>
+      <b>{tc(p.city)}</b>
+      <small>{tc(p.role)}</small>
+      <small>📍 {tc(p.landmark)}, {tc(p.country)}</small>
+      <p>{tc(p.fact)}</p>
+      <span className="museum-credit">{t('Capitolul {n}', { n: chapter })} · {t('Foto')}: {p.author.slice(0, 30)} · {p.license}</span>
     </div>
   )
 }
@@ -40,25 +41,25 @@ export function MuseumScreen({ back, user }: { back: () => void; user: string })
 
   return (
     <div className="screen">
-      <TopBar title="🏛️ Muzeul personalităților" onBack={back} />
+      <TopBar title={`🏛️ ${t('Muzeul personalităților')}`} onBack={back} />
       <div className="segmented">
         {langs.map((l) => (
-          <button key={l} className={l === lang ? 'on' : ''} onClick={() => setLang(l)}><Flag lang={l} size={16} /> {getCourse(l).name}</button>
+          <button key={l} className={l === lang ? 'on' : ''} onClick={() => setLang(l)}><Flag lang={l} size={16} /> {t(getCourse(l).name)}</button>
         ))}
       </div>
-      <p className="muted small">Sala „{getCourse(lang).name}”: {have} din {people.length} portrete. Fiecare capitol terminat aduce în muzeu personalitatea de pe ștampila lui. Atinge un tablou ca să-l vezi de aproape.</p>
+      <p className="muted small">{t('Sala „{lang}”: {n} din {all} portrete. Fiecare capitol terminat aduce în muzeu personalitatea de pe ștampila lui. Atinge un tablou ca să-l vezi de aproape.', { lang: t(getCourse(lang).name), n: have, all: people.length })}</p>
       <div className="museum-wall">
         {people.map((p, i) => {
           const owned = admin || got.has(i + 1)
           return owned ? (
             <button key={p.img} className="museum-frame" onClick={() => setSpot(<Portrait p={p} chapter={i + 1} />)}>
               <div className="museum-photo" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}rewards/${p.img})` }} />
-              <span className="museum-name">{p.city}</span>
+              <span className="museum-name">{tc(p.city)}</span>
             </button>
           ) : (
             <div key={p.img} className="museum-frame empty">
               <div className="museum-photo silhouette">👤</div>
-              <span className="museum-name">Capitolul {i + 1}</span>
+              <span className="museum-name">{t('Capitolul {n}', { n: i + 1 })}</span>
             </div>
           )
         })}

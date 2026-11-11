@@ -1,10 +1,12 @@
+import { t, tk } from './i18n'
+
 export type Season = 'spring' | 'summer' | 'autumn' | 'winter'
 
 export const SEASONS: Record<Season, { name: string; emoji: string; greeting: string }> = {
-  spring: { name: 'Primăvara', emoji: '🌸', greeting: 'Cireșii au înflorit' },
-  summer: { name: 'Vara', emoji: '☀️', greeting: 'Zile lungi, multe cuvinte' },
-  autumn: { name: 'Toamna', emoji: '🍁', greeting: 'Frunzele cad, cuvintele rămân' },
-  winter: { name: 'Iarna', emoji: '❄️', greeting: 'Seri liniștite de studiu' },
+  spring: { name: tk('Primăvara'), emoji: '🌸', greeting: tk('Cireșii au înflorit') },
+  summer: { name: tk('Vara'), emoji: '☀️', greeting: tk('Zile lungi, multe cuvinte') },
+  autumn: { name: tk('Toamna'), emoji: '🍁', greeting: tk('Frunzele cad, cuvintele rămân') },
+  winter: { name: tk('Iarna'), emoji: '❄️', greeting: tk('Seri liniștite de studiu') },
 }
 
 // Anotimpuri meteorologice, emisfera nordică (România)
@@ -23,8 +25,8 @@ export function isNight(d = new Date()): boolean {
 
 export function partOfDay(d = new Date()): string {
   const h = d.getHours()
-  if (h < 5) return 'Noapte bună'
-  if (h < 11) return 'Bună dimineața'
-  if (h < 18) return 'Bună ziua'
-  return 'Bună seara'
+  if (h < 5) return t('Noapte bună')
+  if (h < 11) return t('Bună dimineața')
+  if (h < 18) return t('Bună ziua')
+  return t('Bună seara')
 }

@@ -1,3 +1,4 @@
+import { t, tc, tn } from '../i18n'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { useEffect, useRef, useState } from 'react'
 import { TopBar } from '../components/ui'
@@ -16,25 +17,25 @@ export function KanjiListScreen({ go, back }: { go: Go; back: () => void }) {
   const done = new Map(rows.map((r) => [r.id, r]))
   return (
     <div className="screen">
-      <TopBar title="🖌️ Kanji cu degetul" onBack={back} />
-      <p className="muted small">{done.size} din {LIST.length} kanji exersate. Atinge un kanji ca să vezi ordinea liniilor și să-l scrii cu degetul.</p>
+      <TopBar title={`🖌️ ${t('Kanji cu degetul')}`} onBack={back} />
+      <p className="muted small">{t('{n} din {all} kanji exersate. Atinge un kanji ca să vezi ordinea liniilor și să-l scrii cu degetul.', { n: done.size, all: LIST.length })}</p>
       {GROUPS.map((g) => (
         <section key={g} className="kanji-group">
-          <h3>{g}</h3>
+          <h3>{tc(g)}</h3>
           <div className="kanji-grid">
             {LIST.filter((k) => k.group === g).map((k) => {
               const r = done.get(k.char)
               return (
                 <button key={k.char} className={`kanji-cell ${r ? (r.memory ? 'mastered' : 'practiced') : ''}`} onClick={() => go({ name: 'kanjiOne', char: k.char })}>
                   <span className="jp">{k.char}</span>
-                  <small>{k.meaning.split(';')[0]}</small>
+                  <small>{tc(k.meaning.split(';')[0])}</small>
                 </button>
               )
             })}
           </div>
         </section>
       ))}
-      <p className="muted small center">Verde = exersat cu contur · auriu = scris din memorie. Liniile kanji: KanjiVG (Ulrich Apel și colaboratorii), licență CC BY-SA 3.0.</p>
+      <p className="muted small center">{t('Verde = exersat cu contur · auriu = scris din memorie. Liniile kanji: KanjiVG (Ulrich Apel și colaboratorii), licență CC BY-SA 3.0.')}</p>
     </div>
   )
 }
@@ -103,20 +104,20 @@ export function KanjiOneScreen({ char, go, back }: { char: string; go: Go; back:
   const showGuide = mode === 'trace' || mode === 'demo'
   return (
     <div className="screen">
-      <TopBar title={<span className="jp">{k.char} · {k.meaning}</span>} onBack={back} />
+      <TopBar title={<span className="jp">{k.char} · {tc(k.meaning)}</span>} onBack={back} />
       <div className="kanji-info card">
         <div className="kanji-readings">
-          <div><small className="muted">ON (citire chineză)</small><b className="jp">{k.on}</b></div>
-          {k.kun && <div><small className="muted">KUN (citire japoneză)</small><b className="jp">{k.kun}</b></div>}
-          <div><small className="muted">{k.strokes.length} linii</small></div>
+          <div><small className="muted">{t('ON (citire chineză)')}</small><b className="jp">{k.on}</b></div>
+          {k.kun && <div><small className="muted">{t('KUN (citire japoneză)')}</small><b className="jp">{k.kun}</b></div>}
+          <div><small className="muted">{tn(k.strokes.length, '{n} linie', '{n} linii')}</small></div>
         </div>
-        <button className="kanji-example" onClick={() => speak(k.ex, 'ja', 'ja-JP')}>🔊 <span className="jp">{k.ex}</span> · {k.exRo}</button>
+        <button className="kanji-example" onClick={() => speak(k.ex, 'ja', 'ja-JP')}>🔊 <span className="jp">{k.ex}</span> · {tc(k.exRo)}</button>
       </div>
 
       <div className="segmented kanji-modes">
-        <button className={mode === 'demo' ? 'on' : ''} onClick={() => reset('demo')}>▶ Ordinea liniilor</button>
-        <button className={mode === 'trace' ? 'on' : ''} onClick={() => reset('trace')}>✍️ Cu contur</button>
-        <button className={mode === 'memory' ? 'on' : ''} onClick={() => reset('memory')}>🧠 Din memorie</button>
+        <button className={mode === 'demo' ? 'on' : ''} onClick={() => reset('demo')}>▶ {t('Ordinea liniilor')}</button>
+        <button className={mode === 'trace' ? 'on' : ''} onClick={() => reset('trace')}>✍️ {t('Cu contur')}</button>
+        <button className={mode === 'memory' ? 'on' : ''} onClick={() => reset('memory')}>🧠 {t('Din memorie')}</button>
       </div>
 
       <div className="kanji-pad">
@@ -141,21 +142,21 @@ export function KanjiOneScreen({ char, go, back }: { char: string; go: Go; back:
 
       {mode === 'demo' ? (
         <div className="course-actions kanji-actions">
-          <button className="btn" onClick={() => setDemoRun((r) => r + 1)}>↻ Încă o dată</button>
-          <button className="btn primary" onClick={() => reset('trace')}>✍️ Acum scrie tu</button>
+          <button className="btn" onClick={() => setDemoRun((r) => r + 1)}>↻ {t('Încă o dată')}</button>
+          <button className="btn primary" onClick={() => reset('trace')}>✍️ {t('Acum scrie tu')}</button>
         </div>
       ) : finished ? (
         <div className="card kanji-result">
-          <b>{mistakes === 0 ? 'Perfect! 🎉' : `Gata! ${mistakes} ${mistakes === 1 ? 'greșeală' : 'greșeli'}.`}</b>
-          <small className="muted">{mode === 'trace' ? 'Încearcă acum din memorie, fără contur.' : 'L-ai scris din memorie. Bravo!'}</small>
+          <b>{mistakes === 0 ? t('Perfect! 🎉') : tn(mistakes, 'Gata! {n} greșeală.', 'Gata! {n} greșeli.')}</b>
+          <small className="muted">{mode === 'trace' ? t('Încearcă acum din memorie, fără contur.') : t('L-ai scris din memorie. Bravo!')}</small>
           <div className="course-actions kanji-actions">
-            <button className="btn" onClick={() => reset(mode)}>↻ Încă o dată</button>
-            {mode === 'trace' && <button className="btn primary" onClick={() => reset('memory')}>🧠 Din memorie</button>}
-            {LIST[idx + 1] && <button className="btn primary" onClick={() => go({ name: 'kanjiOne', char: LIST[idx + 1].char })}>Următorul: <span className="jp">{LIST[idx + 1].char}</span> →</button>}
+            <button className="btn" onClick={() => reset(mode)}>↻ {t('Încă o dată')}</button>
+            {mode === 'trace' && <button className="btn primary" onClick={() => reset('memory')}>🧠 {t('Din memorie')}</button>}
+            {LIST[idx + 1] && <button className="btn primary" onClick={() => go({ name: 'kanjiOne', char: LIST[idx + 1].char })}>{t('Următorul:')} <span className="jp">{LIST[idx + 1].char}</span> →</button>}
           </div>
         </div>
       ) : (
-        <p className="muted small center">Linia {done + 1} din {k.strokes.length}{mode === 'trace' ? ' · începe de la punctul colorat' : ''}. Greșeli: {mistakes}.</p>
+        <p className="muted small center">{t('Linia {n} din {all}', { n: done + 1, all: k.strokes.length })}{mode === 'trace' ? ` · ${t('începe de la punctul colorat')}` : ''}. {t('Greșeli: {n}.', { n: mistakes })}</p>
       )}
     </div>
   )

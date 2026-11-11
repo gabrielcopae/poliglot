@@ -1,3 +1,4 @@
+import { t, tc, tn } from '../i18n'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { findLesson, getCourse } from '../content'
 import type { Course, LangCode, Lesson, Word } from '../content/types'
@@ -23,7 +24,7 @@ export function LessonScreen({ lang, lessonId, back }: { lang: LangCode; lessonI
     [round, lesson?.id], // eslint-disable-line react-hooks/exhaustive-deps
   )
 
-  if (!lesson) return <div className="screen"><TopBar title="Lecție negăsită" onBack={back} /></div>
+  if (!lesson) return <div className="screen"><TopBar title={t('Lecție negăsită')} onBack={back} /></div>
 
   return (
     <div className="screen lesson">
@@ -58,24 +59,24 @@ export function LessonScreen({ lang, lessonId, back }: { lang: LangCode; lessonI
 function LessonIntro({ course, lesson, back, onStart }: { course: Course; lesson: Lesson; back: () => void; onStart: () => void }) {
   return (
     <>
-      <TopBar title={lesson.title} onBack={back} />
+      <TopBar title={tc(lesson.title)} onBack={back} />
       <div className="card lesson-hero">
         <div className="lesson-emoji">{lesson.emoji}</div>
-        <h2>{lesson.title}</h2>
-        <p>{lesson.goal}</p>
-        <p className="muted">{lesson.words.length} {lesson.kind === 'kana' ? 'semne și cuvinte' : 'cuvinte'} noi{lesson.sentences.length ? ` · ${lesson.sentences.length} propoziții` : ''}</p>
+        <h2>{tc(lesson.title)}</h2>
+        <p>{tc(lesson.goal)}</p>
+        <p className="muted">{lesson.kind === 'kana' ? t('{n} semne și cuvinte noi', { n: lesson.words.length }) : t('{n} cuvinte noi', { n: lesson.words.length })}{lesson.sentences.length ? ` · ${t('{n} propoziții', { n: lesson.sentences.length })}` : ''}</p>
       </div>
       {lesson.grammar.map((g) => (
         <article key={g.title} className="card grammar">
-          <h3>📖 {g.title}</h3>
-          {g.body.map((p, i) => <p key={i}>{p}</p>)}
+          <h3>📖 {tc(g.title)}</h3>
+          {g.body.map((p, i) => <p key={i}>{tc(p)}</p>)}
           {g.table && (
             <div className="table-wrap">
               <table>
-                <thead><tr>{g.table[0].map((c, i) => <th key={i}>{c}</th>)}</tr></thead>
+                <thead><tr>{g.table[0].map((c, i) => <th key={i}>{tc(c)}</th>)}</tr></thead>
                 <tbody>
                   {g.table.slice(1).map((row, i) => (
-                    <tr key={i}>{row.map((c, j) => <td key={j}>{c}</td>)}</tr>
+                    <tr key={i}>{row.map((c, j) => <td key={j}>{tc(c)}</td>)}</tr>
                   ))}
                 </tbody>
               </table>
@@ -85,19 +86,19 @@ function LessonIntro({ course, lesson, back, onStart }: { course: Course; lesson
       ))}
       {lesson.sentences.length > 0 && (
         <article className="card">
-          <h3>💬 Propoziții din lecție</h3>
+          <h3>💬 {t('Propoziții din lecție')}</h3>
           <ul className="sentences">
             {lesson.sentences.map((s) => (
               <li key={s.t}>
                 <SpeakButton text={s.t} lang={course.lang} small />
-                <div><div className="target">{s.t}</div>{s.r && <div className="romaji">{s.r}</div>}<div className="muted">{s.ro}</div></div>
+                <div><div className="target">{s.t}</div>{s.r && <div className="romaji">{s.r}</div>}<div className="muted">{tc(s.ro)}</div></div>
               </li>
             ))}
           </ul>
         </article>
       )}
       <div className="sticky-actions">
-        <button className="btn primary big" onClick={onStart}>Începe lecția →</button>
+        <button className="btn primary big" onClick={onStart}>{t('Începe lecția →')}</button>
       </div>
     </>
   )
@@ -117,12 +118,12 @@ export function Learn({ course, lesson, back, onDone }: { course: Course; lesson
   return (
     <>
       <TopBar title={<Progress value={(i + 1) / lesson.words.length} />} onBack={back} />
-      <div className="learn-label">Cuvânt nou · {i + 1} din {lesson.words.length}</div>
+      <div className="learn-label">{t('Cuvânt nou · {n} din {all}', { n: i + 1, all: lesson.words.length })}</div>
       <div className="card flash" key={word.id}>
         <div className={`flash-word ${course.lang === 'ja' ? 'jp' : ''}`}>{word.t}</div>
         {word.r && settings.romaji && <div className="romaji">{word.r}</div>}
-        <div className="flash-ro">{word.ro}</div>
-        {word.note && <div className="muted">{word.note}</div>}
+        <div className="flash-ro">{tc(word.ro)}</div>
+        {word.note && <div className="muted">{tc(word.note)}</div>}
         <div className="flash-audio">
           <SpeakButton text={word.t} lang={course.lang} />
           <SpeakButton text={word.t} lang={course.lang} slow />
@@ -131,7 +132,7 @@ export function Learn({ course, lesson, back, onDone }: { course: Course; lesson
       </div>
       <div className="sticky-actions">
         {i > 0 && <button className="btn" onClick={() => setI(i - 1)}>←</button>}
-        <button className="btn primary big" onClick={next}>{i + 1 < lesson.words.length ? 'Următorul' : 'Spre exerciții →'}</button>
+        <button className="btn primary big" onClick={next}>{i + 1 < lesson.words.length ? t('Următorul') : t('Spre exerciții →')}</button>
       </div>
     </>
   )
@@ -160,7 +161,7 @@ export function Practice({ course, exercises, back, onDone }: { course: Course; 
       missed.current.add(ex)
       setQueue((q) => [...q, ex])
     }
-    setFeedback({ ok, note: res === 'accent' ? 'Corect! Atenție la accente și articol.' : undefined, answer: ok ? undefined : correctAnswer, explain: ex.explain })
+    setFeedback({ ok, note: res === 'accent' ? t('Corect! Atenție la accente și articol.') : undefined, answer: ok ? undefined : correctAnswer, explain: ex.explain })
     if (speakText) speak(speakText, course.lang, course.locale)
   }
 
@@ -190,12 +191,12 @@ export function Practice({ course, exercises, back, onDone }: { course: Course; 
       {feedback && (
         <div className={`feedback ${feedback.ok ? 'ok' : 'bad'}`}>
           <div>
-            <b>{feedback.ok ? '✔ Excelent!' : '✘ Nu chiar'}</b>
+            <b>{feedback.ok ? `✔ ${t('Excelent!')}` : `✘ ${t('Nu chiar')}`}</b>
             {feedback.note && <div>{feedback.note}</div>}
-            {feedback.answer && <div>Răspuns corect: <b>{feedback.answer}</b></div>}
+            {feedback.answer && <div>{t('Răspuns corect:')} <b>{feedback.answer}</b></div>}
             {feedback.explain && <div className="feedback-explain">💡 {feedback.explain}</div>}
           </div>
-          <button className="btn primary" onClick={next} autoFocus>Continuă</button>
+          <button className="btn primary" onClick={next} autoFocus>{t('Continuă')}</button>
         </div>
       )}
     </>
@@ -276,7 +277,7 @@ function TypeEx({ ex, course, locked, onAnswer }: { ex: Extract<Exercise, { kind
         autoComplete="off"
         autoCorrect="off"
         spellCheck={false}
-        placeholder="Scrie aici…"
+        placeholder={t('Scrie aici…')}
       />
       {SPECIAL[course.lang].length > 0 && (
         <div className="special">
@@ -285,7 +286,7 @@ function TypeEx({ ex, course, locked, onAnswer }: { ex: Extract<Exercise, { kind
           ))}
         </div>
       )}
-      <button className="btn primary big" disabled={locked || !v.trim()}>Verifică</button>
+      <button className="btn primary big" disabled={locked || !v.trim()}>{t('Verifică')}</button>
     </form>
   )
 }
@@ -310,7 +311,7 @@ function DictationEx({ ex, course, locked, onAnswer }: { ex: Extract<Exercise, {
         autoComplete="off"
         autoCorrect="off"
         spellCheck={false}
-        placeholder="Scrie ce auzi…"
+        placeholder={t('Scrie ce auzi…')}
       />
       {SPECIAL[course.lang].length > 0 && (
         <div className="special">
@@ -319,8 +320,8 @@ function DictationEx({ ex, course, locked, onAnswer }: { ex: Extract<Exercise, {
           ))}
         </div>
       )}
-      <p className="muted small center">Ascultă de câte ori ai nevoie. Punctuația nu contează.</p>
-      <button className="btn primary big" disabled={locked || !v.trim()}>Verifică</button>
+      <p className="muted small center">{t('Ascultă de câte ori ai nevoie. Punctuația nu contează.')}</p>
+      <button className="btn primary big" disabled={locked || !v.trim()}>{t('Verifică')}</button>
     </form>
   )
 }
@@ -349,7 +350,7 @@ function FillEx({ ex, course, locked, onAnswer }: { ex: Extract<Exercise, { kind
         <span>{ex.after}</span>
       </div>
       {ex.ro && <div className="muted center">{ex.ro}</div>}
-      {ex.hint && <div className="hint">Indiciu: {ex.hint}</div>}
+      {ex.hint && <div className="hint">{t('Indiciu:')} {ex.hint}</div>}
       {SPECIAL[course.lang].length > 0 && (
         <div className="special">
           {SPECIAL[course.lang].map((c) => (
@@ -357,7 +358,7 @@ function FillEx({ ex, course, locked, onAnswer }: { ex: Extract<Exercise, { kind
           ))}
         </div>
       )}
-      <button className="btn primary big" disabled={locked || !v.trim()}>Verifică</button>
+      <button className="btn primary big" disabled={locked || !v.trim()}>{t('Verifică')}</button>
     </form>
   )
 }
@@ -372,14 +373,14 @@ function OrderEx({ ex, locked, onAnswer }: { ex: Extract<Exercise, { kind: 'orde
         {chosen.map((ti) => (
           <button key={ti} className="token" disabled={locked} onClick={() => setChosen((c) => c.filter((x) => x !== ti))}>{ex.tokens[ti]}</button>
         ))}
-        {!chosen.length && <span className="muted">Atinge cuvintele în ordinea corectă</span>}
+        {!chosen.length && <span className="muted">{t('Atinge cuvintele în ordinea corectă')}</span>}
       </div>
       <div className={`order-bank ${jp ? 'jp' : ''}`}>
-        {ex.tokens.map((t, ti) => (
-          <button key={ti} className={`token ${chosen.includes(ti) ? 'used' : ''}`} disabled={locked || chosen.includes(ti)} onClick={() => setChosen((c) => [...c, ti])}>{t}</button>
+        {ex.tokens.map((tok, ti) => (
+          <button key={ti} className={`token ${chosen.includes(ti) ? 'used' : ''}`} disabled={locked || chosen.includes(ti)} onClick={() => setChosen((c) => [...c, ti])}>{tok}</button>
         ))}
       </div>
-      <button className="btn primary big" disabled={locked || chosen.length !== ex.tokens.length} onClick={() => onAnswer(chosen.map((i) => ex.tokens[i]))}>Verifică</button>
+      <button className="btn primary big" disabled={locked || chosen.length !== ex.tokens.length} onClick={() => onAnswer(chosen.map((i) => ex.tokens[i]))}>{t('Verifică')}</button>
     </>
   )
 }
@@ -394,7 +395,7 @@ function SpeakEx({ ex, course, locked, onAnswer, onSkip }: { ex: Extract<Exercis
       {ex.sub && <div className="romaji center">{ex.sub}</div>}
       <div className="muted center">{ex.ro}</div>
       <MicCheck text={ex.text} reading={ex.sub} course={course} disabled={locked} onResult={(score) => onAnswer(score >= 0.7)} />
-      {!locked && <button className="btn ghost" onClick={onSkip}>Nu pot vorbi acum</button>}
+      {!locked && <button className="btn ghost" onClick={onSkip}>{t('Nu pot vorbi acum')}</button>}
     </>
   )
 }
@@ -424,19 +425,19 @@ export function MicCheck({ text, reading, course, compact, disabled, onResult }:
     }
   }
 
-  const verdict = score >= 0.9 ? '🌟 Perfect!' : score >= 0.7 ? '👍 Foarte bine!' : score >= 0.45 ? '🙂 Aproape, mai încearcă' : '🔁 Mai încearcă'
+  const verdict = score >= 0.9 ? `🌟 ${t('Perfect!')}` : score >= 0.7 ? `👍 ${t('Foarte bine!')}` : score >= 0.45 ? `🙂 ${t('Aproape, mai încearcă')}` : `🔁 ${t('Mai încearcă')}`
 
   return (
     <div className={`mic ${compact ? 'compact' : ''}`}>
-      <button className={`mic-btn ${state === 'listening' ? 'on' : ''}`} onClick={start} disabled={disabled || state === 'listening'} aria-label="Vorbește">
+      <button className={`mic-btn ${state === 'listening' ? 'on' : ''}`} onClick={start} disabled={disabled || state === 'listening'} aria-label={t('Vorbește')}>
         🎤
       </button>
-      {!compact && state === 'idle' && <div className="muted">Apasă și spune propoziția</div>}
-      {state === 'listening' && <div className="muted">Te ascult…</div>}
+      {!compact && state === 'idle' && <div className="muted">{t('Apasă și spune propoziția')}</div>}
+      {state === 'listening' && <div className="muted">{t('Te ascult…')}</div>}
       {state === 'result' && (
         <div className="mic-result">
           <b>{verdict}</b> <span className="muted">({Math.round(score * 100)}%)</span>
-          <div className="muted">Am auzit: „{heard}”</div>
+          <div className="muted">{t('Am auzit:')} „{heard}”</div>
         </div>
       )}
       {state === 'error' && <div className="mic-result bad">{err}</div>}
@@ -449,16 +450,16 @@ function Done({ lesson, result, back, retry }: { lesson: Lesson; result: { score
   return (
     <div className="done">
       <div className="done-emoji">{pct >= 90 ? '🏆' : pct >= 60 ? '🎉' : '💪'}</div>
-      <h2>Lecție terminată!</h2>
-      <p className="done-score">{pct}% corect din prima</p>
+      <h2>{t('Lecție terminată!')}</h2>
+      <p className="done-score">{t('{p}% corect din prima', { p: pct })}</p>
       <p className="muted">
-        {result.added > 0 ? `${result.added} cuvinte noi au intrat în repetiția ta.` : 'Cuvintele acestei lecții sunt deja în repetiție.'}
-        {' '}Le vei revedea exact când ești pe cale să le uiți.
+        {result.added > 0 ? tn(result.added, '{n} cuvânt nou a intrat în repetiția ta.', '{n} cuvinte noi au intrat în repetiția ta.') : t('Cuvintele acestei lecții sunt deja în repetiție.')}
+        {' '}{t('Le vei revedea exact când ești pe cale să le uiți.')}
       </p>
       <WordList words={lesson.words} />
       <div className="sticky-actions">
-        <button className="btn" onClick={retry}>Încă o dată</button>
-        <button className="btn primary big" onClick={back}>Gata →</button>
+        <button className="btn" onClick={retry}>{t('Încă o dată')}</button>
+        <button className="btn primary big" onClick={back}>{t('Gata →')}</button>
       </div>
     </div>
   )
@@ -467,7 +468,7 @@ function Done({ lesson, result, back, retry }: { lesson: Lesson; result: { score
 function WordList({ words }: { words: Word[] }) {
   return (
     <div className="chips">
-      {words.map((w) => <span key={w.id} className="chip">{w.t} · {w.ro}</span>)}
+      {words.map((w) => <span key={w.id} className="chip">{w.t} · {tc(w.ro)}</span>)}
     </div>
   )
 }

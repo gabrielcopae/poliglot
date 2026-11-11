@@ -1,3 +1,4 @@
+import { t, tc, tn, uiLang } from '../i18n'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Flag } from '../components/Flag'
@@ -16,25 +17,25 @@ const stars = (score: number) => (score >= 90 ? '⭐⭐⭐' : score >= 60 ? '⭐
 export function TalksScreen({ go, back }: { go: Go; back: () => void }) {
   const done = useLiveQuery(() => db.talks.toArray(), [], [])
   const best = new Map(done.map((d) => [d.id, d.best]))
-  const langs = COURSES.filter((c) => TALKS.some((t) => t.lang === c.lang))
+  const langs = COURSES.filter((c) => TALKS.some((x) => x.lang === c.lang))
   const [lang, setLang] = useState<LangCode>(langs[0]?.lang ?? 'es')
   return (
     <div className="screen">
-      <TopBar title="💬 Conversează cu personajele" onBack={back} />
+      <TopBar title={`💬 ${t('Conversează cu personajele')}`} onBack={back} />
       <div className="segmented">
         {langs.map((c) => (
-          <button key={c.lang} className={c.lang === lang ? 'on' : ''} onClick={() => setLang(c.lang)}><Flag lang={c.lang} size={16} /> {c.name}</button>
+          <button key={c.lang} className={c.lang === lang ? 'on' : ''} onClick={() => setLang(c.lang)}><Flag lang={c.lang} size={16} /> {t(c.name)}</button>
         ))}
       </div>
-      <p className="muted small">Personajul îți vorbește, tu alegi răspunsul potrivit. Dacă greșești, personajul reacționează și îți explică. Încearcă să termini fără greșeli pentru trei stele.</p>
-      {TALKS.filter((t) => t.lang === lang).map((t) => (
-        <button key={t.id} className="card talk-card" onClick={() => go({ name: 'talk', id: t.id })}>
-          <span className="talk-emoji">{t.emoji}</span>
+      <p className="muted small">{t('Personajul îți vorbește, tu alegi răspunsul potrivit. Dacă greșești, personajul reacționează și îți explică. Încearcă să termini fără greșeli pentru trei stele.')}</p>
+      {TALKS.filter((x) => x.lang === lang).map((x) => (
+        <button key={x.id} className="card talk-card" onClick={() => go({ name: 'talk', id: x.id })}>
+          <span className="talk-emoji">{x.emoji}</span>
           <span className="session-body">
-            <b>{t.title}</b>
-            <small>{t.npc.emoji} {t.npc.name} · recomandat după {t.afterLabel}</small>
+            <b>{tc(x.title)}</b>
+            <small>{x.npc.emoji} {x.npc.name} · {t('recomandat după {after}', { after: tc(x.afterLabel) })}</small>
           </span>
-          <span className="talk-best">{best.has(t.id) ? stars(best.get(t.id)!) : '▶'}</span>
+          <span className="talk-best">{best.has(x.id) ? stars(best.get(x.id)!) : '▶'}</span>
         </button>
       ))}
     </div>
@@ -106,8 +107,8 @@ export function TalkScreen({ id, back }: { id: string; back: () => void }) {
   const jp = talk.lang === 'ja'
   return (
     <div className="screen talk-screen">
-      <TopBar title={<>{talk.emoji} {talk.title}</>} onBack={back} />
-      <p className="muted small talk-intro">{talk.intro}</p>
+      <TopBar title={<>{talk.emoji} {tc(talk.title)}</>} onBack={back} />
+      <p className="muted small talk-intro">{tc(talk.intro)}</p>
       <div className="chat">
         {msgs.map((m, i) => (
           <div key={i} className={`bubble-row ${m.from}`}>
@@ -116,11 +117,11 @@ export function TalkScreen({ id, back }: { id: string; back: () => void }) {
               <button className={`bubble ${m.from}`} onClick={() => say(m.line, m.from === 'npc' ? 'npc' : 'me')}>
                 <span className={jp ? 'jp' : ''}>{m.line.t}</span>
                 {jp && settings.romaji && m.line.r && <small className="bubble-r">{m.line.r}</small>}
-                {showRo.has(i) && <small className="bubble-ro">{m.line.ro}</small>}
+                {showRo.has(i) && <small className="bubble-ro">{tc(m.line.ro)}</small>}
               </button>
               <div className="bubble-tools">
-                <button onClick={() => setShowRo((s) => { const n = new Set(s); n.has(i) ? n.delete(i) : n.add(i); return n })}>RO</button>
-                {m.tip && <span className="bubble-tip">💡 {m.tip}</span>}
+                <button onClick={() => setShowRo((s) => { const n = new Set(s); n.has(i) ? n.delete(i) : n.add(i); return n })}>{uiLang().toUpperCase()}</button>
+                {m.tip && <span className="bubble-tip">💡 {tc(m.tip)}</span>}
               </div>
             </div>
           </div>
@@ -130,25 +131,25 @@ export function TalkScreen({ id, back }: { id: string; back: () => void }) {
 
       {finished === null ? (
         <div className="talk-choices">
-          <div className="muted small">Ce răspunzi?</div>
+          <div className="muted small">{t('Ce răspunzi?')}</div>
           {choices.map((c, i) => (
             <div key={node + i} className="talk-choice">
               <button className={`option ${tried.has(node + '|' + c.t) ? 'tried' : ''}`} disabled={tried.has(node + '|' + c.t)} onClick={() => pick(i)}>
                 <span className={jp ? 'jp' : ''}>{c.t}</span>
                 {jp && settings.romaji && c.r && <small className="bubble-r">{c.r}</small>}
               </button>
-              <button className="icon-btn" onClick={() => say(c, 'me')} aria-label="Ascultă">🔊</button>
+              <button className="icon-btn" onClick={() => say(c, 'me')} aria-label={t('Ascultă')}>🔊</button>
             </div>
           ))}
         </div>
       ) : (
         <div className="card talk-done">
           <div className="done-emoji">{stars(finished)}</div>
-          <b>{finished === 100 ? 'Perfect, fără nicio greșeală!' : `Ai terminat conversația: ${finished}%`}</b>
-          <small className="muted">{missed.size ? `Ai greșit la ${missed.size} ${missed.size === 1 ? 'pas' : 'pași'}. Încearcă din nou pentru trei stele.` : 'Ai vorbit ca un localnic.'}</small>
+          <b>{finished === 100 ? t('Perfect, fără nicio greșeală!') : t('Ai terminat conversația: {p}%', { p: finished })}</b>
+          <small className="muted">{missed.size ? tn(missed.size, 'Ai greșit la {n} pas. Încearcă din nou pentru trei stele.', 'Ai greșit la {n} pași. Încearcă din nou pentru trei stele.') : t('Ai vorbit ca un localnic.')}</small>
           <div className="course-actions">
-            <button className="btn primary" onClick={restart}>↻ Încă o dată</button>
-            <button className="btn" onClick={back}>Înapoi</button>
+            <button className="btn primary" onClick={restart}>↻ {t('Încă o dată')}</button>
+            <button className="btn" onClick={back}>{t('Înapoi')}</button>
           </div>
         </div>
       )}

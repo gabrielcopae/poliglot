@@ -1,3 +1,4 @@
+import { t } from './i18n'
 import Dexie, { type Table } from 'dexie'
 import { localGet, localSet } from './settings'
 
@@ -72,10 +73,10 @@ async function adminPasswordOk(password: string) {
 export async function createAccount(name: string, password: string): Promise<Session> {
   const clean = name.trim()
   const key = clean.toLowerCase()
-  if (clean.length < 2 || clean.length > 24) throw new Error('Numele trebuie să aibă între 2 și 24 de caractere.')
-  if (password.length < 4) throw new Error('Parola trebuie să aibă cel puțin 4 caractere.')
-  if (key === 'admin' && !(await adminPasswordOk(password))) throw new Error('Contul admin are o parolă fixă. Parola nu e corectă.')
-  if (await adb.accounts.get(key)) throw new Error('Există deja un cont cu acest nume.')
+  if (clean.length < 2 || clean.length > 24) throw new Error(t('Numele trebuie să aibă între 2 și 24 de caractere.'))
+  if (password.length < 4) throw new Error(t('Parola trebuie să aibă cel puțin 4 caractere.'))
+  if (key === 'admin' && !(await adminPasswordOk(password))) throw new Error(t('Contul admin are o parolă fixă. Parola nu e corectă.'))
+  if (await adb.accounts.get(key)) throw new Error(t('Există deja un cont cu acest nume.'))
   // primul cont preia progresul făcut înainte de apariția conturilor
   const first = (await adb.accounts.count()) === 0
   const salt = randomHex(16)
@@ -93,8 +94,8 @@ export async function createAccount(name: string, password: string): Promise<Ses
 
 export async function login(name: string, password: string): Promise<Session> {
   const acc = await adb.accounts.get(name.trim().toLowerCase())
-  if (acc?.key === 'admin' && !(await adminPasswordOk(password))) throw new Error('Nume sau parolă greșită.')
-  if (!acc || (await hashPassword(password, acc.salt)) !== acc.hash) throw new Error('Nume sau parolă greșită.')
+  if (acc?.key === 'admin' && !(await adminPasswordOk(password))) throw new Error(t('Nume sau parolă greșită.'))
+  if (!acc || (await hashPassword(password, acc.salt)) !== acc.hash) throw new Error(t('Nume sau parolă greșită.'))
   return { key: acc.key, name: acc.name, dbName: acc.dbName }
 }
 

@@ -1,13 +1,14 @@
+import { tk } from './i18n'
 import { createEmptyCard, fsrs, Rating, type Card } from 'ts-fsrs'
 import { db, type CardRow } from './db'
 
 const scheduler = fsrs({ request_retention: 0.9, enable_fuzz: true, maximum_interval: 3650 })
 
 export const GRADES = [
-  { rating: Rating.Again, label: 'Din nou', cls: 'again' },
-  { rating: Rating.Hard, label: 'Greu', cls: 'hard' },
-  { rating: Rating.Good, label: 'Bine', cls: 'good' },
-  { rating: Rating.Easy, label: 'Ușor', cls: 'easy' },
+  { rating: Rating.Again, label: tk('Din nou'), cls: 'again' },
+  { rating: Rating.Hard, label: tk('Greu'), cls: 'hard' },
+  { rating: Rating.Good, label: tk('Bine'), cls: 'good' },
+  { rating: Rating.Easy, label: tk('Ușor'), cls: 'easy' },
 ] as const
 
 export type GradeValue = (typeof GRADES)[number]['rating']

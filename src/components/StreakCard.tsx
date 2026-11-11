@@ -1,3 +1,4 @@
+import { t } from '../i18n'
 import type { DayRow } from '../db'
 import { today } from '../util'
 
@@ -17,7 +18,7 @@ export function longestStreak(days: DayRow[]): number {
   return best
 }
 
-const phrase = (n: number) => [`¡${n} días seguidos!`, `${n}日連続！`, `${n} giorni di fila!`]
+const phrase = (n: number) => [`¡${n} días seguidos!`, `${n}日連続！`, `${n} giorni di fila!`, `${n} jours d’affilée !`, `${n} Tage in Folge!`]
 
 /** Cartonașul holografic, multicolor și strălucitor, pentru o zi specială a seriei. */
 export function StreakCard({ n, locked }: { n: number; locked?: boolean }) {
@@ -26,7 +27,7 @@ export function StreakCard({ n, locked }: { n: number; locked?: boolean }) {
       <div className="holo-card locked">
         <div className="holo-inner">
           <div className="holo-num">{n}</div>
-          <div className="holo-sub">zile la rând</div>
+          <div className="holo-sub">{t('zile la rând')}</div>
           <div className="holo-lock">🔒</div>
         </div>
       </div>
@@ -38,7 +39,7 @@ export function StreakCard({ n, locked }: { n: number; locked?: boolean }) {
         <div className="holo-shine" />
         <div className="holo-fire">🔥</div>
         <div className="holo-num">{n}</div>
-        <div className="holo-sub">zile la rând</div>
+        <div className="holo-sub">{t('zile la rând')}</div>
         <div className="holo-phrases">
           {phrase(n).map((p) => <span key={p}>{p}</span>)}
         </div>

@@ -1,3 +1,4 @@
+import { t } from '../i18n'
 import { useState } from 'react'
 import { HIRAGANA, KATAKANA } from '../content/ja'
 import { speak } from '../speech'
@@ -9,15 +10,15 @@ export function KanaScreen({ back }: { back: () => void }) {
   const table = set === 'h' ? HIRAGANA : KATAKANA
   return (
     <div className="screen">
-      <TopBar title="Tabelul kana" onBack={back} />
+      <TopBar title={t('Tabelul kana')} onBack={back} />
       <div className="segmented">
         <button className={set === 'h' ? 'on' : ''} onClick={() => setSet('h')}>ひらがな Hiragana</button>
         <button className={set === 'k' ? 'on' : ''} onClick={() => setSet('k')}>カタカナ Katakana</button>
       </div>
       <p className="muted">
         {set === 'h'
-          ? 'Hiragana: pentru cuvintele japoneze și terminațiile gramaticale.'
-          : 'Katakana: pentru cuvinte străine și nume, de exemplu ルーマニア (Rūmania) = România.'}
+          ? t('Hiragana: pentru cuvintele japoneze și terminațiile gramaticale.')
+          : t('Katakana: pentru cuvinte străine și nume, de exemplu ルーマニア (Rūmania) = România.')}
       </p>
       <div className="kana-grid">
         {table.flat().map((cell, i) =>

@@ -12,6 +12,8 @@ export interface Settings {
   autoplay: boolean
   /** vocile înregistrate dinainte; nesetat = pornite doar pe telefon / tabletă */
   recorded?: boolean
+  /** limba interfeței (meniuri, ecrane); lecțiile rămân în română */
+  ui?: 'ro' | 'en' | 'es' | 'it' | 'fr' | 'de' | 'ja'
 }
 
 const DEFAULTS: Settings = {

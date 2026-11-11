@@ -1,3 +1,4 @@
+import { t, tc } from '../i18n'
 import { useMemo, useState } from 'react'
 import { Flag } from '../components/Flag'
 import { allLessons, getCourse } from '../content'
@@ -50,32 +51,33 @@ export function DictionaryScreen({ lang, back }: { lang: LangCode; back: () => v
   const [filter, setFilter] = useState<'all' | 'lessons'>('all')
 
   const query = norm(q)
-  const shown = entries.filter((e) => (filter === 'all' || e.fromLesson) && (!query || norm(e.t).includes(query) || norm(e.ro).includes(query) || (e.r && norm(e.r).includes(query))))
+  const shown = entries.filter((e) => (filter === 'all' || e.fromLesson) && (!query || norm(e.t).includes(query) || norm(tc(e.ro)).includes(query) || (e.r && norm(e.r).includes(query))))
+  const source = (s: string) => (s.startsWith('Cap. ') ? t('Cap. {n}', { n: s.slice(5) }) : tc(s))
 
   return (
     <div className="screen">
-      <TopBar title={<><Flag lang={lang} size={26} /> Dicționar</>} onBack={back} />
+      <TopBar title={<><Flag lang={lang} size={26} /> {t('Dicționar')}</>} onBack={back} />
       <div className="dict-search">
-        <input className="field" value={q} onChange={(e) => setQ(e.target.value)} placeholder={`Caută în ${course.name.toLowerCase()} sau în română…`} autoCapitalize="off" spellCheck={false} />
+        <input className="field" value={q} onChange={(e) => setQ(e.target.value)} placeholder={t('Caută un cuvânt sau o traducere…')} autoCapitalize="off" spellCheck={false} />
       </div>
       <div className="segmented">
-        <button className={filter === 'all' ? 'on' : ''} onClick={() => setFilter('all')}>Toate ({entries.length})</button>
-        <button className={filter === 'lessons' ? 'on' : ''} onClick={() => setFilter('lessons')}>Doar din lecții ({entries.filter((e) => e.fromLesson).length})</button>
+        <button className={filter === 'all' ? 'on' : ''} onClick={() => setFilter('all')}>{t('Toate')} ({entries.length})</button>
+        <button className={filter === 'lessons' ? 'on' : ''} onClick={() => setFilter('lessons')}>{t('Doar din lecții')} ({entries.filter((e) => e.fromLesson).length})</button>
       </div>
-      <p className="muted small">Dicționarul crește cu fiecare capitol nou. Atinge 🔊 ca să auzi pronunția.</p>
+      <p className="muted small">{t('Dicționarul crește cu fiecare capitol nou. Atinge 🔊 ca să auzi pronunția.')}</p>
       <div className="dict-list">
         {shown.slice(0, 400).map((e) => (
           <div key={e.t + e.source} className="dict-row">
             <SpeakButton text={e.t.replace(/[…]/g, '')} lang={lang} small />
             <div className="dict-body">
               <div className={`dict-word ${lang === 'ja' ? 'jp' : ''}`}>{e.t}{e.r && <span className="romaji"> · {e.r}</span>}</div>
-              <div className="dict-ro">{e.ro}</div>
-              {e.note && <div className="muted small">{e.note}</div>}
+              <div className="dict-ro">{tc(e.ro)}</div>
+              {e.note && <div className="muted small">{tc(e.note)}</div>}
             </div>
-            <span className="dict-src">{e.source}</span>
+            <span className="dict-src">{source(e.source)}</span>
           </div>
         ))}
-        {!shown.length && <p className="muted center">Niciun cuvânt găsit.</p>}
+        {!shown.length && <p className="muted center">{t('Niciun cuvânt găsit.')}</p>}
       </div>
     </div>
   )

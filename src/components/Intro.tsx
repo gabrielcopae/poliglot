@@ -1,11 +1,12 @@
+import { t } from '../i18n'
 import { useEffect } from 'react'
 
 const DURATION = 5200
 
 export function Intro({ onDone }: { onDone: () => void }) {
   useEffect(() => {
-    const t = setTimeout(onDone, DURATION)
-    return () => clearTimeout(t)
+    const timer = setTimeout(onDone, DURATION)
+    return () => clearTimeout(timer)
   }, [onDone])
 
   return (
@@ -42,9 +43,9 @@ export function Intro({ onDone }: { onDone: () => void }) {
       </div>
       <div className="intro-logo">
         <div className="intro-name">Poliglot</div>
-        <div className="intro-tag">Español · Italiano · 日本語</div>
+        <div className="intro-tag">Español · Italiano · Français · Deutsch · 日本語</div>
       </div>
-      <div className="intro-skip">Atinge pentru a sări</div>
+      <div className="intro-skip">{t('Atinge pentru a sări')}</div>
     </div>
   )
 }
