@@ -56,9 +56,14 @@ const contentFiles = import.meta.glob<{ default: string[] }>('./content/*/*.json
 const content: Partial<Record<UiLang, Record<string, string>>> = {}
 const loading: Partial<Record<UiLang, Promise<void>>> = {}
 
-/** Încarcă traducerile de conținut pentru o limbă (o singură dată). */
+/** Încarcă traducerile de conținut pentru o limbă (o singură dată); celelalte limbi încarcă și engleza, ca rezervă. */
 export function loadContent(lang: UiLang): Promise<void> {
   if (lang === 'ro') return Promise.resolve()
+  if (lang !== 'en') return Promise.all([loadContent('en'), loadOne(lang)]).then(() => {})
+  return loadOne(lang)
+}
+
+function loadOne(lang: UiLang): Promise<void> {
   return (loading[lang] ??= (async () => {
     const map: Record<string, string> = {}
     const parts = Object.keys(contentFiles).filter((p) => p.startsWith(`./content/${lang}/`))
@@ -74,8 +79,8 @@ export function loadContent(lang: UiLang): Promise<void> {
   })())
 }
 
-/** Traduce un text din conținut (cheia: textul în română). Fără traducere, rămâne româna. */
+/** Traduce un text din conținut (cheia: textul în română). Fără traducere: engleza, apoi româna. */
 export function tc(ro: string): string {
   const lang = uiLang()
-  return lang === 'ro' ? ro : content[lang]?.[ro] ?? ro
+  return lang === 'ro' ? ro : content[lang]?.[ro] ?? content.en?.[ro] ?? ro
 }
