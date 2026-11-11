@@ -50,17 +50,28 @@ export const langName = (ro: string) => t(ro)
 export const langWord = (ro: string) => (['ro', 'es', 'it', 'fr'].includes(uiLang()) ? t(ro).toLowerCase() : t(ro))
 
 // ——— Traducerea conținutului (lecții, cartonașe, ștampile, calendar) ———
-// Fișiere src/i18n/content/<limbă>/<parte>.json: { "text în română": "traducere" }, încărcate doar pentru limba aleasă.
-const contentFiles = import.meta.glob<{ default: Record<string, string> }>('./content/*/*.json')
+// src/i18n/content/ro/<parte>.json are textele în română (o listă), iar src/i18n/content/<limbă>/<parte>.json
+// are traducerile, rând cu rând, în aceeași ordine. Se încarcă doar limba aleasă.
+const contentFiles = import.meta.glob<{ default: string[] }>('./content/*/*.json')
 const content: Partial<Record<UiLang, Record<string, string>>> = {}
 const loading: Partial<Record<UiLang, Promise<void>>> = {}
 
 /** Încarcă traducerile de conținut pentru o limbă (o singură dată). */
 export function loadContent(lang: UiLang): Promise<void> {
   if (lang === 'ro') return Promise.resolve()
-  return (loading[lang] ??= Promise.all(
-    Object.entries(contentFiles).filter(([p]) => p.startsWith(`./content/${lang}/`)).map(([, load]) => load()),
-  ).then((mods) => { content[lang] = Object.assign({}, ...mods.map((m) => m.default)) }))
+  return (loading[lang] ??= (async () => {
+    const map: Record<string, string> = {}
+    const parts = Object.keys(contentFiles).filter((p) => p.startsWith(`./content/${lang}/`))
+    await Promise.all(parts.map(async (p) => {
+      const ro = contentFiles[p.replace(`/${lang}/`, '/ro/')]
+      if (!ro) return
+      const [src, dst] = await Promise.all([ro(), contentFiles[p]()])
+      // dacă textele românești s-au schimbat între timp, partea întreagă rămâne în română
+      if (src.default.length !== dst.default.length) return
+      src.default.forEach((k, i) => { if (dst.default[i]) map[k] = dst.default[i] })
+    }))
+    content[lang] = map
+  })())
 }
 
 /** Traduce un text din conținut (cheia: textul în română). Fără traducere, rămâne româna. */
