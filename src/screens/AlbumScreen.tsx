@@ -68,7 +68,7 @@ export function AlbumScreen({ back, user }: { back: () => void; user: string }) 
         <p className="muted small">{t('În fiecare zi în care înveți câștigi un cartonaș nou: un loc unde se vorbește limba pe care o înveți, cu ceva special din el și un fun fact despre limbă (atinge cartonașul). La fiecare a 7-a zi, rama e aurie.')}</p>
         {admin && (
           <div className="segmented wrap">
-            {[['all', tk('Toate')], ['es', tk('Spaniolă')], ['ja', tk('Japoneză')], ['it', tk('Italiană')], ['ro', tk('România')]].map(([k, label]) => (
+            {[['all', tk('Toate')], ['es', tk('Spaniolă')], ['ja', tk('Japoneză')], ['it', tk('Italiană')], ['fr', tk('Franceză')], ['ro', tk('România')]].map(([k, label]) => (
               <button key={k} className={cityLang === k ? 'on' : ''} onClick={() => setCityLang(k)}>{t(label)}</button>
             ))}
           </div>

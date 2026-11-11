@@ -141,7 +141,7 @@ function speakTTS(text: string, lang: string, locale: string, rate?: number, opt
 }
 
 // indexurile vocilor înregistrate, încărcate din timp (sunt mici)
-;['es', 'ja', 'it'].forEach((l) => { loadAudioIndex(l) })
+;['es', 'ja', 'it', 'fr'].forEach((l) => { loadAudioIndex(l) })
 
 // iPhone: prima atingere din aplicație „deblochează” vorbirea, cu o replică goală.
 if (synth && IOS) {

@@ -257,6 +257,7 @@ function ListenEx({ ex, course, locked, onAnswer }: { ex: Extract<Exercise, { ki
 const SPECIAL: Record<string, string[]> = {
   es: ['á', 'é', 'í', 'ó', 'ú', 'ñ', 'ü', '¿', '¡'],
   it: ['à', 'è', 'é', 'ì', 'ò', 'ù'],
+  fr: ['é', 'è', 'ê', 'à', 'â', 'ç', 'ô', 'î', 'û', 'ù', 'ë', 'œ', '’'],
   ja: [],
 }
 

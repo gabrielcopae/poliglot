@@ -161,6 +161,18 @@ Momentan are doar 6 lecții scurte, în formatul vechi. Va fi refăcută în for
 
 ---
 
+## 4b. Franceză 🇫🇷
+
+Curs nou, în formatul capitolelor, cu explicații în română și engleză (celelalte limbi ale interfeței vin mai târziu). Personaje noi: Ioana, arhitectă din Iași, se mută la Lyon; Julien, profesor de muzică; vecina, doamna Bernard, cu motanul Victor.
+
+| Unitate | Cap. | Conținut | Stare |
+|---|---|---|---|
+| A1 · Primii pași | 1 | Bonjour, être, ne… pas, întrebări, literele mute | ✅ testat |
+
+Urmează capitolul 2 (avoir, articolele, numerele). Testul: scratchpad pw/fr-range.mjs (ședința = (cap-1)·3 + 1).
+
+---
+
 ## 5. De făcut mai târziu (opțional)
 
 - O voce mai bună, descărcabilă (Kokoro), și recunoașterea vorbirii fără internet (Whisper).

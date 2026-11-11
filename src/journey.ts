@@ -29,7 +29,7 @@ export const PLACES: Record<string, { place: string; emoji: string; color: strin
 }
 
 export function placeOf(unitId: string, lang: LangCode) {
-  return PLACES[unitId] ?? { place: lang === 'it' ? 'Roma' : lang === 'ja' ? 'Japonia' : 'Spania', emoji: '📍', color: '#666' }
+  return PLACES[unitId] ?? { place: lang === 'it' ? 'Roma' : lang === 'fr' ? 'Franța' : lang === 'ja' ? 'Japonia' : 'Spania', emoji: '📍', color: '#666' }
 }
 
 /** Cartonașe speciale (aurii): obiectele importante din povești. */
