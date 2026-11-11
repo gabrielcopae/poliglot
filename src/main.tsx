@@ -6,7 +6,17 @@ import '@fontsource-variable/nunito'
 import './styles.css'
 import App from './App'
 
-registerSW({ immediate: true })
+// Aplicația instalată poate sta deschisă în fundal zile întregi: verificăm actualizările
+// când revine în prim-plan și o dată pe oră, nu doar la pornire.
+registerSW({
+  immediate: true,
+  onRegisteredSW(_url, reg) {
+    if (!reg) return
+    const check = () => { if (navigator.onLine) reg.update().catch(() => {}) }
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') check() })
+    setInterval(check, 60 * 60 * 1000)
+  },
+})
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
