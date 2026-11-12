@@ -3,6 +3,7 @@ import { frCap01 } from './fr-cap01'
 import { frCap02 } from './fr-cap02'
 import { frCap03 } from './fr-cap03'
 import { frCap04 } from './fr-cap04'
+import { frCap05 } from './fr-cap05'
 
 export const fr: Course = {
   lang: 'fr',
@@ -21,5 +22,6 @@ export const fr: Course = {
   ],
   units: [
     { id: 'fr-a1-1', title: 'A1 · Primii pași', level: 'A1', lessons: [frCap01, frCap02, frCap03, frCap04] },
+    { id: 'fr-a1-2', title: 'A1 · Viața de zi cu zi', level: 'A1', lessons: [frCap05] },
   ],
 }
