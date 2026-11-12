@@ -195,10 +195,14 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 26 | Subjonctivul după sentimente și pour que / bien que / avant que (bunica vine cu autocarul) | ✅ testat |
 | | 27 | Pronumele demonstrative și posesive (rochia, costumul lui Henri) | ✅ testat |
 | | 28 | Vorbirea indirectă la prezent + recapitularea unității (cele trei bunici, „dor”) | ✅ testat |
+| A2 · Nunta și viața nouă | 29 | Vocea pasivă (nunta la primărie, valsul pe Saône) | ✅ testat |
+| | 30 | Pronume nehotărâte și negații: personne, rien, aucun, ne… que, ni… ni (luna de miere în Corsica) | ✅ testat |
+| | 31 | Cauza și consecința: parce que, comme, grâce à, à cause de, donc (Sala Henri Bernard) | ✅ testat |
+| | 32 | Exprimarea părerii (je ne pense pas que + subjonctiv) + recapitularea unității (14 iulie) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
-A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. Unitățile A2 până la capitolul 28 sunt complete. Urmează unitatea a cincea din A2 (29–32): nunta (3 mai), vocea pasivă, pronumele relative compuse (lequel, auquel), exprimarea cauzei și consecinței; apoi ultima unitate A2 (33–36). Poveștile au acum 311 → 763 de cuvinte și continuă să crească.
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. Unitățile A2 până la capitolul 32 sunt complete. Urmează ultima unitate A2 (33–36), „A2 · Povești și finalul A2”: nunta de la biserica din Iași, expresiile de timp, avant de / après avoir, ipoteze și marea recapitulare A2. Poveștile au acum 311 → 971 de cuvinte și continuă să crească.
 
 ---
 
