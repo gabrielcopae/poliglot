@@ -33,4 +33,37 @@ export const FR_POVESTI_A2: Record<string, Story> = {
       { kind: 'fill', before: 'Les mains', after: '.', answers: ['savent'] },
     ],
   },
+
+  'fr-cap14': {
+    reading: {
+      title: 'L’homme au manteau gris',
+      cast: { Narratrice: 'f' },
+      lines: [
+        { t: 'C’était au début du mois de janvier. Il faisait froid et il y avait du brouillard sur la Saône.', ro: 'Era la începutul lui ianuarie. Era frig și era ceață pe Saône.' },
+        { t: 'Un soir, Ioana rentrait du travail quand elle a remarqué un homme devant son immeuble.', ro: 'Într-o seară, Ioana se întorcea de la lucru când a observat un bărbat în fața blocului ei.' },
+        { t: 'Il était assez âgé. Il portait un long manteau gris et un chapeau noir. Il avait une grande moustache blanche.', ro: 'Era destul de în vârstă. Purta un palton lung, gri, și o pălărie neagră. Avea o mustață mare, albă.' },
+        { t: 'Il ne bougeait pas. Il regardait les fenêtres de l’immeuble, très attentivement.', ro: 'Nu se mișca. Se uita la ferestrele blocului, foarte atent.' },
+        { br: true, t: 'Le lendemain, l’homme était encore là, à la même heure, au même endroit. Et le jour suivant aussi.', ro: 'A doua zi, bărbatul era din nou acolo, la aceeași oră, în același loc. Și în ziua următoare la fel.' },
+        { t: 'Madame Bernard était inquiète. « Il regarde mon appartement ! C’est peut-être un voleur. Il attend le bon moment… »', ro: 'Doamna Bernard era îngrijorată. „Se uită la apartamentul meu! Poate e un hoț. Așteaptă momentul potrivit…”' },
+        { t: 'Victor, lui, n’avait pas peur. Il dormait sur le radiateur, comme d’habitude.', ro: 'Victor, în schimb, nu se temea. Dormea pe calorifer, ca de obicei.' },
+        { br: true, t: 'Le quatrième soir, Ioana a décidé de parler à l’homme. Elle est descendue avec Julien. Ils avaient un peu peur.', ro: 'În a patra seară, Ioana a hotărât să vorbească cu bărbatul. A coborât cu Julien. Le era puțin frică.' },
+        { t: '« Excusez-moi, monsieur. Vous attendez quelqu’un ? »', ro: '„Scuzați-mă, domnule. Așteptați pe cineva?”' },
+        { t: 'L’homme a sursauté. Puis il a souri et il a ouvert son manteau. Dessous, il tenait un grand carnet de dessin.', ro: 'Bărbatul a tresărit. Apoi a zâmbit și și-a deschis paltonul. Dedesubt ținea un caiet mare de desen.' },
+        { t: '« Pardon, je vous ai fait peur ! Je suis peintre. Je dessine les vieilles maisons de Lyon au coucher du soleil. »', ro: '„Iertați-mă, v-am speriat! Sunt pictor. Desenez casele vechi ale Lyonului la apus.”' },
+        { br: true, t: 'Dans le carnet, il y avait un dessin magnifique de leur immeuble. On voyait toutes les fenêtres, les balcons, les fleurs…', ro: 'În caiet era un desen minunat al blocului lor. Se vedeau toate ferestrele, balcoanele, florile…' },
+        { t: 'Et sur un balcon, il y avait un petit chat roux qui dormait. C’était Victor !', ro: 'Iar pe un balcon era o pisicuță roșcată care dormea. Era Victor!' },
+        { t: '« J’ai grandi dans cet immeuble, a expliqué l’homme. Quand j’étais enfant, j’habitais au troisième étage. Il y avait toujours un chat sur ce balcon. »', ro: '„Am crescut în blocul ăsta, a explicat bărbatul. Când eram copil, locuiam la etajul trei. Pe balconul acela era mereu o pisică.”' },
+        { br: true, t: 'Madame Bernard est arrivée à ce moment-là. Elle a regardé l’homme longtemps. Puis elle a crié : « Paul ? Le petit Paul Martin ? »', ro: 'Doamna Bernard a sosit chiar atunci. S-a uitat mult la bărbat. Apoi a strigat: „Paul? Micuțul Paul Martin?”' },
+        { t: 'C’était le petit garçon des anciens voisins, qui jouait dans l’escalier il y a cinquante ans !', ro: 'Era băiețelul foștilor vecini, care se juca pe scară acum cincizeci de ani!' },
+        { t: 'Ce soir-là, ils ont tous bu un thé chez Madame Bernard, et Paul a offert son dessin. Aujourd’hui, il est accroché dans le salon, au-dessus du radiateur de Victor.', ro: 'În seara aceea au băut toți un ceai la doamna Bernard, iar Paul și-a dăruit desenul. Azi e agățat în sufragerie, deasupra caloriferului lui Victor.' },
+      ],
+      gloss: { début: 'început', brouillard: 'ceață', rentrait: 'se întorcea', remarqué: 'observat', âgé: 'în vârstă', moustache: 'mustață', bougeait: 'se mișca', attentivement: 'atent', lendemain: 'a doua zi', endroit: 'loc', suivant: 'următor', inquiète: 'îngrijorată', radiateur: 'calorifer', décidé: 'hotărât', sursauté: 'tresărit', dessous: 'dedesubt', tenait: 'ținea', carnet: 'caiet', dessin: 'desen', peintre: 'pictor', dessine: 'desenez', coucher: 'apus („coucher du soleil”)', roux: 'roșcat', grandi: 'crescut', expliqué: 'explicat', anciens: 'foști', escalier: 'scară', accroché: 'agățat', 'au-dessus': 'deasupra', paul: 'Paul (nume)', martin: 'Martin (nume de familie)' },
+    },
+    questions: [
+      { kind: 'choice', q: 'Comment était l’homme ?', options: ['Jeune, avec une barbe noire', 'Âgé, avec une grande moustache blanche', 'Grand, avec une casquette rouge'], answer: 'Âgé, avec une grande moustache blanche' },
+      { kind: 'choice', q: 'Que faisait l’homme devant l’immeuble ?', options: ['Il attendait un voleur', 'Il dessinait l’immeuble', 'Il cherchait son chat'], answer: 'Il dessinait l’immeuble' },
+      { kind: 'choice', q: 'Qui était Paul Martin ?', options: ['Un policier', 'Le petit garçon des anciens voisins', 'Le frère de Julien'], answer: 'Le petit garçon des anciens voisins' },
+      { kind: 'fill', before: 'Victor dormait sur le', after: ', comme d’habitude.', answers: ['radiateur'] },
+    ],
+  },
 }
