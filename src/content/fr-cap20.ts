@@ -209,7 +209,7 @@ export const frCap20 = lesson({
       {
         kind: 'drills',
         title: 'Două pronume',
-        instructions: 'Înlocuiește cuvintele subliniate în minte cu două pronume.',
+        instructions: 'Înlocuiește complementele cu două pronume.',
         drills: [
           { kind: 'fill', before: 'Il te prête sa voiture ? → Oui, il me', after: 'prête.', answers: ['la'], explain: 'me + la' },
           { kind: 'fill', before: 'Tu donnes le cadeau à Manon ? → Oui, je le', after: 'donne.', answers: ['lui'], explain: 'le + lui' },

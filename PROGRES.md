@@ -185,10 +185,12 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 16 | Pronumele lui / leur, imperativul cu pronume, plaire (Sfântul Valentin) | ✅ testat |
 | A2 · Oameni, cadouri și locuri | 17 | Comparativul, superlativul, meilleur / mieux (apartamentul nou) | ✅ testat |
 | | 18 | Pronumele y și en (ziua mutării, pianul pe fereastră) | ✅ testat |
+| | 19 | Viitorul simplu (futur simple), quand + viitor, si + prezent (misterul Hélène) | ✅ testat |
+| | 20 | Două pronume împreună (je te le promets) + recapitularea unității (scrisoarea lui Henri) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
-A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. Urmează capitolul 19 (viitorul simplu; misterul Hélène), apoi 20 (recapitularea unității). Testul: scratchpad pw/fr-range.mjs (ședința = (cap-1)·3 + 1).
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. Unitatea A2 · Oameni, cadouri și locuri (17–20) e completă. Urmează unitatea a treia din A2 (21–24): pronumele relative qui / que / où / dont, condiționalul prezent, mai-mult-ca-perfectul, gerunziul. Poveștile au acum 311 → 458 de cuvinte și continuă să crească. Testul: scratchpad pw/fr-range.mjs (ședința = (cap-1)·3 + 1).
 
 ---
 
