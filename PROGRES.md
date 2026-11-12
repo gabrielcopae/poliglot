@@ -191,10 +191,14 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 22 | Condiționalul prezent: politețe, sfaturi, si + imparfait (inelul lui Hélène) | ✅ testat |
 | | 23 | Plus-que-parfait (Julien la Iași) | ✅ testat |
 | | 24 | Gerunziul (en + -ant) + recapitularea unității (cererea în căsătorie sub nuc) | ✅ testat |
+| A2 · Emoții și păreri | 25 | Subjonctivul prezent: il faut que, vouloir que (pregătirile de nuntă, primăria) | ✅ testat |
+| | 26 | Subjonctivul după sentimente și pour que / bien que / avant que (bunica vine cu autocarul) | ✅ testat |
+| | 27 | Pronumele demonstrative și posesive (rochia, costumul lui Henri) | ✅ testat |
+| | 28 | Vorbirea indirectă la prezent + recapitularea unității (cele trei bunici, „dor”) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
-A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. Unitățile A2 până la capitolul 24 sunt complete. Urmează unitatea a patra din A2 (25–28): subjonctivul prezent (il faut que, vouloir que), exprimarea sentimentelor, vorbirea indirectă la prezent, pronumele demonstrative și posesive (celui-ci, le mien). Poveștile au acum 311 → 588 de cuvinte și continuă să crească.
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. Unitățile A2 până la capitolul 28 sunt complete. Urmează unitatea a cincea din A2 (29–32): nunta (3 mai), vocea pasivă, pronumele relative compuse (lequel, auquel), exprimarea cauzei și consecinței; apoi ultima unitate A2 (33–36). Poveștile au acum 311 → 763 de cuvinte și continuă să crească.
 
 ---
 
