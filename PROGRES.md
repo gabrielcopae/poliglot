@@ -184,7 +184,7 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 15 | Pronumele COD le / la / les, connaître / savoir (vizita Elenei) | ✅ testat |
 | | 16 | Pronumele lui / leur, imperativul cu pronume, plaire (Sfântul Valentin) | ✅ testat |
 | A2 · Oameni, cadouri și locuri | 17 | Comparativul, superlativul, meilleur / mieux (apartamentul nou) | ✅ testat |
-| A2 · Oameni, cadouri și locuri | 18 | Pronumele y și en (ziua mutării, pianul pe fereastră) | ✅ testat |
+| | 18 | Pronumele y și en (ziua mutării, pianul pe fereastră) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
