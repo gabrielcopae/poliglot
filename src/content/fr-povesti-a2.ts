@@ -126,4 +126,34 @@ export const FR_POVESTI_A2: Record<string, Story> = {
       { kind: 'fill', before: 'Je lui ai', after: '. Elle m’a envoyé une photo.', answers: ['téléphoné', 'telephone'] },
     ],
   },
+
+  'fr-cap17': {
+    reading: {
+      title: 'La liste',
+      cast: { Narrateur: 'm' },
+      lines: [
+        { t: 'Le dimanche soir, Ioana et Julien se sont assis à la table de la cuisine avec une grande feuille de papier et deux stylos : un rouge et un vert.', ro: 'Duminică seara, Ioana și Julien s-au așezat la masa din bucătărie cu o foaie mare de hârtie și două pixuri: unul roșu și unul verde.' },
+        { t: 'En vert, ils ont écrit les plus. En rouge, les moins. C’était l’idée de Julien. Il est plus organisé que Ioana.', ro: 'Cu verde au scris plusurile. Cu roșu, minusurile. A fost ideea lui Julien. El e mai organizat decât Ioana.' },
+        { t: 'Pour la Croix-Rousse, la colonne verte était la plus longue : la vue, la lumière, le charme, le prix, la boulangerie de Sophie, les petits restaurants.', ro: 'Pentru Croix-Rousse, coloana verde era cea mai lungă: priveliștea, lumina, farmecul, prețul, brutăria lui Sophie, restaurantele mici.' },
+        { t: 'Dans la colonne rouge, il y avait seulement deux choses. Mais elles étaient importantes : cinq étages sans ascenseur, et pas de place pour un piano.', ro: 'În coloana roșie erau doar două lucruri. Dar erau importante: cinci etaje fără lift și niciun loc pentru un pian.' },
+        { br: true, t: 'Pour Monplaisir, c’était le contraire. Plus de place, plus de confort, un ascenseur, un parking. Mais l’appartement était plus cher et le quartier était moins vivant.', ro: 'Pentru Monplaisir era invers. Mai mult loc, mai mult confort, lift, parcare. Dar apartamentul era mai scump și cartierul mai puțin animat.' },
+        { t: '« Le problème, a dit Julien, c’est que la Croix-Rousse est le meilleur appartement pour toi, et Monplaisir le meilleur pour moi. »', ro: '„Problema, a zis Julien, e că în Croix-Rousse e cel mai bun apartament pentru tine, iar Monplaisir cel mai bun pentru mine.”' },
+        { t: 'Ioana a réfléchi. « Non. Le meilleur appartement, c’est celui où nous sommes heureux tous les deux. »', ro: 'Ioana s-a gândit. „Nu. Cel mai bun apartament e cel în care suntem fericiți amândoi.”' },
+        { br: true, t: 'Le lendemain, ils ont téléphoné à l’agence pour poser une question au propriétaire de la Croix-Rousse.', ro: 'A doua zi au sunat la agenție ca să-i pună o întrebare proprietarului din Croix-Rousse.' },
+        { t: 'Et là, surprise ! Le propriétaire avait un deuxième appartement dans le même immeuble, au premier étage. Il était un peu plus grand, et il y avait une petite cour.', ro: 'Și acolo, surpriză! Proprietarul mai avea un apartament în aceeași clădire, la etajul întâi. Era puțin mai mare și avea o curticică.' },
+        { t: 'Il était moins lumineux que l’autre, c’est vrai. La vue était moins belle. Mais il y avait assez de place pour un piano, et la boulangerie de Sophie était juste en face.', ro: 'Era mai puțin luminos decât celălalt, e adevărat. Priveliștea era mai puțin frumoasă. Dar era destul loc pentru un pian, iar brutăria lui Sophie era chiar vizavi.' },
+        { br: true, t: 'Ils l’ont visité le mardi. Le mercredi, ils ont signé le contrat.', ro: 'L-au vizionat marți. Miercuri au semnat contractul.' },
+        { t: 'Le jeudi, Julien a trouvé un vieux piano d’occasion sur internet. Il était moins cher qu’un vélo !', ro: 'Joi, Julien a găsit pe internet un pian vechi, la mâna a doua. Era mai ieftin decât o bicicletă!' },
+        { t: 'Le vendredi, Sophie a appris la nouvelle. Elle a crié de joie : « Mes meilleurs clients deviennent mes voisins ! Croissants gratuits le premier jour ! »', ro: 'Vineri, Sophie a aflat vestea. A strigat de bucurie: „Cei mai buni clienți ai mei îmi devin vecini! Croissanturi gratis în prima zi!”' },
+        { t: 'Et Madame Bernard ? Elle était un peu triste. « Le premier étage, c’est loin de chez moi… » Mais l’immeuble était dans la même rue. Victor, lui, avait déjà trouvé le chemin.', ro: 'Și doamna Bernard? Era puțin tristă. „Etajul întâi e departe de mine…” Dar clădirea era pe aceeași stradă. Victor, în schimb, găsise deja drumul.' },
+      ],
+      gloss: { assis: 'așezați', feuille: 'foaie', stylos: 'pixuri', organisé: 'organizat', colonne: 'coloană', longue: 'lungă', lumière: 'lumină', charme: 'farmec', prix: 'preț', contraire: 'contrar, invers', confort: 'confort', vivant: 'animat, plin de viață', réfléchi: 'gândit', 'tous les deux': 'amândoi', lendemain: 'a doua zi', agence: 'agenție', propriétaire: 'proprietar', cour: 'curte', assez: 'destul', signé: 'semnat', contrat: 'contract', "d’occasion": 'la mâna a doua', appris: 'aflat', nouvelle: 'veste', joie: 'bucurie', clients: 'clienți', deviennent: 'devin', voisins: 'vecini', gratuits: 'gratuite', chemin: 'drum' },
+    },
+    questions: [
+      { kind: 'choice', q: 'Qui est plus organisé ?', options: ['Ioana', 'Julien'], answer: 'Julien' },
+      { kind: 'choice', q: 'Quelle était la surprise ?', options: ['Le loyer était moins cher', 'Le propriétaire avait un autre appartement dans le même immeuble', 'Sophie déménageait'], answer: 'Le propriétaire avait un autre appartement dans le même immeuble' },
+      { kind: 'choice', q: 'Le piano d’occasion était…', options: ['plus cher qu’une voiture', 'moins cher qu’un vélo', 'gratuit'], answer: 'moins cher qu’un vélo' },
+      { kind: 'fill', before: 'Le meilleur appartement, c’est celui où nous sommes', after: 'tous les deux.', answers: ['heureux'] },
+    ],
+  },
 }
