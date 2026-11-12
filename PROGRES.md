@@ -170,8 +170,20 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | A1 · Primii pași | 1 | Bonjour, être, ne… pas, întrebări, literele mute | ✅ testat |
 | | 2 | Avoir, vârsta, articolele, il y a, pas de, numerele 0–20 | ✅ testat |
 | | 3 | Verbele în -er, à / en / au, limbile, aimer + articol, au / du | ✅ testat |
+| | 4 | Aller, ora, zilele săptămânii, numerele până la 100 | ✅ testat |
+| A1 · Viața de zi cu zi | 5 | Restaurantul, partitivul (du, de la), prendre, boire, vouloir | ✅ testat |
+| | 6 | Rutina zilnică, verbele reflexive, faire, toujours / jamais | ✅ testat |
+| | 7 | Drumul prin oraș, imperativul, venir, prepozițiile de loc | ✅ testat |
+| | 8 | Haine, culori, acordul adjectivelor, ce / cette / ces, pouvoir | ✅ testat |
+| A1 · Lumea din jur | 9 | Vremea, anotimpurile, lunile, data, viitorul apropiat | ✅ testat |
+| | 10 | Passé composé cu avoir, participiile | ✅ testat |
+| | 11 | Passé composé cu être, acordul, verbele reflexive la trecut | ✅ testat |
+| | 12 | Posesivele, recapitularea A1 (ziua Ioanei) | ✅ testat |
+| A2 · Povești din trecut | 13 | Imparfait-ul: descriere și obiceiuri (Crăciunul la Marsilia) | ✅ testat |
 
-Urmează capitolul 4 (numerele mari, ora, zilele săptămânii, aller). Testul: scratchpad pw/fr-range.mjs (ședința = (cap-1)·3 + 1).
+Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
+
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. Urmează capitolul 14: imparfait și passé composé în aceeași poveste (Ioana povestește un accident / o întâmplare). Testul: scratchpad pw/fr-range.mjs (ședința = (cap-1)·3 + 1).
 
 ---
 
