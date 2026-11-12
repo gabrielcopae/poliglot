@@ -156,4 +156,33 @@ export const FR_POVESTI_A2: Record<string, Story> = {
       { kind: 'fill', before: 'Le meilleur appartement, c’est celui où nous sommes', after: 'tous les deux.', answers: ['heureux'] },
     ],
   },
+  'fr-cap18': {
+    reading: {
+      title: 'Le piano par la fenêtre',
+      cast: { Narrateur: 'm' },
+      lines: [
+        { t: 'Le lundi matin, à huit heures, toute la rue d’Austerlitz était à la fenêtre. Le piano arrivait.', ro: 'Luni dimineață, la ora opt, toată strada d’Austerlitz era la fereastră. Sosea pianul.' },
+        { t: 'Les déménageurs ont regardé l’escalier. Il était étroit et il tournait beaucoup. « Par l’escalier ? Impossible. On ne peut pas y passer. »', ro: 'Hamalii s-au uitat la scară. Era îngustă și cotea mult. „Pe scară? Imposibil. Nu se poate trece pe acolo.”' },
+        { t: 'Alors ils ont appelé une grue. Elle est arrivée une heure plus tard, jaune et énorme, et elle a bloqué toute la rue.', ro: 'Așa că au chemat o macara. A sosit o oră mai târziu, galbenă și uriașă, și a blocat toată strada.' },
+        { t: 'Julien était très nerveux. Il ne pouvait pas regarder. Ioana, elle, prenait des photos. Elle en a pris au moins cinquante.', ro: 'Julien era foarte emoționat. Nu putea să se uite. Ioana, în schimb, făcea poze. A făcut cel puțin cincizeci.' },
+        { br: true, t: 'Sophie est sortie de sa boulangerie avec un plateau de croissants. « Vous en voulez ? C’est pour le spectacle ! » Les déménageurs en ont pris deux chacun.', ro: 'Sophie a ieșit din brutărie cu o tavă de croissanturi. „Vreți? Sunt pentru spectacol!” Hamalii au luat câte două fiecare.' },
+        { t: 'Madame Bernard est arrivée aussi, avec Victor dans les bras. « J’ai vu un piano voler une fois, en 1975, à Marseille. Il est tombé. » Julien est devenu tout blanc.', ro: 'A venit și doamna Bernard, cu Victor în brațe. „Am văzut o dată un pian zburând, în 1975, la Marseille. A căzut.” Julien s-a făcut alb ca varul.' },
+        { t: 'Mais ce piano n’est pas tombé. Il est monté lentement, il a passé la fenêtre, et il est entré dans le salon. Tout le monde a applaudi.', ro: 'Dar pianul acesta n-a căzut. A urcat încet, a trecut de fereastră și a intrat în sufragerie. Toată lumea a aplaudat.' },
+        { br: true, t: 'Le soir, les cartons étaient encore partout. Il y en avait dans la cuisine, dans la chambre, et même dans la salle de bains.', ro: 'Seara, cutiile erau încă peste tot. Erau în bucătărie, în dormitor și chiar în baie.' },
+        { t: 'Mais Julien ne voyait que le piano. Il s’est assis, il a ouvert le couvercle… et il a trouvé une vieille enveloppe jaune à l’intérieur.', ro: 'Dar Julien nu vedea decât pianul. S-a așezat, a deschis capacul… și a găsit înăuntru un plic vechi și galben.' },
+        { t: 'Dans l’enveloppe, il y avait une partition écrite à la main. En haut, quelqu’un avait écrit : « Pour Hélène, pour ses vingt ans. Lyon, 1962. »', ro: 'În plic era o partitură scrisă de mână. Sus, cineva scrisese: „Pentru Hélène, la cei douăzeci de ani ai ei. Lyon, 1962.”' },
+        { t: '« Qui est Hélène ? » a demandé Ioana. « Je n’en sais rien, a dit Julien. Le vendeur ne m’en a pas parlé. »', ro: '„Cine e Hélène?” a întrebat Ioana. „N-am idee, a zis Julien. Vânzătorul nu mi-a pomenit nimic.”' },
+        { t: 'Alors il a posé la partition sur le piano et il a commencé à jouer. C’était une valse, douce et un peu triste.', ro: 'Așa că a pus partitura pe pian și a început să cânte. Era un vals, blând și puțin trist.' },
+        { br: true, t: 'Ioana s’est assise sur un carton et elle a écouté. Dehors, la rue était calme. Victor était déjà sur le piano, comme s’il y habitait depuis toujours.', ro: 'Ioana s-a așezat pe o cutie și a ascultat. Afară, strada era liniștită. Victor era deja pe pian, de parcă ar fi locuit acolo dintotdeauna.' },
+        { t: 'Quand la musique s’est arrêtée, Ioana a dit : « Demain, j’appelle le vendeur. Je veux savoir qui était Hélène. » Julien a souri. Il en avait envie aussi.', ro: 'Când muzica s-a oprit, Ioana a zis: „Mâine îl sun pe vânzător. Vreau să știu cine era Hélène.” Julien a zâmbit. Avea și el chef de asta.' },
+      ],
+      gloss: { "d’austerlitz": 'd’Austerlitz', déménageurs: 'hamali', escalier: 'scară', étroit: 'îngust', tournait: 'cotea', impossible: 'imposibil', passer: 'a trece', grue: 'macara', jaune: 'galben', énorme: 'uriaș', bloqué: 'blocat', nerveux: 'emoționat, agitat', photos: 'poze', moins: 'puțin („au moins” = cel puțin)', cinquante: 'cincizeci', plateau: 'tavă', spectacle: 'spectacol', chacun: 'fiecare', bras: 'brațe', voler: 'a zbura', tombé: 'căzut', devenu: 'devenit', lentement: 'încet', applaudi: 'aplaudat', partout: 'peste tot', même: 'chiar', voyait: 'vedea', couvercle: 'capac', enveloppe: 'plic', intérieur: 'interior', partition: 'partitură', main: 'mână', "quelqu’un": 'cineva', 'hélène': 'Hélène', vendeur: 'vânzător', parlé: 'vorbit', posé: 'pus', valse: 'vals', douce: 'blândă', écouté: 'ascultat', dehors: 'afară', calme: 'liniștit', toujours: 'mereu („depuis toujours” = dintotdeauna)', arrêtée: 'oprită', souri: 'zâmbit', envie: 'chef, poftă („avoir envie” = a avea chef)' },
+    },
+    questions: [
+      { kind: 'choice', q: 'Pourquoi le piano n’est pas passé par l’escalier ?', options: ['L’escalier était étroit', 'Il était trop cher', 'Julien avait peur'], answer: 'L’escalier était étroit' },
+      { kind: 'choice', q: 'Combien de photos Ioana a prises ?', options: ['Cinq', 'Au moins cinquante', 'Aucune'], answer: 'Au moins cinquante' },
+      { kind: 'choice', q: 'Qu’est-ce que Julien a trouvé dans le piano ?', options: ['Un chat', 'Une enveloppe avec une partition', 'Des croissants'], answer: 'Une enveloppe avec une partition' },
+      { kind: 'fill', before: 'Les déménageurs', after: 'ont pris deux chacun.', answers: ['en'] },
+    ],
+  },
 }
