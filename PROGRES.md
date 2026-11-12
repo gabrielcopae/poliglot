@@ -181,10 +181,12 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 12 | Posesivele, recapitularea A1 (ziua Ioanei) | ✅ testat |
 | A2 · Povești din trecut | 13 | Imparfait-ul: descriere și obiceiuri (Crăciunul la Marsilia) | ✅ testat |
 | | 14 | Imparfait + passé composé, descrierea fizică (telefonul furat) | ✅ testat |
+| | 15 | Pronumele COD le / la / les, connaître / savoir (vizita Elenei) | ✅ testat |
+| | 16 | Pronumele lui / leur, imperativul cu pronume, plaire (Sfântul Valentin) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
-A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. Urmează capitolul 15: pronumele complement direct le / la / les (vizita Elenei la Lyon). Testul: scratchpad pw/fr-range.mjs (ședința = (cap-1)·3 + 1).
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. Urmează unitatea A2 · Oameni, cadouri și locuri (17–20): comparativul și superlativul, pronumele y / en, viitorul simplu, verbele pronominale reciproce. Testul: scratchpad pw/fr-range.mjs (ședința = (cap-1)·3 + 1).
 
 ---
 
