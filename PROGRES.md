@@ -187,10 +187,14 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 18 | Pronumele y și en (ziua mutării, pianul pe fereastră) | ✅ testat |
 | | 19 | Viitorul simplu (futur simple), quand + viitor, si + prezent (misterul Hélène) | ✅ testat |
 | | 20 | Două pronume împreună (je te le promets) + recapitularea unității (scrisoarea lui Henri) | ✅ testat |
+| A2 · Amintiri și planuri | 21 | Pronumele relative qui / que / où / dont, ce qui / ce que (plimbarea cu Hélène) | ✅ testat |
+| | 22 | Condiționalul prezent: politețe, sfaturi, si + imparfait (inelul lui Hélène) | ✅ testat |
+| | 23 | Plus-que-parfait (Julien la Iași) | ✅ testat |
+| | 24 | Gerunziul (en + -ant) + recapitularea unității (cererea în căsătorie sub nuc) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
-A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. Unitatea A2 · Oameni, cadouri și locuri (17–20) e completă. Urmează unitatea a treia din A2 (21–24): pronumele relative qui / que / où / dont, condiționalul prezent, mai-mult-ca-perfectul, gerunziul. Poveștile au acum 311 → 458 de cuvinte și continuă să crească. Testul: scratchpad pw/fr-range.mjs (ședința = (cap-1)·3 + 1).
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. Unitățile A2 până la capitolul 24 sunt complete. Urmează unitatea a patra din A2 (25–28): subjonctivul prezent (il faut que, vouloir que), exprimarea sentimentelor, vorbirea indirectă la prezent, pronumele demonstrative și posesive (celui-ci, le mien). Poveștile au acum 311 → 588 de cuvinte și continuă să crească.
 
 ---
 
