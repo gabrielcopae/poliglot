@@ -66,4 +66,33 @@ export const FR_POVESTI_A2: Record<string, Story> = {
       { kind: 'fill', before: 'Victor dormait sur le', after: ', comme d’habitude.', answers: ['radiateur'] },
     ],
   },
+
+  'fr-cap15': {
+    reading: {
+      title: 'Le test d’Elena',
+      cast: { Narrateur: 'm' },
+      lines: [
+        { t: 'Elena aimait bien Julien. Mais elle était une mère roumaine, et une mère roumaine teste toujours le futur gendre.', ro: 'Elenei îi plăcea de Julien. Dar era o mamă româncă, iar o mamă româncă își testează mereu viitorul ginere.' },
+        { t: 'Le mardi, elle a décidé de faire le premier test : la cuisine. Elle a préparé des sarmale et elle les a servies à Julien.', ro: 'Marți a hotărât să facă primul test: bucătăria. A pregătit sarmale și i le-a servit lui Julien.' },
+        { t: 'Julien les a goûtées. Puis il les a toutes mangées. Il en a même redemandé. Premier test : réussi !', ro: 'Julien le-a gustat. Apoi le-a mâncat pe toate. A mai cerut chiar. Primul test: reușit!' },
+        { br: true, t: 'Le mercredi, deuxième test : la patience. Elena voulait visiter tous les musées de Lyon. Julien l’a accompagnée partout, sans se plaindre.', ro: 'Miercuri, al doilea test: răbdarea. Elena voia să viziteze toate muzeele din Lyon. Julien a însoțit-o peste tot, fără să se plângă.' },
+        { t: 'Au musée des Confluences, elle s’est arrêtée devant chaque objet. Julien l’attendait, souriant. Ils y sont restés quatre heures.', ro: 'La muzeul Confluences s-a oprit în fața fiecărui obiect. Julien o aștepta, zâmbind. Au rămas acolo patru ore.' },
+        { t: '« Vous n’êtes pas fatigué ? » lui a demandé Elena. « Non, madame. J’adore les musées », a menti Julien, très poliment.', ro: '„Nu sunteți obosit?” l-a întrebat Elena. „Nu, doamnă. Ador muzeele”, a mințit Julien, foarte politicos.' },
+        { br: true, t: 'Le jeudi, troisième test, le plus difficile : la țuică. Elena a sorti une bouteille de sa valise. « Chez nous, on la boit pour les grandes occasions. »', ro: 'Joi, al treilea test, cel mai greu: țuica. Elena a scos o sticlă din valiză. „La noi se bea la ocazii mari.”' },
+        { t: 'Elle a rempli deux petits verres. Julien a pris le sien, l’a regardé, puis l’a bu d’un coup.', ro: 'A umplut două păhărele. Julien l-a luat pe al lui, s-a uitat la el, apoi l-a băut dintr-o înghițitură.' },
+        { t: 'Il est devenu tout rouge. Il a toussé. Ses yeux pleuraient. Mais il a dit : « Délicieux ! Noroc ! »', ro: 'S-a făcut roșu tot. A tușit. Îi lăcrimau ochii. Dar a zis: „Delicios! Noroc!”' },
+        { br: true, t: 'Elena a ri pendant cinq minutes. Ioana aussi. Même Victor, qui les regardait depuis le balcon, semblait rire.', ro: 'Elena a râs cinci minute. Și Ioana. Chiar și Victor, care se uita la ei de pe balcon, părea că râde.' },
+        { t: 'Le vendredi, à l’aéroport, Elena a pris Julien dans ses bras. « Julien, je vous attends à Iași cet été. Mon mari veut vous connaître. »', ro: 'Vineri, la aeroport, Elena l-a luat pe Julien în brațe. „Julien, vă aștept la Iași la vară. Soțul meu vrea să vă cunoască.”' },
+        { t: 'Puis, elle a ajouté, en souriant : « Et il a beaucoup de țuică. »', ro: 'Apoi a adăugat, zâmbind: „Și are multă țuică.”' },
+        { t: 'Dans la voiture, Julien était un peu pâle. « Ioana, ton père… il la boit souvent, la țuică ? » Ioana l’a regardé et elle a souri. Elle n’a pas répondu.', ro: 'În mașină, Julien era puțin palid. „Ioana, tatăl tău… o bea des, țuica?” Ioana s-a uitat la el și a zâmbit. N-a răspuns.' },
+      ],
+      gloss: { teste: 'testează', futur: 'viitor', gendre: 'ginere', décidé: 'hotărât', servies: 'servite', goûtées: 'gustate', toutes: 'toate', redemandé: 'cerut din nou', réussi: 'reușit', patience: 'răbdare', accompagnée: 'însoțită', plaindre: 'a se plânge („sans se plaindre” = fără să se plângă)', confluences: 'Confluences (muzeu din Lyon)', "s’est arrêtée": 's-a oprit', objet: 'obiect', souriant: 'zâmbind', menti: 'mințit', occasions: 'ocazii', rempli: 'umplut', sien: 'al său („le sien”)', coup: 'lovitură („d’un coup” = dintr-o dată)', toussé: 'tușit', pleuraient: 'lăcrimau, plângeau', semblait: 'părea', bras: 'brațe', ajouté: 'adăugat', pâle: 'palid', répondu: 'răspuns' },
+    },
+    questions: [
+      { kind: 'choice', q: 'Quel était le premier test ?', options: ['La patience', 'La cuisine', 'La țuică'], answer: 'La cuisine' },
+      { kind: 'choice', q: 'Combien de temps sont-ils restés au musée des Confluences ?', options: ['Une heure', 'Deux heures', 'Quatre heures'], answer: 'Quatre heures' },
+      { kind: 'choice', q: 'Qu’est-ce qui s’est passé quand Julien a bu la țuică ?', options: ['Il a dit qu’il n’aimait pas ça', 'Il est devenu tout rouge et il a toussé', 'Il a dormi'], answer: 'Il est devenu tout rouge et il a toussé' },
+      { kind: 'fill', before: 'Julien, je vous', after: 'à Iași cet été.', answers: ['attends'] },
+    ],
+  },
 }
