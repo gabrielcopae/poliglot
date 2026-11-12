@@ -199,10 +199,14 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 30 | Pronume nehotărâte și negații: personne, rien, aucun, ne… que, ni… ni (luna de miere în Corsica) | ✅ testat |
 | | 31 | Cauza și consecința: parce que, comme, grâce à, à cause de, donc (Sala Henri Bernard) | ✅ testat |
 | | 32 | Exprimarea părerii (je ne pense pas que + subjonctiv) + recapitularea unității (14 iulie) | ✅ testat |
+| A2 · Povești și finalul A2 | 33 | Expresii de timp: depuis, il y a, pendant, en, dans (vestea cea mare) | ✅ testat |
+| | 34 | Avant de + infinitiv, après avoir / être (nunta de la biserica din Iași) | ✅ testat |
+| | 35 | Cele trei tipuri de „si”, condiționalul trecut (Radu și Lucia) | ✅ testat |
+| | 36 | Recunoașterea passé simple + marea recapitulare A2 (Crăciunul, Rose-Hélène) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
-A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. Unitățile A2 până la capitolul 32 sunt complete. Urmează ultima unitate A2 (33–36), „A2 · Povești și finalul A2”: nunta de la biserica din Iași, expresiile de timp, avant de / après avoir, ipoteze și marea recapitulare A2. Poveștile au acum 311 → 971 de cuvinte și continuă să crească.
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. Urmează nivelul B1 (capitolele 37+): nașterea lui Rose-Hélène (martie), subjonctivul trecut, discursul indirect la trecut, participiul prezent, exprimarea concesiei și a scopului.
 
 ---
 
