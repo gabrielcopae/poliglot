@@ -95,4 +95,35 @@ export const FR_POVESTI_A2: Record<string, Story> = {
       { kind: 'fill', before: 'Julien, je vous', after: 'à Iași cet été.', answers: ['attends'] },
     ],
   },
+
+  'fr-cap16': {
+    reading: {
+      title: 'Le piano dessiné',
+      cast: { Narratrice: 'f' },
+      lines: [
+        { t: 'Pendant trois soirs, Ioana a travaillé en secret sur son dessin. Elle a fermé la porte de sa chambre et elle n’a pas répondu au téléphone.', ro: 'Trei seri la rând, Ioana a lucrat în secret la desenul ei. A închis ușa camerei și n-a răspuns la telefon.' },
+        { t: 'Julien lui a envoyé des messages : « Qu’est-ce que tu fais ? Tu ne me réponds pas ! » Elle lui a écrit seulement : « Je travaille. Surprise ! »', ro: 'Julien i-a trimis mesaje: „Ce faci? Nu-mi răspunzi!” Ea i-a scris doar: „Lucrez. Surpriză!”' },
+        { t: 'Sur la photo de Brigitte, on voyait un vieux piano noir dans un salon. Devant le piano, un petit garçon de sept ans souriait.', ro: 'În fotografia de la Brigitte se vedea un pian vechi, negru, într-o sufragerie. În fața pianului zâmbea un băiețel de șapte ani.' },
+        { br: true, t: 'Ioana a dessiné toute la maison d’Annecy : le salon, la fenêtre sur le jardin, le piano avec ses partitions, et le petit Julien.', ro: 'Ioana a desenat toată casa din Annecy: sufrageria, fereastra spre grădină, pianul cu partiturile lui și pe micul Julien.' },
+        { t: 'Madame Bernard lui a prêté un vieux cadre doré. « Il était à Henri, lui a-t-elle dit. Il aimait les beaux dessins. »', ro: 'Doamna Bernard i-a împrumutat o ramă veche, aurie. „Era a lui Henri, i-a spus. Îi plăceau desenele frumoase.”' },
+        { t: 'Sophie lui a donné une idée aussi : « Écris-lui un petit mot derrière. Les hommes ne le disent pas, mais ils adorent ça. »', ro: 'Sophie i-a dat și ea o idee: „Scrie-i un bilețel pe spate. Bărbații nu spun, dar adoră asta.”' },
+        { br: true, t: 'Le 14 février, Julien est arrivé chez Ioana avec un énorme bouquet de roses. Il était nerveux. Il lui a offert les fleurs et une petite boîte de chocolats.', ro: 'Pe 14 februarie, Julien a venit la Ioana cu un buchet uriaș de trandafiri. Era emoționat. I-a dăruit florile și o cutiuță cu bomboane de ciocolată.' },
+        { t: 'Puis Ioana lui a donné son cadeau, dans un papier bleu. Julien l’a ouvert lentement.', ro: 'Apoi Ioana i-a dat cadoul ei, într-o hârtie albastră. Julien l-a deschis încet.' },
+        { t: 'Il n’a rien dit. Il a regardé le dessin longtemps, très longtemps. Ses yeux brillaient.', ro: 'N-a spus nimic. S-a uitat la desen mult, foarte mult. Îi străluceau ochii.' },
+        { t: '« Mon piano… Comment tu as fait ? Tu as parlé à ma mère ? »', ro: '„Pianul meu… Cum ai făcut? Ai vorbit cu mama?”' },
+        { t: '« Je lui ai téléphoné. Elle m’a envoyé une photo. Regarde derrière. »', ro: '„Am sunat-o. Mi-a trimis o fotografie. Uită-te pe spate.”' },
+        { br: true, t: 'Derrière le dessin, Ioana avait écrit en français et en roumain : « Pour Julien, qui m’a appris à aimer Lyon. Pentru Julien. »', ro: 'Pe spatele desenului, Ioana scrisese în franceză și în română: „Pentru Julien, care m-a învățat să iubesc Lyonul. Pentru Julien.”' },
+        { t: 'Julien l’a prise dans ses bras. « C’est le plus beau cadeau de ma vie. »', ro: 'Julien a luat-o în brațe. „E cel mai frumos cadou din viața mea.”' },
+        { t: 'Le lendemain, il a accroché le dessin au-dessus de son lit. Et il a téléphoné à sa mère pour lui dire merci.', ro: 'A doua zi a agățat desenul deasupra patului. Și și-a sunat mama ca să-i mulțumească.' },
+        { t: 'Brigitte a ri au téléphone : « Je sais, mon chéri. Ioana m’a envoyé une photo du dessin hier. Je l’ai montrée à tout le quartier ! »', ro: 'Brigitte a râs la telefon: „Știu, dragul meu. Ioana mi-a trimis ieri o poză cu desenul. Am arătat-o la tot cartierul!”' },
+      ],
+      gloss: { soirs: 'seri', secret: 'secret', fermé: 'închis', voyait: 'vedea („on voyait” = se vedea)', souriait: 'zâmbea', dessiné: 'desenat', partitions: 'partituri', prêté: 'împrumutat', cadre: 'ramă', doré: 'auriu', mot: 'bilețel, cuvânt', derrière: 'pe spate, în spatele', énorme: 'uriaș', bouquet: 'buchet', nerveux: 'emoționat', boîte: 'cutie', lentement: 'încet', brillaient: 'străluceau', appris: 'învățat', bras: 'brațe', lendemain: 'a doua zi', accroché: 'agățat', 'au-dessus': 'deasupra', lit: 'pat', quartier: 'cartier', montrée: 'arătată (acord cu „la”)' },
+    },
+    questions: [
+      { kind: 'choice', q: 'Qui a prêté le cadre à Ioana ?', options: ['Sophie', 'Madame Bernard', 'Brigitte'], answer: 'Madame Bernard' },
+      { kind: 'choice', q: 'Quel conseil Sophie a donné ?', options: ['Acheter des fleurs', 'Écrire un petit mot derrière', 'Aller au restaurant'], answer: 'Écrire un petit mot derrière' },
+      { kind: 'choice', q: 'Où Julien a accroché le dessin ?', options: ['Dans la cuisine', 'Au-dessus de son lit', 'Au bureau'], answer: 'Au-dessus de son lit' },
+      { kind: 'fill', before: 'Je lui ai', after: '. Elle m’a envoyé une photo.', answers: ['téléphoné', 'telephone'] },
+    ],
+  },
 }
