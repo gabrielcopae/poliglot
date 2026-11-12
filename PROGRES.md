@@ -169,8 +169,9 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 |---|---|---|---|
 | A1 · Primii pași | 1 | Bonjour, être, ne… pas, întrebări, literele mute | ✅ testat |
 | | 2 | Avoir, vârsta, articolele, il y a, pas de, numerele 0–20 | ✅ testat |
+| | 3 | Verbele în -er, à / en / au, limbile, aimer + articol, au / du | ✅ testat |
 
-Urmează capitolul 3 (verbele în -er: parler, habiter, aimer; orașul). Testul: scratchpad pw/fr-range.mjs (ședința = (cap-1)·3 + 1).
+Urmează capitolul 4 (numerele mari, ora, zilele săptămânii, aller). Testul: scratchpad pw/fr-range.mjs (ședința = (cap-1)·3 + 1).
 
 ---
 
