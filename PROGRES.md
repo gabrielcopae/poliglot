@@ -223,10 +223,14 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 54 | Conjuncțiile de timp: avant que, jusqu’à ce que + subjonctiv; après que + indicativ (teiul din Tête d’Or) | ✅ testat |
 | | 55 | Gradele de certitudine: il se peut que, il est probable que, sans doute (prima piatră) | ✅ testat |
 | | 56 | Timpurile povestirii + recapitularea unității (ultimul 3 mai al lui Hélène) | ✅ testat |
+| B1 · Media și societate | 57 | Pasivul avansat (laureații bursei) | ✅ testat |
+| | 58 | Verbele de raportare și condiționalul presei (zvonul, știrea falsă) | ✅ testat |
+| | 59 | Argumentarea: certes… mais, en revanche, bien que (dezbaterea de la radio, inaugurarea Sălii Hélène Morel) | ✅ testat |
+| | 60 | Titlurile de presă + recapitularea unității (emisiunea în direct, invitația la Paris) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
-A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. B1 e în lucru: capitolele 37–56 sunt gata (cinci unități complete: „Viață nouă”, „Ce-ar fi dacă…”, „Lumea largă”, „Lumea muncii”, „Condiții și nuanțe”). Poveștile B1 au crescut de la 1045 (cap. 37) la 1961 de cuvinte (cap. 56); capitolul 57 trebuie să aibă peste 1961. Obiectivul: franceza până la B2 inclusiv (cap. 102), apoi celelalte limbi până la B2.
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. B1 e în lucru: capitolele 37–60 sunt gata (șase unități complete: „Viață nouă”, „Ce-ar fi dacă…”, „Lumea largă”, „Lumea muncii”, „Condiții și nuanțe”, „Media și societate”). Poveștile B1 au crescut de la 1045 (cap. 37) la 2110 cuvinte (cap. 60); capitolul 61 trebuie să aibă peste 2110. Urmează ultima unitate B1, „Finalul B1” (61–66). Obiectivul: franceza până la B2 inclusiv (cap. 102), apoi celelalte limbi până la B2.
 
 ---
 
