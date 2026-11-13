@@ -5,7 +5,7 @@ export const frCap48 = lesson({
   id: 'fr-cap48',
   title: 'Plus il joue, plus il progresse',
   emoji: '📈',
-  goal: 'Folosești comparații avansate: plus… plus, moins… moins, de plus en plus, d’autant plus que, autant que, et recapitulezi unitatea.',
+  goal: 'Folosești comparații avansate: plus… plus, moins… moins, de plus en plus, d’autant plus que, autant que, și recapitulezi unitatea.',
   words: [
     w('plus… plus', 'cu cât… cu atât mai mult'),
     w('moins… moins', 'cu cât mai puțin… cu atât mai puțin'),
