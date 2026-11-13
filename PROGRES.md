@@ -227,10 +227,20 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 58 | Verbele de raportare și condiționalul presei (zvonul, știrea falsă) | ✅ testat |
 | | 59 | Argumentarea: certes… mais, en revanche, bien que (dezbaterea de la radio, inaugurarea Sălii Hélène Morel) | ✅ testat |
 | | 60 | Titlurile de presă + recapitularea unității (emisiunea în direct, invitația la Paris) | ✅ testat |
+| B1 · Finalul B1 | 61 | Scopul și cauza: afin que, de peur que, grâce à, faute de (ultima autorizație) | ✅ testat |
+| | 62 | Viitorul anterior (a doua aniversare, repetiția generală în întuneric) | ✅ testat |
+| | 63 | Emoțiile cu subjonctiv / infinitiv (concertul de la Filarmonica din Paris) | ✅ testat |
+| | 64 | Întrebările indirecte la trecut (sosirea bunicii la Perrache) | ✅ testat |
+| | 65 | Registrele limbii: familiar, curent, elevat (discursul lui Dan) | ✅ testat |
+| | 66 | 🎓 Marea recapitulare B1 (nunta lui Radu și a Luciei) | ✅ testat |
+| B2 · Alegeri și ipoteze | 67 | Ipotezele cu nuanțe: au cas où, à condition que, à moins que (săptămâna la mare) | ✅ testat |
+| | 68 | Construcțiile participiale (primul raport, vara teilor) | ✅ testat |
+| | 69 | Concesia avansată: quoique, quoi que, quel que soit, avoir beau (plantarea din mistral) | ✅ testat |
+| | 70 | Subjonctivul în relative + recapitularea unității (nașterea lui Henri-Ion) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
-A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. B1 e în lucru: capitolele 37–60 sunt gata (șase unități complete: „Viață nouă”, „Ce-ar fi dacă…”, „Lumea largă”, „Lumea muncii”, „Condiții și nuanțe”, „Media și societate”). Poveștile B1 au crescut de la 1045 (cap. 37) la 2110 cuvinte (cap. 60); capitolul 61 trebuie să aibă peste 2110. Urmează ultima unitate B1, „Finalul B1” (61–66). Obiectivul: franceza până la B2 inclusiv (cap. 102), apoi celelalte limbi până la B2.
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. 🎓 Nivelul B1 e COMPLET (capitolele 37–66, șapte unități). Poveștile B1 au crescut de la 1045 la 2289 de cuvinte. B2 a început: unitatea „Alegeri și ipoteze” (67–70) e gata; poveștile au ajuns la 2535 de cuvinte (cap. 70), capitolul 71 trebuie să aibă peste 2535. Obiectivul: franceza până la B2 inclusiv (cap. 102), apoi celelalte limbi până la B2.
 
 ---
 
