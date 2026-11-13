@@ -203,10 +203,11 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 34 | Avant de + infinitiv, après avoir / être (nunta de la biserica din Iași) | ✅ testat |
 | | 35 | Cele trei tipuri de „si”, condiționalul trecut (Radu și Lucia) | ✅ testat |
 | | 36 | Recunoașterea passé simple + marea recapitulare A2 (Crăciunul, Rose-Hélène) | ✅ testat |
+| B1 · Viață nouă | 37 | Subjonctivul trecut (nașterea lui Rose-Hélène, 4 martie) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
-A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. Urmează nivelul B1 (capitolele 37+): nașterea lui Rose-Hélène (martie), subjonctivul trecut, discursul indirect la trecut, participiul prezent, exprimarea concesiei și a scopului.
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. B1 a început: capitolul 37 (subjonctivul trecut). Urmează 38 (vorbirea indirectă la trecut, concordanța timpurilor), 39 (pronumele relative compuse: lequel, auquel, duquel), 40 (participiul prezent + recapitulare).
 
 ---
 
