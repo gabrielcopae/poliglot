@@ -204,10 +204,18 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 35 | Cele trei tipuri de „si”, condiționalul trecut (Radu și Lucia) | ✅ testat |
 | | 36 | Recunoașterea passé simple + marea recapitulare A2 (Crăciunul, Rose-Hélène) | ✅ testat |
 | B1 · Viață nouă | 37 | Subjonctivul trecut (nașterea lui Rose-Hélène, 4 martie) | ✅ testat |
+| | 38 | Vorbirea indirectă la trecut, concordanța timpurilor (bunica o cunoaște pe Lucia, examenul Luciei) | ✅ testat |
+| | 39 | Pronumele relative compuse: lequel, auquel, duquel, à qui (declararea nașterii, nașii, prima ieșire) | ✅ testat |
+| | 40 | Participiul prezent și adjectivul verbal + recapitularea unității (3 mai: Hélène 86 de ani, un an de căsnicie) | ✅ testat |
+| B1 · Ce-ar fi dacă… | 41 | Viitorul anterior (creșa, oferta Conservatorului din Paris) | ✅ testat |
+| | 42 | Ipoteza și condiția: au cas où, à condition que, à moins que, si jamais (o zi la Paris) | ✅ testat |
+| | 43 | Concesia și opoziția: bien que, même si, malgré, pourtant, avoir beau (proiectul „Musique en partage”) | ✅ testat |
+| | 44 | Punerea în evidență: c’est… qui / que, ce qui… c’est + recapitularea unității (decizia: rămân la Lyon) | ✅ testat |
+| B1 · Lumea largă | 45 | Construcția cauzativă: faire faire, se faire couper, laisser + infinitiv (botezul în România, hora lui Hélène) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
-A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. B1 a început: capitolul 37 (subjonctivul trecut). Urmează 38 (vorbirea indirectă la trecut, concordanța timpurilor), 39 (pronumele relative compuse: lequel, auquel, duquel), 40 (participiul prezent + recapitulare).
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. B1 e în lucru: capitolele 37–45 sunt gata (unitățile „Viață nouă” și „Ce-ar fi dacă…” complete, „Lumea largă” începută). Poveștile B1 au crescut de la 1045 (cap. 37) la 1273 de cuvinte (cap. 45); capitolul 46 trebuie să aibă peste 1273.
 
 ---
 
