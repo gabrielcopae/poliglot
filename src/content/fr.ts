@@ -64,6 +64,7 @@ import { frCap60 } from './fr-cap60'
 import { frCap61 } from './fr-cap61'
 import { frCap62 } from './fr-cap62'
 import { frCap63 } from './fr-cap63'
+import { frCap64 } from './fr-cap64'
 
 /** Atașează „Povestea capitolului”. */
 const POVESTI = { ...FR_POVESTI_A1, ...FR_POVESTI_A2 }
@@ -84,7 +85,7 @@ const units: Unit[] = [
   { id: 'fr-b1-4', title: 'B1 · Lumea muncii', level: 'B1', lessons: [frCap49, frCap50, frCap51, frCap52] },
   { id: 'fr-b1-5', title: 'B1 · Condiții și nuanțe', level: 'B1', lessons: [frCap53, frCap54, frCap55, frCap56] },
   { id: 'fr-b1-6', title: 'B1 · Media și societate', level: 'B1', lessons: [frCap57, frCap58, frCap59, frCap60] },
-  { id: 'fr-b1-7', title: 'B1 · Finalul B1', level: 'B1', lessons: [frCap61, frCap62, frCap63] },
+  { id: 'fr-b1-7', title: 'B1 · Finalul B1', level: 'B1', lessons: [frCap61, frCap62, frCap63, frCap64] },
 ]
 
 export const fr: Course = {
