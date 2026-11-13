@@ -212,10 +212,15 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 43 | Concesia și opoziția: bien que, même si, malgré, pourtant, avoir beau (proiectul „Musique en partage”) | ✅ testat |
 | | 44 | Punerea în evidență: c’est… qui / que, ce qui… c’est + recapitularea unității (decizia: rămân la Lyon) | ✅ testat |
 | B1 · Lumea largă | 45 | Construcția cauzativă: faire faire, se faire couper, laisser + infinitiv (botezul în România, hora lui Hélène) | ✅ testat |
+| | 46 | Întrebarea indirectă: je me demande si, ce qui / ce que (colecta de instrumente, țambalul misterios) | ✅ testat |
+| | 47 | Scopul: pour que, afin que, de peur que, de sorte que (inaugurarea Sălii Henri Bernard, Mihaela) | ✅ testat |
+| | 48 | Comparația avansată: plus… plus, de plus en plus, d’autant plus que + recapitularea unității (Yanis și tatăl lui, petiția) | ✅ testat |
+| B1 · Lumea muncii | 49 | Limbajul formal: scrisoarea de motivație, CV-ul, interviul (stagiul lui Radu, primul cuvânt al lui Rose-Hélène) | ✅ testat |
+| | 50 | Nominalizarea și titlurile de presă (votul consiliului regional, 14 decembrie) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
-A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. B1 e în lucru: capitolele 37–45 sunt gata (unitățile „Viață nouă” și „Ce-ar fi dacă…” complete, „Lumea largă” începută). Poveștile B1 au crescut de la 1045 (cap. 37) la 1273 de cuvinte (cap. 45); capitolul 46 trebuie să aibă peste 1273.
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. B1 e în lucru: capitolele 37–50 sunt gata (unitățile „Viață nouă”, „Ce-ar fi dacă…” și „Lumea largă” complete, „Lumea muncii” începută). Poveștile B1 au crescut de la 1045 (cap. 37) la 1570 de cuvinte (cap. 50); capitolul 51 trebuie să aibă peste 1570. Obiectivul: franceza până la B2 inclusiv (cap. 102), apoi celelalte limbi până la B2.
 
 ---
 
