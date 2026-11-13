@@ -237,10 +237,14 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 68 | Construcțiile participiale (primul raport, vara teilor) | ✅ testat |
 | | 69 | Concesia avansată: quoique, quoi que, quel que soit, avoir beau (plantarea din mistral) | ✅ testat |
 | | 70 | Subjonctivul în relative + recapitularea unității (nașterea lui Henri-Ion) | ✅ testat |
+| B2 · Timp și memorie | 71 | Aspectul verbal: être en train de, venir de, tant que (caseta de la Nantes) | ✅ testat |
+| | 72 | Passé simple și passé antérieur (carnetele lui Henri) | ✅ testat |
+| | 73 | Expresiile cu en și y (primăvara lui Odile, cei doisprezece tei) | ✅ testat |
+| | 74 | Punerea în evidență + recapitularea unității (cele opt măsuri) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
-A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. 🎓 Nivelul B1 e COMPLET (capitolele 37–66, șapte unități). Poveștile B1 au crescut de la 1045 la 2289 de cuvinte. B2 a început: unitatea „Alegeri și ipoteze” (67–70) e gata; poveștile au ajuns la 2535 de cuvinte (cap. 70), capitolul 71 trebuie să aibă peste 2535. Obiectivul: franceza până la B2 inclusiv (cap. 102), apoi celelalte limbi până la B2.
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. 🎓 Nivelul B1 e COMPLET (capitolele 37–66, șapte unități). Poveștile B1 au crescut de la 1045 la 2289 de cuvinte. B2 e în lucru: unitățile „Alegeri și ipoteze” (67–70) și „Timp și memorie” (71–74) sunt gata; poveștile au ajuns la 2829 de cuvinte (cap. 74), capitolul 75 trebuie să aibă peste 2829. Obiectivul: franceza până la B2 inclusiv (cap. 102), apoi celelalte limbi până la B2.
 
 ---
 
