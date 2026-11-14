@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { findLesson, getCourse } from '../content'
 import type { Course, LangCode, Lesson, Word } from '../content/types'
 import { bumpDay, db } from '../db'
-import { buildExercises, checkTyped, type CheckResult, type Exercise } from '../exercises'
+import { accentDiff, buildExercises, matchTyped, type CheckResult, type Exercise } from '../exercises'
 import { useSettings } from '../settings'
 import { canListen, listen, speak } from '../speech'
 import { addWords } from '../srs'
@@ -148,21 +148,27 @@ export function Practice({ course, exercises, back, onDone }: { course: Course; 
   const [queue, setQueue] = useState<Exercise[]>(exercises)
   const [pos, setPos] = useState(0)
   const [firstTry, setFirstTry] = useState(0)
-  const [feedback, setFeedback] = useState<{ ok: boolean; note?: string; answer?: string; explain?: string } | null>(null)
+  const [feedback, setFeedback] = useState<{ ok: boolean; note?: string; answer?: string; explain?: string; diff?: ReturnType<typeof accentDiff> } | null>(null)
   const missed = useRef(new Set<Exercise>())
 
   const ex = queue[pos]
   const total = exercises.length
 
-  const answer = (res: CheckResult | boolean, correctAnswer?: string, speakText?: string) => {
+  const answer = (res: CheckResult | boolean, correctAnswer?: string, speakText?: string, diff?: ReturnType<typeof accentDiff>) => {
     const ok = res === true || res === 'correct' || res === 'accent'
     if (ok && !missed.current.has(ex)) setFirstTry((n) => n + 1)
     if (!ok && !missed.current.has(ex)) {
       missed.current.add(ex)
       setQueue((q) => [...q, ex])
     }
-    setFeedback({ ok, note: res === 'accent' ? t('Corect! Atenție la accente și articol.') : undefined, answer: ok ? undefined : correctAnswer, explain: ex.explain })
+    const note = res !== 'accent' ? undefined : !diff || (!diff.accents && !diff.article) ? t('Corect! Atenție la accente și articol.') : [diff.accents ? t('Corect, dar ai uitat accentul sau caracterul special la: {w}.', { w: diff.words.join(', ') }) : '', diff.article ? (diff.accents ? t('Ai uitat și articolul: {w}.', { w: diff.missingArticle.join(' ') }) : t('Corect, dar ai uitat articolul: {w}.', { w: diff.missingArticle.join(' ') })) : ''].filter(Boolean).join(' ')
+    setFeedback({ ok, note, answer: ok ? undefined : correctAnswer, explain: ex.explain, diff: res === 'accent' && diff && (diff.accents || diff.article) ? diff : undefined })
     if (speakText) speak(speakText, course.lang, course.locale)
+  }
+
+  const answerTyped = (v: string, accepted: string[], correctAnswer: string, speakText?: string) => {
+    const m = matchTyped(v, accepted)
+    answer(m.res, correctAnswer, speakText, m.res === 'accent' ? accentDiff(m.match ?? correctAnswer, v) : undefined)
   }
 
   const next = () => {
@@ -182,9 +188,9 @@ export function Practice({ course, exercises, back, onDone }: { course: Course; 
         <div className="ex-label">{ex.label}</div>
         {ex.kind === 'choice' && <ChoiceEx ex={ex} course={course} locked={!!feedback} onAnswer={(opt) => answer(opt === ex.answer, ex.answer, ex.optionsTarget ? ex.answer : ex.speak)} />}
         {ex.kind === 'listen' && <ListenEx ex={ex} course={course} locked={!!feedback} onAnswer={(opt) => answer(opt === ex.answer, ex.answer)} />}
-        {ex.kind === 'type' && <TypeEx ex={ex} course={course} locked={!!feedback} onAnswer={(v) => answer(checkTyped(v, ex.accepted), ex.answer, ex.speak)} />}
-        {ex.kind === 'dictation' && <DictationEx ex={ex} course={course} locked={!!feedback} onAnswer={(v) => answer(checkTyped(v, ex.accepted), ex.answer)} />}
-        {ex.kind === 'fill' && <FillEx ex={ex} course={course} locked={!!feedback} onAnswer={(v) => answer(checkTyped(v, ex.accepted), ex.answer, ex.speak)} />}
+        {ex.kind === 'type' && <TypeEx ex={ex} course={course} locked={!!feedback} onAnswer={(v) => answerTyped(v, ex.accepted, ex.answer, ex.speak)} />}
+        {ex.kind === 'dictation' && <DictationEx ex={ex} course={course} locked={!!feedback} onAnswer={(v) => answerTyped(v, ex.accepted, ex.answer)} />}
+        {ex.kind === 'fill' && <FillEx ex={ex} course={course} locked={!!feedback} onAnswer={(v) => answerTyped(v, ex.accepted, ex.answer, ex.speak)} />}
         {ex.kind === 'order' && <OrderEx ex={ex} locked={!!feedback} onAnswer={(parts) => answer(parts.join('|') === ex.answer.join('|'), ex.answer.join(ex.joiner), ex.speak)} />}
         {ex.kind === 'speak' && <SpeakEx ex={ex} course={course} locked={!!feedback} onAnswer={(ok) => answer(ok, ex.text)} onSkip={skip} />}
       </div>
@@ -193,6 +199,7 @@ export function Practice({ course, exercises, back, onDone }: { course: Course; 
           <div>
             <b>{feedback.ok ? `✔ ${t('Excelent!')}` : `✘ ${t('Nu chiar')}`}</b>
             {feedback.note && <div>{feedback.note}</div>}
+            {feedback.diff && <div className="accent-fix">{t('Răspuns corect:')} {feedback.diff.parts.map((p, i) => p.bad ? <mark key={i}>{p.text}</mark> : <span key={i}>{p.text}</span>)}</div>}
             {feedback.answer && <div>{t('Răspuns corect:')} <b>{feedback.answer}</b></div>}
             {feedback.explain && <div className="feedback-explain">💡 {feedback.explain}</div>}
           </div>

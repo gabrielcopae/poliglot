@@ -1082,3 +1082,5 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .day-line.big { background: linear-gradient(135deg, #fff1d6, #ffe0e8); }
 .day-today { align-self: center; }
 .today-label { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.66rem; opacity: 0.8; }
+.accent-fix { margin-top: 4px; font-size: 1.05rem; font-weight: 600; }
+.accent-fix mark { background: #fff3; color: inherit; border-bottom: 2px solid #fff; border-radius: 3px; padding: 0 2px; }

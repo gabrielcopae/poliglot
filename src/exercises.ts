@@ -127,16 +127,4 @@ export function buildExercises(course: Course, lesson: Lesson, opts: { canListen
   return [...shuffle(wordEx), ...typeEx, ...orderEx, ...speakEx]
 }
 
-export type CheckResult = 'correct' | 'accent' | 'wrong'
-
-export function checkTyped(input: string, accepted: string[]): CheckResult {
-  const exact = accepted.some((a) => norm(a, true) === norm(input, true))
-  if (exact) return 'correct'
-  // japoneza se scrie fără spații: comparăm și fără ele
-  const japanese = /[぀-ヿ一-龯]/
-  if (accepted.some((a) => japanese.test(a + input) && norm(a, true).replace(/ /g, '') === norm(input, true).replace(/ /g, ''))) return 'correct'
-  // fără accente sau articol lipsă
-  const stripArticle = (x: string) => x.replace(/^(el|la|los|las|il|lo|l|i|gli|le|un|una|uno) /, '')
-  const loose = accepted.some((a) => norm(a) === norm(input) || stripArticle(norm(a)) === norm(input))
-  return loose ? 'accent' : 'wrong'
-}
+export { accentDiff, checkTyped, matchTyped, type AccentDiff, type CheckResult } from './answer'
