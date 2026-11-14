@@ -257,10 +257,11 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 88 | Pronumele și adjectivele nehotărâte (expoziția „Huit mesures”) | ✅ testat |
 | | 89 | Comparația avansată: plus… plus, d’autant plus que, comme si (pianul Vioricăi) | ✅ testat |
 | | 90 | Cronica de film + recapitularea unității (documentarul „Répondre”) | ✅ testat |
+| B2 · Societate și identitate | 91 | Ipoteza avansată: à supposer que, pour peu que, quand bien même (cetățenia Ioanei) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
-A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. 🎓 Nivelul B1 e COMPLET (capitolele 37–66, șapte unități). Poveștile B1 au crescut de la 1045 la 2289 de cuvinte. B2 e în lucru: unitățile „Alegeri și ipoteze” (67–70), „Timp și memorie” (71–74) „Opinii și dezbateri” (75–78) „Muncă și economie” (79–82) „Știință și mediu” (83–86) și „Cultură și artă” (87–90) sunt gata; poveștile au ajuns la 4894 de cuvinte (cap. 90), capitolul 91 trebuie să aibă peste 4894. Obiectivul: franceza până la B2 inclusiv (cap. 102), apoi celelalte limbi până la B2.
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. 🎓 Nivelul B1 e COMPLET (capitolele 37–66, șapte unități). Poveștile B1 au crescut de la 1045 la 2289 de cuvinte. B2 e în lucru: unitățile „Alegeri și ipoteze” (67–70), „Timp și memorie” (71–74) „Opinii și dezbateri” (75–78) „Muncă și economie” (79–82) „Știință și mediu” (83–86) și „Cultură și artă” (87–90) sunt gata, iar „Societate și identitate” (91–94) e în lucru; poveștile au ajuns la 4983 de cuvinte (cap. 91), capitolul 92 trebuie să aibă peste 4983. Obiectivul: franceza până la B2 inclusiv (cap. 102), apoi celelalte limbi până la B2.
 
 ---
 
