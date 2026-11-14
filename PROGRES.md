@@ -259,10 +259,11 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 90 | Cronica de film + recapitularea unității (documentarul „Répondre”) | ✅ testat |
 | B2 · Societate și identitate | 91 | Ipoteza avansată: à supposer que, pour peu que, quand bien même (cetățenia Ioanei) | ✅ testat |
 | | 92 | Opoziția: alors que, tandis que, au lieu de, loin de (nașterea lui Awa) | ✅ testat |
+| | 93 | Registrele limbii: familiar, verlan, curent, elevat (slamul lui Sami la Academie) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
-A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. 🎓 Nivelul B1 e COMPLET (capitolele 37–66, șapte unități). Poveștile B1 au crescut de la 1045 la 2289 de cuvinte. B2 e în lucru: unitățile „Alegeri și ipoteze” (67–70), „Timp și memorie” (71–74) „Opinii și dezbateri” (75–78) „Muncă și economie” (79–82) „Știință și mediu” (83–86) și „Cultură și artă” (87–90) sunt gata, iar „Societate și identitate” (91–94) e în lucru; poveștile au ajuns la 5080 de cuvinte (cap. 92), capitolul 93 trebuie să aibă peste 5080. Obiectivul: franceza până la B2 inclusiv (cap. 102), apoi celelalte limbi până la B2.
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. 🎓 Nivelul B1 e COMPLET (capitolele 37–66, șapte unități). Poveștile B1 au crescut de la 1045 la 2289 de cuvinte. B2 e în lucru: unitățile „Alegeri și ipoteze” (67–70), „Timp și memorie” (71–74) „Opinii și dezbateri” (75–78) „Muncă și economie” (79–82) „Știință și mediu” (83–86) și „Cultură și artă” (87–90) sunt gata, iar „Societate și identitate” (91–94) e în lucru; poveștile au ajuns la 5117 cuvinte (cap. 93), capitolul 94 trebuie să aibă peste 5117. Obiectivul: franceza până la B2 inclusiv (cap. 102), apoi celelalte limbi până la B2.
 
 ---
 
