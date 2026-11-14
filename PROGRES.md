@@ -262,10 +262,11 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 93 | Registrele limbii: familiar, verlan, curent, elevat (slamul lui Sami la Academie) | ✅ testat |
 | | 94 | Scrisoarea formală de cerere + recapitularea unității (ultimul cart al lui Yves) | ✅ testat |
 | B2 · Pregătire DELF B2 | 95 | Înțelegerea orală: strategii, marcatori, fapt și opinie, ironie (Haruka la Lyon) | ✅ testat |
+| | 96 | Înțelegerea scrisă: teza, citirea pe diagonală, deducerea din context (mediateca Jeanne-Valmont) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
-A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. 🎓 Nivelul B1 e COMPLET (capitolele 37–66, șapte unități). Poveștile B1 au crescut de la 1045 la 2289 de cuvinte. B2 e în lucru: unitățile „Alegeri și ipoteze” (67–70), „Timp și memorie” (71–74) „Opinii și dezbateri” (75–78) „Muncă și economie” (79–82) „Știință și mediu” (83–86) „Cultură și artă” (87–90) și „Societate și identitate” (91–94) sunt gata; unitatea „Pregătire DELF B2” (95–98) e în lucru; poveștile au ajuns la 5407 cuvinte (cap. 95), capitolul 96 trebuie să aibă peste 5407. Obiectivul: franceza până la B2 inclusiv (cap. 102), apoi celelalte limbi până la B2.
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. 🎓 Nivelul B1 e COMPLET (capitolele 37–66, șapte unități). Poveștile B1 au crescut de la 1045 la 2289 de cuvinte. B2 e în lucru: unitățile „Alegeri și ipoteze” (67–70), „Timp și memorie” (71–74) „Opinii și dezbateri” (75–78) „Muncă și economie” (79–82) „Știință și mediu” (83–86) „Cultură și artă” (87–90) și „Societate și identitate” (91–94) sunt gata; unitatea „Pregătire DELF B2” (95–98) e în lucru; poveștile au ajuns la 5478 de cuvinte (cap. 96), capitolul 97 trebuie să aibă peste 5478. Obiectivul: franceza până la B2 inclusiv (cap. 102), apoi celelalte limbi până la B2.
 
 ---
 
