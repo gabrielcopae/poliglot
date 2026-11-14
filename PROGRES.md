@@ -245,10 +245,14 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 76 | Conectorii discursului formal (concursul de elocință, marea de la Marsilia) | ✅ testat |
 | | 77 | Faire / laisser / se faire / se voir + infinitiv (șantierul de la Grenoble, nașterea lui Yves) | ✅ testat |
 | | 78 | Limbajul dezbaterii + recapitularea unității (primul zbor al bunicii) | ✅ testat |
+| B2 · Muncă și economie | 79 | Gerunziul, participiul prezent, adjectivul verbal (cheia biroului) | ✅ testat |
+| | 80 | Diateza pasivă (controlorul și vioara) | ✅ testat |
+| | 81 | Stilul nominal (casa cu valuri de la București) | ✅ testat |
+| | 82 | Interviul de angajare + recapitularea unității (orchestra de joi) | ✅ testat |
 
 Fiecare capitol are și „Povestea capitolului” (fișierul src/content/fr-povesti-a1.ts), care crește de la ~80 de cuvinte (cap. 1) la ~280 (cap. 12). Firul poveștii: Ioana se adaptează la Lyon, Julien se îndrăgostește de ea; la final (cap. 12) îi dă de ziua ei două bilete spre Marsilia, de Crăciun. A2 începe cu răspunsul Ioanei.
 
-A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. 🎓 Nivelul B1 e COMPLET (capitolele 37–66, șapte unități). Poveștile B1 au crescut de la 1045 la 2289 de cuvinte. B2 e în lucru: unitățile „Alegeri și ipoteze” (67–70), „Timp și memorie” (71–74) și „Opinii și dezbateri” (75–78) sunt gata; poveștile au ajuns la 3791 de cuvinte (cap. 78), capitolul 79 trebuie să aibă peste 3791. Obiectivul: franceza până la B2 inclusiv (cap. 102), apoi celelalte limbi până la B2.
+A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓 Nivelul A2 e COMPLET (capitolele 13–36, șase unități). Poveștile au crescut de la 311 la 1029 de cuvinte. 🎓 Nivelul B1 e COMPLET (capitolele 37–66, șapte unități). Poveștile B1 au crescut de la 1045 la 2289 de cuvinte. B2 e în lucru: unitățile „Alegeri și ipoteze” (67–70), „Timp și memorie” (71–74) „Opinii și dezbateri” (75–78) și „Muncă și economie” (79–82) sunt gata; poveștile au ajuns la 4273 de cuvinte (cap. 82), capitolul 83 trebuie să aibă peste 4273. Obiectivul: franceza până la B2 inclusiv (cap. 102), apoi celelalte limbi până la B2.
 
 ---
 
