@@ -88,6 +88,7 @@ import { frCap84 } from './fr-cap84'
 import { frCap85 } from './fr-cap85'
 import { frCap86 } from './fr-cap86'
 import { frCap87 } from './fr-cap87'
+import { frCap88 } from './fr-cap88'
 
 /** Atașează „Povestea capitolului”. */
 const POVESTI = { ...FR_POVESTI_A1, ...FR_POVESTI_A2 }
@@ -114,7 +115,7 @@ const units: Unit[] = [
   { id: 'fr-b2-3', title: 'B2 · Opinii și dezbateri', level: 'B2', lessons: [frCap75, frCap76, frCap77, frCap78] },
   { id: 'fr-b2-4', title: 'B2 · Muncă și economie', level: 'B2', lessons: [frCap79, frCap80, frCap81, frCap82] },
   { id: 'fr-b2-5', title: 'B2 · Știință și mediu', level: 'B2', lessons: [frCap83, frCap84, frCap85, frCap86] },
-  { id: 'fr-b2-6', title: 'B2 · Cultură și artă', level: 'B2', lessons: [frCap87] },
+  { id: 'fr-b2-6', title: 'B2 · Cultură și artă', level: 'B2', lessons: [frCap87, frCap88] },
 ]
 
 export const fr: Course = {
