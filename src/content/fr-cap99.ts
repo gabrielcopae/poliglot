@@ -61,8 +61,8 @@ export const frCap99 = lesson({
       gloss: {
         il: 'el, (impersonal)', faut: 'trebuie', que: 'ca, că', tout: 'totul', soit: 'fie (subjonctiv)', prêt: 'gata', avant: '(„avant que” = înainte ca)', les: 'articolul „les”', invités: 'invitați',
         "n’arrivent": 'sosească (ne expletiv)', chaises: 'scaune', fleurs: 'flori', lanternes: 'felinare', dans: 'în', le: 'articolul „le”', tilleul: 'tei', 'calme-toi': 'calmează-te', quand: 'când',
-        nous: 'noi', aurons: 'vom fi (viitor anterior)', installé: 'pus, instalat', ne: 'nu', restera: 'va rămâne', plus: 'mai', si: 'dacă, ba da', on: 'cineva', "m’avait": 'mi-ar fi (mi-a fi)', dit: 'spus',
-        en: 'în', je: 'eu', viendrais: 'voi veni (viitor în trecut)', un: 'un', jour: 'zi', à: 'la', mariage: 'nuntă', moldavie: 'Moldova', 'quatre-vingt-seize': 'nouăzeci și șase', ans: 'ani',
+        nous: 'noi', aurons: 'vom fi (viitor anterior)', installé: 'pus, instalat', ne: 'nu', restera: 'va rămâne', plus: 'mai', on: 'cineva', "m’avait": 'mi-ar fi (mi-a fi)', dit: 'spus',
+        je: 'eu', viendrais: 'voi veni (viitor în trecut)', un: 'un', jour: 'zi', à: 'la', mariage: 'nuntă', moldavie: 'Moldova', 'quatre-vingt-seize': 'nouăzeci și șase', ans: 'ani',
         "l’aurais": 'l-aș fi', pas: '(negație)', cru: 'crezut', médecin: 'doctor', avait: 'avea, spusese', vous: 'dumneavoastră', pourriez: 'ați putea', faire: 'a face', voyage: 'drum', médecins: 'doctori',
         disent: 'spun', beaucoup: 'multe', de: 'de', choses: 'lucruri', voulais: 'voiam', mon: 'meu', 'petit-fils': 'nepot', se: 'se', marie: 'căsătorească (subjonctiv)', devant: 'în fața', moi: 'mine',
         et: 'și', rencontrer: 'a cunoaște', cette: 'această', 'grand-mère': 'bunică', qui: 'care', siffle: 'fluieră', si: 'dacă, atât de', fort: 'tare', elle: 'ea', a: 'a', "qu’elle": 'că ea', viendrait: 'va veni',
@@ -72,7 +72,7 @@ export const frCap99 = lesson({
         famille: 'familie', manque: 'lipsește', personne: 'nimeni', "d’important": 'important', "quelqu’un": 'cineva', père: 'tată', voulu: 'vrut', jouer: 'a cânta', pour: 'pentru', choisi: 'ales', une: 'o',
         valse: 'vals', chopin: 'Chopin', alors: 'atunci', disions: 'spunem (subjonctiv)', oui: 'da', jouerai: 'voi cânta', henri: 'Henri', jouerez: 'veți cânta', trois: 'trei', notes: 'note', avec: 'cu',
         seul: 'singur', doigt: 'deget', iași: 'Iași', en: 'în, (pronume) dintre ele', jouera: 'va cânta', autres: 'alte', deux: 'două', doigts: 'degete', lui: 'îi', promis: 'promis', "d’apprendre": 'să învăț',
-        rit: 'râde', aurez: 'veți fi', fini: 'terminat', toutes: 'toate', qu: 'decât', "qu’à": 'decât să', danser: 'a dansa', sorina: 'Sorina', andrei: 'Andrei', viorica: 'Viorica',
+        rit: 'râde', aurez: 'veți fi', fini: 'terminat', toutes: 'toate', "qu’à": 'decât să', danser: 'a dansa', sorina: 'Sorina', andrei: 'Andrei', viorica: 'Viorica',
       },
     },
     pron: [
