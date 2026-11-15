@@ -41,7 +41,7 @@ export const frCap99 = lesson({
     ],
     dialogue: {
       title: 'În ajunul nunții',
-      intro: 'Vineri, 30 aprilie 2037, seara, pe veranda casei de la țară a bunicii, lângă Iași. Casa a fost renovată de biroul din București al firmei Fabre & Popescu. Mâine, Sorina și Andrei se căsătoresc aici, sub tei. Viorica a venit de la București.',
+      intro: 'Vineri, 1 mai 2037, seara, pe veranda casei de la țară a bunicii, lângă Iași. Casa a fost renovată de biroul din București al firmei Fabre & Popescu. Mâine, Sorina și Andrei se căsătoresc aici, sub tei. Viorica a venit de la București.',
       cast: { Sorina: 'f', Andrei: 'm', Viorica: 'f' },
       lines: [
         { who: 'Sorina', t: 'Il faut que tout soit prêt avant que les invités n’arrivent. Les chaises, les fleurs, les lanternes dans le tilleul…', ro: 'Trebuie ca totul să fie gata înainte să sosească invitații. Scaunele, florile, felinarele din tei…' },
@@ -216,7 +216,7 @@ export const frCap99 = lesson({
         title: 'Text de citit: O pagină de jurnal',
         instructions: 'Viorica ține un jurnal de când era copil. Iată pagina scrisă în seara nunții. Observă timpurile: prezentul, trecutul, viitorul anterior, condiționalul trecut. Ascultă textul de 2 ori, apoi citește-l cu voce tare. La final răspunzi la 4 întrebări.',
         reading: {
-          title: 'Journal de Viorica, 1er mai 2037',
+          title: 'Journal de Viorica, 2 mai 2037',
           cast: { Narrateur: 'f' },
           lines: [
             { t: 'Ce soir, j’écris à la lumière d’une lanterne, sous un tilleul de quatre-vingt-onze ans, dans un village de Moldavie où je n’étais jamais venue. Mon petit-fils s’est marié aujourd’hui. Je ne pensais pas qu’il me serait donné de voir ce jour.', ro: 'În seara asta scriu la lumina unui felinar, sub un tei de nouăzeci și unu de ani, într-un sat din Moldova în care nu fusesem niciodată. Nepotul meu s-a căsătorit azi. Nu credeam că îmi va fi dat să văd ziua aceasta.' },

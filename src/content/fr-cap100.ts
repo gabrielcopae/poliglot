@@ -41,7 +41,7 @@ export const frCap100 = lesson({
     ],
     dialogue: {
       title: 'Consiliul de familie',
-      intro: 'Duminică, 6 iunie 2037, la cafeneaua lui Gérard, în josul străzii Austerlitz. Doamna Roux, 91 de ani, vrea să-l găzduiască pe Farid în camera liberă din apartamentul ei din Villeurbanne. Fiul ei, Philippe, venit de la Paris, e împotrivă. Inès, care vrea să devină avocată, apără proiectul.',
+      intro: 'Duminică, 7 iunie 2037, la cafeneaua lui Gérard, în josul străzii Austerlitz. Doamna Roux, 91 de ani, vrea să-l găzduiască pe Farid în camera liberă din apartamentul ei din Villeurbanne. Fiul ei, Philippe, venit de la Paris, e împotrivă. Inès, care vrea să devină avocată, apără proiectul.',
       cast: { Philippe: 'm', 'Madame Roux': 'f', Inès: 'f' },
       lines: [
         { who: 'Philippe', t: 'Maman, je comprends ton idée, mais étant donné ton âge, c’est beaucoup trop risqué.', ro: 'Mamă, îți înțeleg ideea, dar, având în vedere vârsta ta, e mult prea riscant.' },
