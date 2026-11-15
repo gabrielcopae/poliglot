@@ -93,7 +93,20 @@ Perfecto, indefinido, neregulatele, imperfecto, imperfecto vs indefinido, pronum
 | B1 · Finalul B1 | 65 | Narațiune avansată: toate timpurile trecute + subjonctiv la trecut, conectori | ✅ testat |
 | | 66 | Recapitulare B1 în format DELE + decizia Anei și a lui Mihai | ✅ testat |
 
-**Urmează: B2** (36 de capitole, de la capitolul 67), apoi C1 (44 de capitole).
+### B2 — în lucru: 6 din 36 de capitole (67–72)
+
+| Unitate | Capitol | Temă | Stare |
+|---|---|---|---|
+| B2 · Nuanțele trecutului | 67 | Perfecto / indefinido / imperfecto / pluscuamperfecto, soler, pretérito anterior (tortilla lui Mihai) | ✅ testat |
+| | 68 | Perifraze verbale de nivel B2 (volver a, dejar de, estar a punto de, llevar + gerunziu, tener + participiu) — cei zece ani ai Ecaterinei la Madrid | ✅ testat |
+| | 69 | Viitorul și condiționalul de probabilitate, a lo mejor, puede que, deber de (litera mică din dedicație) | ✅ testat |
+| | 70 | Vorbirea indirectă avansată + recapitularea unității (apelul video cu Andrés) | ✅ testat |
+| B2 · Opinie și argumentare | 71 | Opinie și apreciere: creo que / no creo que, es evidente / es normal que, no es que… sino que (reîntâlnirea de la Madrid) | ✅ testat |
+| | 72 | Cauză și consecință: como, ya que, debido a, gracias a / por culpa de, tan… que, de ahí que (postarea virală) | ✅ testat |
+
+Poveștile B2: 67: 1480 · 68: 1511 · 69: 1540 · 70: 1572 · 71: 1579 · **72: 1630**. Capitolul 73 trebuie să aibă peste 1630.
+
+**Urmează:** capitolele 73–102 (B2), apoi C1 (44 de capitole).
 
 **Firul poveștii în spaniolă:**
 - Mihai (medic român) și Ana (profesoară de spaniolă) se cunosc la clubul de japoneză al lui Yuki. Kenji are un restaurant de ramen. Doamna Suzuki lucrează la bibliotecă și are pisica Tama.
