@@ -93,7 +93,7 @@ Perfecto, indefinido, neregulatele, imperfecto, imperfecto vs indefinido, pronum
 | B1 · Finalul B1 | 65 | Narațiune avansată: toate timpurile trecute + subjonctiv la trecut, conectori | ✅ testat |
 | | 66 | Recapitulare B1 în format DELE + decizia Anei și a lui Mihai | ✅ testat |
 
-### B2 — în lucru: 6 din 36 de capitole (67–72)
+### B2 — în lucru: 9 din 36 de capitole (67–75)
 
 | Unitate | Capitol | Temă | Stare |
 |---|---|---|---|
@@ -103,10 +103,13 @@ Perfecto, indefinido, neregulatele, imperfecto, imperfecto vs indefinido, pronum
 | | 70 | Vorbirea indirectă avansată + recapitularea unității (apelul video cu Andrés) | ✅ testat |
 | B2 · Opinie și argumentare | 71 | Opinie și apreciere: creo que / no creo que, es evidente / es normal que, no es que… sino que (reîntâlnirea de la Madrid) | ✅ testat |
 | | 72 | Cauză și consecință: como, ya que, debido a, gracias a / por culpa de, tan… que, de ahí que (postarea virală) | ✅ testat |
+| | 73 | Concesia: aunque + ind./subj., por mucho que, por muy… que, si bien, y eso que (ultimele cinci pagini ale traducerii) | ✅ testat |
+| | 74 | Condițiile: siempre que, con tal de que, a no ser que, en caso de que, de + infinitiv, como + subj. + recapitulare (lansarea de la București) | ✅ testat |
+| B2 · Limba scrisă | 75 | Pronumele relative: el que, quien, el cual, cuyo, lo que / lo cual, explicative și specificative (camionul cu cărți) | ✅ testat |
 
-Poveștile B2: 67: 1480 · 68: 1511 · 69: 1540 · 70: 1572 · 71: 1579 · **72: 1630**. Capitolul 73 trebuie să aibă peste 1630.
+Poveștile B2: 67: 1480 · 68: 1511 · 69: 1540 · 70: 1572 · 71: 1579 · 72: 1630 · 73: 1642 · 74: 1645 · **75: 1675**. Capitolul 76 trebuie să aibă peste 1675.
 
-**Urmează:** capitolele 73–102 (B2), apoi C1 (44 de capitole).
+**Urmează:** capitolele 76–102 (B2), apoi C1 (44 de capitole).
 
 **Firul poveștii în spaniolă:**
 - Mihai (medic român) și Ana (profesoară de spaniolă) se cunosc la clubul de japoneză al lui Yuki. Kenji are un restaurant de ramen. Doamna Suzuki lucrează la bibliotecă și are pisica Tama.

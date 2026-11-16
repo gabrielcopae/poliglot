@@ -75,6 +75,7 @@ import { esCap71 } from './es-cap71'
 import { esCap72 } from './es-cap72'
 import { esCap73 } from './es-cap73'
 import { esCap74 } from './es-cap74'
+import { esCap75 } from './es-cap75'
 
 /** Atașează textele lungi de lectură și „Povestea capitolului”. */
 const R = (l: Lesson) => {
@@ -118,5 +119,6 @@ export const es: Course = {
     { id: 'es-b1-8', title: 'B1 · Finalul B1', level: 'B1', lessons: [esCap65, esCap66].map(R) },
     { id: 'es-b2-1', title: 'B2 · Nuanțele trecutului', level: 'B2', lessons: [esCap67, esCap68, esCap69, esCap70].map(R) },
     { id: 'es-b2-2', title: 'B2 · Opinie și argumentare', level: 'B2', lessons: [esCap71, esCap72, esCap73, esCap74].map(R) },
+    { id: 'es-b2-3', title: 'B2 · Limba scrisă', level: 'B2', lessons: [esCap75].map(R) },
   ],
 }
