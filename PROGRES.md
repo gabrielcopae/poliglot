@@ -93,7 +93,7 @@ Perfecto, indefinido, neregulatele, imperfecto, imperfecto vs indefinido, pronum
 | B1 · Finalul B1 | 65 | Narațiune avansată: toate timpurile trecute + subjonctiv la trecut, conectori | ✅ testat |
 | | 66 | Recapitulare B1 în format DELE + decizia Anei și a lui Mihai | ✅ testat |
 
-### B2 — în lucru: 16 din 36 de capitole (67–82)
+### B2 — în lucru: 18 din 36 de capitole (67–84)
 
 | Unitate | Capitol | Temă | Stare |
 |---|---|---|---|
@@ -113,10 +113,12 @@ Perfecto, indefinido, neregulatele, imperfecto, imperfecto vs indefinido, pronum
 | | 80 | Por și para la nivel B2, expresii fixe, verbele cu prepoziție (august la sat, Andrei pleacă la Madrid) | ✅ testat |
 | | 81 | Propozițiile temporale: al / nada más + infinitiv, en cuanto, una vez que, a medida que, desde que, hasta que, participiul absolut (septembrie la Madrid) | ✅ testat |
 | | 82 | Trecutul ireal: si + hubiera → habría, condiționale mixte, de + infinitiv compus, ojalá + hubiera (dezvelirea plăcii) | ✅ testat |
+| | 83 | Comparația avansată: cuanto más… más, cada vez más, tanto… como, el doble de, más de lo que, -ísimo, de lo más (examenul DELE B2) | ✅ testat |
+| | 84 | Pronumele: se lo, poziția cu infinitiv / gerunziu / imperativ, dublarea complementului, se intensiv și se involuntar (Crăciunul la București, manuscrisul) | ✅ testat |
 
-Poveștile B2: 67: 1480 · 68: 1511 · 69: 1540 · 70: 1572 · 71: 1579 · 72: 1630 · 73: 1642 · 74: 1645 · 75: 1675 · 76: 1752 · 77: 2028 · 78: 2169 · 79: 2239 · 80: 2395 · 81: 2448 · **82: 2501**. Capitolul 83 trebuie să aibă peste 2501.
+Poveștile B2: 67: 1480 · 68: 1511 · 69: 1540 · 70: 1572 · 71: 1579 · 72: 1630 · 73: 1642 · 74: 1645 · 75: 1675 · 76: 1752 · 77: 2028 · 78: 2169 · 79: 2239 · 80: 2395 · 81: 2448 · 82: 2501 · 83: 2554 · **84: 2614**. Capitolul 85 trebuie să aibă peste 2614.
 
-**Urmează:** capitolele 83–102 (B2), apoi C1 (44 de capitole).
+**Urmează:** capitolele 85–102 (B2), apoi C1 (44 de capitole).
 
 **Firul poveștii în spaniolă:**
 - Mihai (medic român) și Ana (profesoară de spaniolă) se cunosc la clubul de japoneză al lui Yuki. Kenji are un restaurant de ramen. Doamna Suzuki lucrează la bibliotecă și are pisica Tama.
