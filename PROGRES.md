@@ -214,8 +214,9 @@ Curs nou, în formatul capitolelor (ca franceza), cu explicații în română ș
 | | 6 | Rutina zilnică, verbele reflexive (mi alzo, devo alzarmi), sempre / spesso / non… mai, presto / tardi / in ritardo (ziua Graziellei) | ✅ testat |
 | | 7 | În oraș: indicații, imperativul (gira / giri), prepozițiile articulate, de loc, venire, uscire (harta comorii) | ✅ testat |
 | | 8 | Haine și culori, acordul adjectivelor, pluralul, questo / quello (cămașa albastră și petrecerea Giuliei) | ✅ testat |
+| A1 · Lumea din jur | 9 | Vremea, anotimpurile, lunile, data (il primo maggio), stare + gerunziu, stare per (cele patru fețe ale Florenței) | ✅ testat |
 
-Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · **8: 212**. Capitolul 2 trebuie să aibă o poveste mai lungă.
+Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · **9: 213**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
@@ -231,8 +232,6 @@ Curs nou, în formatul capitolelor, cu explicații în română și engleză (ce
 | | 4 | Aller, ora, zilele săptămânii, numerele până la 100 | ✅ testat |
 | A1 · Viața de zi cu zi | 5 | Restaurantul, partitivul (du, de la), prendre, boire, vouloir | ✅ testat |
 | | 6 | Rutina zilnică, verbele reflexive, faire, toujours / jamais | ✅ testat |
-| | 7 | În oraș: indicații, imperativul (gira / giri), prepozițiile articulate, de loc, venire, uscire (harta comorii) | ✅ testat |
-| | 8 | Haine și culori, acordul adjectivelor, pluralul, questo / quello (cămașa albastră și petrecerea Giuliei) | ✅ testat |
 | | 7 | Drumul prin oraș, imperativul, venir, prepozițiile de loc | ✅ testat |
 | | 8 | Haine, culori, acordul adjectivelor, ce / cette / ces, pouvoir | ✅ testat |
 | A1 · Lumea din jur | 9 | Vremea, anotimpurile, lunile, data, viitorul apropiat | ✅ testat |
