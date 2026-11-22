@@ -93,7 +93,7 @@ Perfecto, indefinido, neregulatele, imperfecto, imperfecto vs indefinido, pronum
 | B1 · Finalul B1 | 65 | Narațiune avansată: toate timpurile trecute + subjonctiv la trecut, conectori | ✅ testat |
 | | 66 | Recapitulare B1 în format DELE + decizia Anei și a lui Mihai | ✅ testat |
 
-### B2 — în lucru: 35 din 36 de capitole (67–101)
+### B2 — COMPLET: 36 din 36 de capitole (67–102)
 
 | Unitate | Capitol | Temă | Stare |
 |---|---|---|---|
@@ -132,10 +132,13 @@ Perfecto, indefinido, neregulatele, imperfecto, imperfecto vs indefinido, pronum
 | | 99 | Timpurile povestirii: prezentul istoric, viitorul în trecut (condițional, iba a… pero, estaba a punto de… cuando), conectori narativi (februarie la Triana, introducerea antologiei, portocalul înflorit de Ziua Andaluziei) | ✅ testat |
 | | 100 | Registrul colocvial: pues, venga, vaya, anda, o sea, ¡qué pasada!, ¡no me digas!, mogollón, colocvial vs formal (mărțișoarele pentru Spania, Costel pe Cuesta de Moyano cu Lucas, încolțește nucul de la Valencia) | ✅ testat |
 | | 101 | Sentimente cu subjonctiv și corespondența timpurilor: me alegro de que hayas venido, me alegré de que vinieras, me habría gustado que, expresii de emoție (Ziua Cărții la Madrid, lansarea dublă, băiatul din Teruel și tatăl lui, scrisoarea Begoñei) | ✅ testat |
+| | 102 | Marea recapitulare B2 în format DELE: timpuri, subjonctiv, trecut ireal, conectori, ser/estar, por/para, structura examenului (lămpile din 18 iunie, prima scrisoare a bunicului Gheorghe) | ✅ testat |
 
-Poveștile B2: 67: 1480 · 68: 1511 · 69: 1540 · 70: 1572 · 71: 1579 · 72: 1630 · 73: 1642 · 74: 1645 · 75: 1675 · 76: 1752 · 77: 2028 · 78: 2169 · 79: 2239 · 80: 2395 · 81: 2448 · 82: 2501 · 83: 2554 · 84: 2614 · 85: 2672 · 86: 2732 · 87: 2778 · 88: 2886 · 89: 2944 · 90: 3033 · 91: 3095 · 92: 3176 · 93: 3232 · 94: 3237 · 95: 3363 · 96: 3538 · 97: 3648 · 98: 3850 · 99: 3964 · 100: 4034 · **101: 4092**. Capitolul 102 trebuie să aibă peste 4092.
+Poveștile B2: 67: 1480 · 68: 1511 · 69: 1540 · 70: 1572 · 71: 1579 · 72: 1630 · 73: 1642 · 74: 1645 · 75: 1675 · 76: 1752 · 77: 2028 · 78: 2169 · 79: 2239 · 80: 2395 · 81: 2448 · 82: 2501 · 83: 2554 · 84: 2614 · 85: 2672 · 86: 2732 · 87: 2778 · 88: 2886 · 89: 2944 · 90: 3033 · 91: 3095 · 92: 3176 · 93: 3232 · 94: 3237 · 95: 3363 · 96: 3538 · 97: 3648 · 98: 3850 · 99: 3964 · 100: 4034 · 101: 4092 · **102: 4175**. Primul capitol C1 (103) trebuie să aibă peste 4175.
 
-**Urmează:** capitolul 102 (B2, unitatea „Finalul B2”), apoi C1 (44 de capitole).
+🎓 **Nivelul B2 la spaniolă e COMPLET** (capitolele 67–102, șapte unități: „Nuanțele trecutului”, „Opinie și argumentare”, „Limba scrisă”, „Schimbări și începuturi”, „Comunicare și nuanțe”, „Vocabular și stil”, „Finalul B2”). Poveștile B2 au crescut de la 1480 la 4175 de cuvinte.
+
+**Urmează:** celelalte limbi până la B2 (italiana, germana, japoneza), apoi C1.
 
 **Firul poveștii în spaniolă:**
 - Mihai (medic român) și Ana (profesoară de spaniolă) se cunosc la clubul de japoneză al lui Yuki. Kenji are un restaurant de ramen. Doamna Suzuki lucrează la bibliotecă și are pisica Tama.
