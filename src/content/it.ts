@@ -10,6 +10,7 @@ import { itCap08 } from './it-cap08'
 import { itCap09 } from './it-cap09'
 import { itCap10 } from './it-cap10'
 import { itCap11 } from './it-cap11'
+import { itCap12 } from './it-cap12'
 
 /**
  * Italiană, în formatul capitolelor (ca franceza).
@@ -20,7 +21,7 @@ import { itCap11 } from './it-cap11'
 const units: Unit[] = [
   { id: 'it-a1-1', title: 'A1 · Primii pași', level: 'A1', lessons: [itCap01, itCap02, itCap03, itCap04] },
   { id: 'it-a1-2', title: 'A1 · Viața de zi cu zi', level: 'A1', lessons: [itCap05, itCap06, itCap07, itCap08] },
-  { id: 'it-a1-3', title: 'A1 · Lumea din jur', level: 'A1', lessons: [itCap09, itCap10, itCap11] },
+  { id: 'it-a1-3', title: 'A1 · Lumea din jur', level: 'A1', lessons: [itCap09, itCap10, itCap11, itCap12] },
 ]
 
 export const it: Course = {
