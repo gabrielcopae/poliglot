@@ -2,6 +2,7 @@ import type { Course, Unit } from './types'
 import { itCap01 } from './it-cap01'
 import { itCap02 } from './it-cap02'
 import { itCap03 } from './it-cap03'
+import { itCap04 } from './it-cap04'
 
 /**
  * Italiană, în formatul capitolelor (ca franceza).
@@ -10,7 +11,7 @@ import { itCap03 } from './it-cap03'
  * Giulia, colegă restauratoare din Napoli; profesorul Bellini, șeful atelierului.
  */
 const units: Unit[] = [
-  { id: 'it-a1-1', title: 'A1 · Primii pași', level: 'A1', lessons: [itCap01, itCap02, itCap03] },
+  { id: 'it-a1-1', title: 'A1 · Primii pași', level: 'A1', lessons: [itCap01, itCap02, itCap03, itCap04] },
 ]
 
 export const it: Course = {
