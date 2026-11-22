@@ -93,7 +93,7 @@ Perfecto, indefinido, neregulatele, imperfecto, imperfecto vs indefinido, pronum
 | B1 · Finalul B1 | 65 | Narațiune avansată: toate timpurile trecute + subjonctiv la trecut, conectori | ✅ testat |
 | | 66 | Recapitulare B1 în format DELE + decizia Anei și a lui Mihai | ✅ testat |
 
-### B2 — în lucru: 33 din 36 de capitole (67–99)
+### B2 — în lucru: 34 din 36 de capitole (67–100)
 
 | Unitate | Capitol | Temă | Stare |
 |---|---|---|---|
@@ -130,10 +130,11 @@ Perfecto, indefinido, neregulatele, imperfecto, imperfecto vs indefinido, pronum
 | B2 · Finalul B2 | 97 | Scopul și consecința: para que, no vaya a ser que, de modo que, de ahí que (serbarea de Crăciun, atlasul din 1980, Revelionul la sat) | ✅ testat |
 | | 98 | Ser și estar la nivel B2: adjective cu sens schimbat, estar de, ser pentru evenimente, pasiv vs rezultat (primul drum al lui Costel la Valencia, nucul lui Gheorghe plantat la liceul lui Álex, domnul Dan trece C1) | ✅ testat |
 | | 99 | Timpurile povestirii: prezentul istoric, viitorul în trecut (condițional, iba a… pero, estaba a punto de… cuando), conectori narativi (februarie la Triana, introducerea antologiei, portocalul înflorit de Ziua Andaluziei) | ✅ testat |
+| | 100 | Registrul colocvial: pues, venga, vaya, anda, o sea, ¡qué pasada!, ¡no me digas!, mogollón, colocvial vs formal (mărțișoarele pentru Spania, Costel pe Cuesta de Moyano cu Lucas, încolțește nucul de la Valencia) | ✅ testat |
 
-Poveștile B2: 67: 1480 · 68: 1511 · 69: 1540 · 70: 1572 · 71: 1579 · 72: 1630 · 73: 1642 · 74: 1645 · 75: 1675 · 76: 1752 · 77: 2028 · 78: 2169 · 79: 2239 · 80: 2395 · 81: 2448 · 82: 2501 · 83: 2554 · 84: 2614 · 85: 2672 · 86: 2732 · 87: 2778 · 88: 2886 · 89: 2944 · 90: 3033 · 91: 3095 · 92: 3176 · 93: 3232 · 94: 3237 · 95: 3363 · 96: 3538 · 97: 3648 · 98: 3850 · **99: 3964**. Capitolul 100 trebuie să aibă peste 3964.
+Poveștile B2: 67: 1480 · 68: 1511 · 69: 1540 · 70: 1572 · 71: 1579 · 72: 1630 · 73: 1642 · 74: 1645 · 75: 1675 · 76: 1752 · 77: 2028 · 78: 2169 · 79: 2239 · 80: 2395 · 81: 2448 · 82: 2501 · 83: 2554 · 84: 2614 · 85: 2672 · 86: 2732 · 87: 2778 · 88: 2886 · 89: 2944 · 90: 3033 · 91: 3095 · 92: 3176 · 93: 3232 · 94: 3237 · 95: 3363 · 96: 3538 · 97: 3648 · 98: 3850 · 99: 3964 · **100: 4034**. Capitolul 101 trebuie să aibă peste 4034.
 
-**Urmează:** capitolele 100–102 (B2, unitatea „Finalul B2”), apoi C1 (44 de capitole).
+**Urmează:** capitolele 101–102 (B2, unitatea „Finalul B2”), apoi C1 (44 de capitole).
 
 **Firul poveștii în spaniolă:**
 - Mihai (medic român) și Ana (profesoară de spaniolă) se cunosc la clubul de japoneză al lui Yuki. Kenji are un restaurant de ramen. Doamna Suzuki lucrează la bibliotecă și are pisica Tama.
