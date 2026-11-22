@@ -208,8 +208,9 @@ Curs nou, în formatul capitolelor (ca franceza), cu explicații în română ș
 |---|---|---|---|
 | A1 · Primii pași | 1 | Ciao, essere, pronumele (și „Lei”), non, întrebări, pronunția (c/g, gn, gli, consoane duble) | ✅ testat |
 | | 2 | Avere, vârsta, articolele (il/lo/la, un/uno/una), familia, c’è / ci sono, numerele 0–20 (motanul Michelangelo) | ✅ testat |
+| | 3 | Prezentul verbelor regulate (-are, -ere, -ire, -isc-), limbile, „a” cu orașe / „in” cu țări (prima zi la atelier, profesorul Bellini) | ✅ testat |
 
-Poveștile italiene: 1: 78 · **2: 100**. Capitolul 2 trebuie să aibă o poveste mai lungă.
+Poveștile italiene: 1: 78 · 2: 100 · **3: 103**. Capitolul 2 trebuie să aibă o poveste mai lungă.
 
 ---
 
