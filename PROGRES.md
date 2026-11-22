@@ -218,8 +218,9 @@ Curs nou, în formatul capitolelor (ca franceza), cu explicații în română ș
 | | 10 | Passato prossimo cu avere, participiile regulate și neregulate, ieri / fa / scorso, già / non… ancora (jurnalul lui Pietro, raviolii) | ✅ testat |
 | | 11 | Passato prossimo cu essere, acordul participiului, verbele reflexive la trecut, conectorii (scuza Giuliei, weekendul la Napoli) | ✅ testat |
 | | 12 | Posesivele (il mio, mio padre, il loro), familia extinsă, recapitularea A1 (albumul Graziellei, Crăciunul la Sibiu) | ✅ testat |
+| A2 · Povești din trecut | 13 | Imperfetto: descriere și obiceiuri, c’era / c’erano, una volta… adesso (interviul lui Pietro, copilăria profesorului Bellini) | ✅ testat |
 
-Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · **12: 290**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · **13: 306**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
