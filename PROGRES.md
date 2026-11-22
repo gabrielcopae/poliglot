@@ -215,8 +215,9 @@ Curs nou, în formatul capitolelor (ca franceza), cu explicații în română ș
 | | 7 | În oraș: indicații, imperativul (gira / giri), prepozițiile articulate, de loc, venire, uscire (harta comorii) | ✅ testat |
 | | 8 | Haine și culori, acordul adjectivelor, pluralul, questo / quello (cămașa albastră și petrecerea Giuliei) | ✅ testat |
 | A1 · Lumea din jur | 9 | Vremea, anotimpurile, lunile, data (il primo maggio), stare + gerunziu, stare per (cele patru fețe ale Florenței) | ✅ testat |
+| | 10 | Passato prossimo cu avere, participiile regulate și neregulate, ieri / fa / scorso, già / non… ancora (jurnalul lui Pietro, raviolii) | ✅ testat |
 
-Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · **9: 213**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · **10: 221**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
