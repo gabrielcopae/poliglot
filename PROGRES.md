@@ -93,7 +93,7 @@ Perfecto, indefinido, neregulatele, imperfecto, imperfecto vs indefinido, pronum
 | B1 · Finalul B1 | 65 | Narațiune avansată: toate timpurile trecute + subjonctiv la trecut, conectori | ✅ testat |
 | | 66 | Recapitulare B1 în format DELE + decizia Anei și a lui Mihai | ✅ testat |
 
-### B2 — în lucru: 18 din 36 de capitole (67–84)
+### B2 — în lucru: 31 din 36 de capitole (67–97)
 
 | Unitate | Capitol | Temă | Stare |
 |---|---|---|---|
@@ -115,10 +115,23 @@ Perfecto, indefinido, neregulatele, imperfecto, imperfecto vs indefinido, pronum
 | | 82 | Trecutul ireal: si + hubiera → habría, condiționale mixte, de + infinitiv compus, ojalá + hubiera (dezvelirea plăcii) | ✅ testat |
 | | 83 | Comparația avansată: cuanto más… más, cada vez más, tanto… como, el doble de, más de lo que, -ísimo, de lo más (examenul DELE B2) | ✅ testat |
 | | 84 | Pronumele: se lo, poziția cu infinitiv / gerunziu / imperativ, dublarea complementului, se intensiv și se involuntar (Crăciunul la București, manuscrisul) | ✅ testat |
+| B2 · Comunicare și nuanțe | 85 | Verbele de influență: pedir, rogar, aconsejar, prohibir, permitir + subjonctiv / infinitiv (notele editoarei, ianuarie) | ✅ testat |
+| | 86 | Marcatorii discursului: es decir, o sea, en cambio, de todos modos, por cierto (rezultatele DELE B2) | ✅ testat |
+| | 87 | Dorințele: ojalá, que + subjonctiv, a ver si, ¡quién pudiera! (încheietura ruptă, ghipsul Ecaterinei) | ✅ testat |
+| | 88 | Exclamațiile: ¡qué…!, ¡cuánto…!, ¡vaya…!, lo + adjectiv + que (lansarea de la Madrid) | ✅ testat |
+| | 89 | Gerunziul: perifraze, valori, greșeli tipice (lansarea de la Sevilla, doña Remedios) | ✅ testat |
+| | 90 | Expresii idiomatice + recapitularea unității (Târgul de Carte, Faustino și doña Remedios) | ✅ testat |
+| B2 · Vocabular și stil | 91 | Verbe care își schimbă sensul cu se: quedar/quedarse, llevar/llevarse, acordar/acordarse (lămpile din 18 iunie) | ✅ testat |
+| | 92 | Pase lo que pase, digan lo que digan, indefinitele în -quiera (examenul C1, pneumonia bunicului, cererea în căsătorie) | ✅ testat |
+| | 93 | Articolul de opinie și eseul argumentativ (bunicul la 97 de ani, „Las cartas que no mandamos”) | ✅ testat |
+| | 94 | Verbele declarative și modul: asegurar, negar que, prometer que + condițional, advertir / recordar cu două moduri (rezultatele C1, ultima zi a lui Faustino pe Cuesta de Moyano) | ✅ testat |
+| | 95 | Formarea cuvintelor: prefixe și sufixe (lansarea „Lampa aprinsă”, nunta de la Triana) | ✅ testat |
+| | 96 | Colocațiile + recapitularea unității (al doilea examen C1 al domnului Dan, prima ninsoare) | ✅ testat |
+| B2 · Finalul B2 | 97 | Scopul și consecința: para que, no vaya a ser que, de modo que, de ahí que (serbarea de Crăciun, atlasul din 1980, Revelionul la sat) | ✅ testat |
 
-Poveștile B2: 67: 1480 · 68: 1511 · 69: 1540 · 70: 1572 · 71: 1579 · 72: 1630 · 73: 1642 · 74: 1645 · 75: 1675 · 76: 1752 · 77: 2028 · 78: 2169 · 79: 2239 · 80: 2395 · 81: 2448 · 82: 2501 · 83: 2554 · **84: 2614**. Capitolul 85 trebuie să aibă peste 2614.
+Poveștile B2: 67: 1480 · 68: 1511 · 69: 1540 · 70: 1572 · 71: 1579 · 72: 1630 · 73: 1642 · 74: 1645 · 75: 1675 · 76: 1752 · 77: 2028 · 78: 2169 · 79: 2239 · 80: 2395 · 81: 2448 · 82: 2501 · 83: 2554 · 84: 2614 · 85: 2672 · 86: 2732 · 87: 2778 · 88: 2886 · 89: 2944 · 90: 3033 · 91: 3095 · 92: 3176 · 93: 3232 · 94: 3237 · 95: 3363 · 96: 3538 · **97: 3648**. Capitolul 98 trebuie să aibă peste 3648.
 
-**Urmează:** capitolele 85–102 (B2), apoi C1 (44 de capitole).
+**Urmează:** capitolele 98–102 (B2, unitatea „Finalul B2”), apoi C1 (44 de capitole).
 
 **Firul poveștii în spaniolă:**
 - Mihai (medic român) și Ana (profesoară de spaniolă) se cunosc la clubul de japoneză al lui Yuki. Kenji are un restaurant de ramen. Doamna Suzuki lucrează la bibliotecă și are pisica Tama.
