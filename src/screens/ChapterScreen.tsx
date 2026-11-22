@@ -75,6 +75,21 @@ function makeSteps(
   ]
 }
 
+/** Bifează un capitol ca parcurs (ședințele, temele, cuvintele în repetiție) fără să șteargă ce exista deja. */
+async function markChapterDone(lang: LangCode, lesson: Lesson) {
+  const ch = lesson.chapter
+  if (!ch) return
+  const now = Date.now()
+  const prev = await db.chapters.get(lesson.id)
+  await db.chapters.put({ id: lesson.id, lang, ...prev, s1: prev?.s1 ?? now, s2: prev?.s2 ?? now, s1Step: 0, s2Step: 0 })
+  const old = new Map((await db.homework.where('lessonId').equals(lesson.id).toArray()).map((r) => [r.id, r]))
+  await db.homework.bulkPut(ch.homework.map((_, k) => {
+    const id = `${lesson.id}#${k}`
+    return { id, lessonId: lesson.id, at: now, ...old.get(id), done: true }
+  }))
+  await addWords(lang, lesson.id, lesson.words.map((w) => w.id))
+}
+
 // ——— Prezentarea capitolului ———
 
 export function ChapterOverview({ lang, lessonId, go, back }: { lang: LangCode; lessonId: string; go: Go; back: () => void }) {
@@ -89,6 +104,18 @@ export function ChapterOverview({ lang, lessonId, go, back }: { lang: LangCode; 
   if (!lesson || !ch) return null
   const hwDone = hw.filter((h) => h.done).length
   const started = !!(state?.s1 || state?.s2 || hwDone || lessonRow)
+
+  const markOne = async () => {
+    const ok = window.confirm(t('Marchezi Capitolul {n} ca parcurs?\n\nAmbele ședințe și toate temele apar ca terminate, iar cuvintele intră în repetiție. Nu se pierde nimic din ce ai făcut deja.', { n: ch.number }))
+    if (ok) await markChapterDone(lang, lesson)
+  }
+  const markUpTo = async () => {
+    const list = allLessons(course).filter((l) => l.chapter)
+    const upTo = list.slice(0, list.findIndex((l) => l.id === lesson.id) + 1)
+    const ok = window.confirm(t('Marchezi ca parcurse toate capitolele de la 1 până la {n} ({k} capitole)?\n\nFolosește asta dacă le-ai făcut deja pe alt dispozitiv sau înainte să se șteargă datele. Nu se pierde nimic din ce ai făcut deja.', { n: ch.number, k: upTo.length }))
+    if (!ok) return
+    for (const l of upTo) await markChapterDone(lang, l)
+  }
 
   const reset = async () => {
     const ok = window.confirm(
@@ -134,16 +161,16 @@ export function ChapterOverview({ lang, lessonId, go, back }: { lang: LangCode; 
 
       <article className="card toc">
         <h3>📑 {t('Cuprins')}</h3>
-        <p className="muted small">{t('După ce termini o ședință, poți sări direct la orice parte a ei.')}</p>
+        <p className="muted small">{t('Poți sări direct la orice parte a unei ședințe, oricând.')}</p>
         {([1, 2] as const).map((s) => {
           const done = s === 1 ? !!state?.s1 : !!state?.s2
           return (
             <div key={s} className="toc-group">
-              <div className="toc-head">{t('Ședința {n}', { n: s })} {done ? '✓' : `· ${t('se deblochează după ce o termini')}`}</div>
+              <div className="toc-head">{t('Ședința {n}', { n: s })} {done ? '✓' : ''}</div>
               {toc[s - 1].map((st, k) =>
                 k === 0 || st.title === t('Mini-test') ? null : (
-                  <button key={k} className="toc-item" disabled={!done} onClick={() => go({ name: 'session', lang, lessonId, session: s, step: k, fromChapter: true })}>
-                    <span>{done ? st.icon : '🔒'}</span>
+                  <button key={k} className="toc-item" onClick={() => go({ name: 'session', lang, lessonId, session: s, step: k, fromChapter: true })}>
+                    <span>{st.icon}</span>
                     <span className="toc-title">{st.title}</span>
                     <span className="toc-go">→</span>
                   </button>
@@ -153,6 +180,12 @@ export function ChapterOverview({ lang, lessonId, go, back }: { lang: LangCode; 
           )
         })}
       </article>
+
+      <div className="card">
+        <p className="muted small">{t('Ai parcurs deja capitolul (pe alt dispozitiv sau înainte să se șteargă datele)? Îl poți bifa fără să-l refaci.')}</p>
+        {!(state?.s1 && state?.s2 && hwDone === ch.homework.length) && <button className="btn" onClick={markOne}>✓ {t('Marchează capitolul ca parcurs')}</button>}
+        {ch.number > 1 && <button className="btn" onClick={markUpTo}>✓✓ {t('Marchează capitolele 1–{n} ca parcurse', { n: ch.number })}</button>}
+      </div>
 
       {started && (
         <button className="btn danger" onClick={reset}>↺ {t('Ia capitolul de la capăt (șterge progresul)')}</button>
