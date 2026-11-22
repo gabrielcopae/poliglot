@@ -29,7 +29,7 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,woff2,json}'],
-        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
+        maximumFileSizeToCacheInBytes: 32 * 1024 * 1024,
         // vocile înregistrate: salvate la prima redare; Safari cere fișierele „pe bucăți” (Range)
         runtimeCaching: [
           {
