@@ -202,7 +202,13 @@ Poveștile B2: 67: 1480 · 68: 1511 · 69: 1540 · 70: 1572 · 71: 1579 · 72: 1
 
 ## 4. Italiană 🇮🇹
 
-Momentan are doar 6 lecții scurte, în formatul vechi. Va fi refăcută în formatul capitolelor, după ce avansează spaniola.
+Curs nou, în formatul capitolelor (ca franceza), cu explicații în română și engleză. Cele 6 lecții vechi au fost înlocuite. Personaje: **Matei**, restaurator de picturi din Sibiu, se mută la Florența, în cartierul Oltrarno, deasupra trattoriei „Da Graziella”; **signora Graziella** (proprietăreasa, florentină) și nepotul ei **Pietro** (8 ani); **Giulia**, colegă restauratoare din Napoli; **profesorul Bellini**, șeful atelierului de restaurare, foarte serios. Sora lui Matei, **Ilinca**, e la Sibiu.
+
+| Unitate | Cap. | Conținut | Stare |
+|---|---|---|---|
+| A1 · Primii pași | 1 | Ciao, essere, pronumele (și „Lei”), non, întrebări, pronunția (c/g, gn, gli, consoane duble) | ✅ testat |
+
+Poveștile italiene: **1: 78**. Capitolul 2 trebuie să aibă o poveste mai lungă.
 
 ---
 
