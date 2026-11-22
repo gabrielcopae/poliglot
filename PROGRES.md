@@ -211,8 +211,9 @@ Curs nou, în formatul capitolelor (ca franceza), cu explicații în română ș
 | | 3 | Prezentul verbelor regulate (-are, -ere, -ire, -isc-), limbile, „a” cu orașe / „in” cu țări (prima zi la atelier, profesorul Bellini) | ✅ testat |
 | | 4 | Andare, fare, ora, zilele săptămânii (il lunedì), numerele până la 100 (săptămâna lui Pietro) | ✅ testat |
 | A1 · Viața de zi cu zi | 5 | La bar: vorrei, volere, potere, bere, partitivul (del/della/dei), prețurile, regulile cafelei (cappuccino-ul de la patru) | ✅ testat |
+| | 6 | Rutina zilnică, verbele reflexive (mi alzo, devo alzarmi), sempre / spesso / non… mai, presto / tardi / in ritardo (ziua Graziellei) | ✅ testat |
 
-Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · **5: 130**. Capitolul 2 trebuie să aibă o poveste mai lungă.
+Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · **6: 161**. Capitolul 2 trebuie să aibă o poveste mai lungă.
 
 ---
 
