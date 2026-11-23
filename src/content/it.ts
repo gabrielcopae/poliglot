@@ -44,6 +44,7 @@ import { itCap42 } from './it-cap42'
 import { itCap43 } from './it-cap43'
 import { itCap44 } from './it-cap44'
 import { itCap45 } from './it-cap45'
+import { itCap46 } from './it-cap46'
 
 /**
  * Italiană, în formatul capitolelor (ca franceza).
@@ -63,7 +64,7 @@ const units: Unit[] = [
   { id: 'it-a2-6', title: 'A2 · Povești și finalul A2', level: 'A2', lessons: [itCap33, itCap34, itCap35, itCap36] },
   { id: 'it-b1-1', title: 'B1 · Viață nouă', level: 'B1', lessons: [itCap37, itCap38, itCap39, itCap40] },
   { id: 'it-b1-2', title: 'B1 · Ce-ar fi dacă…', level: 'B1', lessons: [itCap41, itCap42, itCap43, itCap44] },
-  { id: 'it-b1-3', title: 'B1 · Lumea largă', level: 'B1', lessons: [itCap45] },
+  { id: 'it-b1-3', title: 'B1 · Lumea largă', level: 'B1', lessons: [itCap45, itCap46] },
 ]
 
 export const it: Course = {
