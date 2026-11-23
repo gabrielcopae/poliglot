@@ -221,8 +221,9 @@ Curs nou, în formatul capitolelor (ca franceza), cu explicații în română ș
 | A2 · Povești din trecut | 13 | Imperfetto: descriere și obiceiuri, c’era / c’erano, una volta… adesso (interviul lui Pietro, copilăria profesorului Bellini) | ✅ testat |
 | | 14 | Imperfetto + passato prossimo (mentre / quando), descrierea fizică, plângerea la poliție (bicicleta furată, inundația din 1966 și Aldo) | ✅ testat |
 | | 15 | Pronumele complement direct (lo, la, li, le, mi, ti…), acordul participiului (l’ho vista), conoscere / sapere, „lo so” (vizita Ilincăi la Florența) | ✅ testat |
+|  | 16 | Pronumele complement indirect (gli, le, mi, ti…), piacere la prezent și trecut, mancare / servire / sembrare (cadoul pentru Giulia, „Mi piaci. Da ottobre.”) | ✅ testat |
 
-Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · **15: 342**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · **16: 355**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
