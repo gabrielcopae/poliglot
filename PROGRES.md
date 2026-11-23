@@ -231,8 +231,9 @@ Curs nou, în formatul capitolelor (ca franceza), cu explicații în română ș
 |  | 23 | Trapassato prossimo, dopo che, già / appena / non… mai (vestea lui Pietro, scrisoarea lui Ernesto Bellini din 1972 și pensula) | ✅ testat |
 |  | 24 | Gerunziul (camminando, pur essendo, avendo finito), recapitularea unității (cererea în căsătorie pe Ponte Santa Trinita, sub zăpadă) | ✅ testat |
 | A2 · Emoții și păreri | 25 | Congiuntivo presente după voglio che, penso che, spero che, bisogna che; congiuntivo sau infinitiv (iarna la Sibiu, bunicile și nunta) | ✅ testat |
+|  | 26 | Congiuntivo după emoții (sono felice che, ho paura che) și conjuncții (benché, perché, prima che, purché, senza che) (Paștele Doinei la Napoli, scrisoarea în napoletană) | ✅ testat |
 
-Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · 16: 355 · 17: 356 · 18: 386 · 19: 395 · 20: 421 · 21: 469 · 22: 492 · 23: 510 · 24: 526 · **25: 532**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · 16: 355 · 17: 356 · 18: 386 · 19: 395 · 20: 421 · 21: 469 · 22: 492 · 23: 510 · 24: 526 · 25: 532 · **26: 546**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
