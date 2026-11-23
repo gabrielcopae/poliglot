@@ -267,7 +267,7 @@ export const itCap47 = lesson({
           'Am folosit concordanța timpurilor la trecut (perché capissero).',
         ],
         model: [
-          { t: 'Vorrei aprire una piccola biblioteca nel mio palazzo, affinché i bambini possano leggere gratis.', ro: 'Aș vrea să deschid o mică bibliotecă în blocul meu, pentru ca, copiii să poată citi gratuit.' },
+          { t: 'Vorrei aprire una piccola biblioteca nel mio palazzo, affinché i bambini possano leggere gratis.', ro: 'Aș vrea să deschid o mică bibliotecă în blocul meu, pentru ca copiii să poată citi gratuit.' },
           { t: 'Metterei gli scaffali bassi, in modo che anche i più piccoli arrivino ai libri.', ro: 'Aș pune rafturile jos, astfel încât și cei mai mici să ajungă la cărți.' },
           { t: 'Ho già chiesto ai vicini di donare i loro libri, perché la biblioteca cominciasse subito.', ro: 'Le-am cerut deja vecinilor să-și doneze cărțile, ca biblioteca să înceapă imediat.' },
           { t: 'Pur di vederla funzionare, la terrei aperta io ogni sabato.', ro: 'Numai s-o văd funcționând, aș ține-o deschisă eu în fiecare sâmbătă.' },
