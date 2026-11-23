@@ -241,8 +241,9 @@ Curs nou, în formatul capitolelor (ca franceza), cu explicații în română ș
 | A2 · Povești și finalul A2 | 33 | Expresiile de timp: da, fa, per, tra / fra, in, entro, durante, mentre (prima ecografie, Ion și Doina vin cu trenul) | ✅ testat |
 |  | 34 | Prima di + infinitiv, dopo aver / essere + participiu, appena, finché (mutarea, crestăturile lui Aldo pe tocul ușii) | ✅ testat |
 |  | 35 | Ipoteza reală (se + prezent / viitor) și condiționalul trecut (avrei voluto, avresti dovuto) (alegerea numelor: Viola și Aldo) | ✅ testat |
+|  | 36 | Recunoașterea lui passato remoto + marea recapitulare A2 (Crăciunul, jurnalul lui Ernesto, Aldo și Madona din 1966) | ✅ testat |
 
-Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · 16: 355 · 17: 356 · 18: 386 · 19: 395 · 20: 421 · 21: 469 · 22: 492 · 23: 510 · 24: 526 · 25: 532 · 26: 546 · 27: 550 · 28: 558 · 29: 570 · 30: 576 · 31: 690 · 32: 714 · 33: 731 · 34: 748 · **35: 754**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · 16: 355 · 17: 356 · 18: 386 · 19: 395 · 20: 421 · 21: 469 · 22: 492 · 23: 510 · 24: 526 · 25: 532 · 26: 546 · 27: 550 · 28: 558 · 29: 570 · 30: 576 · 31: 690 · 32: 714 · 33: 731 · 34: 748 · 35: 754 · **36: 783**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
