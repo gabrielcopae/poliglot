@@ -248,8 +248,9 @@ Curs nou, în formatul capitolelor (ca franceza), cu explicații în română ș
 |  | 40 | Participiul absolut (Finito il lavoro…) și gerunziul trecut (avendo finito, essendo arrivati) + recapitularea unității (întoarcerea la Siracusa, scrisoarea lui Bellini) | ✅ testat |
 | B1 · Ce-ar fi dacă… | 41 | Ipoteza imposibilă: se + congiuntivo trapassato + condițional trecut, ipoteza mixtă (copilul ascuns din tabloul lui Caravaggio, paracliserul Turi) | ✅ testat |
 |  | 42 | Viitorul anterior (avrò finito) și viitorul de probabilitate (Saranno le otto. Avrà perso il treno) (Crăciunul la Siracusa, „Totò de la Santa Lucia”) | ✅ testat |
+|  | 43 | Concesia: benché, sebbene, nonostante + congiuntivo, anche se, malgrado, pur + gerunziu, eppure (strângerea de fonduri „Un euro per Totò”) | ✅ testat |
 
-Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · 16: 355 · 17: 356 · 18: 386 · 19: 395 · 20: 421 · 21: 469 · 22: 492 · 23: 510 · 24: 526 · 25: 532 · 26: 546 · 27: 550 · 28: 558 · 29: 570 · 30: 576 · 31: 690 · 32: 714 · 33: 731 · 34: 748 · 35: 754 · 36: 783 · 37: 790 · 38: 806 · 39: 826 · 40: 850 · 41: 860 · **42: 881**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · 16: 355 · 17: 356 · 18: 386 · 19: 395 · 20: 421 · 21: 469 · 22: 492 · 23: 510 · 24: 526 · 25: 532 · 26: 546 · 27: 550 · 28: 558 · 29: 570 · 30: 576 · 31: 690 · 32: 714 · 33: 731 · 34: 748 · 35: 754 · 36: 783 · 37: 790 · 38: 806 · 39: 826 · 40: 850 · 41: 860 · 42: 881 · **43: 898**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
