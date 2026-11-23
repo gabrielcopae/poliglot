@@ -25,6 +25,7 @@ import { itCap23 } from './it-cap23'
 import { itCap24 } from './it-cap24'
 import { itCap25 } from './it-cap25'
 import { itCap26 } from './it-cap26'
+import { itCap27 } from './it-cap27'
 
 /**
  * Italiană, în formatul capitolelor (ca franceza).
@@ -39,7 +40,7 @@ const units: Unit[] = [
   { id: 'it-a2-1', title: 'A2 · Povești din trecut', level: 'A2', lessons: [itCap13, itCap14, itCap15, itCap16] },
   { id: 'it-a2-2', title: 'A2 · Oameni, cadouri și locuri', level: 'A2', lessons: [itCap17, itCap18, itCap19, itCap20] },
   { id: 'it-a2-3', title: 'A2 · Amintiri și planuri', level: 'A2', lessons: [itCap21, itCap22, itCap23, itCap24] },
-  { id: 'it-a2-4', title: 'A2 · Emoții și păreri', level: 'A2', lessons: [itCap25, itCap26] },
+  { id: 'it-a2-4', title: 'A2 · Emoții și păreri', level: 'A2', lessons: [itCap25, itCap26, itCap27] },
 ]
 
 export const it: Course = {
