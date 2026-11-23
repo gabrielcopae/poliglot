@@ -254,8 +254,9 @@ Curs nou, în formatul capitolelor (ca franceza), cu explicații în română ș
 |  | 46 | Întrebarea indirectă: mi chiedo se, non so chi sia, chissà se (nunta Ilincăi la Sibiu, primul zbor al Graziellei, furatul miresei) | ✅ testat |
 |  | 47 | Scopul: per + infinitiv, affinché / perché + congiuntivo, in modo che, pur di (atelierul deschis sâmbăta, ucenicul Davide) | ✅ testat |
 |  | 48 | Comparația avansată: più… più, sempre più, più di quanto + congiuntivo, superlativul + congiuntivo + recapitularea unității (crestătura lui Pietro, primul cuvânt al Violei: „guadda”) | ✅ testat |
+| B1 · Lumea muncii | 49 | Limbajul formal: scrisoarea formală, CV-ul, interviul, registrul cu „Lei” (angajarea Chiarei, proba celor cinci minute de tăcere) | ✅ testat |
 
-Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · 16: 355 · 17: 356 · 18: 386 · 19: 395 · 20: 421 · 21: 469 · 22: 492 · 23: 510 · 24: 526 · 25: 532 · 26: 546 · 27: 550 · 28: 558 · 29: 570 · 30: 576 · 31: 690 · 32: 714 · 33: 731 · 34: 748 · 35: 754 · 36: 783 · 37: 790 · 38: 806 · 39: 826 · 40: 850 · 41: 860 · 42: 881 · 43: 898 · 44: 916 · 45: 952 · 46: 984 · 47: 1041 · **48: 1066**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · 16: 355 · 17: 356 · 18: 386 · 19: 395 · 20: 421 · 21: 469 · 22: 492 · 23: 510 · 24: 526 · 25: 532 · 26: 546 · 27: 550 · 28: 558 · 29: 570 · 30: 576 · 31: 690 · 32: 714 · 33: 731 · 34: 748 · 35: 754 · 36: 783 · 37: 790 · 38: 806 · 39: 826 · 40: 850 · 41: 860 · 42: 881 · 43: 898 · 44: 916 · 45: 952 · 46: 984 · 47: 1041 · 48: 1066 · **49: 1109**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
