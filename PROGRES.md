@@ -266,8 +266,9 @@ Curs nou, în formatul capitolelor (ca franceza), cu explicații în română ș
 |  | 58 | verbele de relatare și condiționalul din presă (sarebbe, avrebbe acquistato), viitorul în trecut | ✅ testat |
 |  | 59 | argumentarea: innanzitutto, inoltre, da un lato… dall’altro, tuttavia, dato che, di conseguenza | ✅ testat |
 |  | 60 | limbajul titlurilor (participiu singur, fără verb, prezent pentru trecut), jargonul presei + recapitularea unității | ✅ testat |
+| B1 · Finalul B1 | 61 | vorbirea indirectă completă: timpuri, repere (domani → il giorno dopo), di + infinitiv, se | ✅ testat |
 
-Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · 16: 355 · 17: 356 · 18: 386 · 19: 395 · 20: 421 · 21: 469 · 22: 492 · 23: 510 · 24: 526 · 25: 532 · 26: 546 · 27: 550 · 28: 558 · 29: 570 · 30: 576 · 31: 690 · 32: 714 · 33: 731 · 34: 748 · 35: 754 · 36: 783 · 37: 790 · 38: 806 · 39: 826 · 40: 850 · 41: 860 · 42: 881 · 43: 898 · 44: 916 · 45: 952 · 46: 984 · 47: 1041 · 48: 1066 · 49: 1109 · 50: 1138 · 51: 1141 · 52: 1158 · 53: 1183 · 54: 1203 · 55: 1237 · 56: 1273 · 57: 1511 · 58: 1537 · 59: 1552 · **60: 1564**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · 16: 355 · 17: 356 · 18: 386 · 19: 395 · 20: 421 · 21: 469 · 22: 492 · 23: 510 · 24: 526 · 25: 532 · 26: 546 · 27: 550 · 28: 558 · 29: 570 · 30: 576 · 31: 690 · 32: 714 · 33: 731 · 34: 748 · 35: 754 · 36: 783 · 37: 790 · 38: 806 · 39: 826 · 40: 850 · 41: 860 · 42: 881 · 43: 898 · 44: 916 · 45: 952 · 46: 984 · 47: 1041 · 48: 1066 · 49: 1109 · 50: 1138 · 51: 1141 · 52: 1158 · 53: 1183 · 54: 1203 · 55: 1237 · 56: 1273 · 57: 1511 · 58: 1537 · 59: 1552 · 60: 1564 · **61: 1629**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
