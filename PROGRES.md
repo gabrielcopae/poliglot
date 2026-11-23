@@ -233,8 +233,9 @@ Curs nou, în formatul capitolelor (ca franceza), cu explicații în română ș
 | A2 · Emoții și păreri | 25 | Congiuntivo presente după voglio che, penso che, spero che, bisogna che; congiuntivo sau infinitiv (iarna la Sibiu, bunicile și nunta) | ✅ testat |
 |  | 26 | Congiuntivo după emoții (sono felice che, ho paura che) și conjuncții (benché, perché, prima che, purché, senza che) (Paștele Doinei la Napoli, scrisoarea în napoletană) | ✅ testat |
 |  | 27 | Pronumele demonstrative (questo, quello) și posesive (il mio, la tua) fără substantiv, quello di / quello che (rochia de 90 de ani, nasturele Doinei) | ✅ testat |
+|  | 28 | Vorbirea indirectă (dice che, chiede se, dice di + infinitiv, ha detto che era / aveva / sarebbe), recapitularea unității (expoziția de la Brukenthal, Radu) | ✅ testat |
 
-Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · 16: 355 · 17: 356 · 18: 386 · 19: 395 · 20: 421 · 21: 469 · 22: 492 · 23: 510 · 24: 526 · 25: 532 · 26: 546 · **27: 550**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · 16: 355 · 17: 356 · 18: 386 · 19: 395 · 20: 421 · 21: 469 · 22: 492 · 23: 510 · 24: 526 · 25: 532 · 26: 546 · 27: 550 · **28: 558**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
