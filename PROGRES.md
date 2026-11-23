@@ -225,8 +225,9 @@ Curs nou, în formatul capitolelor (ca franceza), cu explicații în română ș
 | A2 · Oameni, cadouri și locuri | 17 | Comparativul (più… di / che, tanto… quanto), superlativul relativ și absolut, migliore / meglio, peggiore / peggio (apartamentul nou al Giuliei, dezbaterea de Pasquetta) | ✅ testat |
 |  | 18 | Particulele ci (loc, ci vuole, ci metto) și ne (cantitate, „che ne pensi?”), acordul cu ne (mutarea Giuliei la etajul patru fără lift) | ✅ testat |
 |  | 19 | Viitorul simplu (regulat și neregulat), quando / appena + viitor, se + prezent / viitor, viitorul de probabilitate (planuri de vară, scrisoarea lui Pietro pentru 2045) | ✅ testat |
+|  | 20 | Pronumele duble (me lo, glielo, ce ne), andarsene, recapitularea unității (ceasul lui Pietro, nouă lumânărele) | ✅ testat |
 
-Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · 16: 355 · 17: 356 · 18: 386 · **19: 395**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · 16: 355 · 17: 356 · 18: 386 · 19: 395 · **20: 421**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
