@@ -243,8 +243,9 @@ Curs nou, în formatul capitolelor (ca franceza), cu explicații în română ș
 |  | 35 | Ipoteza reală (se + prezent / viitor) și condiționalul trecut (avrei voluto, avresti dovuto) (alegerea numelor: Viola și Aldo) | ✅ testat |
 |  | 36 | Recunoașterea lui passato remoto + marea recapitulare A2 (Crăciunul, jurnalul lui Ernesto, Aldo și Madona din 1966) | ✅ testat |
 | B1 · Viață nouă | 37 | Congiuntivo imperfetto, concordanța timpurilor, come se, magari (nașterea Violei, 17 mai) | ✅ testat |
+|  | 38 | Ipoteza posibilă: se + congiuntivo imperfetto + condițional, se fossi in te (nopțile albe, cântecul de leagăn al bunicii Viorica) | ✅ testat |
 
-Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · 16: 355 · 17: 356 · 18: 386 · 19: 395 · 20: 421 · 21: 469 · 22: 492 · 23: 510 · 24: 526 · 25: 532 · 26: 546 · 27: 550 · 28: 558 · 29: 570 · 30: 576 · 31: 690 · 32: 714 · 33: 731 · 34: 748 · 35: 754 · 36: 783 · **37: 790**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile italiene: 1: 78 · 2: 100 · 3: 103 · 4: 119 · 5: 130 · 6: 161 · 7: 200 · 8: 212 · 9: 213 · 10: 221 · 11: 237 · 12: 290 · 13: 306 · 14: 332 · 15: 342 · 16: 355 · 17: 356 · 18: 386 · 19: 395 · 20: 421 · 21: 469 · 22: 492 · 23: 510 · 24: 526 · 25: 532 · 26: 546 · 27: 550 · 28: 558 · 29: 570 · 30: 576 · 31: 690 · 32: 714 · 33: 731 · 34: 748 · 35: 754 · 36: 783 · 37: 790 · **38: 806**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
