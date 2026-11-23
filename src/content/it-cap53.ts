@@ -157,7 +157,7 @@ export const itCap53 = lesson({
       { kind: 'fill', before: 'Mettiti la giacca,', after: 'ti ammali. (altfel)', answers: ['altrimenti', 'se no', 'sennò'], ro: 'Pune-ți geaca, altfel te îmbolnăvești.' },
       { kind: 'fill', before: 'In caso', after: 'pioggia, la festa è rinviata.', answers: ['di'], ro: 'În caz de ploaie, petrecerea e amânată.' },
       { kind: 'fill', before: 'Arriverà sabato, sempre che il treno', after: 'in orario. (essere)', answers: ['sia'], ro: 'Va sosi sâmbătă, cu condiția ca trenul să fie la timp.' },
-      { kind: 'choice', q: '„Cu condiția să te ocupi tu de el.”', options: ['purché te ne occupi tu', 'purché te ne occupi tu (indicativ)', 'purché te ne occuperai'], answer: 'purché te ne occupi tu' },
+      { kind: 'choice', q: '„Cu condiția să vină și el.”', options: ['purché venga anche lui', 'purché viene anche lui', 'purché verrebbe anche lui'], answer: 'purché venga anche lui' },
       { kind: 'choice', q: '„Doar dacă nu vii tu.”', options: ['a meno che tu non venga', 'a meno che tu non vieni', 'se non tu vieni'], answer: 'a meno che tu non venga' },
       { kind: 'choice', q: 'Formula formală pentru „în cazul în care”:', options: ['qualora', 'basta che', 'se no'], answer: 'qualora' },
       { kind: 'choice', q: '„În caz de urgență”:', options: ['in caso di emergenza', 'nel caso di che emergenza', 'qualora emergenza'], answer: 'in caso di emergenza' },
