@@ -55,6 +55,7 @@ import { itCap53 } from './it-cap53'
 import { itCap54 } from './it-cap54'
 import { itCap55 } from './it-cap55'
 import { itCap56 } from './it-cap56'
+import { itCap57 } from './it-cap57'
 
 /**
  * Italiană, în formatul capitolelor (ca franceza).
@@ -77,6 +78,7 @@ const units: Unit[] = [
   { id: 'it-b1-3', title: 'B1 · Lumea largă', level: 'B1', lessons: [itCap45, itCap46, itCap47, itCap48] },
   { id: 'it-b1-4', title: 'B1 · Lumea muncii', level: 'B1', lessons: [itCap49, itCap50, itCap51, itCap52] },
   { id: 'it-b1-5', title: 'B1 · Condiții și nuanțe', level: 'B1', lessons: [itCap53, itCap54, itCap55, itCap56] },
+  { id: 'it-b1-6', title: 'B1 · Media și societate', level: 'B1', lessons: [itCap57] },
 ]
 
 export const it: Course = {
