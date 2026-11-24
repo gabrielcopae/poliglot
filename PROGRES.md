@@ -470,8 +470,16 @@ Curs nou (engleză britanică, vocea en-GB), în formatul capitolelor, cu explic
 |  | 34 | Question tags, intonația, so do I / neither do I (Crăciunul la Bran) | ✅ testat |
 |  | 35 | Too / enough, so / such, so … that (cererea în căsătorie) | ✅ testat |
 |  | 36 | Marea recapitulare A2, formatul A2 Key (petrecerea de logodnă) | ✅ testat |
+| B1 · Viață nouă | 37 | Present perfect continuous vs simple, verbele de stare (pregătirile de nuntă, lecțiile secrete de dans) | ✅ testat |
+|  | 38 | Past perfect, by the time, already / just / never before (ziua nunții în Grădina Montană) | ✅ testat |
+|  | 39 | Timpurile narative, past perfect continuous, while / as soon as / eventually (nunta din Bran, furatul miresei) | ✅ testat |
+|  | 40 | Used to / be used to / get used to, would pentru obiceiuri, recapitularea unității (viața în doi) | ✅ testat |
+| B1 · Ce-ar fi dacă… | 41 | Condiționalul de tip 2, If I were you, could / might (oferta de la Kew, lista) | ✅ testat |
+|  | 42 | Wish + past, wish + could / would, if only, I’d rather, wish vs hope (vizita la Kew, Vlad singur la Londra) | ✅ testat |
+|  | 43 | Condiționalul de tip 3, could / might have, wish + past perfect (scrisoarea din Canada, lanțul întâmplărilor) | ✅ testat |
+|  | 44 | Condiționalul zero și mixt, unless / as long as / provided that / even if / in case, recapitulare (Proiectul Semințelor Carpatine) | ✅ testat |
 
-Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · 16: 357 · 17: 369 · 18: 371 · 19: 473 · 20: 502 · 21: 522 · 22: 536 · 23: 549 · 24: 572 · 25: 600 · 26: 622 · 27: 631 · 28: 658 · 29: 709 · 30: 712 · 31: 718 · 32: 736 · 33: 739 · 34: 749 · 35: 758 · **36: 759**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · 16: 357 · 17: 369 · 18: 371 · 19: 473 · 20: 502 · 21: 522 · 22: 536 · 23: 549 · 24: 572 · 25: 600 · 26: 622 · 27: 631 · 28: 658 · 29: 709 · 30: 712 · 31: 718 · 32: 736 · 33: 739 · 34: 749 · 35: 758 · 36: 759 · 37: 775 · 38: 789 · 39: 823 · 40: 841 · 41: 844 · 42: 846 · 43: 852 · **44: 861**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
