@@ -89,6 +89,14 @@ import { enCap87 } from './en-cap87'
 import { enCap88 } from './en-cap88'
 import { enCap89 } from './en-cap89'
 import { enCap90 } from './en-cap90'
+import { enCap91 } from './en-cap91'
+import { enCap92 } from './en-cap92'
+import { enCap93 } from './en-cap93'
+import { enCap94 } from './en-cap94'
+import { enCap95 } from './en-cap95'
+import { enCap96 } from './en-cap96'
+import { enCap97 } from './en-cap97'
+import { enCap98 } from './en-cap98'
 
 /**
  * Engleză (britanică), în formatul capitolelor (ca italiana și franceza).
@@ -119,6 +127,8 @@ const units: Unit[] = [
   { id: 'en-b2-4', title: 'B2 · Nuanțe în discurs', level: 'B2', lessons: [enCap79, enCap80, enCap81, enCap82] },
   { id: 'en-b2-5', title: 'B2 · Vocabular avansat', level: 'B2', lessons: [enCap83, enCap84, enCap85, enCap86] },
   { id: 'en-b2-6', title: 'B2 · Scriere: eseu, recenzie, articol', level: 'B2', lessons: [enCap87, enCap88, enCap89, enCap90] },
+  { id: 'en-b2-7', title: 'B2 · Structuri avansate', level: 'B2', lessons: [enCap91, enCap92, enCap93, enCap94] },
+  { id: 'en-b2-8', title: 'B2 · Varietăți și stil', level: 'B2', lessons: [enCap95, enCap96, enCap97, enCap98] },
 ]
 
 export const en: Course = {

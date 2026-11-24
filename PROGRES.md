@@ -524,8 +524,16 @@ Curs nou (engleză britanică, vocea en-GB), în formatul capitolelor, cu explic
 |  | 88 | Recenzia și raportul (bistroul lui Vlad, raportul Ericăi) | ✅ testat |
 |  | 89 | Articolul de revistă (Hannah, „Seven Rosettes”) | ✅ testat |
 |  | 90 | Discursul persuasiv + recapitulare (Jamie la Parlamentul Scoțian) | ✅ testat |
+| B2 · Structuri avansate | 91 | Determinanți: each, every, both, neither, few / a few (Maggie la 90 de ani) | ✅ testat |
+|  | 92 | Comparații avansate: the more… the more, twice as many, by far (42 de rozete) | ✅ testat |
+|  | 93 | Grupuri nominale: a seven-pound baby, the decision to (se naște Jean) | ✅ testat |
+|  | 94 | Viitorul perfect (continuu) + recapitulare (douăzeci de ani; Irina rămâne) | ✅ testat |
+| B2 · Varietăți și stil | 95 | Engleza britanică și americană (echipa de documentar) | ✅ testat |
+|  | 96 | Scots și accente regionale (Burns Night) | ✅ testat |
+|  | 97 | Registru și politețe (Maggie primește MBE) | ✅ testat |
+|  | 98 | Umor și ironie britanică + recapitulare (inundația din librărie) | ✅ testat |
 
-Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · 16: 357 · 17: 369 · 18: 371 · 19: 473 · 20: 502 · 21: 522 · 22: 536 · 23: 549 · 24: 572 · 25: 600 · 26: 622 · 27: 631 · 28: 658 · 29: 709 · 30: 712 · 31: 718 · 32: 736 · 33: 739 · 34: 749 · 35: 758 · 36: 759 · 37: 775 · 38: 789 · 39: 823 · 40: 841 · 41: 844 · 42: 846 · 43: 852 · 44: 861 · 45: 866 · 46: 868 · 47: 876 · 48: 882 · 49: 883 · 50: 893 · 51: 894 · 52: 895 · 53: 899 · 54: 901 · 55: 924 · 56: 939 · 57: 950 · 58: 952 · 59: 955 · 60: 958 · 61: 960 · 62: 962 · 63: 980 · 64: 989 · 65: 993 · 66: 996 · 67: 1056 · 68: 1108 · 69: 1168 · 70: 1212 · 71: 1342 · 72: 1410 · 73: 1430 · 74: 1431 · 75: 1543 · 76: 1650 · 77: 1741 · 78: 1822 · 79: 1906 · 80: 1968 · 81: 1980 · 82: 1993 · 83: 1999 · 84: 2013 · 85: 2066 · 86: 2069 · 87: 2085 · 88: 2125 · 89: 2147 · **90: 2154**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · 16: 357 · 17: 369 · 18: 371 · 19: 473 · 20: 502 · 21: 522 · 22: 536 · 23: 549 · 24: 572 · 25: 600 · 26: 622 · 27: 631 · 28: 658 · 29: 709 · 30: 712 · 31: 718 · 32: 736 · 33: 739 · 34: 749 · 35: 758 · 36: 759 · 37: 775 · 38: 789 · 39: 823 · 40: 841 · 41: 844 · 42: 846 · 43: 852 · 44: 861 · 45: 866 · 46: 868 · 47: 876 · 48: 882 · 49: 883 · 50: 893 · 51: 894 · 52: 895 · 53: 899 · 54: 901 · 55: 924 · 56: 939 · 57: 950 · 58: 952 · 59: 955 · 60: 958 · 61: 960 · 62: 962 · 63: 980 · 64: 989 · 65: 993 · 66: 996 · 67: 1056 · 68: 1108 · 69: 1168 · 70: 1212 · 71: 1342 · 72: 1410 · 73: 1430 · 74: 1431 · 75: 1543 · 76: 1650 · 77: 1741 · 78: 1822 · 79: 1906 · 80: 1968 · 81: 1980 · 82: 1993 · 83: 1999 · 84: 2013 · 85: 2066 · 86: 2069 · 87: 2085 · 88: 2125 · 89: 2147 · 90: 2154 · 91: 2189 · 92: 2197 · 93: 2200 · 94: 2246 · 95: 2251 · 96: 2307 · 97: 2312 · **98: 2366**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
