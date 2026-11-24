@@ -97,6 +97,10 @@ import { enCap95 } from './en-cap95'
 import { enCap96 } from './en-cap96'
 import { enCap97 } from './en-cap97'
 import { enCap98 } from './en-cap98'
+import { enCap99 } from './en-cap99'
+import { enCap100 } from './en-cap100'
+import { enCap101 } from './en-cap101'
+import { enCap102 } from './en-cap102'
 
 /**
  * Engleză (britanică), în formatul capitolelor (ca italiana și franceza).
@@ -129,6 +133,7 @@ const units: Unit[] = [
   { id: 'en-b2-6', title: 'B2 · Scriere: eseu, recenzie, articol', level: 'B2', lessons: [enCap87, enCap88, enCap89, enCap90] },
   { id: 'en-b2-7', title: 'B2 · Structuri avansate', level: 'B2', lessons: [enCap91, enCap92, enCap93, enCap94] },
   { id: 'en-b2-8', title: 'B2 · Varietăți și stil', level: 'B2', lessons: [enCap95, enCap96, enCap97, enCap98] },
+  { id: 'en-b2-9', title: 'B2 · Examenul B2 First și finalul', level: 'B2', lessons: [enCap99, enCap100, enCap101, enCap102] },
 ]
 
 export const en: Course = {
