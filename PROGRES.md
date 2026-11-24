@@ -450,8 +450,12 @@ Curs nou (engleză britanică, vocea en-GB), în formatul capitolelor, cu explic
 |  | 14 | Descrierea oamenilor (What is he like? / What does he look like?), used to (Maggie și Rab) | ✅ testat |
 |  | 15 | Comparativul (-er, more, better / worse), than, as … as, much / a bit (Edinburgh vs Glasgow, scrisoarea Irinei către mama ei) | ✅ testat |
 |  | 16 | Superlativul (the -est, the most, the best), in / of, recapitularea unității (seara de quiz la pub) | ✅ testat |
+| A2 · Planuri și viitor | 17 | Be going to pentru intenții și predicții după semne, expresiile de viitor (biletele de avion, planul Maggiei) | ✅ testat |
+|  | 18 | Will pentru predicții, oferte, promisiuni, decizii pe loc; Shall I…?; will vs going to (ghicitoarea Ruby) | ✅ testat |
+|  | 19 | Prezentul continuu pentru aranjamente, prezentul simplu pentru orare, when / as soon as / until + prezent (planul secret cu Vlad, drumul la Bran) | ✅ testat |
+|  | 20 | Condiționalul de tip 1, unless, if vs when, recapitularea viitorului (Revelionul la cabană) | ✅ testat |
 
-Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · **16: 357**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · 16: 357 · 17: 369 · 18: 371 · 19: 473 · **20: 502**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
