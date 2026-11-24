@@ -541,6 +541,25 @@ Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 
 
 ---
 
+## 4d. Germană 🇩🇪
+
+Curs nou (germana standard, vocea de-DE), în formatul capitolelor, cu explicații în română. Personaje: **Mara Ionescu**, asistentă medicală din Sibiu (Hermannstadt), 27 de ani, primește un post la un spital din Berlin și se mută în cartierul Prenzlauer Berg; **Herr Ludwig Brandt** (proprietarul, 78 de ani, fost vatman pe linia M1 în Berlinul de Est, cu teckelul **Fritz**); nepoata lui, **Lena**, brutăreasă, cu brutăria la parter; **Jonas Weber**, coleg asistent din Hamburg; **dr. Ayşe Yılmaz**, doctoriță berlineză de origine turcă.
+
+| Unitate | Cap. | Conținut | Stare |
+|---|---|---|---|
+| A1 · Primii pași | 1 | Hallo, SEIN, du / Sie, meseria fără articol, substantivele cu majusculă, nicht, întrebările, pronunția (ü, ö, ä, ß, ei / ie) | ✅ testat |
+|  | 2 | Haben, vârsta cu SEIN (Ich bin 27 Jahre alt), der / die / das, ein / eine, pluralul, numerele 0–20, mein / meine (fotografiile familiei Marei) | ✅ testat |
+|  | 3 | Prezentul verbelor regulate, sprechen / sehen / fahren, verbul pe locul 2, limbile, man, cum ceri o repetare (prima zi pe secția 4, berlineza lui Herr Schulz) | ✅ testat |
+|  | 4 | Numerele până la 100 (einundzwanzig), prețurile, ora (halb acht = 7:30!), zilele cu am, momentele zilei, doch (brutăria Lenei, Fritz și ceasul) | ✅ testat |
+| A1 · Viața de zi cu zi | 5 | La cafenea: ich möchte, acuzativul (den / einen / keinen), kein vs nicht, nehmen / essen, nota și bacșișul (micul dejun de duminică la Herr Brandt, linia M1) | ✅ testat |
+|  | 6 | Verbele separabile (ich stehe … auf), prefixele separabile și neseparabile, schlafen / anfangen, zuerst / dann / danach, turele (tura de noapte, Herr Schulz nu poate dormi) | ✅ testat |
+|  | 7 | Imperativul (Geh! Nimm! Gehen Sie!), dativul cu aus / bei / mit / nach / seit / von / zu / gegenüber, zum / zur / vom / beim, indicații și transport (Mara se rătăcește până în Kreuzberg) | ✅ testat |
+|  | 8 | Locuința și mobila, toate posesivele (sein / ihr / Ihr, euer → eure), posesivele la acuzativ, es gibt, etajele (Frau Hoffmann, pianista de la etajul patru) | ✅ testat |
+
+Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · **8: 317**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+
+---
+
 ## 5. De făcut mai târziu (opțional)
 
 - O voce mai bună, descărcabilă (Kokoro), și recunoașterea vorbirii fără internet (Whisper).
