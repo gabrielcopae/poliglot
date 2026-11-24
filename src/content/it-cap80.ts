@@ -295,7 +295,7 @@ export const itCap80 = lesson({
         instructions: 'Exercițiu de vorbit.',
         steps: [
           'Citește dialogul cu voce tare, pe rând în rolul Giuliei, al lui Karl și al Chiarei.',
-          'Simulează un interviu de angajare: răspunde la întrebările „Di che cosa si è occupato finora?”, „In che cosa consisteva il Suo lavoro?”, „Su chi può contare?”.',
+          'Simulează un interviu de angajare, cu răspunsuri la întrebările „Di che cosa si è occupato finora?”, „In che cosa consisteva il Suo lavoro?”, „Su chi può contare?”.',
           'Spune cinci fraze cu „me ne occupo”, „ci penso io”, „ci conto”, „non ci rinuncio”, „dipende da”.',
           'Repovestește în 5 minute povestea primului contract al cooperativei, de la sosirea aparatului până la biletul lui Karl.',
         ],
