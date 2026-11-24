@@ -583,8 +583,16 @@ Curs nou (germana standard, vocea de-DE), în formatul capitolelor, cu explicaț
 |  | 34 | Lassen (a permite, a pune pe altcineva să facă, sich … lassen), brauchen … zu (Crăciunul cu paisprezece farfurii, discul „Die Schienen”) | ✅ testat |
 |  | 35 | Marea recapitulare A2 și examenul Goethe A2: poziția verbului, cazurile, timpurile (Andrei trece examenul cu 93 de puncte) | ✅ testat |
 |  | 36 | Mulțumiri, urări, rămas-bun, je … desto, finalul A2 (botezul micului Ludwig, „Acasă sunt oamenii”) | ✅ testat |
+| B1 · Ce-ar fi fost dacă | 37 | Plusquamperfekt (hatte / war + participiu), nachdem, ordinea evenimentelor (Mara îl cunoaște pe Jakob, învățătorul violoncelist, la cor) | ✅ testat |
+|  | 38 | Condiționala ireală la prezent și trecut (Wenn ich das gewusst hätte, wäre ich…), regrete (lampioanele de Sfântul Martin, prima întâlnire) | ✅ testat |
+|  | 39 | Dorințe ireale (Ich wünschte…, Wenn … doch nur!), als ob / als wäre, so tun als ob (scrisoarea din 1961 a doamnei Hoffmann către Friedrich) | ✅ testat |
+|  | 40 | Pasivul cu modale (muss gemacht werden), pasivul la Perfekt (ist … worden), pasivul stării (revederea lui Grete cu Friedrich după 65 de ani) | ✅ testat |
+| B1 · Legături noi | 41 | Conjuncții temporale: bevor, während, seitdem, bis, sobald, solange (călătoria la Lübeck și Marea Baltică) | ✅ testat |
+|  | 42 | Scop și consecință: damit / um … zu, sodass, so … dass (Jakob se mută pe Kastanienallee, § 12 din contract) | ✅ testat |
+|  | 43 | Conectori din două părți: entweder … oder, weder … noch, sowohl … als auch, nicht nur … sondern auch, zwar … aber (cafeneaua „Bei Ingrid”) | ✅ testat |
+|  | 44 | Partizip I și II ca adjective (das lachende Kind, die verlorenen Jahre) (Revelionul 2030, Grete și Friedrich se mută împreună) | ✅ testat |
 
-Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · 16: 746 · 17: 772 · 18: 774 · 19: 801 · 20: 840 · 21: 845 · 22: 850 · 23: 857 · 24: 871 · 25: 876 · 26: 885 · 27: 893 · 28: 917 · 29: 936 · 30: 949 · 31: 959 · 32: 971 · 33: 977 · 34: 985 · 35: 993 · **36: 1005**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · 16: 746 · 17: 772 · 18: 774 · 19: 801 · 20: 840 · 21: 845 · 22: 850 · 23: 857 · 24: 871 · 25: 876 · 26: 885 · 27: 893 · 28: 917 · 29: 936 · 30: 949 · 31: 959 · 32: 971 · 33: 977 · 34: 985 · 35: 993 · 36: 1005 · 37: 1013 · 38: 1025 · 39: 1035 · 40: 1052 · 41: 1072 · 42: 1074 · 43: 1080 · **44: 1083**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
