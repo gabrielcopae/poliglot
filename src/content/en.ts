@@ -73,6 +73,14 @@ import { enCap71 } from './en-cap71'
 import { enCap72 } from './en-cap72'
 import { enCap73 } from './en-cap73'
 import { enCap74 } from './en-cap74'
+import { enCap75 } from './en-cap75'
+import { enCap76 } from './en-cap76'
+import { enCap77 } from './en-cap77'
+import { enCap78 } from './en-cap78'
+import { enCap79 } from './en-cap79'
+import { enCap80 } from './en-cap80'
+import { enCap81 } from './en-cap81'
+import { enCap82 } from './en-cap82'
 
 /**
  * Engleză (britanică), în formatul capitolelor (ca italiana și franceza).
@@ -99,6 +107,8 @@ const units: Unit[] = [
   { id: 'en-b1-7', title: 'B1 · Finalul B1', level: 'B1', lessons: [enCap61, enCap62, enCap63, enCap64, enCap65, enCap66] },
   { id: 'en-b2-1', title: 'B2 · Povești și emfază', level: 'B2', lessons: [enCap67, enCap68, enCap69, enCap70] },
   { id: 'en-b2-2', title: 'B2 · Dorințe și ipoteze', level: 'B2', lessons: [enCap71, enCap72, enCap73, enCap74] },
+  { id: 'en-b2-3', title: 'B2 · Pasiv, raportare, structuri', level: 'B2', lessons: [enCap75, enCap76, enCap77, enCap78] },
+  { id: 'en-b2-4', title: 'B2 · Nuanțe în discurs', level: 'B2', lessons: [enCap79, enCap80, enCap81, enCap82] },
 ]
 
 export const en: Course = {

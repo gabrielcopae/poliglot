@@ -508,8 +508,16 @@ Curs nou (engleză britanică, vocea en-GB), în formatul capitolelor, cu explic
 |  | 72 | Wish, if only, it’s time, would rather, as if (șoldul Maggiei, poveștile despre Rab) | ✅ testat |
 |  | 73 | Modale avansate: might as well, bound to, needn’t have, must have been -ing (Maggie în România) | ✅ testat |
 |  | 74 | Propoziții participiale + recapitulare (pălăria verde, discursul de la Moray House) | ✅ testat |
+| B2 · Pasiv, raportare, structuri | 75 | Pasivul avansat: it is said that, is believed to have been, have something done (saxifraga furată, Jamie) | ✅ testat |
+|  | 76 | Verbe de raportare: accuse of, deny, insist on, urge, threaten, suggest (ședința publică, grădina salvată) | ✅ testat |
+|  | 77 | -ing sau to: remember, stop, try, regret, go on, mean, need (înmormântarea lui Ilie) | ✅ testat |
+|  | 78 | Relative reduse + recapitulare (fotografia celor douăzeci de femei) | ✅ testat |
+| B2 · Nuanțe în discurs | 79 | Conectori: however, nevertheless, whereas, moreover, actually, after all (absolvirea lui Ruby, pălăria verde) | ✅ testat |
+|  | 80 | Hedging: it seems that, tend to, is likely to, arguably (titlul de ziar, Hannah) | ✅ testat |
+|  | 81 | Emfaza: do / did, so / such, the very, on earth (ceilidh-ul de Hogmanay, „fiule”) | ✅ testat |
+|  | 82 | Elipsă și substituție + recapitulare (Ewan o cere pe Ruby) | ✅ testat |
 
-Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · 16: 357 · 17: 369 · 18: 371 · 19: 473 · 20: 502 · 21: 522 · 22: 536 · 23: 549 · 24: 572 · 25: 600 · 26: 622 · 27: 631 · 28: 658 · 29: 709 · 30: 712 · 31: 718 · 32: 736 · 33: 739 · 34: 749 · 35: 758 · 36: 759 · 37: 775 · 38: 789 · 39: 823 · 40: 841 · 41: 844 · 42: 846 · 43: 852 · 44: 861 · 45: 866 · 46: 868 · 47: 876 · 48: 882 · 49: 883 · 50: 893 · 51: 894 · 52: 895 · 53: 899 · 54: 901 · 55: 924 · 56: 939 · 57: 950 · 58: 952 · 59: 955 · 60: 958 · 61: 960 · 62: 962 · 63: 980 · 64: 989 · 65: 993 · 66: 996 · 67: 1056 · 68: 1108 · 69: 1168 · 70: 1212 · 71: 1342 · 72: 1410 · 73: 1430 · **74: 1431**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · 16: 357 · 17: 369 · 18: 371 · 19: 473 · 20: 502 · 21: 522 · 22: 536 · 23: 549 · 24: 572 · 25: 600 · 26: 622 · 27: 631 · 28: 658 · 29: 709 · 30: 712 · 31: 718 · 32: 736 · 33: 739 · 34: 749 · 35: 758 · 36: 759 · 37: 775 · 38: 789 · 39: 823 · 40: 841 · 41: 844 · 42: 846 · 43: 852 · 44: 861 · 45: 866 · 46: 868 · 47: 876 · 48: 882 · 49: 883 · 50: 893 · 51: 894 · 52: 895 · 53: 899 · 54: 901 · 55: 924 · 56: 939 · 57: 950 · 58: 952 · 59: 955 · 60: 958 · 61: 960 · 62: 962 · 63: 980 · 64: 989 · 65: 993 · 66: 996 · 67: 1056 · 68: 1108 · 69: 1168 · 70: 1212 · 71: 1342 · 72: 1410 · 73: 1430 · 74: 1431 · 75: 1543 · 76: 1650 · 77: 1741 · 78: 1822 · 79: 1906 · 80: 1968 · 81: 1980 · **82: 1993**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
