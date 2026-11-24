@@ -27,6 +27,14 @@ import { enCap25 } from './en-cap25'
 import { enCap26 } from './en-cap26'
 import { enCap27 } from './en-cap27'
 import { enCap28 } from './en-cap28'
+import { enCap29 } from './en-cap29'
+import { enCap30 } from './en-cap30'
+import { enCap31 } from './en-cap31'
+import { enCap32 } from './en-cap32'
+import { enCap33 } from './en-cap33'
+import { enCap34 } from './en-cap34'
+import { enCap35 } from './en-cap35'
+import { enCap36 } from './en-cap36'
 
 /**
  * Engleză (britanică), în formatul capitolelor (ca italiana și franceza).
@@ -42,6 +50,8 @@ const units: Unit[] = [
   { id: 'en-a2-2', title: 'A2 · Planuri și viitor', level: 'A2', lessons: [enCap17, enCap18, enCap19, enCap20] },
   { id: 'en-a2-3', title: 'A2 · Experiențe', level: 'A2', lessons: [enCap21, enCap22, enCap23, enCap24] },
   { id: 'en-a2-4', title: 'A2 · Reguli, sfaturi, abilități', level: 'A2', lessons: [enCap25, enCap26, enCap27, enCap28] },
+  { id: 'en-a2-5', title: 'A2 · Cuvinte și construcții', level: 'A2', lessons: [enCap29, enCap30, enCap31, enCap32] },
+  { id: 'en-a2-6', title: 'A2 · Finalul A2', level: 'A2', lessons: [enCap33, enCap34, enCap35, enCap36] },
 ]
 
 export const en: Course = {

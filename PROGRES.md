@@ -462,8 +462,16 @@ Curs nou (engleză britanică, vocea en-GB), în formatul capitolelor, cu explic
 |  | 26 | Should, ought to, If I were you, Why don’t you…?, advice (Priya și Kenny) | ✅ testat |
 |  | 27 | Can / could / be able to / managed to, cereri politicoase (părinții Irinei, pescuitul lui Mihai și Duncan) | ✅ testat |
 |  | 28 | Much / many, a lot of, (a) few / (a) little, too much / enough, recapitularea modalelor (Ziua Muntelui) | ✅ testat |
+| A2 · Cuvinte și construcții | 29 | Propozițiile relative: who, which, that, where, whose, omiterea pronumelui (festivalul, mimul tăcut Rory) | ✅ testat |
+|  | 30 | Verb + -ing vs verb + to, prepoziție + -ing, stop / remember / try (secretul lui Callum: lecțiile de română) | ✅ testat |
+|  | 31 | Phrasal verbs frecvente, separabile și inseparabile (Maggie cade pe scări) | ✅ testat |
+|  | 32 | Adverbele de mod, adjectiv vs adverb, recapitularea unității (deschiderea grădinii montane) | ✅ testat |
+| A2 · Finalul A2 | 33 | Diateza pasivă la toate timpurile, by + agent (spargerea de la librărie, inelul găsit de Hamish) | ✅ testat |
+|  | 34 | Question tags, intonația, so do I / neither do I (Crăciunul la Bran) | ✅ testat |
+|  | 35 | Too / enough, so / such, so … that (cererea în căsătorie) | ✅ testat |
+|  | 36 | Marea recapitulare A2, formatul A2 Key (petrecerea de logodnă) | ✅ testat |
 
-Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · 16: 357 · 17: 369 · 18: 371 · 19: 473 · 20: 502 · 21: 522 · 22: 536 · 23: 549 · 24: 572 · 25: 600 · 26: 622 · 27: 631 · **28: 658**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · 16: 357 · 17: 369 · 18: 371 · 19: 473 · 20: 502 · 21: 522 · 22: 536 · 23: 549 · 24: 572 · 25: 600 · 26: 622 · 27: 631 · 28: 658 · 29: 709 · 30: 712 · 31: 718 · 32: 736 · 33: 739 · 34: 749 · 35: 758 · **36: 759**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
