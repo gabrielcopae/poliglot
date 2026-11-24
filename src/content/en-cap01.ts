@@ -244,7 +244,7 @@ export const enCap01 = lesson({
       reading: {
         kind: 'story',
         title: 'Ruby, eight years old',
-        cast: { Narratore: 'f' },
+        cast: { Narrator: 'f' },
         lines: [
           { t: 'Hi! My name is Ruby. I’m eight years old.', ro: 'Salut! Mă numesc Ruby. Am opt ani.' },
           { t: 'I’m Scottish. I’m from Edinburgh, from Stockbridge.', ro: 'Sunt scoțiancă. Sunt din Edinburgh, din Stockbridge.' },

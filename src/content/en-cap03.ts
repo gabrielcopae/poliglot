@@ -184,7 +184,7 @@ export const enCap03 = lesson({
       reading: {
         kind: 'story',
         title: 'Dr Grant talks to trees',
-        cast: { Narratore: 'm' },
+        cast: { Narrator: 'm' },
         lines: [
           { t: 'Dr Alasdair Grant is fifty-eight. He’s the boss of the glasshouses at the Botanic Garden.', ro: 'Doctorul Alasdair Grant are cincizeci și opt de ani. E șeful serelor de la Grădina Botanică.' },
           { t: 'He lives in a small house near the garden with his wife, Morag, and a very old dog.', ro: 'Locuiește într-o căsuță lângă grădină cu soția lui, Morag, și un câine foarte bătrân.' },

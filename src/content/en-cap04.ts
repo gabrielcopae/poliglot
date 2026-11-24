@@ -202,7 +202,7 @@ export const enCap04 = lesson({
       reading: {
         kind: 'story',
         title: 'A week in the life of Hamish',
-        cast: { Narratore: 'f' },
+        cast: { Narrator: 'f' },
         lines: [
           { t: 'Hamish is a big orange cat. He’s eleven years old and he lives with Maggie in Stockbridge.', ro: 'Hamish e un motan mare și portocaliu. Are unsprezece ani și locuiește cu Maggie în Stockbridge.' },
           { t: 'Hamish doesn’t work, of course. But he has a very busy week.', ro: 'Hamish nu lucrează, desigur. Dar are o săptămână foarte încărcată.' },

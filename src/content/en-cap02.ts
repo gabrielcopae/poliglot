@@ -204,7 +204,7 @@ export const enCap02 = lesson({
       reading: {
         kind: 'story',
         title: 'Granny Maggie’s family',
-        cast: { Narratore: 'f' },
+        cast: { Narrator: 'f' },
         lines: [
           { t: 'Hello again! It’s me, Ruby. Today I’ve got a photo of my family.', ro: 'Salut din nou! Sunt eu, Ruby. Azi am o fotografie cu familia mea.' },
           { t: 'There are six people in the photo.', ro: 'Sunt șase persoane în fotografie.' },

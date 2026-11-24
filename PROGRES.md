@@ -438,8 +438,12 @@ Curs nou (engleză britanică, vocea en-GB), în formatul capitolelor, cu explic
 | | 2 | Have got, vârsta cu TO BE (I’m 28), a / an / the, pluralul (children, people), there is / are, numerele 0–20 (familia lui Ruby) | ✅ testat |
 | | 3 | Prezentul simplu, -s / -es / -ies la persoana a III-a, limbile (prima zi la Grădina Botanică, dr. Grant vorbește cu copacii) | ✅ testat |
 | | 4 | Do / does la întrebări și negații, răspunsuri scurte, ora britanică (half past, quarter to), zilele cu „on”, numerele până la 100, prețurile (librăria lui Callum, săptămâna lui Hamish) | ✅ testat |
+| A1 · Viața de zi cu zi | 5 | La ceainărie: I’d like, would you like, can I have, some / any, numărabil / nenumărabil, a cup of, can (regulile ceaiului lui Maggie) | ✅ testat |
+|  | 6 | Rutina zilnică, adverbele de frecvență și locul lor, how often, once / twice a week, have breakfast (porridge-ul cu sare al lui Callum, o zi cu Maggie) | ✅ testat |
+|  | 7 | Indicații, imperativul (go, turn, don’t), let’s, prepozițiile de loc, ordinalele (Irina se rătăcește în Old Town, Greyfriars Bobby) | ✅ testat |
+|  | 8 | Haine, culori, this / that / these / those, adjectivul înaintea substantivului, too / very, la magazin (paltonul verde, kiltul lui Callum) | ✅ testat |
 
-Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · **4: 145**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · **8: 224**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
