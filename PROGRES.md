@@ -571,8 +571,16 @@ Curs nou (germana standard, vocea de-DE), în formatul capitolelor, cu explicaț
 |  | 22 | Als / wenn / wann, secundara pe primul loc, recunoașterea Präteritum (Mara și Lena la Sibiu, rezultatul examenului pe Podul Minciunilor) | ✅ testat |
 |  | 23 | Konjunktiv II: würde, hätte, wäre, könnte; cereri politicoase, dorințe, limbaj formal la muncă (contractul nedeterminat, lista de dorințe a casei, tramvaiul 5218) | ✅ testat |
 |  | 24 | Sfaturi: sollte, an deiner Stelle würde ich, du könntest, wie wäre es mit; recapitulare A2 (Ludwig conduce din nou linia 46) | ✅ testat |
+| A2 · Legături și argumente | 25 | Verbe cu prepoziție fixă (warten auf, denken an), wo(r)- și da(r)-, darauf, dass… (Andrei vine la Berlin, patru dimineața în brutărie) | ✅ testat |
+|  | 26 | Întrebări indirecte cu ob și cu cuvinte interogative, ob vs wenn, politețea la telefon (Mara sună la Konzerthaus pentru doamna Hoffmann) | ✅ testat |
+|  | 27 | Zu + infinitiv, verbe separabile (anzurufen), um … zu, ohne … zu, fără zu după modale (Kuba adoptă câinele Bruno de la adăpost) | ✅ testat |
+|  | 28 | Obwohl / trotzdem, aber / sondern, harta conectorilor (concertul doamnei Hoffmann la Konzerthaus, 91 de ani) | ✅ testat |
+| A2 · Lumea din jur | 29 | Genitivul (des / der, -s / -es), nume cu -s, von + dativ, wegen / trotz / während / statt (părinții Marei la Berlin, albinele de pe acoperiș) | ✅ testat |
+|  | 30 | Propoziții relative (der / den / dem / denen / dessen), cu prepoziție, wo și was (a 80-a aniversare a lui Ludwig, împăcarea cu Thomas) | ✅ testat |
+|  | 31 | Pasivul la prezent (wird gebacken) și Präteritum (wurde gebaut), von + dativ, rețete și procese (Andrei, Erasmus la Berlin, istoria casei din 1905) | ✅ testat |
+|  | 32 | Präteritum pentru povestiri: -te și verbele neregulate frecvente, Präteritum vs Perfekt, basme (caietul lui Andrei: Cum a ajuns sora mea la Berlin) | ✅ testat |
 
-Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · 16: 746 · 17: 772 · 18: 774 · 19: 801 · 20: 840 · 21: 845 · 22: 850 · 23: 857 · **24: 871**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · 16: 746 · 17: 772 · 18: 774 · 19: 801 · 20: 840 · 21: 845 · 22: 850 · 23: 857 · 24: 871 · 25: 876 · 26: 885 · 27: 893 · 28: 917 · 29: 936 · 30: 949 · 31: 959 · **32: 971**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
