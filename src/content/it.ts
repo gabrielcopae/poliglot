@@ -98,6 +98,7 @@ import { itCap96 } from './it-cap96'
 import { itCap97 } from './it-cap97'
 import { itCap98 } from './it-cap98'
 import { itCap99 } from './it-cap99'
+import { itCap100 } from './it-cap100'
 
 /**
  * Italiană, în formatul capitolelor (ca franceza).
@@ -129,7 +130,7 @@ const units: Unit[] = [
   { id: 'it-b2-5', title: 'B2 · Știință și mediu', level: 'B2', lessons: [itCap83, itCap84, itCap85, itCap86] },
   { id: 'it-b2-6', title: 'B2 · Cultură și artă', level: 'B2', lessons: [itCap87, itCap88, itCap89, itCap90] },
   { id: 'it-b2-7', title: 'B2 · Vocabular și stil', level: 'B2', lessons: [itCap91, itCap92, itCap93, itCap94, itCap95, itCap96] },
-  { id: 'it-b2-8', title: 'B2 · Finalul B2', level: 'B2', lessons: [itCap97, itCap98, itCap99] },
+  { id: 'it-b2-8', title: 'B2 · Finalul B2', level: 'B2', lessons: [itCap97, itCap98, itCap99, itCap100] },
 ]
 
 export const it: Course = {
