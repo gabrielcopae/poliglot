@@ -563,8 +563,16 @@ Curs nou (germana standard, vocea de-DE), în formatul capitolelor, cu explicaț
 |  | 14 | Modalele la Präteritum (konnte, musste, wollte, durfte, sollte, mochte), werden, copilăria (copilăria lui Ludwig printre ruine, pianul din pivniță al doamnei Hoffmann) | ✅ testat |
 |  | 15 | Propoziții secundare cu weil și dass (verbul la final), denn, deshalb, păreri cu glauben / wissen / hoffen (Fritz dispare și toată casa îl caută) | ✅ testat |
 |  | 16 | Wechselpräpositionen: wo? + dativ, wohin? + acuzativ, stellen / stehen, legen / liegen, hängen, setzen / sitzen (petrecerea din curte, muzica de la etajul patru) | ✅ testat |
+| A2 · Descrieri | 17 | Comparativul (größer als, so … wie), superlativul (am größten, der größte), forme neregulate (besser, mehr, lieber) (Andrei vizitează Berlinul de Paște, brezelurile de la patru dimineața) | ✅ testat |
+|  | 18 | Declinarea adjectivului după der / dieser / welcher (-e / -en), haine de nuntă, adjective substantivizate (rochia Clarei, costumul de nuntă din 1974 al lui Ludwig) | ✅ testat |
+|  | 19 | Adjectivul după ein / kein / mein (-er / -es) și fără articol (frischer Kaffee), zile de naștere și cadouri (discul Eterna din 1964 al doamnei Hoffmann) | ✅ testat |
+|  | 20 | Verbele reflexive (mich / dich / sich), dativul reflexiv (ich wasche mir die Hände), reflexive cu prepoziție (sich freuen auf / über) (nunta de la Kiel, costumul dansează) | ✅ testat |
+| A2 · Planuri și dorințe | 21 | Viitorul: prezent + expresii de timp, werden + infinitiv, presupuneri cu wohl, vocabularul examenelor (Mara dă examenul Goethe B1) | ✅ testat |
+|  | 22 | Als / wenn / wann, secundara pe primul loc, recunoașterea Präteritum (Mara și Lena la Sibiu, rezultatul examenului pe Podul Minciunilor) | ✅ testat |
+|  | 23 | Konjunktiv II: würde, hätte, wäre, könnte; cereri politicoase, dorințe, limbaj formal la muncă (contractul nedeterminat, lista de dorințe a casei, tramvaiul 5218) | ✅ testat |
+|  | 24 | Sfaturi: sollte, an deiner Stelle würde ich, du könntest, wie wäre es mit; recapitulare A2 (Ludwig conduce din nou linia 46) | ✅ testat |
 
-Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · **16: 746**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · 16: 746 · 17: 772 · 18: 774 · 19: 801 · 20: 840 · 21: 845 · 22: 850 · 23: 857 · **24: 871**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
