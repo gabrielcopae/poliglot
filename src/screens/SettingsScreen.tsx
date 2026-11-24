@@ -2,7 +2,7 @@ declare const __BUILD__: string
 import { Flag } from '../components/Flag'
 import { useEffect, useRef, useState } from 'react'
 import { COURSES } from '../content'
-import { exportProgress, importProgress } from '../db'
+import { lastBackup, restoreBackup, saveBackup } from '../backup'
 import { SEASONS, type Season } from '../season'
 import { setSettings, recordedVoicesOn, useSettings, type Settings } from '../settings'
 import { allVoices, canListen, onVoices, speak, voiceFor, voiceId, voicesFor } from '../speech'
@@ -27,17 +27,15 @@ export function SettingsScreen({ user, signOut }: { user: string; signOut: () =>
   }, [])
 
   const doExport = async () => {
-    const blob = new Blob([await exportProgress()], { type: 'application/json' })
-    const a = document.createElement('a')
-    a.href = URL.createObjectURL(blob)
-    a.download = `poliglot-backup-${new Date().toISOString().slice(0, 10)}.json`
-    a.click()
-    URL.revokeObjectURL(a.href)
+    try {
+      await saveBackup(user)
+      setMsg(t('✔ Copia a fost salvată.'))
+    } catch { /* anulat */ }
   }
 
   const doImport = async (f: File) => {
     try {
-      await importProgress(await f.text())
+      await restoreBackup(user, f)
       setMsg(t('✔ Progresul a fost importat.'))
     } catch (e) {
       setMsg(`✘ ${(e as Error).message}`)
@@ -163,11 +161,12 @@ export function SettingsScreen({ user, signOut }: { user: string; signOut: () =>
         )}
         {storage && !storage.persisted && <button className="btn" onClick={persist}>🔒 {t('Protejează datele de ștergere automată')}</button>}
         <div className="row">
-          <button className="btn" onClick={doExport}>⬇ {t('Exportă progresul')}</button>
-          <button className="btn" onClick={() => file.current?.click()}>⬆ {t('Importă progres')}</button>
+          <button className="btn primary" onClick={doExport}>💾 {t('Salvează o copie a progresului')}</button>
+          <button className="btn" onClick={() => file.current?.click()}>📂 {t('Restaurează dintr-o copie')}</button>
           <input ref={file} type="file" accept="application/json" hidden onChange={(e) => e.target.files?.[0] && doImport(e.target.files[0])} />
         </div>
-        <p className="muted small">{t('Folosește exportul ca să muți progresul între telefon și laptop.')}</p>
+        <p className="muted small">{lastBackup(user) ? t('Ultima copie: {date}', { date: new Date(lastBackup(user)).toLocaleDateString() }) : t('Nu ai salvat încă nicio copie')}</p>
+        <p className="muted small">{t('Copia se salvează ca fișier (în Descărcări sau, pe telefon, unde alegi: Drive, Fișiere). Dacă ștergi datele aplicației, o restaurezi de aici.')}</p>
         {msg && <p>{msg}</p>}
       </article>
 

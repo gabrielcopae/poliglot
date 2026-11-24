@@ -11,6 +11,7 @@ import { localGet, localSet } from '../settings'
 import { ALL_REWARDS, RewardCard, studyDays } from '../components/RewardCard'
 import { MILESTONES, StreakCard, longestStreak } from '../components/StreakCard'
 import { t, tc, tk, tn } from '../i18n'
+import { BackupStrip, SaveButton } from '../components/BackupStrip'
 
 
 /** Ecranul principal, varianta simplă: salut, „Continuă”, repetiție (doar când e ceva), limbi, explorare. */
@@ -117,6 +118,8 @@ export function Home({ go, user }: { go: Go; season: Season; user: string }) {
         </button>
       )}
 
+      <BackupStrip user={user} hasProgress={lessons.length > 0 || chapters.length > 0 || homework.length > 0 || cardCount > 0} />
+
       <h2 className="section-title">{t('Limbile tale')}</h2>
       <div className="lang-list">
         {langs.map((x) => {
@@ -156,6 +159,7 @@ export function Home({ go, user }: { go: Go; season: Season; user: string }) {
           </button>
         ))}
       </div>
+      <SaveButton user={user} />
     </div>
   )
 }

@@ -515,5 +515,15 @@ const d: Record<string, string> = {
   '{n} lună': "{n}か月",
   '{n} luni': "{n}か月",
   'Mod simplu: fundal liniștit, fără peisaj și fără animații': "シンプルモード：落ち着いた背景、風景とアニメーションなし",
+  'Salvează o copie a progresului': "進捗のコピーを保存",
+  'Nu ai salvat încă nicio copie': "まだコピーを保存していません",
+  'Ultima copie: acum {n} zile': "最後のコピー：{n}日前",
+  'Ultima copie: {date}': "最後のコピー：{date}",
+  '✔ Copia a fost salvată.': "✔ コピーを保存しました。",
+  'Ai o copie de rezervă?': "バックアップはありますか？",
+  'Dacă ai mai folosit aplicația, alege fișierul salvat și continui de unde ai rămas.': "以前にアプリを使っていた場合は、保存したファイルを選んで続きから始めましょう。",
+  'Restaurează dintr-o copie': "コピーから復元",
+  'Încep de la zero': "最初から始める",
+  'Copia se salvează ca fișier (în Descărcări sau, pe telefon, unde alegi: Drive, Fișiere). Dacă ștergi datele aplicației, o restaurezi de aici.': "コピーはファイルとして保存されます（ダウンロード、またはスマホでは選んだ場所：Drive、ファイル）。アプリのデータを消した場合は、ここから復元できます。",
 }
 export default d

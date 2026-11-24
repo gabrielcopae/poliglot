@@ -515,5 +515,15 @@ const d: Record<string, string> = {
   '{n} lună': "{n} mes",
   '{n} luni': "{n} meses",
   'Mod simplu: fundal liniștit, fără peisaj și fără animații': "Modo sencillo: fondo tranquilo, sin paisaje ni animaciones",
+  'Salvează o copie a progresului': "Guardar una copia del progreso",
+  'Nu ai salvat încă nicio copie': "Aún no has guardado ninguna copia",
+  'Ultima copie: acum {n} zile': "Última copia: hace {n} días",
+  'Ultima copie: {date}': "Última copia: {date}",
+  '✔ Copia a fost salvată.': "✔ La copia se ha guardado.",
+  'Ai o copie de rezervă?': "¿Tienes una copia de seguridad?",
+  'Dacă ai mai folosit aplicația, alege fișierul salvat și continui de unde ai rămas.': "Si ya usaste la aplicación, elige el archivo guardado y continúa donde lo dejaste.",
+  'Restaurează dintr-o copie': "Restaurar desde una copia",
+  'Încep de la zero': "Empiezo de cero",
+  'Copia se salvează ca fișier (în Descărcări sau, pe telefon, unde alegi: Drive, Fișiere). Dacă ștergi datele aplicației, o restaurezi de aici.': "La copia se guarda como archivo (en Descargas o, en el móvil, donde elijas: Drive, Archivos). Si borras los datos de la aplicación, restáurala desde aquí.",
 }
 export default d

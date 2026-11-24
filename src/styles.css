@@ -1146,3 +1146,10 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .course-calm .syl-toc { margin-right: 6px; }
 .course-calm .exam-link { border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent); }
 .course-calm .syl-planned { font-size: 0.82rem; }
+
+/* ——— Copia de rezervă ——— */
+.backup-card { display: flex; flex-direction: column; gap: 6px; }
+.backup-card small { color: var(--dim); }
+.backup-card .row { margin-top: 6px; }
+.backup-msg { margin: 0 4px 14px; font-weight: 700; color: var(--good); }
+.save-link { font-size: 0.85rem; margin: 18px auto 0; }
