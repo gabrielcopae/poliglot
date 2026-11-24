@@ -454,8 +454,16 @@ Curs nou (engleză britanică, vocea en-GB), în formatul capitolelor, cu explic
 |  | 18 | Will pentru predicții, oferte, promisiuni, decizii pe loc; Shall I…?; will vs going to (ghicitoarea Ruby) | ✅ testat |
 |  | 19 | Prezentul continuu pentru aranjamente, prezentul simplu pentru orare, when / as soon as / until + prezent (planul secret cu Vlad, drumul la Bran) | ✅ testat |
 |  | 20 | Condiționalul de tip 1, unless, if vs when, recapitularea viitorului (Revelionul la cabană) | ✅ testat |
+| A2 · Experiențe | 21 | Present perfect pentru experiențe: ever / never, participiile neregulate, been vs gone (ferma familiei Reid, aurora boreală) | ✅ testat |
+|  | 22 | Present perfect vs past simple, When did…?, întrebări de interviu (interviul pentru grădina montană) | ✅ testat |
+|  | 23 | Just, already, yet, still; felicitări și reacții (vestea cea mare, semințele lui Alasdair) | ✅ testat |
+|  | 24 | For și since, How long…?, present perfect continuous, recapitularea unității (un an la Edinburgh, jurnalul Irinei) | ✅ testat |
+| A2 · Reguli, sfaturi, abilități | 25 | Must / mustn’t, have to / don’t have to, had to, reguli scrise (șantierul, Bill alpinistul) | ✅ testat |
+|  | 26 | Should, ought to, If I were you, Why don’t you…?, advice (Priya și Kenny) | ✅ testat |
+|  | 27 | Can / could / be able to / managed to, cereri politicoase (părinții Irinei, pescuitul lui Mihai și Duncan) | ✅ testat |
+|  | 28 | Much / many, a lot of, (a) few / (a) little, too much / enough, recapitularea modalelor (Ziua Muntelui) | ✅ testat |
 
-Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · 16: 357 · 17: 369 · 18: 371 · 19: 473 · **20: 502**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · 16: 357 · 17: 369 · 18: 371 · 19: 473 · 20: 502 · 21: 522 · 22: 536 · 23: 549 · 24: 572 · 25: 600 · 26: 622 · 27: 631 · **28: 658**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
