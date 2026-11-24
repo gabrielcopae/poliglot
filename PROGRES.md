@@ -555,8 +555,16 @@ Curs nou (germana standard, vocea de-DE), în formatul capitolelor, cu explicaț
 |  | 6 | Verbele separabile (ich stehe … auf), prefixele separabile și neseparabile, schlafen / anfangen, zuerst / dann / danach, turele (tura de noapte, Herr Schulz nu poate dormi) | ✅ testat |
 |  | 7 | Imperativul (Geh! Nimm! Gehen Sie!), dativul cu aus / bei / mit / nach / seit / von / zu / gegenüber, zum / zur / vom / beim, indicații și transport (Mara se rătăcește până în Kreuzberg) | ✅ testat |
 |  | 8 | Locuința și mobila, toate posesivele (sein / ihr / Ihr, euer → eure), posesivele la acuzativ, es gibt, etajele (Frau Hoffmann, pianista de la etajul patru) | ✅ testat |
+| A1 · Timp liber, haine, sănătate | 9 | Verbele modale können / wollen (ich kann, er will), paranteza verbală, gern / lieber / am liebsten, propuneri și refuzuri (corul lui Jonas, Ludwig învață să folosească telefonul) | ✅ testat |
+|  | 10 | Haine și culori, pronumele la dativ (mir, dir, ihm, ihr), gefallen / passen / stehen, welcher / dieser, la magazin și la talcioc (paltonul verde din Mauerpark, lampa de tramvai a lui Ludwig) | ✅ testat |
+|  | 11 | Perfekt: haben / sein + participiu, ge-…-t și ge-…-en, verbe separabile și fără ge-, war / hatte (excursia la Potsdam, povestea lui Ludwig și a lui Ingrid, 9 noiembrie 1989) | ✅ testat |
+|  | 12 | Corpul, ce te doare, müssen / dürfen / sollen, muss nicht ≠ darf nicht, la doctor și la farmacie, recapitulare A1 (Ludwig cu ghips, Crăciunul în toată casa, Frau Hoffmann coboară scările) | ✅ testat |
+| A2 · Trecutul și amintirile | 13 | War / hatte la toate persoanele, Perfekt recapitulat, expresii de timp trecut (vor einer Woche, letztes Jahr), cum povestești o întâmplare (Revelionul la urgențe, cererea în căsătorie a lui Jonas) | ✅ testat |
+|  | 14 | Modalele la Präteritum (konnte, musste, wollte, durfte, sollte, mochte), werden, copilăria (copilăria lui Ludwig printre ruine, pianul din pivniță al doamnei Hoffmann) | ✅ testat |
+|  | 15 | Propoziții secundare cu weil și dass (verbul la final), denn, deshalb, păreri cu glauben / wissen / hoffen (Fritz dispare și toată casa îl caută) | ✅ testat |
+|  | 16 | Wechselpräpositionen: wo? + dativ, wohin? + acuzativ, stellen / stehen, legen / liegen, hängen, setzen / sitzen (petrecerea din curte, muzica de la etajul patru) | ✅ testat |
 
-Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · **8: 317**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · **16: 746**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
