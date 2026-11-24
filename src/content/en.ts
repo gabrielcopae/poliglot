@@ -59,6 +59,12 @@ import { enCap57 } from './en-cap57'
 import { enCap58 } from './en-cap58'
 import { enCap59 } from './en-cap59'
 import { enCap60 } from './en-cap60'
+import { enCap61 } from './en-cap61'
+import { enCap62 } from './en-cap62'
+import { enCap63 } from './en-cap63'
+import { enCap64 } from './en-cap64'
+import { enCap65 } from './en-cap65'
+import { enCap66 } from './en-cap66'
 
 /**
  * Engleză (britanică), în formatul capitolelor (ca italiana și franceza).
@@ -82,6 +88,7 @@ const units: Unit[] = [
   { id: 'en-b1-4', title: 'B1 · Lumea muncii', level: 'B1', lessons: [enCap49, enCap50, enCap51, enCap52] },
   { id: 'en-b1-5', title: 'B1 · Condiții și nuanțe', level: 'B1', lessons: [enCap53, enCap54, enCap55, enCap56] },
   { id: 'en-b1-6', title: 'B1 · Media și societate', level: 'B1', lessons: [enCap57, enCap58, enCap59, enCap60] },
+  { id: 'en-b1-7', title: 'B1 · Finalul B1', level: 'B1', lessons: [enCap61, enCap62, enCap63, enCap64, enCap65, enCap66] },
 ]
 
 export const en: Course = {

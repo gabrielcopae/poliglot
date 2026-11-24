@@ -494,8 +494,14 @@ Curs nou (engleză britanică, vocea en-GB), în formatul capitolelor, cu explic
 |  | 58 | Propoziții de scop: to, in order to, so as (not) to, so that, for (salvarea librăriei, podcastul „Tea and Books”) | ✅ testat |
 |  | 59 | Pasivul de relatare: It is said that…, he is believed to have… (necrologul lui Bill) | ✅ testat |
 |  | 60 | Verb + obiect + to (want / ask / persuade somebody to), recapitularea unității (Piatra lui Bill) | ✅ testat |
+| B1 · Finalul B1 | 61 | Formarea cuvintelor: prefixe și sufixe (eseul lui Ruby despre Maggie) | ✅ testat |
+|  | 62 | Make vs do, have și take în expresii fixe (prima întâlnire a lui Vlad, ciorba) | ✅ testat |
+|  | 63 | Phrasal verbs cu sens abstract și cu trei părți (Maggie predă casa, scrisorile lui Rab) | ✅ testat |
+|  | 64 | Expresii idiomatice (ziua Ericăi, cererea în căsătorie a lui Vlad) | ✅ testat |
+|  | 65 | Registrul formal și informal în scris (scrisoarea către primărie, Grădina lui Bill) | ✅ testat |
+|  | 66 | Marea recapitulare B1, formatul B1 Preliminary (nunta lui Vlad) | ✅ testat |
 
-Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · 16: 357 · 17: 369 · 18: 371 · 19: 473 · 20: 502 · 21: 522 · 22: 536 · 23: 549 · 24: 572 · 25: 600 · 26: 622 · 27: 631 · 28: 658 · 29: 709 · 30: 712 · 31: 718 · 32: 736 · 33: 739 · 34: 749 · 35: 758 · 36: 759 · 37: 775 · 38: 789 · 39: 823 · 40: 841 · 41: 844 · 42: 846 · 43: 852 · 44: 861 · 45: 866 · 46: 868 · 47: 876 · 48: 882 · 49: 883 · 50: 893 · 51: 894 · 52: 895 · 53: 899 · 54: 901 · 55: 924 · 56: 939 · 57: 950 · 58: 952 · 59: 955 · **60: 958**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · 16: 357 · 17: 369 · 18: 371 · 19: 473 · 20: 502 · 21: 522 · 22: 536 · 23: 549 · 24: 572 · 25: 600 · 26: 622 · 27: 631 · 28: 658 · 29: 709 · 30: 712 · 31: 718 · 32: 736 · 33: 739 · 34: 749 · 35: 758 · 36: 759 · 37: 775 · 38: 789 · 39: 823 · 40: 841 · 41: 844 · 42: 846 · 43: 852 · 44: 861 · 45: 866 · 46: 868 · 47: 876 · 48: 882 · 49: 883 · 50: 893 · 51: 894 · 52: 895 · 53: 899 · 54: 901 · 55: 924 · 56: 939 · 57: 950 · 58: 952 · 59: 955 · 60: 958 · 61: 960 · 62: 962 · 63: 980 · 64: 989 · 65: 993 · **66: 996**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
