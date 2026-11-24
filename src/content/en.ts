@@ -65,6 +65,14 @@ import { enCap63 } from './en-cap63'
 import { enCap64 } from './en-cap64'
 import { enCap65 } from './en-cap65'
 import { enCap66 } from './en-cap66'
+import { enCap67 } from './en-cap67'
+import { enCap68 } from './en-cap68'
+import { enCap69 } from './en-cap69'
+import { enCap70 } from './en-cap70'
+import { enCap71 } from './en-cap71'
+import { enCap72 } from './en-cap72'
+import { enCap73 } from './en-cap73'
+import { enCap74 } from './en-cap74'
 
 /**
  * Engleză (britanică), în formatul capitolelor (ca italiana și franceza).
@@ -89,6 +97,8 @@ const units: Unit[] = [
   { id: 'en-b1-5', title: 'B1 · Condiții și nuanțe', level: 'B1', lessons: [enCap53, enCap54, enCap55, enCap56] },
   { id: 'en-b1-6', title: 'B1 · Media și societate', level: 'B1', lessons: [enCap57, enCap58, enCap59, enCap60] },
   { id: 'en-b1-7', title: 'B1 · Finalul B1', level: 'B1', lessons: [enCap61, enCap62, enCap63, enCap64, enCap65, enCap66] },
+  { id: 'en-b2-1', title: 'B2 · Povești și emfază', level: 'B2', lessons: [enCap67, enCap68, enCap69, enCap70] },
+  { id: 'en-b2-2', title: 'B2 · Dorințe și ipoteze', level: 'B2', lessons: [enCap71, enCap72, enCap73, enCap74] },
 ]
 
 export const en: Course = {
