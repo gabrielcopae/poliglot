@@ -71,6 +71,7 @@ import { itCap69 } from './it-cap69'
 import { itCap70 } from './it-cap70'
 import { itCap71 } from './it-cap71'
 import { itCap72 } from './it-cap72'
+import { itCap73 } from './it-cap73'
 
 /**
  * Italiană, în formatul capitolelor (ca franceza).
@@ -96,7 +97,7 @@ const units: Unit[] = [
   { id: 'it-b1-6', title: 'B1 · Media și societate', level: 'B1', lessons: [itCap57, itCap58, itCap59, itCap60] },
   { id: 'it-b1-7', title: 'B1 · Finalul B1', level: 'B1', lessons: [itCap61, itCap62, itCap63, itCap64, itCap65, itCap66] },
   { id: 'it-b2-1', title: 'B2 · Alegeri și ipoteze', level: 'B2', lessons: [itCap67, itCap68, itCap69, itCap70] },
-  { id: 'it-b2-2', title: 'B2 · Timp și memorie', level: 'B2', lessons: [itCap71, itCap72] },
+  { id: 'it-b2-2', title: 'B2 · Timp și memorie', level: 'B2', lessons: [itCap71, itCap72, itCap73] },
 ]
 
 export const it: Course = {
