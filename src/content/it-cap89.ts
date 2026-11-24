@@ -291,7 +291,7 @@ export const itCap89 = lesson({
           'Citește dialogul cu voce tare, pe rând în rolul lui Pietro și al lui Ion.',
           'Compară cu voce tare orașul tău cu Florența în zece fraze, folosind toate structurile din capitol.',
           'Apoi descrie orașul tău în cinci fraze FĂRĂ nicio comparație. Observă diferența.',
-          'Repovestește în 5 minute Crăciunul lui Pietro la Sibiu, de la invitația Doinei la ceasul lui Franco.',
+          'Repovestește în 5 minute Crăciunul lui Pietro la Sibiu, de la invitația Doinei la secretul lui Franco.',
         ],
       },
     ],
