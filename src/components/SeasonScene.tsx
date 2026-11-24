@@ -5,6 +5,7 @@ interface Props {
   season: Season
   night: boolean
   particles: boolean
+  calm?: boolean
 }
 
 interface P {
@@ -15,7 +16,7 @@ interface P {
 
 const reduceMotion = () => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
-export function SeasonScene({ season, night, particles }: Props) {
+export function SeasonScene({ season, night, particles, calm }: Props) {
   const ref = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -182,7 +183,7 @@ export function SeasonScene({ season, night, particles }: Props) {
   }, [season, night, particles])
 
   return (
-    <div className="scene" aria-hidden="true">
+    <div className={`scene${calm ? ' calm' : ''}`} aria-hidden="true">
       <div className="sky" />
       <div className={night ? 'moon' : 'sun'} />
       {night && <div className="stars" />}

@@ -79,6 +79,7 @@ export function SettingsScreen({ user, signOut }: { user: string; signOut: () =>
 
       <article className="card">
         <h3>🎨 {t('Aspect')}</h3>
+        <label className="toggle"><input type="checkbox" checked={s.calm} onChange={(e) => setSettings({ calm: e.target.checked })} /> {t('Mod simplu: fundal liniștit, fără peisaj și fără animații')}</label>
         <label className="field-label">{t('Anotimp')}</label>
         {seg('season', [['auto', `🗓️ ${t('Automat')}`], ...(Object.keys(SEASONS) as Season[]).map((k) => [k, `${SEASONS[k].emoji} ${t(SEASONS[k].name)}`] as [Season, string])])}
         <label className="field-label">{t('Zi / noapte')}</label>

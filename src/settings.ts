@@ -5,6 +5,8 @@ export interface Settings {
   season: 'auto' | Season
   time: 'auto' | 'day' | 'night'
   particles: boolean
+  /** mod simplu: fundal liniștit, fără peisaj și fără animația de la pornire */
+  calm: boolean
   intro: 'daily' | 'always' | 'never'
   rate: number
   voices: Partial<Record<string, string>>
@@ -20,6 +22,7 @@ const DEFAULTS: Settings = {
   season: 'auto',
   time: 'auto',
   particles: true,
+  calm: true,
   intro: 'daily',
   rate: 0.9,
   voices: {},

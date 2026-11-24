@@ -1,24 +1,20 @@
 import { Flag } from '../components/Flag'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { COURSES, getCourse } from '../content'
-import type { LangCode } from '../content/types'
 import { db, streakFrom } from '../db'
 import type { Go } from '../nav'
-import { SEASONS, partOfDay, type Season } from '../season'
+import { partOfDay, type Season } from '../season'
 import { Progress } from '../components/ui'
 import { buildSyllabus } from './CourseScreen'
-import { stamps } from '../journey'
 import { useState } from 'react'
 import { localGet, localSet } from '../settings'
 import { ALL_REWARDS, RewardCard, studyDays } from '../components/RewardCard'
 import { MILESTONES, StreakCard, longestStreak } from '../components/StreakCard'
-import { dayInfo } from './HolidaysScreen'
 import { t, tc, tk, tn } from '../i18n'
 
-/** Limbile din planul zilnic. Italiana se adaugă după spaniola A2. */
-const PLAN_LANGS: LangCode[] = ['es', 'ja', 'fr', 'en']
 
-export function Home({ go, season, user }: { go: Go; season: Season; user: string }) {
+/** Ecranul principal, varianta simplă: salut, „Continuă”, repetiție (doar când e ceva), limbi, explorare. */
+export function Home({ go, user }: { go: Go; season: Season; user: string }) {
   const lessons = useLiveQuery(() => db.lessons.toArray(), [], [])
   const days = useLiveQuery(() => db.days.toArray(), [], [])
   const now = Date.now()
@@ -35,9 +31,6 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
   const done = new Set(lessons.map((l) => l.id))
   const streak = streakFrom(days)
   const totalDue = Object.values(dueByLang).reduce((a, b) => a + b, 0)
-  const info = SEASONS[season]
-  const stampCount = stamps(chapters, homework).length
-  const today = dayInfo(new Date())
   const earned = studyDays(days)
   const seenKey = `poliglot.rewardSeen.${user}`
   const [seen, setSeen] = useState(() => Number(localGet(seenKey) ?? 0))
@@ -50,8 +43,30 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
   const freshMs = reached > msSeen ? reached : 0
   const closeMs = () => { localSet(msKey, String(reached)); setMsSeen(reached) }
 
+  // progresul fiecărei limbi
+  const langs = COURSES.map((c) => {
+    const all = buildSyllabus(c.lang, chapters.filter((x) => x.lang === c.lang), homework, done)
+      .flatMap((u) => u.lessons.flatMap((l) => l.items))
+    const n = all.filter((x) => x.status === 'done').length
+    const next = all.find((x) => x.status === 'progress') ?? all.find((x) => x.status === 'todo')
+    const started = all.some((x) => x.status !== 'todo')
+    return { c, all, n, next, started }
+  })
+
+  // limba la care ai lucrat ultima dată → butonul mare „Continuă”
+  const last: Record<string, number> = {}
+  lessons.forEach((l) => { last[l.lang] = Math.max(last[l.lang] ?? 0, l.completedAt ?? 0) })
+  homework.forEach((h) => { const lang = h.lessonId.split('-')[0]; last[lang] = Math.max(last[lang] ?? 0, h.at ?? 0) })
+  const cont = langs
+    .filter((x) => x.started && x.next)
+    .sort((a, b) => (last[b.c.lang] ?? 0) - (last[a.c.lang] ?? 0))[0]
+
+  const nextLabel = (x: (typeof langs)[number]) => x.next
+    ? `${x.next.lesson.chapter ? t('Cap. {n}', { n: x.next.lesson.chapter.number }) : tc(x.next.lesson.title)} · ${t('Ședința {n}', { n: x.next.n })}`
+    : t('totul e gata 🎉')
+
   return (
-    <div className="screen home">
+    <div className="screen home home-calm">
       {freshMs > 0 && (
         <div className="reward-pop" onClick={closeMs}>
           <div className="reward-pop-box" onClick={(e) => e.stopPropagation()}>
@@ -72,85 +87,74 @@ export function Home({ go, season, user }: { go: Go; season: Season; user: strin
           </div>
         </div>
       )}
+
       <section className="hero">
-        <div className="hero-season">{info.emoji} {t(info.name)} · {t(info.greeting)}</div>
         <h1 className="hero-title">{partOfDay()}, {user}!</h1>
-        <div className="hero-stats">
-          <div className="pill"><span>🔥</span><b>{streak}</b> {tn(streak, 'zi la rând', 'zile la rând')}</div>
-          <div className="pill"><span>📚</span><b>{cardCount}</b> {t('cuvinte')}</div>
-        </div>
+        <p className="hero-line">
+          🔥 <b>{streak}</b> {tn(streak, 'zi la rând', 'zile la rând')} <span className="sep">·</span> 📚 <b>{cardCount}</b> {t('cuvinte')}
+        </p>
       </section>
 
-      <button className={`card review-strip ${totalDue ? '' : 'ok'}`} onClick={() => go({ name: 'review' })} disabled={!totalDue}>
-        <span className="plan-icon">🔁</span>
-        <span className="plan-body">
-          <b>{t('Repetiție')}</b>
-          <small>{totalDue ? tn(totalDue, '{n} cuvânt de repetat azi', '{n} cuvinte de repetat azi') : t('Nimic de repetat acum ✓')}</small>
-        </span>
-        {totalDue ? <span className="due-go">▶</span> : null}
-      </button>
+      {cont && cont.next && (
+        <button className="card continue-home" onClick={() => go(cont.next!.route)}>
+          <Flag lang={cont.c.lang} size={36} />
+          <span className="continue-home-body">
+            <small>{t('Continuă')} · {t(cont.c.name)}</small>
+            <b>{nextLabel(cont)}</b>
+          </span>
+          <span className="continue-home-go">▶</span>
+        </button>
+      )}
 
-      <button className="card holiday-banner" onClick={() => go({ name: 'holidays' })}>
-        <span>{today.holiday?.emoji ?? (today.born.length ? '🎂' : '📅')}</span>
-        <span className="session-body">
-          <small className="today-label">{t('Azi în lumea limbilor tale')}</small>
-          <b>{today.holiday ? tc(today.holiday.name) : tc(today.esRo)}</b>
-          <small>{today.holiday ? tc(today.esRo) : `${t('Japonia')}: ${tc(today.jaRo)}`}{today.born.length ? ` · 🎂 ${today.born[0].city}` : ''}</small>
-        </span>
-      </button>
-
-      <h2 className="section-title">{t('Explorează')}</h2>
-      <div className="journey-tiles">
-        {([
-          ['passport', '🛂', tk('Pașaport'), tn(stampCount, '{n} ștampilă', '{n} ștampile')],
-          ['album', '🃏', tk('Album'), t('cartonașe')],
-          ['island', '🏝️', tk('Orașul tău'), t('crește cu tine')],
-          ['train', '🚂', tk('Trenul'), t('gară cu gară')],
-          ['talks', '💬', tk('Conversații'), t('cu personajele')],
-          ['pairs', '🧩', tk('Perechi'), t('joc de memorie')],
-          ['museum', '🏛️', tk('Muzeul'), t('personalităților')],
-          ['holidays', '🎎', tk('Sărbători'), t('calendar')],
-        ] as const).map(([name, emoji, title, sub]) => (
-          <button key={name} className="card journey-tile" onClick={() => go({ name })}>
-            <span className="journey-emoji">{emoji}</span>
-            <b>{t(title)}</b>
-            <small>{sub}</small>
-          </button>
-        ))}
-      </div>
+      {totalDue > 0 && (
+        <button className="card review-strip" onClick={() => go({ name: 'review' })}>
+          <span className="plan-icon">🔁</span>
+          <span className="plan-body">
+            <b>{t('Repetiție')}</b>
+            <small>{tn(totalDue, '{n} cuvânt de repetat azi', '{n} cuvinte de repetat azi')}</small>
+          </span>
+          <span className="due-go">▶</span>
+        </button>
+      )}
 
       <h2 className="section-title">{t('Limbile tale')}</h2>
-      <div className="lang-grid">
-        {COURSES.map((c) => {
-          const all = buildSyllabus(c.lang, chapters.filter((x) => x.lang === c.lang), homework, done)
-            .flatMap((u) => u.lessons.flatMap((l) => l.items))
-          const n = all.filter((x) => x.status === 'done').length
-          const next = all.find((x) => x.status === 'progress') ?? all.find((x) => x.status === 'todo')
-          const started = all.some((x) => x.status !== 'todo')
+      <div className="lang-list">
+        {langs.map((x) => {
+          const { c } = x
           const course = getCourse(c.lang)
           return (
-            <button key={c.lang} className={`card lang-card lang-${c.lang}`} onClick={() => go({ name: 'course', lang: c.lang })}>
-              <div className="lang-head">
-                <span className="lang-flag"><Flag lang={c.lang} size={44} /></span>
-                <div>
-                  <div className="lang-name">{t(c.name)}</div>
-                  <div className="lang-native">{c.native} · {c.hello}</div>
-                </div>
-                {dueByLang[c.lang] ? <span className="chip">{t('{n} de repetat', { n: dueByLang[c.lang] })}</span> : null}
-                {!PLAN_LANGS.includes(c.lang) && !dueByLang[c.lang] ? <span className="chip later">{t('după spaniolă A2')}</span> : null}
-              </div>
-              <Progress value={all.length ? n / all.length : 0} />
-              <div className="lang-foot">
-                <span className="muted">{t('{n} / {all} ședințe', { n, all: all.length })}</span>
-                <span className="lang-next">
-                  {next
-                    ? `${started ? '▶ ' : ''}${next.lesson.chapter ? t('Cap. {n}', { n: next.lesson.chapter.number }) : tc(next.lesson.title)} · ${t('Ședința {n}', { n: next.n })}`
-                    : `${t(course.name)}: ${t('totul e gata 🎉')}`}
+            <button key={c.lang} className={`card lang-card lang-row lang-${c.lang}`} onClick={() => go({ name: 'course', lang: c.lang })}>
+              <span className="lang-flag"><Flag lang={c.lang} size={32} /></span>
+              <span className="lang-row-body">
+                <span className="lang-row-top">
+                  <b className="lang-name">{t(c.name)}</b>
+                  {dueByLang[c.lang] ? <span className="chip">{t('{n} de repetat', { n: dueByLang[c.lang] })}</span> : null}
                 </span>
-              </div>
+                <Progress value={x.all.length ? x.n / x.all.length : 0} />
+                <small className="muted">{x.next ? nextLabel(x) : `${t(course.name)}: ${t('totul e gata 🎉')}`}</small>
+              </span>
             </button>
           )
         })}
+      </div>
+
+      <h2 className="section-title">{t('Explorează')}</h2>
+      <div className="explore-row">
+        {([
+          ['album', '🃏', tk('Album')],
+          ['passport', '🛂', tk('Pașaport')],
+          ['talks', '💬', tk('Conversații')],
+          ['pairs', '🧩', tk('Perechi')],
+          ['island', '🏝️', tk('Orașul tău')],
+          ['train', '🚂', tk('Trenul')],
+          ['museum', '🏛️', tk('Muzeul')],
+          ['holidays', '🎎', tk('Sărbători')],
+        ] as const).map(([name, emoji, title]) => (
+          <button key={name} className="explore-tile" onClick={() => go({ name })}>
+            <span className="explore-emoji">{emoji}</span>
+            <span>{t(title)}</span>
+          </button>
+        ))}
       </div>
     </div>
   )

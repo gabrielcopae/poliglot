@@ -62,7 +62,7 @@ export default function App() {
   const now = useNow()
   const season = settings.season === 'auto' ? seasonFor(now) : settings.season
   const night = settings.time === 'auto' ? isNight(now) : settings.time === 'night'
-  const [intro, setIntro] = useState(() => shouldShowIntro(settings.intro))
+  const [intro, setIntro] = useState(() => shouldShowIntro(settings.calm && settings.intro === 'daily' ? 'never' : settings.intro))
   const [session, setSession] = useState<Session | null>(initialSession)
   // traducerile de conținut ale limbii alese se încarcă la cerere; apoi redesenăm
   const [, setContentReady] = useState('')
@@ -104,7 +104,7 @@ export default function App() {
 
   return (
     <>
-      <SeasonScene season={season} night={night} particles={settings.particles} />
+      <SeasonScene season={season} night={night} particles={settings.particles && !settings.calm} calm={settings.calm} />
       {intro && <Intro onDone={endIntro} />}
       {session ? (
         <MainApp key={session.key} session={session} season={season} signOut={signOut} />

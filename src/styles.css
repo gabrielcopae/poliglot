@@ -1084,3 +1084,31 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .today-label { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.66rem; opacity: 0.8; }
 .accent-fix { margin-top: 4px; font-size: 1.05rem; font-weight: 600; }
 .accent-fix mark { background: #fff3; color: inherit; border-bottom: 2px solid #fff; border-radius: 3px; padding: 0 2px; }
+
+/* ——— Mod simplu (liniștit) ——— */
+.scene.calm .sun, .scene.calm .moon, .scene.calm .stars, .scene.calm .hills, .scene.calm .tree, .scene.calm .particles { display: none; }
+
+/* ——— Ecranul principal, varianta simplă ——— */
+.home-calm .hero { padding: 10px 4px 4px; }
+.home-calm .hero-title { font-size: clamp(1.6rem, 6vw, 2.1rem); margin: 0 0 4px; }
+.hero-line { margin: 0 0 16px; color: var(--dim); font-size: 0.95rem; }
+.hero-line b { color: var(--text); }
+.hero-line .sep { margin: 0 6px; }
+.continue-home { display: flex; align-items: center; gap: 14px; background: var(--accent); color: var(--on-accent); border: none; padding: 16px 18px; }
+.continue-home-body { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.continue-home-body small { opacity: 0.85; font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.continue-home-body b { font-size: 1.1rem; }
+.continue-home-go { font-size: 1.3rem; }
+.home-calm .review-strip { padding: 14px 16px; }
+.lang-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 6px; }
+.lang-row { display: flex; align-items: center; gap: 12px; padding: 12px 14px; margin: 0; box-shadow: none; }
+.lang-row-body { flex: 1; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.lang-row-top { display: flex; align-items: center; gap: 8px; }
+.lang-row-top .chip { margin-left: auto; }
+.lang-row .lang-name { font-size: 1.05rem; }
+.lang-row .progress { height: 6px; }
+.lang-row small { font-size: 0.8rem; }
+.explore-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-bottom: 8px; }
+.explore-tile { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 2px; border: none; background: transparent; border-radius: 14px; font-size: 0.75rem; font-weight: 700; color: var(--dim); }
+.explore-tile:active, .explore-tile:hover { background: var(--card); color: var(--text); }
+.explore-emoji { font-size: 1.5rem; }

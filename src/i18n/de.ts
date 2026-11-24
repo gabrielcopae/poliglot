@@ -514,5 +514,6 @@ const d: Record<string, string> = {
   '{n} zile': "{n} Tage",
   '{n} lună': "{n} Monat",
   '{n} luni': "{n} Monate",
+  'Mod simplu: fundal liniștit, fără peisaj și fără animații': "Einfacher Modus: ruhiger Hintergrund, ohne Landschaft und Animationen",
 }
 export default d
