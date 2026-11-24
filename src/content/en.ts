@@ -43,6 +43,14 @@ import { enCap41 } from './en-cap41'
 import { enCap42 } from './en-cap42'
 import { enCap43 } from './en-cap43'
 import { enCap44 } from './en-cap44'
+import { enCap45 } from './en-cap45'
+import { enCap46 } from './en-cap46'
+import { enCap47 } from './en-cap47'
+import { enCap48 } from './en-cap48'
+import { enCap49 } from './en-cap49'
+import { enCap50 } from './en-cap50'
+import { enCap51 } from './en-cap51'
+import { enCap52 } from './en-cap52'
 
 /**
  * Engleză (britanică), în formatul capitolelor (ca italiana și franceza).
@@ -62,6 +70,8 @@ const units: Unit[] = [
   { id: 'en-a2-6', title: 'A2 · Finalul A2', level: 'A2', lessons: [enCap33, enCap34, enCap35, enCap36] },
   { id: 'en-b1-1', title: 'B1 · Viață nouă', level: 'B1', lessons: [enCap37, enCap38, enCap39, enCap40] },
   { id: 'en-b1-2', title: 'B1 · Ce-ar fi dacă…', level: 'B1', lessons: [enCap41, enCap42, enCap43, enCap44] },
+  { id: 'en-b1-3', title: 'B1 · Lumea largă', level: 'B1', lessons: [enCap45, enCap46, enCap47, enCap48] },
+  { id: 'en-b1-4', title: 'B1 · Lumea muncii', level: 'B1', lessons: [enCap49, enCap50, enCap51, enCap52] },
 ]
 
 export const en: Course = {

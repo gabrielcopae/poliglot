@@ -478,8 +478,16 @@ Curs nou (engleză britanică, vocea en-GB), în formatul capitolelor, cu explic
 |  | 42 | Wish + past, wish + could / would, if only, I’d rather, wish vs hope (vizita la Kew, Vlad singur la Londra) | ✅ testat |
 |  | 43 | Condiționalul de tip 3, could / might have, wish + past perfect (scrisoarea din Canada, lanțul întâmplărilor) | ✅ testat |
 |  | 44 | Condiționalul zero și mixt, unless / as long as / provided that / even if / in case, recapitulare (Proiectul Semințelor Carpatine) | ✅ testat |
+| B1 · Lumea largă | 45 | Vorbirea indirectă: afirmații, say / tell, mutarea timpurilor (ciobanul Ilie și briceagul lui Alasdair) | ✅ testat |
+|  | 46 | Vorbirea indirectă: întrebări și ordine, asked if / where, told … not to, warn / remind (Duncan și Mihai la pescuit) | ✅ testat |
+|  | 47 | Have / get something done, get somebody to do, have somebody do (apartamentul lui Vlad, foștii elevi ai Maggiei) | ✅ testat |
+|  | 48 | Future continuous și future perfect, by the time, recapitularea unității (capsula timpului) | ✅ testat |
+| B1 · Lumea muncii | 49 | Deducții la prezent: must / can’t / might be (răsadul misterios din tava 47) | ✅ testat |
+|  | 50 | Deducții la trecut: must / can’t / might have done (rezultatele ADN, floarea oii, planșa din 1874) | ✅ testat |
+|  | 51 | Should have / could have / needn’t have, scuze (articolul din ziar, gardienii stâncilor) | ✅ testat |
+|  | 52 | Make / let / allow / be allowed to, recapitularea unității (Saxifraga pastoris) | ✅ testat |
 
-Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · 16: 357 · 17: 369 · 18: 371 · 19: 473 · 20: 502 · 21: 522 · 22: 536 · 23: 549 · 24: 572 · 25: 600 · 26: 622 · 27: 631 · 28: 658 · 29: 709 · 30: 712 · 31: 718 · 32: 736 · 33: 739 · 34: 749 · 35: 758 · 36: 759 · 37: 775 · 38: 789 · 39: 823 · 40: 841 · 41: 844 · 42: 846 · 43: 852 · **44: 861**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · 16: 357 · 17: 369 · 18: 371 · 19: 473 · 20: 502 · 21: 522 · 22: 536 · 23: 549 · 24: 572 · 25: 600 · 26: 622 · 27: 631 · 28: 658 · 29: 709 · 30: 712 · 31: 718 · 32: 736 · 33: 739 · 34: 749 · 35: 758 · 36: 759 · 37: 775 · 38: 789 · 39: 823 · 40: 841 · 41: 844 · 42: 846 · 43: 852 · 44: 861 · 45: 866 · 46: 868 · 47: 876 · 48: 882 · 49: 883 · 50: 893 · 51: 894 · **52: 895**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
