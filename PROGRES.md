@@ -442,8 +442,12 @@ Curs nou (engleză britanică, vocea en-GB), în formatul capitolelor, cu explic
 |  | 6 | Rutina zilnică, adverbele de frecvență și locul lor, how often, once / twice a week, have breakfast (porridge-ul cu sare al lui Callum, o zi cu Maggie) | ✅ testat |
 |  | 7 | Indicații, imperativul (go, turn, don’t), let’s, prepozițiile de loc, ordinalele (Irina se rătăcește în Old Town, Greyfriars Bobby) | ✅ testat |
 |  | 8 | Haine, culori, this / that / these / those, adjectivul înaintea substantivului, too / very, la magazin (paltonul verde, kiltul lui Callum) | ✅ testat |
+| A1 · Lumea din jur | 9 | Vremea, anotimpurile, lunile, data (the fifth of May), prezentul continuu vs simplu, -ing (apelul lui Vlad, patru anotimpuri pe Arthur’s Seat) | ✅ testat |
+|  | 10 | Was / were, trecutul verbelor regulate (-ed, pronunția t / d / id), yesterday / last / ago (weekendul la St Andrews, prima zi de școală a lui Maggie în 1976) | ✅ testat |
+|  | 11 | Verbele neregulate la trecut, did / didn’t, răspunsuri scurte, someone / anyone / no one (ceilidh-ul de la Inverness, grădina bunicii Ana de la Bran) | ✅ testat |
+|  | 12 | Posesivele (my, ’s, whose, mine / yours), familia extinsă, recapitularea A1 (ziua Irinei, cartea din 1932 a bunicii lui Callum) | ✅ testat |
 
-Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · **8: 224**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · **12: 271**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
