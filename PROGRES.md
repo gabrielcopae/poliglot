@@ -579,8 +579,12 @@ Curs nou (germana standard, vocea de-DE), în formatul capitolelor, cu explicaț
 |  | 30 | Propoziții relative (der / den / dem / denen / dessen), cu prepoziție, wo și was (a 80-a aniversare a lui Ludwig, împăcarea cu Thomas) | ✅ testat |
 |  | 31 | Pasivul la prezent (wird gebacken) și Präteritum (wurde gebaut), von + dativ, rețete și procese (Andrei, Erasmus la Berlin, istoria casei din 1905) | ✅ testat |
 |  | 32 | Präteritum pentru povestiri: -te și verbele neregulate frecvente, Präteritum vs Perfekt, basme (caietul lui Andrei: Cum a ajuns sora mea la Berlin) | ✅ testat |
+| A2 · Finalul A2 | 33 | Declinarea n (den Jungen, dem Kollegen), formarea cuvintelor (-ung, -heit, -keit, -schaft), cuvinte compuse (se naște micul Ludwig Andrei Weber) | ✅ testat |
+|  | 34 | Lassen (a permite, a pune pe altcineva să facă, sich … lassen), brauchen … zu (Crăciunul cu paisprezece farfurii, discul „Die Schienen”) | ✅ testat |
+|  | 35 | Marea recapitulare A2 și examenul Goethe A2: poziția verbului, cazurile, timpurile (Andrei trece examenul cu 93 de puncte) | ✅ testat |
+|  | 36 | Mulțumiri, urări, rămas-bun, je … desto, finalul A2 (botezul micului Ludwig, „Acasă sunt oamenii”) | ✅ testat |
 
-Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · 16: 746 · 17: 772 · 18: 774 · 19: 801 · 20: 840 · 21: 845 · 22: 850 · 23: 857 · 24: 871 · 25: 876 · 26: 885 · 27: 893 · 28: 917 · 29: 936 · 30: 949 · 31: 959 · **32: 971**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · 16: 746 · 17: 772 · 18: 774 · 19: 801 · 20: 840 · 21: 845 · 22: 850 · 23: 857 · 24: 871 · 25: 876 · 26: 885 · 27: 893 · 28: 917 · 29: 936 · 30: 949 · 31: 959 · 32: 971 · 33: 977 · 34: 985 · 35: 993 · **36: 1005**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
