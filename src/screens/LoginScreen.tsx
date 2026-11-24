@@ -40,7 +40,7 @@ export function LoginScreen({ onLogin }: { onLogin: (s: Session) => void }) {
       <div className="login-head">
         <div className="login-logo">📖</div>
         <h1>Poliglot</h1>
-        <p className="muted">Español · Italiano · Français · Deutsch · 日本語</p>
+        <p className="muted">English · Español · Italiano · Français · Deutsch · 日本語</p>
       </div>
 
       <form className="card login-card" onSubmit={submit}>

@@ -43,7 +43,7 @@ export function Intro({ onDone }: { onDone: () => void }) {
       </div>
       <div className="intro-logo">
         <div className="intro-name">Poliglot</div>
-        <div className="intro-tag">Español · Italiano · Français · Deutsch · 日本語</div>
+        <div className="intro-tag">English · Español · Italiano · Français · Deutsch · 日本語</div>
       </div>
       <div className="intro-skip">{t('Atinge pentru a sări')}</div>
     </div>

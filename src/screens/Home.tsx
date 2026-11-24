@@ -16,7 +16,7 @@ import { dayInfo } from './HolidaysScreen'
 import { t, tc, tk, tn } from '../i18n'
 
 /** Limbile din planul zilnic. Italiana se adaugă după spaniola A2. */
-const PLAN_LANGS: LangCode[] = ['es', 'ja', 'fr']
+const PLAN_LANGS: LangCode[] = ['es', 'ja', 'fr', 'en']
 
 export function Home({ go, season, user }: { go: Go; season: Season; user: string }) {
   const lessons = useLiveQuery(() => db.lessons.toArray(), [], [])

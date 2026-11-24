@@ -428,6 +428,21 @@ A1 e complet (1–12). Poveștile A2 sunt în src/content/fr-povesti-a2.ts. 🎓
 
 ---
 
+## 4c. Engleză 🇬🇧
+
+Curs nou (engleză britanică, vocea en-GB), în formatul capitolelor, cu explicații în română. Personaje: **Irina**, peisagistă din Brașov (28 de ani), primește un post la Grădina Botanică din Edinburgh și se mută în cartierul Stockbridge; **Mrs Maggie Fraser** (proprietăreasa, învățătoare pensionară, cu motanul **Hamish**) și nepoata ei **Ruby** (8 ani); **Callum**, librar din Inverness, cu librăria la parter; **Priya**, colegă din Leicester; **dr. Alasdair Grant**, șeful serelor, care vorbește cu copacii.
+
+| Unitate | Cap. | Conținut | Stare |
+|---|---|---|---|
+| A1 · Primii pași | 1 | Hello, TO BE cu formele scurte, pronumele (you = tu / dvs.), not, întrebările cu inversiune, a / an cu meseriile, pronunția (th, w, r britanic) | ✅ testat |
+| | 2 | Have got, vârsta cu TO BE (I’m 28), a / an / the, pluralul (children, people), there is / are, numerele 0–20 (familia lui Ruby) | ✅ testat |
+| | 3 | Prezentul simplu, -s / -es / -ies la persoana a III-a, limbile (prima zi la Grădina Botanică, dr. Grant vorbește cu copacii) | ✅ testat |
+| | 4 | Do / does la întrebări și negații, răspunsuri scurte, ora britanică (half past, quarter to), zilele cu „on”, numerele până la 100, prețurile (librăria lui Callum, săptămâna lui Hamish) | ✅ testat |
+
+Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · **4: 145**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+
+---
+
 ## 5. De făcut mai târziu (opțional)
 
 - O voce mai bună, descărcabilă (Kokoro), și recunoașterea vorbirii fără internet (Whisper).

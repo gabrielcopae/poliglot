@@ -5,6 +5,10 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { REWARDS } from './rewards-list.mjs'
 import { SESSION_PLACES } from './session-places-list.mjs'
 import { SESSION_PLACES_ES2 } from './session-places-es2.mjs'
+import { SESSION_PLACES_ES3 } from './session-places-es3.mjs'
+import { SESSION_PLACES_IT } from './session-places-it.mjs'
+import { SESSION_PLACES_FR, REWARDS_FR } from './session-places-fr.mjs'
+import { SESSION_PLACES_EN, REWARDS_EN } from './session-places-en.mjs'
 import { PEOPLE } from './people-list.mjs'
 
 // node tools/fetch-rewards.mjs          → cartonașele zilnice
@@ -14,7 +18,7 @@ const MODE = process.argv[2] ?? 'daily'
 const SESSION = MODE === 'session'
 const PEOPLE_MODE = MODE === 'people'
 // rândurile personalităților au în plus „cine a fost”; le aducem la forma [nume, loc, țară, titlu, limbă, fapt] + rol
-const LIST = PEOPLE_MODE ? PEOPLE.map(([n, place, country, role, t, l, f]) => [n, country, place, t, l, f, role]) : SESSION ? [...SESSION_PLACES, ...SESSION_PLACES_ES2] : REWARDS
+const LIST = PEOPLE_MODE ? PEOPLE.map(([n, place, country, role, t, l, f]) => [n, country, place, t, l, f, role]) : SESSION ? [...SESSION_PLACES, ...SESSION_PLACES_ES2, ...SESSION_PLACES_ES3, ...SESSION_PLACES_IT, ...SESSION_PLACES_FR, ...SESSION_PLACES_EN] : [...REWARDS, ...REWARDS_FR, ...REWARDS_EN]
 const OUT_JSON = PEOPLE_MODE ? 'src/content/people-data.json' : SESSION ? 'src/content/session-places.json' : 'src/content/rewards-data.json'
 const PREFIX = PEOPLE_MODE ? 'p-' : SESSION ? 's-' : ''
 

@@ -28,6 +28,17 @@ export function Flag({ lang, size = 36 }: { lang: string; size?: number }) {
       </svg>
     )
   }
+  if (lang === 'en') {
+    return (
+      <svg {...common} viewBox="0 0 60 40">
+        <rect width="60" height="40" fill="#012169" />
+        <path d="M0,0 60,40 M60,0 0,40" stroke="#fff" strokeWidth="8" />
+        <path d="M0,0 60,40 M60,0 0,40" stroke="#c8102e" strokeWidth="3" />
+        <path d="M30,0 v40 M0,20 h60" stroke="#fff" strokeWidth="12" />
+        <path d="M30,0 v40 M0,20 h60" stroke="#c8102e" strokeWidth="7" />
+      </svg>
+    )
+  }
   if (lang === 'de') {
     return (
       <svg {...common} viewBox="0 0 30 20">
