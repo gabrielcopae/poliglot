@@ -446,8 +446,12 @@ Curs nou (engleză britanică, vocea en-GB), în formatul capitolelor, cu explic
 |  | 10 | Was / were, trecutul verbelor regulate (-ed, pronunția t / d / id), yesterday / last / ago (weekendul la St Andrews, prima zi de școală a lui Maggie în 1976) | ✅ testat |
 |  | 11 | Verbele neregulate la trecut, did / didn’t, răspunsuri scurte, someone / anyone / no one (ceilidh-ul de la Inverness, grădina bunicii Ana de la Bran) | ✅ testat |
 |  | 12 | Posesivele (my, ’s, whose, mine / yours), familia extinsă, recapitularea A1 (ziua Irinei, cartea din 1932 a bunicii lui Callum) | ✅ testat |
+| A2 · Povești din trecut | 13 | Trecutul continuu (was / were + -ing) vs trecutul simplu, when / while (Hamish a dispărut, salvarea de pe acoperiș) | ✅ testat |
+|  | 14 | Descrierea oamenilor (What is he like? / What does he look like?), used to (Maggie și Rab) | ✅ testat |
+|  | 15 | Comparativul (-er, more, better / worse), than, as … as, much / a bit (Edinburgh vs Glasgow, scrisoarea Irinei către mama ei) | ✅ testat |
+|  | 16 | Superlativul (the -est, the most, the best), in / of, recapitularea unității (seara de quiz la pub) | ✅ testat |
 
-Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · **12: 271**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile englezești: 1: 84 · 2: 100 · 3: 121 · 4: 145 · 5: 154 · 6: 197 · 7: 218 · 8: 224 · 9: 230 · 10: 236 · 11: 264 · 12: 271 · 13: 272 · 14: 282 · 15: 290 · **16: 357**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 

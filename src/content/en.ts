@@ -11,6 +11,10 @@ import { enCap09 } from './en-cap09'
 import { enCap10 } from './en-cap10'
 import { enCap11 } from './en-cap11'
 import { enCap12 } from './en-cap12'
+import { enCap13 } from './en-cap13'
+import { enCap14 } from './en-cap14'
+import { enCap15 } from './en-cap15'
+import { enCap16 } from './en-cap16'
 
 /**
  * Engleză (britanică), în formatul capitolelor (ca italiana și franceza).
@@ -22,6 +26,7 @@ const units: Unit[] = [
   { id: 'en-a1-1', title: 'A1 · Primii pași', level: 'A1', lessons: [enCap01, enCap02, enCap03, enCap04] },
   { id: 'en-a1-2', title: 'A1 · Viața de zi cu zi', level: 'A1', lessons: [enCap05, enCap06, enCap07, enCap08] },
   { id: 'en-a1-3', title: 'A1 · Lumea din jur', level: 'A1', lessons: [enCap09, enCap10, enCap11, enCap12] },
+  { id: 'en-a2-1', title: 'A2 · Povești din trecut', level: 'A2', lessons: [enCap13, enCap14, enCap15, enCap16] },
 ]
 
 export const en: Course = {
