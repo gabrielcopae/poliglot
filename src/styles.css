@@ -1112,3 +1112,37 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .explore-tile { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 2px; border: none; background: transparent; border-radius: 14px; font-size: 0.75rem; font-weight: 700; color: var(--dim); }
 .explore-tile:active, .explore-tile:hover { background: var(--card); color: var(--text); }
 .explore-emoji { font-size: 1.5rem; }
+
+/* ——— Pagina unei limbi, varianta aerisită ——— */
+.course-calm .topbar { margin-bottom: 8px; }
+.course-summary { display: flex; flex-direction: column; gap: 6px; margin: 0 4px 16px; }
+.course-summary .progress { height: 6px; }
+.course-summary small { color: var(--dim); font-size: 0.82rem; }
+.course-calm .course-actions { margin-bottom: 12px; }
+.course-calm .course-tabs { margin: 0 0 16px; }
+.course-calm .continue-home { margin-bottom: 18px; }
+.continue-home .continue-n { background: color-mix(in srgb, var(--on-accent) 14%, transparent); color: var(--on-accent); }
+.continue-sub { font-size: 0.82rem; opacity: 0.85; }
+.course-calm .now-chapter { padding: 0 2px; margin-bottom: 14px; }
+.course-calm .syl-ch-head { padding: 4px 4px 8px; }
+.course-calm .syl-ch-head b { font-family: var(--display); font-weight: 600; font-size: 1.02rem; }
+.course-calm .syl-row { background: transparent; border-color: transparent; padding: 8px 6px; margin-bottom: 2px; }
+.course-calm .syl-row.st-progress { background: color-mix(in srgb, var(--accent) 10%, transparent); border-color: transparent; }
+.course-calm .syl-n { min-width: 30px; height: 30px; border-radius: 50%; font-size: 0.85rem; }
+.course-calm .syl-row:not(.st-progress) .session-body small { display: none; }
+.course-calm .syl-row .session-body b { font-weight: 700; }
+.course-calm details.level-card { padding: 14px 16px; margin-bottom: 10px; }
+.course-calm details.level-card > .progress { height: 6px; margin-bottom: 4px; }
+.course-calm details.syl-unit { border-top: none; margin-top: 14px; padding-top: 0; }
+.course-calm details.syl-unit > summary { padding: 4px 2px 6px; }
+.course-calm .syl-unit-title { font-size: 0.98rem; }
+.course-calm details.syl-chapter { border: none; background: none; border-radius: 0; border-bottom: 1px solid var(--line); margin: 0; padding-bottom: 0; }
+.course-calm details.syl-chapter:last-of-type { border-bottom: none; }
+.course-calm details.syl-chapter > summary { padding: 10px 4px; }
+.course-calm details.syl-chapter[open] > summary { border-bottom: none; margin-bottom: 0; }
+.course-calm details.syl-chapter[open] { padding-bottom: 8px; }
+.course-calm details.syl-chapter.ch-current > summary .ch-title b { color: var(--accent); }
+.course-calm details.syl-chapter > .syl-row { margin-left: 0; margin-right: 0; width: 100%; }
+.course-calm .syl-toc { margin-right: 6px; }
+.course-calm .exam-link { border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent); }
+.course-calm .syl-planned { font-size: 0.82rem; }
