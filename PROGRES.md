@@ -665,8 +665,10 @@ Personaje: **Nora Lindqvist**, arhitectă din Göteborg (Suedia), 32 de ani, vin
 | A1 · Primii pași | 1 | Saluturi, tu / dumneavoastră, verbul „a fi”, meseria fără articol, nu, întrebările prin intonație, alfabetul și diacriticele (ă, â/î, ș, ț, ce/ci, che/chi) | ✅ testat (+ 6 limbi) |
 |  | 2 | Familia: a avea, vârsta cu „a avea”, cele trei genuri (neutrul!), un / o / niște, numerele 0–10 (doi / două), meu / mea / mei / mele (fotografiile doamnei Pop; Ioana, Andrei, Radu; pisica Sigrid) | ✅ testat (+ 6 limbi) |
 |  | 3 | Articolul hotărât lipit (-ul, -le, -a, -ua; plural -i / -le), prezentul în -a (-ez) și -i (-esc), limbile, cum ceri o repetare (prima zi la Atelierul Rusu: Ana Mureșan, domnul Ionuț Rusu, Casa Wolphard) | ✅ testat (+ 6 limbi) |
+|  | 4 | Numerele 11–100, regula cu „de” după 20, lei și bani, vreau / aș vrea, ora (și un sfert, fără zece), zilele săptămânii cu articol (piața Mărăști, domnul Gheorghe din Florești; sarmalele de duminică) | ✅ testat (+ 6 limbi) |
+| A1 · Viața de zi cu zi | 5 | La cafenea: a bea / a mânca / a lua, pluralul (-i, -e, -uri, -ele), negația dublă (nu… nimic / nimeni / niciodată), pronumele îl / o / îi / le cu „pe” (cafeneaua „Ceasul” a domnului Grigore Bălan, papanașii, ceasul lui Vasile care nu merge) | ✅ testat (+ 6 limbi) |
 
-Poveștile românești: 1: 71 · 2: 120 · 3: 134. Fiecare capitol are o poveste mai lungă decât cel dinainte.
+Poveștile românești: 1: 71 · 2: 120 · 3: 134 · 4: 184 · 5: 200. Fiecare capitol are o poveste mai lungă decât cel dinainte.
 
 ---
 
