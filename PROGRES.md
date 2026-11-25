@@ -621,8 +621,16 @@ Curs nou (germana standard, vocea de-DE), în formatul capitolelor, cu explicaț
 |  | 72 | verbe funcționale; despărțirea de Friedrich | ✅ testat |
 |  | 73 | conectori formali; dezvelirea plăcuței | ✅ testat |
 |  | 74 | propoziții de dorință, Konj. I în urări; nunta Marei și a lui Jakob | ✅ testat |
+| B2 · Societate și opinii | 75 | Erörterung; nunta din Sibiu, cererea lui Andrei | ✅ testat |
+|  | 76 | prepoziții cu genitiv; Mara anunță sarcina la Lindenhain | ✅ testat |
+|  | 77 | adjective și substantive cu prepoziție; bursa Friedrich-Mertens | ✅ testat |
+|  | 78 | discuție și statistici; chiria, cafeneaua se mută | ✅ testat |
+| B2 · Limbă și identitate | 79 | Berlinerisch; Hotte Kaminski | ✅ testat |
+|  | 80 | als ob; se naște Ingrid Hilde | ✅ testat |
+|  | 81 | infinitiv perfect/pasiv; Verlag Winter, prefața lui Ludwig | ✅ testat |
+|  | 82 | formarea adjectivelor; 87 de ani, 37 de bilețele | ✅ testat |
 
-Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · 16: 746 · 17: 772 · 18: 774 · 19: 801 · 20: 840 · 21: 845 · 22: 850 · 23: 857 · 24: 871 · 25: 876 · 26: 885 · 27: 893 · 28: 917 · 29: 936 · 30: 949 · 31: 959 · 32: 971 · 33: 977 · 34: 985 · 35: 993 · 36: 1005 · 37: 1013 · 38: 1025 · 39: 1035 · 40: 1052 · 41: 1072 · 42: 1074 · 43: 1080 · 44: 1083 · 45: 1108 · 46: 1112 · 47: 1140 · 48: 1189 · 49: 1213 · 50: 1228 · 51: 1238 · 52: 1248 · 53: 1279 · 54: 1311 · 55: 1312 · 56: 1326 · 57: 1328 · 58: 1336 · 59: 1351 · 60: 1386 · 61: 1402 · 62: 1403 · 63: 1419 · 64: 1425 · 65: 1426 · 66: 1442 · 67: 1449 · 68: 1453 · 69: 1474 · 70: 1481 · 71: 1484 · 72: 1491 · 73: 1494 · **74: 1496**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · 16: 746 · 17: 772 · 18: 774 · 19: 801 · 20: 840 · 21: 845 · 22: 850 · 23: 857 · 24: 871 · 25: 876 · 26: 885 · 27: 893 · 28: 917 · 29: 936 · 30: 949 · 31: 959 · 32: 971 · 33: 977 · 34: 985 · 35: 993 · 36: 1005 · 37: 1013 · 38: 1025 · 39: 1035 · 40: 1052 · 41: 1072 · 42: 1074 · 43: 1080 · 44: 1083 · 45: 1108 · 46: 1112 · 47: 1140 · 48: 1189 · 49: 1213 · 50: 1228 · 51: 1238 · 52: 1248 · 53: 1279 · 54: 1311 · 55: 1312 · 56: 1326 · 57: 1328 · 58: 1336 · 59: 1351 · 60: 1386 · 61: 1402 · 62: 1403 · 63: 1419 · 64: 1425 · 65: 1426 · 66: 1442 · 67: 1449 · 68: 1453 · 69: 1474 · 70: 1481 · 71: 1484 · 72: 1491 · 73: 1494 · 74: 1496 · 75: 1502 · 76: 1524 · 77: 1527 · 78: 1528 · 79: 1539 · 80: 1542 · 81: 1556 · **82: 1579**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
