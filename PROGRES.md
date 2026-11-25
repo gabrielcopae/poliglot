@@ -599,8 +599,16 @@ Curs nou (germana standard, vocea de-DE), în formatul capitolelor, cu explicaț
 |  | 50 | ohne / statt … zu, ohne / statt dass; oferta din Sibiu | ✅ testat |
 |  | 51 | verbe cu prefix (ent-, er-, ver-, zer-, um-, über-); cutia de tablă din 1989 | ✅ testat |
 |  | 52 | ordinea în Mittelfeld (TeKaMoLo, D/A, nicht); Crăciun la Sibiu | ✅ testat |
+| B1 · Scrisori și argumente | 53 | scrisoarea formală și reclamația; Ludwig îi scrie lui Susanne | ✅ testat |
+|  | 54 | argumentare (einerseits/andererseits, zwar/aber); mutarea la parter | ✅ testat |
+|  | 55 | obwohl / trotzdem / auch wenn; adunarea despre castani | ✅ testat |
+|  | 56 | relative cu was / wer / wo(r)-; concertul lui Mirko | ✅ testat |
+| B1 · Lumea muncii | 57 | candidatura, CV, stil nominal; Andrei aplică la BVG | ✅ testat |
+|  | 58 | interviul, întrebări indirecte (ob, W-Fragen); soneria de alamă | ✅ testat |
+|  | 59 | prezentarea și graficele; Ludwig din nou în tramvai | ✅ testat |
+|  | 60 | recapitulare conectori B1; cei optzeci de inele | ✅ testat |
 
-Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · 16: 746 · 17: 772 · 18: 774 · 19: 801 · 20: 840 · 21: 845 · 22: 850 · 23: 857 · 24: 871 · 25: 876 · 26: 885 · 27: 893 · 28: 917 · 29: 936 · 30: 949 · 31: 959 · 32: 971 · 33: 977 · 34: 985 · 35: 993 · 36: 1005 · 37: 1013 · 38: 1025 · 39: 1035 · 40: 1052 · 41: 1072 · 42: 1074 · 43: 1080 · 44: 1083 · 45: 1108 · 46: 1112 · 47: 1140 · 48: 1189 · 49: 1213 · 50: 1228 · 51: 1238 · **52: 1248**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · 16: 746 · 17: 772 · 18: 774 · 19: 801 · 20: 840 · 21: 845 · 22: 850 · 23: 857 · 24: 871 · 25: 876 · 26: 885 · 27: 893 · 28: 917 · 29: 936 · 30: 949 · 31: 959 · 32: 971 · 33: 977 · 34: 985 · 35: 993 · 36: 1005 · 37: 1013 · 38: 1025 · 39: 1035 · 40: 1052 · 41: 1072 · 42: 1074 · 43: 1080 · 44: 1083 · 45: 1108 · 46: 1112 · 47: 1140 · 48: 1189 · 49: 1213 · 50: 1228 · 51: 1238 · 52: 1248 · 53: 1279 · 54: 1311 · 55: 1312 · 56: 1326 · 57: 1328 · 58: 1336 · 59: 1351 · **60: 1386**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
