@@ -670,8 +670,9 @@ Personaje: **Nora Lindqvist**, arhitectă din Göteborg (Suedia), 32 de ani, vin
 |  | 6 | Verbele reflexive (mă trezesc, mă spăl, mă culc), verbele în -e (a merge, a face, a scrie), a putea / a trebui, conjunctivul cu „să” și persoana a 3-a (să meargă, să fie, să aibă), cât de des (dimineața la ușa băii; ziua perfectă a lui Mițu) | ✅ testat (+ 6 limbi) |
 |  | 7 | Indicații în oraș, imperativul (mergi!, vino!, fă!, mergeți!), imperativul negativ (nu merge!, nu vă grăbiți!), pronumele după imperativ (ia-o!), prepozițiile de loc și genitivul după „în fața” (drumul Norei spre Filarmonică, trandafirii albi pentru Radu) | ✅ testat (+ 6 limbi) |
 |  | 8 | Locuința și mobila, acordul adjectivului (4 forme; neutrul), culorile, demonstrativele (acest / acel, -a după substantiv, ăsta / asta), toate posesivele, îmi place / îmi plac (talciocul din Mărăști: raftul verde, lampa galbenă, covorul roșu din Maramureș) | ✅ testat (+ 6 limbi) |
+| A1 · Timp liber și sănătate | 9 | Vremea (e cald, plouă, mi-e frig), anotimpurile și lunile, comparația (mai… decât, la fel de… ca, cel mai), a ști vs a putea, propuneri cu „hai să” (planul pentru Cheile Turzii; Mițu în rucsac) | ✅ testat (+ 6 limbi) |
 
-Poveștile românești: 1: 71 · 2: 120 · 3: 134 · 4: 184 · 5: 200 · 6: 216 · 7: 270 · 8: 301. Fiecare capitol are o poveste mai lungă decât cel dinainte.
+Poveștile românești: 1: 71 · 2: 120 · 3: 134 · 4: 184 · 5: 200 · 6: 216 · 7: 270 · 8: 301 · 9: 310. Fiecare capitol are o poveste mai lungă decât cel dinainte.
 
 ---
 
