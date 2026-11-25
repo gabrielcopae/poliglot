@@ -672,8 +672,9 @@ Personaje: **Nora Lindqvist**, arhitectă din Göteborg (Suedia), 32 de ani, vin
 |  | 8 | Locuința și mobila, acordul adjectivului (4 forme; neutrul), culorile, demonstrativele (acest / acel, -a după substantiv, ăsta / asta), toate posesivele, îmi place / îmi plac (talciocul din Mărăști: raftul verde, lampa galbenă, covorul roșu din Maramureș) | ✅ testat (+ 6 limbi) |
 | A1 · Timp liber și sănătate | 9 | Vremea (e cald, plouă, mi-e frig), anotimpurile și lunile, comparația (mai… decât, la fel de… ca, cel mai), a ști vs a putea, propuneri cu „hai să” (planul pentru Cheile Turzii; Mițu în rucsac) | ✅ testat (+ 6 limbi) |
 |  | 10 | Hainele, a purta, în magazin (mărime, a proba, îmi vine bine), genitivul (-ului, -ei / -ii, -lor, lui + nume), al / a / ai / ale, dativul și pronumele îmi / îți / îi / le (paltonul verde al Norei; fularul mov al bunicii Anei; ia românească) | ✅ testat (+ 6 limbi) |
+|  | 11 | Perfectul compus (am / ai / a / am / ați / au + participiu), participiile (-at, -ut, -it, -ât; fost, făcut, mers, spus, scris), negația (n-am), reflexivele la trecut (m-am trezit), expresii de timp (ieri, acum doi ani, deja, încă nu) (povestea excursiei; fularul roșu dat lui Radu; fluierul bunicului Vasile) | ✅ testat (+ 6 limbi) |
 
-Poveștile românești: 1: 71 · 2: 120 · 3: 134 · 4: 184 · 5: 200 · 6: 216 · 7: 270 · 8: 301 · 9: 310 · 10: 333. Fiecare capitol are o poveste mai lungă decât cel dinainte.
+Poveștile românești: 1: 71 · 2: 120 · 3: 134 · 4: 184 · 5: 200 · 6: 216 · 7: 270 · 8: 301 · 9: 310 · 10: 333 · 11: 338. Fiecare capitol are o poveste mai lungă decât cel dinainte.
 
 ---
 

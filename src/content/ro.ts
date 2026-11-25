@@ -9,12 +9,13 @@ import { roCap07 } from './ro-cap07'
 import { roCap08 } from './ro-cap08'
 import { roCap09 } from './ro-cap09'
 import { roCap10 } from './ro-cap10'
+import { roCap11 } from './ro-cap11'
 
 // Română: Nora Lindqvist, arhitectă din Göteborg, la Cluj-Napoca (strada Horea), în casa doamnei Elisabeta Pop.
 const units: Unit[] = [
   { id: 'ro-a1-1', title: 'A1 · Primii pași', level: 'A1', lessons: [roCap01, roCap02, roCap03, roCap04] },
   { id: 'ro-a1-2', title: 'A1 · Viața de zi cu zi', level: 'A1', lessons: [roCap05, roCap06, roCap07, roCap08] },
-  { id: 'ro-a1-3', title: 'A1 · Timp liber și sănătate', level: 'A1', lessons: [roCap09, roCap10] },
+  { id: 'ro-a1-3', title: 'A1 · Timp liber și sănătate', level: 'A1', lessons: [roCap09, roCap10, roCap11] },
 ]
 
 export const ro: Course = {
