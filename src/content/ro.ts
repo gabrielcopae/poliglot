@@ -1,9 +1,11 @@
 import type { Course, Unit } from './types'
 import { roCap01 } from './ro-cap01'
+import { roCap02 } from './ro-cap02'
+import { roCap03 } from './ro-cap03'
 
 // Română: Nora Lindqvist, arhitectă din Göteborg, la Cluj-Napoca (strada Horea), în casa doamnei Elisabeta Pop.
 const units: Unit[] = [
-  { id: 'ro-a1-1', title: 'A1 · Primii pași', level: 'A1', lessons: [roCap01] },
+  { id: 'ro-a1-1', title: 'A1 · Primii pași', level: 'A1', lessons: [roCap01, roCap02, roCap03] },
 ]
 
 export const ro: Course = {
