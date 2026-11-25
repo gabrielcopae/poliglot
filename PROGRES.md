@@ -654,6 +654,20 @@ Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7
 
 ---
 
+## 4e. Română 🇷🇴
+
+Curs nou pentru străini care învață limba română (vocea ro-RO), în formatul capitolelor. Explicațiile sunt scrise în română și **traduse integral în toate limbile interfeței** (engleză, spaniolă, franceză, italiană, germană, japoneză): fișierele src/i18n/content/<limbă>/ro-capNN.json. Dialogurile, poveștile și exemplele sunt în română corectă, cu toate diacriticele (ș și ț cu virgulă). În conținut, un text care începe cu „=” (ajutorul K() din src/content/ro-help.ts) e formă românească de exersat și nu se traduce.
+
+Personaje: **Nora Lindqvist**, arhitectă din Göteborg (Suedia), 32 de ani, vine un an la Cluj-Napoca pentru restaurarea unor clădiri vechi și închiriază o cameră pe strada Horea; **doamna Elisabeta Pop** (proprietăreasa, 74 de ani, văduva lui Vasile, profesoară de română pensionară, vorbăreață), cu motanul **Mițu** (8 ani); nepotul ei, **Radu**, violonist într-o orchestră.
+
+| Unitate | Cap. | Conținut | Stare |
+|---|---|---|---|
+| A1 · Primii pași | 1 | Saluturi, tu / dumneavoastră, verbul „a fi”, meseria fără articol, nu, întrebările prin intonație, alfabetul și diacriticele (ă, â/î, ș, ț, ce/ci, che/chi) | ✅ testat (+ 6 limbi) |
+
+Poveștile românești: 1: 71. Fiecare capitol are o poveste mai lungă decât cel dinainte.
+
+---
+
 ## 5. De făcut mai târziu (opțional)
 
 - O voce mai bună, descărcabilă (Kokoro), și recunoașterea vorbirii fără internet (Whisper).

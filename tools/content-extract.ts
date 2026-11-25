@@ -19,11 +19,18 @@ type Groups = Record<string, string[]>
 export function collect(): Groups {
   const groups: Groups = {}
   const seen = new Set<string>()
+  const seenOwn: Record<string, Set<string>> = {}
   const add = (group: string, s?: string) => {
-    if (!s || !s.trim() || seen.has(s)) return
+    if (!s || !s.trim()) return
+    // cursul de română își ține toate textele (traduse complet în fiecare limbă); restul: fiecare text o singură dată
+    const own = group.startsWith('ro-')
+    const set = own ? (seenOwn[group] ??= new Set<string>()) : seen
+    if (set.has(s)) return
+    // „=…” = text în limba română studiată (cursul de română): nu se traduce
+    if (s.startsWith('=')) return
     // textele fără nicio literă latină (numai japoneză, cifre, semne) nu au ce traduce
     if (!/[a-zA-ZăâîșțĂÂÎȘȚ]/.test(s)) return
-    seen.add(s)
+    set.add(s)
     ;(groups[group] ??= []).push(s)
   }
   const drills = (g: string, ds?: Drill[]) => ds?.forEach((d) => {

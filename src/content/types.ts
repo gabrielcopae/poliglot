@@ -1,4 +1,4 @@
-export type LangCode = 'es' | 'it' | 'ja' | 'fr' | 'en' | 'de'
+export type LangCode = 'es' | 'it' | 'ja' | 'fr' | 'en' | 'de' | 'ro'
 
 export interface Word {
   id: string

@@ -268,6 +268,7 @@ const SPECIAL: Record<string, string[]> = {
   ja: [],
   en: ['’'],
   de: ['ä', 'ö', 'ü', 'ß', 'Ä', 'Ö', 'Ü'],
+  ro: ['ă', 'â', 'î', 'ș', 'ț', 'Ă', 'Â', 'Î', 'Ș', 'Ț'],
 }
 
 function TypeEx({ ex, course, locked, onAnswer }: { ex: Extract<Exercise, { kind: 'type' }>; course: Course; locked: boolean; onAnswer: (v: string) => void }) {

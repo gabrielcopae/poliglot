@@ -22,6 +22,8 @@ export function today(d = new Date()): string {
 /** Normalizează un răspuns: litere mici, fără punctuație; opțional fără accente. */
 export function norm(s: string, keepAccents = false): string {
   let x = s.toLowerCase().normalize('NFC')
+    // româna: ş/ţ cu sedilă (tastaturi vechi) = ș/ț cu virgulă
+    .replace(/ş/g, 'ș').replace(/ţ/g, 'ț')
     .replace(/[¿¡?!.,;:、。「」『』"'‘’…()\-—]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()

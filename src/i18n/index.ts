@@ -79,8 +79,12 @@ function loadOne(lang: UiLang): Promise<void> {
   })())
 }
 
-/** Traduce un text din conținut (cheia: textul în română). Fără traducere: engleza, apoi româna. */
+/**
+ * Traduce un text din conținut (cheia: textul în română). Fără traducere: engleza, apoi româna.
+ * Un text care începe cu „=” e chiar limba română studiată (cursul de română): rămâne neschimbat, fără „=”.
+ */
 export function tc(ro: string): string {
+  if (ro.startsWith('=')) return ro.slice(1)
   const lang = uiLang()
   return lang === 'ro' ? ro : content[lang]?.[ro] ?? content.en?.[ro] ?? ro
 }

@@ -70,6 +70,7 @@ const d: Record<string, string> = {
   'Italiană': "Italiano",
   'Franceză': "Francese",
   'Germană': "Tedesco",
+  'Română': "Rumeno",
   'Engleză': "Inglese",
   'România': "Romania",
   'Cartonașe speciale pentru serie': "Carte speciali per la serie",

@@ -47,8 +47,8 @@ export function canSpeak() {
 }
 
 // Numele vocilor nu spun direct genul; ghicim după prenumele folosite de Windows, Android și Apple.
-const FEMALE = /elvira|helena|laura|sabina|dalia|ximena|paloma|elsa|isabella|isabela|monica|mónica|paulina|marisol|angélica|angelica|francisca|soledad|lucia|lucía|alice|federica|paola|nanami|haruka|ayumi|mayu|sayaka|kyoko|o-ren|\bflo\b|sandy|shelley|grandma|sonia|libby|maisie|hazel|susan|zira|aria|jenny|serena|kate|martha|fiona|moira|karen|samantha|tessa|katja|hedda|amala|seraphina|louisa|katja|hedda|amala|seraphina|louisa|female|mujer|donna|femenin|女性/i
-const MALE = /alvaro|álvaro|pablo|raul|raúl|jorge|juan|diego|jaime|carlos|benigno|cosimo|giuseppe|luca|keita|ichiro|daichi|naoki|otoya|hattori|\beddy\b|\breed\b|rocko|grandpa|ryan|thomas|george|daniel|\bguy\b|davis|arthur|oliver|james|\bfred\b|\btom\b|aaron|conrad|killian|stefan|markus|florian|\bmale|hombre|uomo|masculin|男性/i
+const FEMALE = /elvira|helena|laura|sabina|dalia|ximena|paloma|elsa|isabella|isabela|monica|mónica|paulina|marisol|angélica|angelica|francisca|soledad|lucia|lucía|alice|federica|paola|nanami|haruka|ayumi|mayu|sayaka|kyoko|o-ren|\bflo\b|sandy|shelley|grandma|sonia|libby|maisie|hazel|susan|zira|aria|jenny|serena|kate|martha|fiona|moira|karen|samantha|tessa|katja|hedda|amala|seraphina|louisa|katja|hedda|amala|seraphina|louisa|alina|ioana|female|mujer|donna|femenin|女性/i
+const MALE = /alvaro|álvaro|pablo|raul|raúl|jorge|juan|diego|jaime|carlos|benigno|cosimo|giuseppe|luca|keita|ichiro|daichi|naoki|otoya|hattori|\beddy\b|\breed\b|rocko|grandpa|ryan|thomas|george|daniel|\bguy\b|davis|arthur|oliver|james|\bfred\b|\btom\b|aaron|conrad|killian|stefan|markus|florian|\bemil\b|andrei|\bmale|hombre|uomo|masculin|男性/i
 
 /** Identificator stabil: pe iPhone, mai multe voci pot avea același voiceURI. */
 export function voiceId(v: SpeechSynthesisVoice) {
@@ -141,7 +141,7 @@ function speakTTS(text: string, lang: string, locale: string, rate?: number, opt
 }
 
 // indexurile vocilor înregistrate, încărcate din timp (sunt mici)
-;['es', 'ja', 'it', 'fr', 'en', 'de'].forEach((l) => { loadAudioIndex(l) })
+;['es', 'ja', 'it', 'fr', 'en', 'de', 'ro'].forEach((l) => { loadAudioIndex(l) })
 
 // iPhone: prima atingere din aplicație „deblochează” vorbirea, cu o replică goală.
 if (synth && IOS) {

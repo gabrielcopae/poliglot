@@ -4,10 +4,11 @@ import { ja } from './ja'
 import { fr } from './fr'
 import { en } from './en'
 import { de } from './de'
+import { ro } from './ro'
 import type { Course, LangCode, Lesson, Word } from './types'
 
 // Ordinea de studiu: spaniola și japoneza întâi, italiana după spaniola A2, apoi franceza.
-export const COURSES: Course[] = [es, ja, it, fr, en, de]
+export const COURSES: Course[] = [es, ja, it, fr, en, de, ro]
 
 export function getCourse(lang: string): Course {
   return COURSES.find((c) => c.lang === lang) ?? es

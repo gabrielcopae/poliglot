@@ -48,6 +48,15 @@ export function Flag({ lang, size = 36 }: { lang: string; size?: number }) {
       </svg>
     )
   }
+  if (lang === 'ro') {
+    return (
+      <svg {...common} viewBox="0 0 30 20">
+        <rect width="10" height="20" fill="#002b7f" />
+        <rect x="10" width="10" height="20" fill="#fcd116" />
+        <rect x="20" width="10" height="20" fill="#ce1126" />
+      </svg>
+    )
+  }
   if (lang === 'ja') {
     return (
       <svg {...common} viewBox="0 0 30 20">

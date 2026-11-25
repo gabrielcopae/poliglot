@@ -70,6 +70,7 @@ const d: Record<string, string> = {
   'Italiană': "イタリア語",
   'Franceză': "フランス語",
   'Germană': "ドイツ語",
+  'Română': "ルーマニア語",
   'Engleză': "英語",
   'România': "ルーマニア",
   'Cartonașe speciale pentru serie': "連続記録の特別カード",

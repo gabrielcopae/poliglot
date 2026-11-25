@@ -1,0 +1,25 @@
+import type { Course, Unit } from './types'
+import { roCap01 } from './ro-cap01'
+
+// Română: Nora Lindqvist, arhitectă din Göteborg, la Cluj-Napoca (strada Horea), în casa doamnei Elisabeta Pop.
+const units: Unit[] = [
+  { id: 'ro-a1-1', title: 'A1 · Primii pași', level: 'A1', lessons: [roCap01] },
+]
+
+export const ro: Course = {
+  lang: 'ro',
+  name: 'Română',
+  native: 'Română',
+  flag: '🇷🇴',
+  locale: 'ro-RO',
+  hello: 'Bună',
+  exam: 'Certificat de competență lingvistică B2 (Institutul Limbii Române)',
+  plan: [
+    { level: 'A1', title: 'Începător', chapters: 12 },
+    { level: 'A2', title: 'Elementar', chapters: 24 },
+    { level: 'B1', title: 'Intermediar', chapters: 30 },
+    { level: 'B2', title: 'Intermediar avansat', chapters: 36 },
+    { level: 'C1', title: 'Avansat (profesionist)', chapters: 44 },
+  ],
+  units,
+}

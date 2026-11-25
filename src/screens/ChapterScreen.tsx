@@ -657,7 +657,7 @@ function ChecklistTask({ steps }: { steps: string[] }) {
   )
 }
 
-const SPECIAL_CHARS: Record<string, string[]> = { es: ['á', 'é', 'í', 'ó', 'ú', 'ñ', '¿', '¡'], it: ['à', 'è', 'é', 'ì', 'ò', 'ù'], fr: ['é', 'è', 'ê', 'à', 'â', 'ç', 'ô', 'î', 'û', 'ù', 'ë', 'œ', '’'], ja: [], en: ['’'], de: ['ä', 'ö', 'ü', 'ß', 'Ä', 'Ö', 'Ü'] }
+const SPECIAL_CHARS: Record<string, string[]> = { es: ['á', 'é', 'í', 'ó', 'ú', 'ñ', '¿', '¡'], it: ['à', 'è', 'é', 'ì', 'ò', 'ù'], fr: ['é', 'è', 'ê', 'à', 'â', 'ç', 'ô', 'î', 'û', 'ù', 'ë', 'œ', '’'], ja: [], en: ['’'], de: ['ä', 'ö', 'ü', 'ß', 'Ä', 'Ö', 'Ü'], ro: ['ă', 'â', 'î', 'ș', 'ț', 'Ă', 'Â', 'Î', 'Ș', 'Ț'] }
 
 function WritingTask({ task, course, row, save, close }: {
   task: Extract<Homework, { kind: 'writing' }>; course: Course; row?: HomeworkRow; save: (p: Partial<HomeworkRow>) => Promise<void>; close: () => void
