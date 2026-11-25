@@ -678,10 +678,11 @@ Personaje: **Nora Lindqvist**, arhitectă din Göteborg (Suedia), 32 de ani, vin
 | A2 · Amintiri | 14 | Imperfect vs perfect compus, povestea pendulei | ✅ testat (+ 6 limbi) |
 | A2 · Amintiri | 15 | Pronumele relative (care, pe care, căruia), caietul lui Vasile | ✅ testat (+ 6 limbi) |
 | A2 · Amintiri | 16 | Numere mari, date, secole, istoria Clujului; pendula pornește | ✅ testat (+ 6 limbi) |
+| A2 · Planuri și călătorii | 17 | Viitorul (voi / o să / am să), planuri pentru Sibiu, ghicitul în cafea | ✅ testat (+ 6 limbi) |
 
 A1 COMPLET (capitolele 1–12).
 
-Poveștile românești: 1: 71 · 2: 120 · 3: 134 · 4: 184 · 5: 200 · 6: 216 · 7: 270 · 8: 301 · 9: 310 · 10: 333 · 11: 338 · 12: 414 · 13: 437 · 14: 459 · 15: 466 · 16: 503. Fiecare capitol are o poveste mai lungă decât cel dinainte.
+Poveștile românești: 1: 71 · 2: 120 · 3: 134 · 4: 184 · 5: 200 · 6: 216 · 7: 270 · 8: 301 · 9: 310 · 10: 333 · 11: 338 · 12: 414 · 13: 437 · 14: 459 · 15: 466 · 16: 503 · 17: 514. Fiecare capitol are o poveste mai lungă decât cel dinainte.
 
 ---
 
