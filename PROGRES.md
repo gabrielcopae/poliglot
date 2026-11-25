@@ -641,8 +641,16 @@ Curs nou (germana standard, vocea de-DE), în formatul capitolelor, cu explicaț
 |  | 92 | limbaj tehnic, alternative la pasiv; examenul oral al lui Leo | ✅ testat |
 |  | 93 | modale subiective; nunta din Sibiu, Hotte fără bilet | ✅ testat |
 |  | 94 | feedback, recapitulare; cursa de examen, ceașca de cafea | ✅ testat |
+| B2 · Examenul și finalul | 95 | Goethe B2 Lesen; Elena nu mai citește fiecare cuvânt | ✅ testat |
+|  | 96 | Goethe B2 Hören; melodia, nu fiecare vioară | ✅ testat |
+|  | 97 | Goethe B2 Schreiben; scrisoarea către doamna Petersen | ✅ testat |
+|  | 98 | Goethe B2 Sprechen; ziua examenului, Yusuf din Alep | ✅ testat |
+|  | 99 | recapitulare I: verbele; ultima dorință a lui Grete | ✅ testat |
+|  | 100 | recapitulare II: nume și propoziții; certificatul Elenei, logodna lui Leo | ✅ testat |
+|  | 101 | recapitulare III: comunicare; bursa Friedrich și Margarete, Ben | ✅ testat |
+|  | 102 | final B2, drumul spre C1; prima cursă singur a lui Leo | ✅ testat |
 
-Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · 16: 746 · 17: 772 · 18: 774 · 19: 801 · 20: 840 · 21: 845 · 22: 850 · 23: 857 · 24: 871 · 25: 876 · 26: 885 · 27: 893 · 28: 917 · 29: 936 · 30: 949 · 31: 959 · 32: 971 · 33: 977 · 34: 985 · 35: 993 · 36: 1005 · 37: 1013 · 38: 1025 · 39: 1035 · 40: 1052 · 41: 1072 · 42: 1074 · 43: 1080 · 44: 1083 · 45: 1108 · 46: 1112 · 47: 1140 · 48: 1189 · 49: 1213 · 50: 1228 · 51: 1238 · 52: 1248 · 53: 1279 · 54: 1311 · 55: 1312 · 56: 1326 · 57: 1328 · 58: 1336 · 59: 1351 · 60: 1386 · 61: 1402 · 62: 1403 · 63: 1419 · 64: 1425 · 65: 1426 · 66: 1442 · 67: 1449 · 68: 1453 · 69: 1474 · 70: 1481 · 71: 1484 · 72: 1491 · 73: 1494 · 74: 1496 · 75: 1502 · 76: 1524 · 77: 1527 · 78: 1528 · 79: 1539 · 80: 1542 · 81: 1556 · 82: 1578 · 83: 1602 · 84: 1642 · 85: 1655 · 86: 1664 · 87: 1667 · 88: 1697 · 89: 1706 · 90: 1732 · 91: 1755 · 92: 1760 · 93: 1808 · **94: 1829**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · 16: 746 · 17: 772 · 18: 774 · 19: 801 · 20: 840 · 21: 845 · 22: 850 · 23: 857 · 24: 871 · 25: 876 · 26: 885 · 27: 893 · 28: 917 · 29: 936 · 30: 949 · 31: 959 · 32: 971 · 33: 977 · 34: 985 · 35: 993 · 36: 1005 · 37: 1013 · 38: 1025 · 39: 1035 · 40: 1052 · 41: 1072 · 42: 1074 · 43: 1080 · 44: 1083 · 45: 1108 · 46: 1112 · 47: 1140 · 48: 1189 · 49: 1213 · 50: 1228 · 51: 1238 · 52: 1248 · 53: 1279 · 54: 1311 · 55: 1312 · 56: 1326 · 57: 1328 · 58: 1336 · 59: 1351 · 60: 1386 · 61: 1402 · 62: 1403 · 63: 1419 · 64: 1425 · 65: 1426 · 66: 1442 · 67: 1449 · 68: 1453 · 69: 1474 · 70: 1481 · 71: 1484 · 72: 1491 · 73: 1494 · 74: 1496 · 75: 1502 · 76: 1524 · 77: 1527 · 78: 1528 · 79: 1539 · 80: 1542 · 81: 1556 · 82: 1578 · 83: 1602 · 84: 1642 · 85: 1655 · 86: 1664 · 87: 1667 · 88: 1697 · 89: 1706 · 90: 1732 · 91: 1755 · 92: 1760 · 93: 1808 · 94: 1829 · 95: 1830 · 96: 1839 · 97: 1840 · 98: 1853 · 99: 1856 · 100: 1877 · 101: 1925 · **102: 1959**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
