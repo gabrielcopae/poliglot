@@ -667,8 +667,10 @@ Personaje: **Nora Lindqvist**, arhitectă din Göteborg (Suedia), 32 de ani, vin
 |  | 3 | Articolul hotărât lipit (-ul, -le, -a, -ua; plural -i / -le), prezentul în -a (-ez) și -i (-esc), limbile, cum ceri o repetare (prima zi la Atelierul Rusu: Ana Mureșan, domnul Ionuț Rusu, Casa Wolphard) | ✅ testat (+ 6 limbi) |
 |  | 4 | Numerele 11–100, regula cu „de” după 20, lei și bani, vreau / aș vrea, ora (și un sfert, fără zece), zilele săptămânii cu articol (piața Mărăști, domnul Gheorghe din Florești; sarmalele de duminică) | ✅ testat (+ 6 limbi) |
 | A1 · Viața de zi cu zi | 5 | La cafenea: a bea / a mânca / a lua, pluralul (-i, -e, -uri, -ele), negația dublă (nu… nimic / nimeni / niciodată), pronumele îl / o / îi / le cu „pe” (cafeneaua „Ceasul” a domnului Grigore Bălan, papanașii, ceasul lui Vasile care nu merge) | ✅ testat (+ 6 limbi) |
+|  | 6 | Verbele reflexive (mă trezesc, mă spăl, mă culc), verbele în -e (a merge, a face, a scrie), a putea / a trebui, conjunctivul cu „să” și persoana a 3-a (să meargă, să fie, să aibă), cât de des (dimineața la ușa băii; ziua perfectă a lui Mițu) | ✅ testat (+ 6 limbi) |
+|  | 7 | Indicații în oraș, imperativul (mergi!, vino!, fă!, mergeți!), imperativul negativ (nu merge!, nu vă grăbiți!), pronumele după imperativ (ia-o!), prepozițiile de loc și genitivul după „în fața” (drumul Norei spre Filarmonică, trandafirii albi pentru Radu) | ✅ testat (+ 6 limbi) |
 
-Poveștile românești: 1: 71 · 2: 120 · 3: 134 · 4: 184 · 5: 200. Fiecare capitol are o poveste mai lungă decât cel dinainte.
+Poveștile românești: 1: 71 · 2: 120 · 3: 134 · 4: 184 · 5: 200 · 6: 216 · 7: 270. Fiecare capitol are o poveste mai lungă decât cel dinainte.
 
 ---
 
