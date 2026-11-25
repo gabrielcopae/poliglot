@@ -613,8 +613,16 @@ Curs nou (germana standard, vocea de-DE), în formatul capitolelor, cu explicaț
 |  | 64 | declinarea adjectivului; Grete împlinește 97 de ani | ✅ testat |
 |  | 65 | pregătire Goethe B1; examenul lui Ayşe, noua stație | ✅ testat |
 |  | 66 | mare recapitulare B1; Jakob o cere pe Mara de soție | ✅ testat |
+| B2 · Nuanțe și stil | 67 | stil nominal ↔ verbal; prima zi de ucenicie a lui Leo | ✅ testat |
+|  | 68 | atribute participiale extinse; articolul despre lecțiile lui Grete | ✅ testat |
+|  | 69 | vorbirea indirectă în presă; Ingrid-Brandt-Platz votat | ✅ testat |
+|  | 70 | particule modale; metronomul domnului Wendland | ✅ testat |
+| B2 · Acte și ceremonii | 71 | înlocuitorii pasivului; actele pentru nuntă | ✅ testat |
+|  | 72 | verbe funcționale; despărțirea de Friedrich | ✅ testat |
+|  | 73 | conectori formali; dezvelirea plăcuței | ✅ testat |
+|  | 74 | propoziții de dorință, Konj. I în urări; nunta Marei și a lui Jakob | ✅ testat |
 
-Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · 16: 746 · 17: 772 · 18: 774 · 19: 801 · 20: 840 · 21: 845 · 22: 850 · 23: 857 · 24: 871 · 25: 876 · 26: 885 · 27: 893 · 28: 917 · 29: 936 · 30: 949 · 31: 959 · 32: 971 · 33: 977 · 34: 985 · 35: 993 · 36: 1005 · 37: 1013 · 38: 1025 · 39: 1035 · 40: 1052 · 41: 1072 · 42: 1074 · 43: 1080 · 44: 1083 · 45: 1108 · 46: 1112 · 47: 1140 · 48: 1189 · 49: 1213 · 50: 1228 · 51: 1238 · 52: 1248 · 53: 1279 · 54: 1311 · 55: 1312 · 56: 1326 · 57: 1328 · 58: 1336 · 59: 1351 · 60: 1386 · 61: 1402 · 62: 1403 · 63: 1419 · 64: 1425 · 65: 1426 · **66: 1442**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
+Poveștile germane: 1: 80 · 2: 121 · 3: 132 · 4: 186 · 5: 204 · 6: 225 · 7: 252 · 8: 317 · 9: 381 · 10: 410 · 11: 419 · 12: 528 · 13: 662 · 14: 692 · 15: 703 · 16: 746 · 17: 772 · 18: 774 · 19: 801 · 20: 840 · 21: 845 · 22: 850 · 23: 857 · 24: 871 · 25: 876 · 26: 885 · 27: 893 · 28: 917 · 29: 936 · 30: 949 · 31: 959 · 32: 971 · 33: 977 · 34: 985 · 35: 993 · 36: 1005 · 37: 1013 · 38: 1025 · 39: 1035 · 40: 1052 · 41: 1072 · 42: 1074 · 43: 1080 · 44: 1083 · 45: 1108 · 46: 1112 · 47: 1140 · 48: 1189 · 49: 1213 · 50: 1228 · 51: 1238 · 52: 1248 · 53: 1279 · 54: 1311 · 55: 1312 · 56: 1326 · 57: 1328 · 58: 1336 · 59: 1351 · 60: 1386 · 61: 1402 · 62: 1403 · 63: 1419 · 64: 1425 · 65: 1426 · 66: 1442 · 67: 1449 · 68: 1453 · 69: 1474 · 70: 1481 · 71: 1484 · 72: 1491 · 73: 1494 · **74: 1496**. Fiecare capitol nou are o poveste mai lungă decât precedentul.
 
 ---
 
