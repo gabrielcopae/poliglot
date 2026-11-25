@@ -675,10 +675,11 @@ Personaje: **Nora Lindqvist**, arhitectă din Göteborg (Suedia), 32 de ani, vin
 |  | 11 | Perfectul compus (am / ai / a / am / ați / au + participiu), participiile (-at, -ut, -it, -ât; fost, făcut, mers, spus, scris), negația (n-am), reflexivele la trecut (m-am trezit), expresii de timp (ieri, acum doi ani, deja, încă nu) (povestea excursiei; fularul roșu dat lui Radu; fluierul bunicului Vasile) | ✅ testat (+ 6 limbi) |
 |  | 12 | Corpul, mă doare / mă dor, la doctor și la farmacie (112), viitorul cu „o să” + conjunctiv (și „voi” + infinitiv), recapitularea A1 (răceala Norei, doctorița Ioana; Radu vine cu un trandafir alb și păstrează fularul roșu) | ✅ testat (+ 6 limbi) |
 | A2 · Amintiri | 13 | Imperfectul (lucram, mergeam, locuiam; eram, aveam, făceam), când îl folosești (obicei, descriere, acțiune în desfășurare), expresii (pe vremea aceea, pe atunci, a fost odată), amintiri (copilăria doamnei Pop lângă Bistrița; Vasile, vecinul care o trăgea de codițe; cele două fotografii de la Cheile Turzii) | ✅ testat (+ 6 limbi) |
+| A2 · Amintiri | 14 | Imperfect vs perfect compus, povestea pendulei | ✅ testat (+ 6 limbi) |
 
 A1 COMPLET (capitolele 1–12).
 
-Poveștile românești: 1: 71 · 2: 120 · 3: 134 · 4: 184 · 5: 200 · 6: 216 · 7: 270 · 8: 301 · 9: 310 · 10: 333 · 11: 338 · 12: 414 · 13: 437. Fiecare capitol are o poveste mai lungă decât cel dinainte.
+Poveștile românești: 1: 71 · 2: 120 · 3: 134 · 4: 184 · 5: 200 · 6: 216 · 7: 270 · 8: 301 · 9: 310 · 10: 333 · 11: 338 · 12: 414 · 13: 437 · 14: 459. Fiecare capitol are o poveste mai lungă decât cel dinainte.
 
 ---
 
