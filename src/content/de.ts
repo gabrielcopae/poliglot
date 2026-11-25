@@ -43,6 +43,14 @@ import { deCap41 } from './de-cap41'
 import { deCap42 } from './de-cap42'
 import { deCap43 } from './de-cap43'
 import { deCap44 } from './de-cap44'
+import { deCap45 } from './de-cap45'
+import { deCap46 } from './de-cap46'
+import { deCap47 } from './de-cap47'
+import { deCap48 } from './de-cap48'
+import { deCap49 } from './de-cap49'
+import { deCap50 } from './de-cap50'
+import { deCap51 } from './de-cap51'
+import { deCap52 } from './de-cap52'
 
 // Germană: Mara Ionescu, asistentă medicală din Sibiu, la un spital din Berlin (Prenzlauer Berg).
 const units: Unit[] = [
@@ -57,6 +65,8 @@ const units: Unit[] = [
   { id: 'de-a2-6', title: 'A2 · Finalul A2', level: 'A2', lessons: [deCap33, deCap34, deCap35, deCap36] },
   { id: 'de-b1-1', title: 'B1 · Ce-ar fi fost dacă', level: 'B1', lessons: [deCap37, deCap38, deCap39, deCap40] },
   { id: 'de-b1-2', title: 'B1 · Legături noi', level: 'B1', lessons: [deCap41, deCap42, deCap43, deCap44] },
+  { id: 'de-b1-3', title: 'B1 · Vorbe și zvonuri', level: 'B1', lessons: [deCap45, deCap46, deCap47, deCap48] },
+  { id: 'de-b1-4', title: 'B1 · Casa și rădăcinile', level: 'B1', lessons: [deCap49, deCap50, deCap51, deCap52] },
 ]
 
 export const de: Course = {
