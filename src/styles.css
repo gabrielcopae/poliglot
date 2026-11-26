@@ -1175,3 +1175,86 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .option.right { animation: pop-right 0.3s ease-out; }
 @keyframes pop-right { 50% { transform: scale(1.03); } }
 @media (prefers-reduced-motion: reduce) { .option.right, .option.wrong { animation: none; } }
+
+/* ——— Parcursul cursului: niveluri ca butoane, capitole pe o linie verticală ——— */
+.level-chips { display: flex; gap: 8px; margin: 20px 0 6px; overflow-x: auto; scrollbar-width: none; padding: 2px; }
+.level-chips::-webkit-scrollbar { display: none; }
+.level-chip {
+  position: relative; flex: 1 0 auto; min-width: 58px; padding: 10px 14px 12px; border-radius: 14px; overflow: hidden;
+  border: 1px solid var(--line); background: var(--card); color: var(--dim); backdrop-filter: blur(10px);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.level-chip b { font-size: 0.95rem; letter-spacing: 0.02em; }
+.level-chip i { position: absolute; left: 0; bottom: 0; height: 3px; background: var(--good); border-radius: 0 3px 3px 0; }
+.level-chip.on { background: var(--accent); color: var(--on-accent); border-color: transparent; }
+.level-chip.on i { background: color-mix(in srgb, var(--on-accent) 70%, transparent); }
+
+.path-level-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 18px 4px 4px; }
+.path-level-head h2 { font-size: 1.35rem; margin: 0; }
+.path-level-head small { color: var(--dim); font-weight: 700; white-space: nowrap; }
+.path-unit { margin-top: 18px; }
+.path-unit-title { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 0 4px 10px; font-size: 1.02rem; }
+.path-unit-title small { font-family: inherit; font-size: 0.78rem; color: var(--dim); font-weight: 700; }
+
+.path { list-style: none; margin: 0; padding: 0; position: relative; }
+.path-node { position: relative; padding-left: 0; }
+/* linia care leagă punctele */
+.path-node::before {
+  content: ''; position: absolute; left: 27px; top: 0; bottom: 0; width: 3px; border-radius: 3px;
+  background: color-mix(in srgb, var(--text) 10%, transparent);
+}
+.path-node:first-child::before { top: 30px; }
+.path-node:last-child::before { bottom: calc(100% - 30px); }
+.path-node.st-done::before { background: color-mix(in srgb, var(--good) 45%, transparent); }
+
+.path-head {
+  position: relative; display: flex; align-items: center; gap: 14px; width: 100%; text-align: left;
+  padding: 8px 6px 8px 4px; border: none; background: none; color: inherit; border-radius: 16px;
+}
+.path-head:active { transform: scale(0.995); }
+.path-dot {
+  position: relative; z-index: 1; width: 48px; height: 48px; flex-shrink: 0; border-radius: 50%; display: grid; place-items: center;
+  font-weight: 800; font-size: 1.05rem; color: var(--dim);
+  background: color-mix(in srgb, var(--bg2) 85%, var(--bg1)); border: 3px solid color-mix(in srgb, var(--text) 14%, transparent);
+}
+.path-node.st-done .path-dot { background: var(--good); border-color: var(--good); color: #fff; }
+.path-node.st-progress .path-dot { border-color: var(--accent); color: var(--accent); }
+.path-node.st-current .path-dot {
+  background: var(--accent); border-color: var(--accent); color: var(--on-accent);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+.path-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.path-body b { font-size: 1.02rem; line-height: 1.3; }
+.path-node.st-todo .path-body b { color: color-mix(in srgb, var(--text) 78%, transparent); }
+.path-body small { color: var(--dim); font-size: 0.82rem; }
+.path-kicker { font-size: 0.74rem !important; font-weight: 700; letter-spacing: 0.02em; }
+.path-node.st-current .path-kicker { color: var(--accent) !important; }
+.path-meter { display: flex; align-items: center; gap: 4px; margin-top: 4px; }
+.path-meter i { width: 18px; height: 5px; border-radius: 3px; background: color-mix(in srgb, var(--text) 13%, transparent); }
+.path-meter i.st-done { background: var(--good); }
+.path-meter i.st-progress { background: var(--accent); }
+.path-meter em { font-style: normal; font-size: 0.74rem; color: var(--dim); margin-left: 6px; }
+.path-chev { font-size: 1.5rem; line-height: 1; color: var(--dim); transition: transform 0.2s; padding: 0 4px; }
+.path-node.open .path-chev { transform: rotate(90deg); }
+
+.path-sessions { margin: 0 0 12px 62px; display: flex; flex-direction: column; gap: 8px; animation: slideup 0.2s ease both; }
+.path-session {
+  display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; padding: 12px 14px;
+  border-radius: 16px; border: 1px solid var(--line); background: var(--card); color: inherit; backdrop-filter: blur(10px);
+}
+.path-session:active { transform: scale(0.99); }
+.path-session-n {
+  width: 30px; height: 30px; flex-shrink: 0; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 0.85rem;
+  background: color-mix(in srgb, var(--text) 9%, transparent);
+}
+.path-session.st-done .path-session-n { background: var(--good); color: #fff; }
+.path-session.st-progress { border-color: var(--accent); }
+.path-session.st-progress .path-session-n { background: var(--accent); color: var(--on-accent); }
+.path-session-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.path-session-body b { font-size: 0.95rem; }
+.path-session-body small { color: var(--dim); font-size: 0.78rem; line-height: 1.35; }
+.path-session.st-done .path-session-body b { color: var(--dim); font-weight: 600; }
+.path-session-go { color: var(--accent); font-size: 0.85rem; }
+.path-toc { align-self: flex-end; border: none; background: none; color: var(--accent); font-weight: 800; font-size: 0.85rem; padding: 4px 6px; }
+.path-level .exam-link { margin-top: 18px; }
+@media (prefers-reduced-motion: reduce) { .path-sessions { animation: none; } }

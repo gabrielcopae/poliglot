@@ -539,5 +539,6 @@ const d: Record<string, string> = {
   'Sunet scurt la răspuns corect sau greșit': "Son bref pour une bonne ou une mauvaise réponse",
   'Vibrație scurtă la răspuns (pe telefon)': "Vibration brève à la réponse (sur téléphone)",
   'Pe calculator poți răspunde și din tastatură: 1–9 pentru variante, Enter pentru Continuă, Spațiu la repetiție.': "Sur ordinateur, tu peux aussi répondre au clavier : 1–9 pour les choix, Entrée pour Continuer, Espace pendant la révision.",
+  'Nivel': "Niveau",
 }
 export default d
