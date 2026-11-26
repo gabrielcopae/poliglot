@@ -75,7 +75,7 @@ export const itCap02 = lesson({
       },
     },
     pron: [
-      { sound: 'h mut', how: 'Litera H nu se citește niciodată. Ho = „o”, hai = „ai”, ha = „a”, hanno = „ano” (cu „n” dublu). H există doar ca să deosebească „ho” (am) de „o” (sau).', words: ['ho', 'hai', 'ha', 'hanno'] },
+      { sound: 'h mut', how: 'Litera H nu se citește niciodată. Ho = „o”, hai = „ai”, ha = „a”, hanno = „anno” (cu „n” dublu). H există doar ca să deosebească „ho” (am) de „o” (sau).', words: ['ho', 'hai', 'ha', 'hanno'] },
       { sound: 'gli', how: 'GLI e un „li” moale: figlio = „fili-o”, famiglia = „famili-a”, gli = „li”. Limba se lipește de cerul gurii.', words: ['figlio', 'famiglia', 'gli'] },
       { sound: 'zz / z', how: 'Z se citește „ț” (grazie = „grație”) sau „dz” (zero = „dzero”). Dublu, se ține mai mult: pizza = „pițța”.', words: ['grazie', 'zero', 'pizza', 'ragazzo'] },
       { sound: 'numerele', how: 'Atenție la consoanele duble din numere: otto (8), sette (7), diciassette (17), diciotto (18). Și la accentul din „ventitré”.', words: ['otto', 'sette', 'diciotto', 'venti'] },
