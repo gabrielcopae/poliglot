@@ -526,5 +526,18 @@ const d: Record<string, string> = {
   'Restaurează dintr-o copie': "Restore from a copy",
   'Încep de la zero': "Start from scratch",
   'Copia se salvează ca fișier (în Descărcări sau, pe telefon, unde alegi: Drive, Fișiere). Dacă ștergi datele aplicației, o restaurezi de aici.': "The copy is saved as a file (in Downloads or, on a phone, wherever you choose: Drive, Files). If you clear the app’s data, restore it from here.",
+  'Obiectivul de azi': "Today’s goal",
+  'Obiectivul de azi: {v} din {g} puncte': "Today’s goal: {v} of {g} points",
+  'azi': "today",
+  'Ieri ai avut zi liberă. Învață azi și seria merge mai departe.': "Yesterday was your day off. Study today and your streak keeps going.",
+  'Învățare': "Learning",
+  'Obiectivul zilnic': "Daily goal",
+  'Ușor · 15': "Easy · 15",
+  'Normal · 30': "Normal · 30",
+  'Serios · 60': "Serious · 60",
+  'O ședință aduce cam 25–45 de puncte, un cuvânt repetat aduce 1. O zi liberă pe săptămână nu îți rupe seria.': "A session gives about 25–45 points, a reviewed word gives 1. One day off a week won’t break your streak.",
+  'Sunet scurt la răspuns corect sau greșit': "Short sound for a right or wrong answer",
+  'Vibrație scurtă la răspuns (pe telefon)': "Short vibration on answer (on phone)",
+  'Pe calculator poți răspunde și din tastatură: 1–9 pentru variante, Enter pentru Continuă, Spațiu la repetiție.': "On a computer you can also answer with the keyboard: 1–9 for options, Enter for Continue, Space in review.",
 }
 export default d

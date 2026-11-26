@@ -1153,3 +1153,25 @@ details.syl-chapter > .syl-row { margin-left: 8px; margin-right: 8px; width: cal
 .backup-card .row { margin-top: 6px; }
 .backup-msg { margin: 0 4px 14px; font-weight: 700; color: var(--good); }
 .save-link { font-size: 0.85rem; margin: 18px auto 0; }
+
+/* ——— Obiectivul zilnic, tastele scurte și răspunsul discret ——— */
+.hero.hero-goal { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.hero-text { min-width: 0; }
+.hero-note { margin: -4px 0 0; font-size: 0.88rem; color: var(--dim); }
+.goal-ring { position: relative; width: 64px; height: 64px; flex-shrink: 0; display: grid; place-items: center; }
+.goal-ring svg { position: absolute; inset: 0; }
+.goal-track { fill: none; stroke: color-mix(in srgb, var(--text) 12%, transparent); stroke-width: 6; }
+.goal-fill { fill: none; stroke: var(--accent); stroke-width: 6; stroke-linecap: round; transition: stroke-dashoffset 0.8s ease; }
+.goal-ring.done .goal-fill { stroke: var(--good); }
+.goal-label { position: relative; font-weight: 800; font-size: 0.8rem; margin-top: -6px; }
+.goal-ring.done .goal-label { font-size: 1.3rem; color: var(--good); }
+.goal-cap { position: absolute; bottom: 12px; font-size: 0.62rem; color: var(--dim); }
+.goal-ring.done .goal-cap { display: none; }
+.key-hint { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  .key-hint { display: inline-grid; place-items: center; min-width: 1.4em; height: 1.4em; margin-right: 8px; border-radius: 6px; font: 600 0.72rem/1 system-ui, sans-serif; color: var(--dim); border: 1px solid color-mix(in srgb, var(--text) 18%, transparent); vertical-align: 0.1em; }
+  .grade .key-hint { color: inherit; border-color: rgba(255, 255, 255, 0.5); margin-right: 5px; }
+}
+.option.right { animation: pop-right 0.3s ease-out; }
+@keyframes pop-right { 50% { transform: scale(1.03); } }
+@media (prefers-reduced-motion: reduce) { .option.right, .option.wrong { animation: none; } }

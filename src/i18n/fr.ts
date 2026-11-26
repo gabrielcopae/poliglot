@@ -526,5 +526,18 @@ const d: Record<string, string> = {
   'Restaurează dintr-o copie': "Restaurer depuis une copie",
   'Încep de la zero': "Je commence de zéro",
   'Copia se salvează ca fișier (în Descărcări sau, pe telefon, unde alegi: Drive, Fișiere). Dacă ștergi datele aplicației, o restaurezi de aici.': "La copie est enregistrée comme fichier (dans Téléchargements ou, sur téléphone, où tu veux : Drive, Fichiers). Si tu effaces les données de l’application, restaure-la d’ici.",
+  'Obiectivul de azi': "Objectif du jour",
+  'Obiectivul de azi: {v} din {g} puncte': "Objectif du jour : {v} sur {g} points",
+  'azi': "aujourd’hui",
+  'Ieri ai avut zi liberă. Învață azi și seria merge mai departe.': "Hier, c’était ton jour de repos. Étudie aujourd’hui et ta série continue.",
+  'Învățare': "Apprentissage",
+  'Obiectivul zilnic': "Objectif quotidien",
+  'Ușor · 15': "Facile · 15",
+  'Normal · 30': "Normal · 30",
+  'Serios · 60': "Sérieux · 60",
+  'O ședință aduce cam 25–45 de puncte, un cuvânt repetat aduce 1. O zi liberă pe săptămână nu îți rupe seria.': "Une séance rapporte environ 25–45 points, un mot révisé rapporte 1. Un jour de repos par semaine ne casse pas ta série.",
+  'Sunet scurt la răspuns corect sau greșit': "Son bref pour une bonne ou une mauvaise réponse",
+  'Vibrație scurtă la răspuns (pe telefon)': "Vibration brève à la réponse (sur téléphone)",
+  'Pe calculator poți răspunde și din tastatură: 1–9 pentru variante, Enter pentru Continuă, Spațiu la repetiție.': "Sur ordinateur, tu peux aussi répondre au clavier : 1–9 pour les choix, Entrée pour Continuer, Espace pendant la révision.",
 }
 export default d

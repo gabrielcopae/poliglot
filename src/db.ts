@@ -148,16 +148,34 @@ export async function bumpDay(patch: Partial<Omit<DayRow, 'date'>>) {
   })
 }
 
-export function streakFrom(days: DayRow[]): number {
+/**
+ * Seria de zile. O zi liberă pe săptămână nu o rupe (cercetările arată că pierderea seriei
+ * îi face pe mulți să renunțe de tot); zilele libere nu se adună la serie.
+ */
+export function streakInfo(days: DayRow[]): { n: number; restYesterday: boolean } {
   const active = new Set(days.filter((d) => d.reviews + d.lessons > 0).map((d) => d.date))
   const d = new Date()
-  if (!active.has(today(d))) d.setDate(d.getDate() - 1)
+  if (!active.has(today(d))) d.setDate(d.getDate() - 1) // azi încă se poate învăța
   let n = 0
-  while (active.has(today(d))) {
-    n++
+  let lastRest = -Infinity // indexul (în zile înapoi) al ultimei zile libere folosite
+  let restYesterday = false
+  for (let back = 0; back < 4000; back++) {
+    if (active.has(today(d))) n++
+    else {
+      const prev = new Date(d); prev.setDate(prev.getDate() - 1)
+      // zi liberă doar dacă ziua dinainte e activă și n-a mai fost alta în ultimele 7 zile
+      if (n === 0 && back > 0) break
+      if (!active.has(today(prev)) || back - lastRest < 7) break
+      lastRest = back
+      if (back === 0) restYesterday = true
+    }
     d.setDate(d.getDate() - 1)
   }
-  return n
+  return { n, restYesterday: restYesterday && n > 0 }
+}
+
+export function streakFrom(days: DayRow[]): number {
+  return streakInfo(days).n
 }
 
 export async function exportProgress(): Promise<string> {

@@ -526,5 +526,18 @@ const d: Record<string, string> = {
   'Restaurează dintr-o copie': "コピーから復元",
   'Încep de la zero': "最初から始める",
   'Copia se salvează ca fișier (în Descărcări sau, pe telefon, unde alegi: Drive, Fișiere). Dacă ștergi datele aplicației, o restaurezi de aici.': "コピーはファイルとして保存されます（ダウンロード、またはスマホでは選んだ場所：Drive、ファイル）。アプリのデータを消した場合は、ここから復元できます。",
+  'Obiectivul de azi': "今日の目標",
+  'Obiectivul de azi: {v} din {g} puncte': "今日の目標：{g}ポイント中{v}",
+  'azi': "今日",
+  'Ieri ai avut zi liberă. Învață azi și seria merge mai departe.': "昨日はお休みの日でした。今日学習すれば連続記録は続きます。",
+  'Învățare': "学習",
+  'Obiectivul zilnic': "1日の目標",
+  'Ușor · 15': "やさしい · 15",
+  'Normal · 30': "ふつう · 30",
+  'Serios · 60': "しっかり · 60",
+  'O ședință aduce cam 25–45 de puncte, un cuvânt repetat aduce 1. O zi liberă pe săptămână nu îți rupe seria.': "1回のレッスンで約25〜45ポイント、単語の復習1つで1ポイントです。週に1日のお休みなら連続記録は途切れません。",
+  'Sunet scurt la răspuns corect sau greșit': "正解・不正解のときに短い音を鳴らす",
+  'Vibrație scurtă la răspuns (pe telefon)': "回答時に短く振動する（スマートフォン）",
+  'Pe calculator poți răspunde și din tastatură: 1–9 pentru variante, Enter pentru Continuă, Spațiu la repetiție.': "パソコンではキーボードでも答えられます：選択肢は1〜9、「続ける」はEnter、復習ではスペース。",
 }
 export default d

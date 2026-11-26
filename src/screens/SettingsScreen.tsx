@@ -88,6 +88,20 @@ export function SettingsScreen({ user, signOut }: { user: string; signOut: () =>
       </article>
 
       <article className="card">
+        <h3>🎯 {t('Învățare')}</h3>
+        <label className="field-label">{t('Obiectivul zilnic')}</label>
+        <div className="segmented wrap">
+          {([[15, t('Ușor · 15')], [30, t('Normal · 30')], [60, t('Serios · 60')]] as const).map(([v, label]) => (
+            <button key={v} className={(s.dailyGoal ?? 30) === v ? 'on' : ''} onClick={() => setSettings({ dailyGoal: v })}>{label}</button>
+          ))}
+        </div>
+        <p className="muted small">{t('O ședință aduce cam 25–45 de puncte, un cuvânt repetat aduce 1. O zi liberă pe săptămână nu îți rupe seria.')}</p>
+        <label className="toggle"><input type="checkbox" checked={s.sounds !== false} onChange={(e) => setSettings({ sounds: e.target.checked })} /> {t('Sunet scurt la răspuns corect sau greșit')}</label>
+        <label className="toggle"><input type="checkbox" checked={s.haptics !== false} onChange={(e) => setSettings({ haptics: e.target.checked })} /> {t('Vibrație scurtă la răspuns (pe telefon)')}</label>
+        <p className="muted small">{t('Pe calculator poți răspunde și din tastatură: 1–9 pentru variante, Enter pentru Continuă, Spațiu la repetiție.')}</p>
+      </article>
+
+      <article className="card">
         <h3>🔊 {t('Voce și pronunție')}</h3>
         <RecordedVoices on={recordedVoicesOn(s)} />
         <label className="toggle"><input type="checkbox" checked={s.autoplay} onChange={(e) => setSettings({ autoplay: e.target.checked })} /> {t('Redă automat pronunția')}</label>

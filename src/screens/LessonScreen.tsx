@@ -9,6 +9,7 @@ import { canListen, listen, speak } from '../speech'
 import { addWords } from '../srs'
 import { similarity } from '../util'
 import { Progress, SpeakButton, TopBar } from '../components/ui'
+import { digitIndex, playFeedback, playFinish } from '../feedback'
 
 type Phase = 'intro' | 'learn' | 'practice' | 'done'
 
@@ -163,6 +164,7 @@ export function Practice({ course, exercises, back, onDone }: { course: Course; 
     }
     const note = res !== 'accent' ? undefined : !diff || (!diff.accents && !diff.article) ? t('Corect! Atenție la accente și articol.') : [diff.accents ? t('Corect, dar ai uitat accentul sau caracterul special la: {w}.', { w: diff.words.join(', ') }) : '', diff.article ? (diff.accents ? t('Ai uitat și articolul: {w}.', { w: diff.missingArticle.join(' ') }) : t('Corect, dar ai uitat articolul: {w}.', { w: diff.missingArticle.join(' ') })) : ''].filter(Boolean).join(' ')
     setFeedback({ ok, note, answer: ok ? undefined : correctAnswer, explain: ex.explain, diff: res === 'accent' && diff && (diff.accents || diff.article) ? diff : undefined })
+    playFeedback(ok)
     if (speakText) speak(speakText, course.lang, course.locale)
   }
 
@@ -173,7 +175,7 @@ export function Practice({ course, exercises, back, onDone }: { course: Course; 
 
   const next = () => {
     setFeedback(null)
-    if (pos + 1 >= queue.length) onDone(firstTry / total)
+    if (pos + 1 >= queue.length) { playFinish(); onDone(firstTry / total) }
     else setPos(pos + 1)
   }
 
@@ -220,18 +222,7 @@ function ChoiceEx({ ex, course, locked, onAnswer }: { ex: Extract<Exercise, { ki
         {ex.speak && <SpeakButton text={ex.speak} lang={course.lang} small />}
       </div>
       {ex.sub && <div className="romaji center">{ex.sub}</div>}
-      <div className="options">
-        {ex.options.map((o) => (
-          <button
-            key={o}
-            disabled={locked}
-            className={`option ${ex.optionsTarget && course.lang === 'ja' ? 'jp' : ''} ${locked && o === ex.answer ? 'right' : ''} ${locked && picked === o && o !== ex.answer ? 'wrong' : ''}`}
-            onClick={() => { setPicked(o); onAnswer(o) }}
-          >
-            {o}
-          </button>
-        ))}
-      </div>
+      <Options options={ex.options} answer={ex.answer} locked={locked} picked={picked} jp={!!ex.optionsTarget && course.lang === 'ja'} onPick={(o) => { setPicked(o); onAnswer(o) }} />
     </>
   )
 }
@@ -245,19 +236,38 @@ function ListenEx({ ex, course, locked, onAnswer }: { ex: Extract<Exercise, { ki
         <button className="listen-big" onClick={() => speak(ex.speak, course.lang, course.locale)}>🔊</button>
         <button className="listen-slow" onClick={() => speak(ex.speak, course.lang, course.locale, 0.6)}>🐢</button>
       </div>
-      <div className="options">
-        {ex.options.map((o) => (
-          <button
-            key={o}
-            disabled={locked}
-            className={`option ${course.lang === 'ja' ? 'jp' : ''} ${locked && o === ex.answer ? 'right' : ''} ${locked && picked === o && o !== ex.answer ? 'wrong' : ''}`}
-            onClick={() => { setPicked(o); onAnswer(o) }}
-          >
-            {o}
-          </button>
-        ))}
-      </div>
+      <Options options={ex.options} answer={ex.answer} locked={locked} picked={picked} jp={course.lang === 'ja'} onPick={(o) => { setPicked(o); onAnswer(o) }} />
     </>
+  )
+}
+
+/** Variantele de răspuns; pe calculator se pot alege și cu tastele 1–9. */
+function Options({ options, answer, locked, picked, jp, onPick }: { options: string[]; answer: string; locked: boolean; picked: string | null; jp: boolean; onPick: (o: string) => void }) {
+  const pick = useRef(onPick)
+  pick.current = onPick
+  useEffect(() => {
+    if (locked) return
+    const onKey = (e: KeyboardEvent) => {
+      const i = digitIndex(e)
+      if (i >= 0 && i < options.length) { e.preventDefault(); pick.current(options[i]) }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [locked, options])
+  return (
+    <div className="options">
+      {options.map((o, i) => (
+        <button
+          key={o}
+          disabled={locked}
+          className={`option ${jp ? 'jp' : ''} ${locked && o === answer ? 'right' : ''} ${locked && picked === o && o !== answer ? 'wrong' : ''}`}
+          onClick={() => onPick(o)}
+        >
+          {i < 9 && <kbd className="key-hint" aria-hidden="true">{i + 1}</kbd>}
+          {o}
+        </button>
+      ))}
+    </div>
   )
 }
 

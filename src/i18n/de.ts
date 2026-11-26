@@ -526,5 +526,18 @@ const d: Record<string, string> = {
   'Restaurează dintr-o copie': "Aus einer Kopie wiederherstellen",
   'Încep de la zero': "Ich fange neu an",
   'Copia se salvează ca fișier (în Descărcări sau, pe telefon, unde alegi: Drive, Fișiere). Dacă ștergi datele aplicației, o restaurezi de aici.': "Die Kopie wird als Datei gespeichert (im Download-Ordner oder auf dem Handy, wo du willst: Drive, Dateien). Wenn du die App-Daten löschst, stellst du sie hier wieder her.",
+  'Obiectivul de azi': "Tagesziel",
+  'Obiectivul de azi: {v} din {g} puncte': "Tagesziel: {v} von {g} Punkten",
+  'azi': "heute",
+  'Ieri ai avut zi liberă. Învață azi și seria merge mai departe.': "Gestern war dein freier Tag. Lerne heute, dann geht deine Serie weiter.",
+  'Învățare': "Lernen",
+  'Obiectivul zilnic': "Tagesziel",
+  'Ușor · 15': "Leicht · 15",
+  'Normal · 30': "Normal · 30",
+  'Serios · 60': "Ernsthaft · 60",
+  'O ședință aduce cam 25–45 de puncte, un cuvânt repetat aduce 1. O zi liberă pe săptămână nu îți rupe seria.': "Eine Einheit bringt etwa 25–45 Punkte, ein wiederholtes Wort bringt 1. Ein freier Tag pro Woche unterbricht deine Serie nicht.",
+  'Sunet scurt la răspuns corect sau greșit': "Kurzer Ton bei richtiger oder falscher Antwort",
+  'Vibrație scurtă la răspuns (pe telefon)': "Kurze Vibration bei der Antwort (am Handy)",
+  'Pe calculator poți răspunde și din tastatură: 1–9 pentru variante, Enter pentru Continuă, Spațiu la repetiție.': "Am Computer kannst du auch mit der Tastatur antworten: 1–9 für die Optionen, Enter für Weiter, Leertaste bei der Wiederholung.",
 }
 export default d

@@ -16,6 +16,12 @@ export interface Settings {
   recorded?: boolean
   /** limba interfeței (meniuri, ecrane); lecțiile rămân în română */
   ui?: 'ro' | 'en' | 'es' | 'it' | 'fr' | 'de' | 'ja'
+  /** tonuri scurte la răspuns corect / greșit */
+  sounds?: boolean
+  /** vibrație scurtă la răspuns (pe telefon) */
+  haptics?: boolean
+  /** obiectivul zilnic, în puncte (o ședință ≈ 25–45, o repetiție = 1) */
+  dailyGoal?: number
 }
 
 const DEFAULTS: Settings = {

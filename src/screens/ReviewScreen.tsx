@@ -1,6 +1,7 @@
 import { t, tc } from '../i18n'
 import { Flag } from '../components/Flag'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { digitIndex } from '../feedback'
 import { getCourse, lookupWord } from '../content'
 import type { LangCode } from '../content/types'
 import { bumpDay, db, type CardRow } from '../db'
@@ -38,6 +39,19 @@ export function ReviewScreen({ lang, back }: { lang?: LangCode; back?: () => voi
     if (card && entry && settings.autoplay) speak(entry.word.t, card.lang, entry.course.locale)
   }, [card?.id]) // eslint-disable-line react-hooks/exhaustive-deps
 
+  // pe calculator: Spațiu / Enter arată răspunsul, 1–4 dau nota
+  const rateRef = useRef<((r: (typeof GRADES)[number]['rating']) => void) | null>(null)
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (!card) return
+      if (!shown && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); setShown(true); return }
+      const i = digitIndex(e)
+      if (shown && i >= 0 && i < GRADES.length) { e.preventDefault(); rateRef.current?.(GRADES[i].rating) }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [card, shown])
+
   const title = lang ? <><Flag lang={lang} size={26} /> {t('Repetiție')} · {t(getCourse(lang).name)}</> : t('Repetiție')
 
   if (!queue) return <div className="screen"><TopBar title={title} onBack={back} /></div>
@@ -68,6 +82,7 @@ export function ReviewScreen({ lang, back }: { lang?: LangCode; back?: () => voi
     if (updated.due - Date.now() < 10 * 60 * 1000) setQueue((q) => [...(q ?? []), updated])
     setPos(pos + 1)
   }
+  rateRef.current = rate
 
   return (
     <div className="screen review">
@@ -91,9 +106,9 @@ export function ReviewScreen({ lang, back }: { lang?: LangCode; back?: () => voi
           <button className="btn primary big" onClick={() => setShown(true)}>{t('Arată răspunsul')}</button>
         ) : (
           <div className="grades">
-            {GRADES.map((g) => (
+            {GRADES.map((g, i) => (
               <button key={g.label} className={`grade ${g.cls}`} onClick={() => rate(g.rating)}>
-                <b>{t(g.label)}</b>
+                <b><kbd className="key-hint" aria-hidden="true">{i + 1}</kbd>{t(g.label)}</b>
                 <small>{formatInterval(preview(card, g.rating))}</small>
               </button>
             ))}

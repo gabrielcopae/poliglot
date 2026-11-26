@@ -1,7 +1,27 @@
 import { Flag } from '../components/Flag'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { COURSES, getCourse } from '../content'
-import { db, streakFrom } from '../db'
+import { db, streakInfo } from '../db'
+import { useSettings } from '../settings'
+import { today } from '../util'
+
+/** Cercul obiectivului zilnic: se umple încet pe măsură ce înveți azi. */
+function GoalRing({ value, goal }: { value: number; goal: number }) {
+  const p = Math.min(1, value / Math.max(1, goal))
+  const r = 26
+  const c = 2 * Math.PI * r
+  const done = p >= 1
+  return (
+    <div className={`goal-ring ${done ? 'done' : ''}`} title={t('Obiectivul de azi')} aria-label={t('Obiectivul de azi: {v} din {g} puncte', { v: Math.min(value, goal), g: goal })}>
+      <svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+        <circle cx="32" cy="32" r={r} className="goal-track" />
+        <circle cx="32" cy="32" r={r} className="goal-fill" strokeDasharray={c} strokeDashoffset={c * (1 - p)} transform="rotate(-90 32 32)" />
+      </svg>
+      <span className="goal-label">{done ? '✓' : `${Math.min(value, goal)}/${goal}`}</span>
+      <small className="goal-cap">{t('azi')}</small>
+    </div>
+  )
+}
 import type { Go } from '../nav'
 import { partOfDay, type Season } from '../season'
 import { Progress } from '../components/ui'
@@ -30,7 +50,11 @@ export function Home({ go, user }: { go: Go; season: Season; user: string }) {
   const homework = useLiveQuery(() => db.homework.toArray(), [], [])
 
   const done = new Set(lessons.map((l) => l.id))
-  const streak = streakFrom(days)
+  const { n: streak, restYesterday } = streakInfo(days)
+  const settings = useSettings()
+  const goal = settings.dailyGoal ?? 30
+  const xpToday = days.find((d) => d.date === today())?.xp ?? 0
+  const learnedToday = days.some((d) => d.date === today() && d.reviews + d.lessons > 0)
   const totalDue = Object.values(dueByLang).reduce((a, b) => a + b, 0)
   const earned = studyDays(days)
   const seenKey = `poliglot.rewardSeen.${user}`
@@ -89,11 +113,17 @@ export function Home({ go, user }: { go: Go; season: Season; user: string }) {
         </div>
       )}
 
-      <section className="hero">
-        <h1 className="hero-title">{partOfDay()}, {user}!</h1>
-        <p className="hero-line">
-          🔥 <b>{streak}</b> {tn(streak, 'zi la rând', 'zile la rând')} <span className="sep">·</span> 📚 <b>{cardCount}</b> {t('cuvinte')}
-        </p>
+      <section className="hero hero-goal">
+        <div className="hero-text">
+          <h1 className="hero-title">{partOfDay()}, {user}!</h1>
+          <p className="hero-line">
+            🔥 <b>{streak}</b> {tn(streak, 'zi la rând', 'zile la rând')} <span className="sep">·</span> 📚 <b>{cardCount}</b> {t('cuvinte')}
+          </p>
+          {restYesterday && !learnedToday && (
+            <p className="hero-note">{t('Ieri ai avut zi liberă. Învață azi și seria merge mai departe.')}</p>
+          )}
+        </div>
+        <GoalRing value={xpToday} goal={goal} />
       </section>
 
       {cont && cont.next && (
