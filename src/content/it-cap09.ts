@@ -80,7 +80,7 @@ export const itCap09 = lesson({
       { sound: 'gn în ogni / giugno', how: 'GN = „ni” moale: giu-GNO = „giu-nio”, o-GNI = „o-ni”.', words: ['giugno', 'ogni', 'bagnato'] },
       { sound: 'gli în luglio', how: 'Luglio = „lu-lio”, cu GLI moale.', words: ['luglio', 'meglio', 'foglie'] },
       { sound: 'ndo', how: 'Gerunziul se termină în -ando sau -endo, cu accent pe silaba „AN” / „EN”: la-vo-RAN-do, be-VEN-do, dor-MEN-do.', words: ['lavorando', 'bevendo', 'dormendo'] },
-      { sound: 'zz în terrazzo', how: 'ZZ în „terrazzo”, „pranzo” se citește „ț” lung: ter-RAȚ-ȚO.', words: ['terrazzo', 'pranzo', 'piazza'] },
+      { sound: 'zz în terrazzo', how: 'ZZ în „terrazzo”, „pizza” se citește „ț” lung: ter-RAȚ-ȚO.', words: ['terrazzo', 'pranzo', 'piazza'] },
     ],
     explain: [
       {
