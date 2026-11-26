@@ -70,7 +70,7 @@ export const itCap57 = lesson({
       },
     },
     pron: [
-      { sound: 'redazione', how: 'Z sonor, ca „dz”, accent pe „ZIO”: re-da-ZIO-ne.', words: ['redazione', 'didascalia', 'rettifica'] },
+      { sound: 'redazione', how: 'Z surd, ca „ț”, accent pe „ZIO”: re-da-ȚIO-ne (în „-zione” z-ul e mereu surd).', words: ['redazione', 'didascalia', 'rettifica'] },
       { sound: 'edicola', how: 'Accent pe prima silabă: E-di-co-la (nu e-di-CO-la).', words: ['edicola', 'edicolante', 'articolo'] },
       { sound: 'pubblicato', how: 'BB dublu, accent pe „CA”: pub-bli-CA-to.', words: ['pubblicato', 'pubblico', 'pubblicità'] },
       { sound: 'telegiornale', how: '„GIOR” ca „gior”, i nu se pronunță separat: te-le-gior-NA-le.', words: ['telegiornale', 'giornalista', 'giornale'] },
