@@ -68,7 +68,7 @@ export const itCap67 = lesson({
       },
     },
     pron: [
-      { sound: 'ipotesi', how: 'Accent pe prima silabă: I-po-te-si (nu i-po-TE-si).', words: ['ipotesi', 'analisi', 'sintesi'] },
+      { sound: 'ipotesi', how: 'Accentul cade pe a treia silabă de la sfârșit: i-PO-te-si, a-NA-li-si, SIN-te-si (nu i-po-TE-si).', words: ['ipotesi', 'analisi', 'sintesi'] },
       { sound: 'casomai', how: 'Un singur cuvânt, accent pe „MAI”: ca-so-MAI.', words: ['casomai', 'semmai', 'ormai'] },
       { sound: 'concattedrale', how: 'CC și TT duble: con-cat-te-DRA-le.', words: ['concattedrale', 'cattedrale', 'cattolico'] },
       { sound: 'decollazione', how: 'LL dublu, accent pe „ZIO”: de-col-la-ZIO-ne.', words: ['decollazione', 'collezione', 'decollare'] },
