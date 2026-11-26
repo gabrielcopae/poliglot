@@ -141,7 +141,7 @@ export const itCap100 = lesson({
               ['sciocco', 'senza sale; stupido', 'nesărat; prost'],
             ],
           },
-          { tip: '„Noi si va, noi si mangia”: florentinii folosesc „si” + persoana a III-a în loc de „noi andiamo”. Pâinea toscană tradițională e „sciocca”, adică fără sare.' },
+          { tip: '„Noi si va, noi si mangia”: florentinii folosesc „si” + persoana a III-a în loc de „noi andiamo”. Pâinea toscană tradițională e „sciocco”, adică fără sare.' },
         ],
       },
       {
