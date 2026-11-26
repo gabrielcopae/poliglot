@@ -67,7 +67,7 @@ export const itCap61 = lesson({
       },
     },
     pron: [
-      { sound: 'riferire', how: 'Trei silabe ușoare, accent pe „RI” din final: ri-fe-RI-re.', words: ['riferire', 'preferire', 'proferire'] },
+      { sound: 'riferire', how: 'Patru silabe ușoare, accent pe penultima, „RI”: ri-fe-RI-re.', words: ['riferire', 'preferire', 'proferire'] },
       { sound: 'malinteso', how: 'Accent pe „TE”, S între vocale sonor: ma-lin-TE-zo.', words: ['malinteso', 'inteso', 'sorpresa'] },
       { sound: 'indomani', how: 'Accent pe „MA”: in-do-MA-ni.', words: ['indomani', 'domani', 'stamani'] },
       { sound: 'equivocare', how: '„QUI” cu u pronunțat: e-qui-vo-CA-re.', words: ['equivocare', 'equivoco', 'quindi'] },
