@@ -86,7 +86,7 @@ export const itCap50 = lesson({
               ['-zione', 'inaugurare, decidere', 'l’inaugurazione, la decisione'],
               ['-mento', 'pensionare, cambiare', 'il pensionamento, il cambiamento'],
               ['-ura', 'aprire, chiudere', 'l’apertura, la chiusura'],
-              ['-ta / -ita', 'scoprire, partire, uscire', 'la scoperta, la partenza, l’uscita'],
+              ['-ta / -ita', 'scoprire, perdere, uscire', 'la scoperta, la perdita, l’uscita'],
               ['fără sufix', 'arrivare, restaurare, nominare', 'l’arrivo, il restauro, la nomina'],
             ],
           },
