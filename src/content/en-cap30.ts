@@ -71,7 +71,7 @@ export const enCap30 = lesson({
       },
     },
     pron: [
-      { sound: '-ing', how: 'Finalul „-ing” e un „i” scurt + sunetul nazal „ng”, fără G apăsat: „ri-DING”, nu „ri-ding-g”.', words: ['reading', 'learning', 'hiding', 'following'] },
+      { sound: '-ing', how: 'Finalul „-ing” e un „i” scurt + sunetul nazal „ng”, fără G apăsat: „RII-ding”, nu „RII-ding-g”.', words: ['reading', 'learning', 'hiding', 'following'] },
       { sound: 'pretend', how: '„pri-TEND”, accent pe a doua silabă.', words: ['pretend', 'pretends', 'pretended'] },
       { sound: 'jealous', how: '„GE-lăs”: „ea” e un „e” scurt.', words: ['jealous', 'jealousy', 'zealous'] },
       { sound: 'suspicious', how: '„să-SPI-șăs”.', words: ['suspicious', 'delicious', 'precious'] },
