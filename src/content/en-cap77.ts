@@ -69,7 +69,7 @@ export const enCap77 = lesson({
     pron: [
       { sound: 'regret', how: '„ri-GRET”, accentul pe a doua silabă.', words: ['regret', 'regretted', 'regrettable'] },
       { sound: 'funeral', how: '„FIU-nă-răl”.', words: ['funeral', 'general', 'mineral'] },
-      { sound: 'mourn', how: '„moon”, ca „morning” fără „-ing”.', words: ['mourn', 'mourning', 'morning'] },
+      { sound: 'mourn', how: '„moon” cu „o” lung (ca în „morning” fără „-ing”), „r”-ul aproape nu se aude.', words: ['mourn', 'mourning', 'morning'] },
       { sound: 'meant', how: '„ment”, scurt (nu „miint”).', words: ['meant', 'mean', 'dreamt'] },
     ],
     explain: [
