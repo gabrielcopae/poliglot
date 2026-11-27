@@ -1477,3 +1477,13 @@ html[data-vt='out']::view-transition-old(root) { animation-name: vt-shrink; tran
 .poli-demo-grid figcaption { font-size: 0.8rem; color: var(--dim); font-weight: 600; }
 .done-poli { display: grid; place-items: center; margin: 4px auto 6px; }
 .update-pill { position: fixed; z-index: 80; left: 50%; top: calc(10px + env(safe-area-inset-top)); transform: translateX(-50%); padding: 8px 14px; border-radius: 99px; background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); font-size: 0.82rem; font-weight: 700; backdrop-filter: blur(10px); animation: slideup 0.25s ease both; }
+
+/* ——— Ședințele din capitol ca desfășurător ——— */
+.session-acc { padding: 0; overflow: hidden; }
+.session-acc .session-acc-head { width: 100%; border: none; background: none; box-shadow: none; margin: 0; text-align: left; color: inherit; }
+.session-chev { font-size: 1.5rem; line-height: 1; color: var(--dim); transition: transform 0.2s; margin-left: 2px; }
+.session-acc.open .session-chev { transform: rotate(90deg); }
+.session-acc-body { padding: 0 14px 14px; display: flex; flex-direction: column; gap: 6px; animation: slideup 0.2s ease both; }
+.session-acc-body > .btn.primary { margin: 2px 0 4px; }
+.session-acc-body > p { margin: 4px 2px 2px; }
+@media (prefers-reduced-motion: reduce) { .session-acc-body { animation: none; } }

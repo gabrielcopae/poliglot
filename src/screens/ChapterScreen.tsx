@@ -102,8 +102,11 @@ export function ChapterOverview({ lang, lessonId, go, back }: { lang: LangCode; 
     () => (lesson && ch ? ([1, 2] as const).map((s) => makeSteps(course, lesson, ch, s, () => {}, () => {}).map((st) => ({ title: st.title, icon: st.icon }))) : [[], []]),
     [lessonId], // eslint-disable-line react-hooks/exhaustive-deps
   )
+  // un singur desfășurător deschis: implicit ședința la care ești
+  const [openSession, setOpenSession] = useState<1 | 2 | null | undefined>(undefined)
   if (!lesson || !ch) return null
   const hwDone = hw.filter((h) => h.done).length
+  const shownSession = openSession === undefined ? (!state?.s1 ? 1 : !state?.s2 ? 2 : null) : openSession
   const started = !!(state?.s1 || state?.s2 || hwDone || lessonRow)
 
   const markOne = async () => {
@@ -141,17 +144,27 @@ export function ChapterOverview({ lang, lessonId, go, back }: { lang: LangCode; 
       </article>
 
       <div className="session-list">
-        <SessionCard
-          n="1" title={t('Ședința {n}', { n: 1 })} detail={t('Dialog cu audio · cuvinte noi · exerciții · pronunție · dictare · joc de rol')} minutes={40}
-          done={!!state?.s1}
-          onClick={() => go({ name: 'session', lang, lessonId, session: 1, fromChapter: true })}
-        />
-        <SessionCard
-          n="2" title={t('Ședința {n}', { n: 2 })} detail={t('Gramatica pe înțelesul tuturor · exerciții · traduceri din dialog · mini-test')} minutes={40}
-          done={!!state?.s2}
-          extra={lessonRow ? `${t('Mini-test')}: ${Math.round(lessonRow.best * 100)}%` : undefined}
-          onClick={() => go({ name: 'session', lang, lessonId, session: 2, fromChapter: true })}
-        />
+        {([1, 2] as const).map((sn) => {
+          const done = sn === 1 ? !!state?.s1 : !!state?.s2
+          const stepAt = sn === 1 ? state?.s1Step : state?.s2Step
+          return (
+            <SessionAccordion
+              key={sn}
+              n={String(sn)}
+              title={t('Ședința {n}', { n: sn })}
+              detail={sn === 1 ? t('Dialog cu audio · cuvinte noi · exerciții · pronunție · dictare · joc de rol') : t('Gramatica pe înțelesul tuturor · exerciții · traduceri din dialog · mini-test')}
+              minutes={40}
+              done={done}
+              extra={sn === 2 && lessonRow ? `${t('Mini-test')}: ${Math.round(lessonRow.best * 100)}%` : undefined}
+              open={shownSession === sn}
+              onToggle={() => setOpenSession(shownSession === sn ? null : sn)}
+              startLabel={done ? t('Reia ședința') : stepAt ? t('Continuă ședința') : t('Începe ședința')}
+              onStart={() => go({ name: 'session', lang, lessonId, session: sn, fromChapter: true })}
+              steps={toc[sn - 1].map((st, k) => ({ k, ...st })).filter((st) => st.k !== 0 && st.title !== t('Mini-test'))}
+              onStep={(k) => go({ name: 'session', lang, lessonId, session: sn, step: k, fromChapter: true })}
+            />
+          )
+        })}
         <SessionCard
           n="✎" title={t('Teme pentru acasă')} detail={t('{n} teme · exerciții, traduceri, text de citit cu audio, compunere', { n: ch.homework.length })} minutes={30}
           done={hwDone === ch.homework.length}
@@ -159,28 +172,6 @@ export function ChapterOverview({ lang, lessonId, go, back }: { lang: LangCode; 
           onClick={() => go({ name: 'homework', lang, lessonId })}
         />
       </div>
-
-      <article className="card toc">
-        <h3>📑 {t('Cuprins')}</h3>
-        <p className="muted small">{t('Poți sări direct la orice parte a unei ședințe, oricând.')}</p>
-        {([1, 2] as const).map((s) => {
-          const done = s === 1 ? !!state?.s1 : !!state?.s2
-          return (
-            <div key={s} className="toc-group">
-              <div className="toc-head">{t('Ședința {n}', { n: s })} {done ? '✓' : ''}</div>
-              {toc[s - 1].map((st, k) =>
-                k === 0 || st.title === t('Mini-test') ? null : (
-                  <button key={k} className="toc-item" onClick={() => go({ name: 'session', lang, lessonId, session: s, step: k, fromChapter: true })}>
-                    <span>{st.icon}</span>
-                    <span className="toc-title">{st.title}</span>
-                    <span className="toc-go">→</span>
-                  </button>
-                ),
-              )}
-            </div>
-          )
-        })}
-      </article>
 
       <div className="card">
         <p className="muted small">{t('Ai parcurs deja capitolul (pe alt dispozitiv sau înainte să se șteargă datele)? Îl poți bifa fără să-l refaci.')}</p>
@@ -192,6 +183,40 @@ export function ChapterOverview({ lang, lessonId, go, back }: { lang: LangCode; 
         <button className="btn danger" onClick={reset}>↺ {t('Ia capitolul de la capăt (șterge progresul)')}</button>
       )}
       <p className="muted small center">{t('Recomandat: Ședința 1 → Ședința 2 → Teme, în 2–3 zile.')}</p>
+    </div>
+  )
+}
+
+/** O ședință care se desfășoară: antetul arată ședința, iar la atingere apar butonul de start și pașii ei. */
+function SessionAccordion({ n, title, detail, minutes, done, extra, open, onToggle, startLabel, onStart, steps, onStep }: {
+  n: string; title: string; detail: string; minutes: number; done: boolean; extra?: string; open: boolean; onToggle: () => void
+  startLabel: string; onStart: () => void; steps: { k: number; title: string; icon: string }[]; onStep: (k: number) => void
+}) {
+  return (
+    <div className={`card session-acc ${done ? 'done' : ''} ${open ? 'open' : ''}`}>
+      <button className="session-card session-acc-head" aria-expanded={open} onClick={onToggle}>
+        <span className="session-n">{done ? '✓' : n}</span>
+        <span className="session-body">
+          <b>{title}</b>
+          <small>{detail}</small>
+          {extra && <small className="session-extra">{extra}</small>}
+        </span>
+        <span className="session-min">~{minutes} min</span>
+        <span className="session-chev" aria-hidden="true">›</span>
+      </button>
+      {open && (
+        <div className="session-acc-body">
+          <button className="btn primary" onClick={onStart}>▶ {startLabel}</button>
+          <p className="muted small">{t('Sau sari direct la o parte:')}</p>
+          {steps.map((st) => (
+            <button key={st.k} className="toc-item" onClick={() => onStep(st.k)}>
+              <span>{st.icon}</span>
+              <span className="toc-title">{st.title}</span>
+              <span className="toc-go">→</span>
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

@@ -549,5 +549,9 @@ const d: Record<string, string> = {
   'E târziu… dar o repetiție scurtă tot merge.': "もう遅いけど…短い復習ならまだできます。",
   'Te aștept la lecția de azi!': "今日のレッスンで待っています！",
   'Se încarcă versiunea nouă…': "新しいバージョンを読み込み中…",
+  'Reia ședința': "もう一度やる",
+  'Continuă ședința': "続きから",
+  'Începe ședința': "レッスンを始める",
+  'Sau sari direct la o parte:': "または、好きな部分へ直接：",
 }
 export default d

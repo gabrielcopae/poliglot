@@ -549,5 +549,9 @@ const d: Record<string, string> = {
   'E târziu… dar o repetiție scurtă tot merge.': "È tardi… ma un ripasso breve va sempre bene.",
   'Te aștept la lecția de azi!': "Ti aspetto alla lezione di oggi!",
   'Se încarcă versiunea nouă…': "Caricamento della nuova versione…",
+  'Reia ședința': "Ripeti la sessione",
+  'Continuă ședința': "Continua la sessione",
+  'Începe ședința': "Inizia la sessione",
+  'Sau sari direct la o parte:': "Oppure vai direttamente a una parte:",
 }
 export default d
