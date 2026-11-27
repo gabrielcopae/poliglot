@@ -75,7 +75,7 @@ export const deCap34 = lesson({
       },
     },
     pron: [
-      { sound: 'lässt', how: '„lasen” → „du lässt, er lässt” = „lest”: a devine ä.', words: ['lassen', 'lässt', 'gelassen'] },
+      { sound: 'lässt', how: '„lassen” → „du lässt, er lässt” = „lest”: a devine ä.', words: ['lassen', 'lässt', 'gelassen'] },
       { sound: 'Bescherung', how: '„be-ȘEE-rung”: momentul cadourilor.', words: ['Bescherung', 'schenken'] },
       { sound: 'Heiligabend', how: '„HAI-lih-aa-bent”.', words: ['Heiligabend', 'heilig'] },
       { sound: 'Friseur', how: '„fri-ZÖÖR”: cuvânt francez, accent la final.', words: ['Friseur', 'Friseurin'] },
