@@ -58,6 +58,8 @@ import { jaCap55 } from './ja-cap55'
 import { jaCap56 } from './ja-cap56'
 import { jaCap57 } from './ja-cap57'
 import { jaCap58 } from './ja-cap58'
+import { jaCap59 } from './ja-cap59'
+import { jaCap60 } from './ja-cap60'
 
 /** Tabelul hiragana (rând cu rând). Celulele goale sunt `null`. */
 export const HIRAGANA: (readonly [string, string] | null)[][] = [
@@ -444,7 +446,7 @@ export const ja: Course = {
       id: 'ja-u12',
       title: 'N3 · Nunta lui Yuki',
       level: 'N3',
-      lessons: [jaCap56, jaCap57, jaCap58],
+      lessons: [jaCap56, jaCap57, jaCap58, jaCap59, jaCap60],
     },
   ],
 }
