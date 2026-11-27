@@ -249,7 +249,7 @@ export const enCap54 = lesson({
           cast: { Narrator: 'm' },
           lines: [
             { t: 'The moose is the largest member of the deer family. An adult male can weigh as much as a small car.', ro: 'Elanul e cel mai mare membru al familiei cerbilor. Un mascul adult poate cântări cât o mașină mică.' },
-            { t: 'Moose live in forests in Canada, Alaska, Scandinavia and Russia. In Britain, they are called moose; in Europe, people often call them elk.', ro: 'Elanii trăiesc în pădurile din Canada, Alaska, Scandinavia și Rusia. În Marea Britanie li se spune „moose”; în Europa, oamenii le spun adesea „elk”.' },
+            { t: 'Moose live in forests in Canada, Alaska, Scandinavia and Russia. In North America, they are called moose; in Britain and the rest of Europe, people usually call them elk.', ro: 'Elanii trăiesc în pădurile din Canada, Alaska, Scandinavia și Rusia. În America de Nord li se spune „moose”; în Marea Britanie și în restul Europei, oamenii le spun de obicei „elk”.' },
             { t: 'They are excellent swimmers and often stand in rivers and lakes to eat water plants.', ro: 'Sunt înotători excelenți și stau adesea în râuri și lacuri ca să mănânce plante acvatice.' },
             { t: 'A moose may look slow and peaceful, but it can run at fifty kilometres an hour.', ro: 'Un elan poate părea încet și pașnic, dar poate alerga cu cincizeci de kilometri pe oră.' },
             { t: 'The plural of “moose” is “moose”. Nobody says “meese”, although some children try.', ro: 'Pluralul lui „moose” e „moose”. Nimeni nu spune „meese”, deși unii copii încearcă.' },
