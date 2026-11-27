@@ -68,7 +68,7 @@ export const enCap86 = lesson({
     },
     pron: [
       { sound: 'accentul se mută', how: 'Unele sufixe mută accentul: „PHOtograph → phoTOgraphy → photoGRAPHic”.', words: ['photograph', 'photography', 'photographic'] },
-      { sound: '-ity', how: 'Accentul cade pe silaba dinaintea lui -ity: „aBILity”, „posSIBility”, „loyALty” (excepție, -ty).', words: ['ability', 'possibility', 'curiosity'] },
+      { sound: '-ity', how: 'Accentul cade pe silaba dinaintea lui -ity: „aBILity”, „posSIBility”, „curiOSity”.', words: ['ability', 'possibility', 'curiosity'] },
       { sound: 'prefixe', how: 'Prefixele negative primesc adesea un accent secundar: „UN-reLAted”, „DIS-aGREE”.', words: ['unrelated', 'disagree', 'misunderstand'] },
       { sound: 'neighbourhood', how: '„NEI-bă-hud”.', words: ['neighbourhood', 'childhood', 'brotherhood'] },
     ],
