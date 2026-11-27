@@ -184,7 +184,7 @@ Poveștile B2: 67: 1480 · 68: 1511 · 69: 1540 · 70: 1572 · 71: 1579 · 72: 1
 | 10 | ～ています, e voie / nu e voie | 20 | înainte / după, recapitularea N5 |
 
 - **Firul poveștii în japoneză:** excursia lui Mihai și a Anei în Japonia (Tokyo, Kyoto, Hiroshima). Doamna Suzuki se împacă cu sora ei, Fumiko. Mihai o cere în căsătorie pe Ana la poarta torii de la Miyajima (capitolul 20).
-- **N4 — în lucru: 5 din 30 de capitole gata (21–25)**, testate toate. Unitatea „N4 · Pregătiri de nuntă”:
+- **N4 — în lucru: 13 din 30 de capitole gata (21–33).** Unitatea „N4 · Pregătiri de nuntă”:
 
 | Cap. | Temă |
 |---|---|
@@ -195,8 +195,23 @@ Poveștile B2: 67: 1480 · 68: 1511 · 69: 1540 · 70: 1572 · 71: 1579 · 72: 1
 | 25 | ～そう (pare / se zice), ～よう です, ～みたい, ～らしい + recapitularea unității |
 
 - **Firul poveștii N4:** înapoi la Madrid. Mihai învață kanji ca să citească scrisoarea doamnei Fumiko (21). Cele două mame, Carmen și Elena, gătesc împreună și cos în secret floarea albastră pe rochie (22). Doamna Fumiko vine pentru prima dată în străinătate și îi dăruiește Anei acul de păr al mamei ei (23). Haruka și Sakura vin la Madrid; Sakura se rătăcește și găsește drumul după mirosul de ramen (24). Nunta din 17 mai, văzută de Sakura: Mihai răspunde „Hai!”, Kenji caută inelele (25). Totul se potrivește cu nunta din cursul de spaniolă (capitolul 38).
-- **Poveștile cresc de la 58 la 640 de cuvinte** (21: 562 · 22: 573 · 23: 591 · 24: 593 · **25: 640**). Capitolul 26 trebuie să aibă peste 640.
-- **Urmează: N4, capitolele 26–50**, apoi N3, N2, N1.
+- **Poveștile cresc de la 58 la 640 de cuvinte** (21: 562 · 22: 573 · 23: 591 · 24: 593 · **25: 640**).
+- **Extinderea spre 200 de capitole (din 27 nov. 2026):** N4 = 21–50, N3 = 51–90, N2 = 91–140, N1 = 141–200. Lucrăm cu 2 agenți: unul scrie capitolul, celălalt îl verifică și traduce explicațiile în toate limbile. Planul N4 și jurnalul (ce se întâmplă în fiecare capitol, personaje noi) sunt în scratchpad: ja-write/PLAN-N4.md și ja-write/JURNAL.md. Poveștile se numără acum cu scriptul jacount.mjs (cuvinte separate prin spații; cap. 25 = 547 după numărătoarea nouă).
+
+| Cap. | Temă | Unitatea |
+|---|---|---|
+| 26 | ～て しまう / ～ちゃう | N4 · Luna de miere |
+| 27 | ～て みる, ～て おく | |
+| 28 | verbe tranzitive / intranzitive, ～て ある vs ～て いる | |
+| 29 | ～ながら, ～し ～し, ～ので | |
+| 30 | forma volitivă ～(よ)う, つもり, よてい + recapitulare | |
+| 31 | pasivul direct | N4 · Două orașe |
+| 32 | pasivul „de suferință” | |
+| 33 | cauzativul ～させる | |
+
+- **Firul poveștii 26–33:** a doua zi după nuntă, Sakura pleacă acasă și îi lasă Anei poza cu hora (26). Luna de miere la bunicul Gheorghe, în Carpați: mămăligă, calul Sura, poveștile de lângă sobă (27); șorțul bunicii Ileana și prietenia din armată (1952) dintre Gheorghe și Vasile, cu fluierul cioplit (28). Yuki pleacă la o editură din Tokyo (29–30). Mihai, medic, primește un post de 2 ani la un spital din București; Ana spune „じゃあ、いこう” (30). Mutarea în Cotroceni, vecina Doina (31); portofelul furat în tramvai și studenta Ioana, care îl aduce înapoi și învață japoneză (32); prima lecție a Anei la școala de limbi, cu Andrei care desenează (33).
+- **Lungimea poveștilor (numărătoarea nouă):** 26: 565 · 27: 583 · 28: 595 · 29: 612 · 30: 620 · 31: 643 · 32: 655 · **33: 664**.
+- **Urmează:** 34–35 (în lucru), apoi 36–50 (keigo, nașterea Rosei Elena, primul an), apoi N3, N2, N1.
 
 ---
 
