@@ -192,7 +192,7 @@ export const enCap91 = lesson({
         { kind: 'choice', q: 'How many replies did the message get?', options: ['Three hundred and forty', 'Forty', 'Ninety'], answer: 'Three hundred and forty' },
         { kind: 'choice', q: 'What was Erica’s idea?', options: ['Cards with memories hung on strings meeting above Maggie’s armchair', 'A big cake', 'A video'], answer: 'Cards with memories hung on strings meeting above Maggie’s armchair' },
         { kind: 'choice', q: 'What did the lawyer say when Maggie said she didn’t want a party?', options: ['It’s not a party, it’s a gathering', 'Sorry, we’ll go home', 'Happy birthday'], answer: 'It’s not a party, it’s a gathering' },
-        { kind: 'choice', q: 'What card had Maggie kept for fifty-two years?', options: ['A birthday card from Fiona, aged 8', 'A letter from Rab', 'A card from Miss Rennie'], answer: 'A birthday card from Fiona, aged 8' },
+        { kind: 'choice', q: 'What card had Maggie kept for fifty-three years?', options: ['A birthday card from Fiona, aged 8', 'A letter from Rab', 'A card from Miss Rennie'], answer: 'A birthday card from Fiona, aged 8' },
       ],
     },
     homework: [
