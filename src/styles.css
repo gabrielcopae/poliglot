@@ -1337,3 +1337,36 @@ html[data-vt='out']::view-transition-old(root) { animation-name: vt-shrink; tran
 @keyframes vt-recede { to { transform: scale(0.96); opacity: 0.6; } }
 @keyframes vt-return { from { transform: scale(0.96); opacity: 0.6; } }
 @media (prefers-reduced-motion: reduce) { .orb.current .orb-wrap::after, .app-icon.st-current .app-icon-tile { animation: none; } }
+
+/* ——— Limbile pe ecranul principal: dreptunghiuri sticloase ——— */
+.glass-grid { display: grid; gap: 12px; margin-bottom: 8px; }
+.glass-grid.mine { grid-template-columns: 1fr; }
+.glass-grid.others { grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 560px) { .glass-grid.mine { grid-template-columns: repeat(2, 1fr); } .glass-grid.others { grid-template-columns: repeat(3, 1fr); } }
+.glass-tile {
+  position: relative; display: flex; align-items: center; gap: 12px; text-align: left; overflow: hidden;
+  padding: 14px 14px; border-radius: 20px; color: #fff; border: 1px solid rgba(255, 255, 255, 0.35);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+  background:
+    radial-gradient(140% 100% at 50% -20%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 45%),
+    linear-gradient(160deg, hsl(var(--lt-h) 68% 60%), hsl(calc(var(--lt-h) + 14) 62% 40%));
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.6),
+    inset 0 -8px 18px rgba(0, 0, 0, 0.18),
+    0 8px 20px hsl(var(--lt-h) 55% 28% / 0.28),
+    0 1px 3px rgba(0, 0, 0, 0.15);
+  transition: transform 0.18s cubic-bezier(.2, .8, .2, 1), box-shadow 0.2s;
+}
+/* reflexia de sticlă pe jumătatea de sus */
+.glass-tile::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 50%; background: linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0)); pointer-events: none; }
+.glass-tile:active { transform: scale(0.97); }
+@media (hover: hover) { .glass-tile:hover { transform: translateY(-2px); box-shadow: inset 0 1px 1px rgba(255,255,255,.6), inset 0 -8px 18px rgba(0,0,0,.18), 0 12px 26px hsl(var(--lt-h) 55% 28% / 0.36), 0 1px 3px rgba(0,0,0,.15); } }
+.glass-tile.big { padding: 18px 18px; min-height: 92px; }
+.glass-tile-flag { position: relative; flex-shrink: 0; display: grid; place-items: center; padding: 6px; border-radius: 14px; background: rgba(255, 255, 255, 0.22); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5); }
+.glass-tile-body { position: relative; flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.glass-tile-body b { font-size: 1.05rem; }
+.glass-tile.big .glass-tile-body b { font-size: 1.2rem; }
+.glass-tile-body small { font-size: 0.8rem; opacity: 0.92; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.glass-tile-bar { display: block; height: 6px; border-radius: 3px; background: rgba(0, 0, 0, 0.18); overflow: hidden; margin-top: 4px; }
+.glass-tile-bar i { display: block; height: 100%; border-radius: 3px; background: rgba(255, 255, 255, 0.9); }
+.glass-tile-badge { position: absolute; top: 8px; right: 8px; min-width: 24px; height: 24px; padding: 0 6px; border-radius: 12px; display: grid; place-items: center; font: 800 0.72rem/1 system-ui, sans-serif; background: #fff; color: hsl(var(--lt-h) 60% 35%); text-shadow: none; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); }

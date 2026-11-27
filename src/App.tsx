@@ -164,7 +164,7 @@ function MainApp({ session, season, signOut }: { session: Session; season: Retur
   return (
     <>
       <main className={`app ${showNav ? 'with-nav' : ''}`}>
-        {route.name === 'home' && <Home go={go} season={season} user={session.name} />}
+        {route.name === 'home' && <Home go={go} zoomGo={zoomGo} season={season} user={session.name} />}
         {route.name === 'course' && <CourseScreen key={`${route.lang}-${route.level ?? ''}`} lang={route.lang} level={route.level} go={go} zoomGo={zoomGo} back={back} />}
         {route.name === 'lesson' && (findLesson(getCourse(route.lang), route.lessonId)?.chapter
           ? <ChapterOverview key={route.lessonId} lang={route.lang} lessonId={route.lessonId} go={go} back={back} />

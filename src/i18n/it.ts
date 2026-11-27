@@ -540,5 +540,8 @@ const d: Record<string, string> = {
   'Vibrație scurtă la răspuns (pe telefon)': "Vibrazione breve alla risposta (sul telefono)",
   'Pe calculator poți răspunde și din tastatură: 1–9 pentru variante, Enter pentru Continuă, Spațiu la repetiție.': "Sul computer puoi rispondere anche con la tastiera: 1–9 per le opzioni, Invio per Continua, Spazio nel ripasso.",
   'Nivel': "Livello",
+  'Începe': "Inizia",
+  'Începe o limbă nouă': "Inizia una nuova lingua",
+  'Alege o limbă': "Scegli una lingua",
 }
 export default d

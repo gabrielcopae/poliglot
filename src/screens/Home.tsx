@@ -1,6 +1,6 @@
 import { Flag } from '../components/Flag'
 import { useLiveQuery } from 'dexie-react-hooks'
-import { COURSES, getCourse } from '../content'
+import { COURSES } from '../content'
 import { db, streakInfo } from '../db'
 import { useSettings } from '../settings'
 import { today } from '../util'
@@ -22,9 +22,11 @@ function GoalRing({ value, goal }: { value: number; goal: number }) {
     </div>
   )
 }
-import type { Go } from '../nav'
+import type { Go, ZoomGo } from '../nav'
+
+/** Nuanța dreptunghiului sticlos al fiecărei limbi (după culorile steagului). */
+const LANG_HUE: Record<string, number> = { es: 14, ja: 350, it: 140, fr: 226, en: 204, de: 40, ro: 262 }
 import { partOfDay, type Season } from '../season'
-import { Progress } from '../components/ui'
 import { buildSyllabus } from './CourseScreen'
 import { useState } from 'react'
 import { localGet, localSet } from '../settings'
@@ -35,7 +37,7 @@ import { BackupStrip, SaveButton } from '../components/BackupStrip'
 
 
 /** Ecranul principal, varianta simplă: salut, „Continuă”, repetiție (doar când e ceva), limbi, explorare. */
-export function Home({ go, user }: { go: Go; season: Season; user: string }) {
+export function Home({ go, zoomGo, user }: { go: Go; zoomGo: ZoomGo; season: Season; user: string }) {
   const lessons = useLiveQuery(() => db.lessons.toArray(), [], [])
   const days = useLiveQuery(() => db.days.toArray(), [], [])
   const now = Date.now()
@@ -150,26 +152,53 @@ export function Home({ go, user }: { go: Go; season: Season; user: string }) {
 
       <BackupStrip user={user} hasProgress={lessons.length > 0 || chapters.length > 0 || homework.length > 0 || cardCount > 0} />
 
-      <h2 className="section-title">{t('Limbile tale')}</h2>
-      <div className="lang-list">
-        {langs.map((x) => {
+      {(() => {
+        // limbile începute sus, mari; celelalte într-o grilă mai mică, ca să nu fie toate grămadă
+        const mine = langs.filter((x) => x.started).sort((a, b) => (last[b.c.lang] ?? 0) - (last[a.c.lang] ?? 0))
+        const others = langs.filter((x) => !x.started)
+        const tile = (x: (typeof langs)[number], big: boolean) => {
           const { c } = x
-          const course = getCourse(c.lang)
+          const frac = x.all.length ? x.n / x.all.length : 0
           return (
-            <button key={c.lang} className={`card lang-card lang-row lang-${c.lang}`} onClick={() => go({ name: 'course', lang: c.lang })}>
-              <span className="lang-flag"><Flag lang={c.lang} size={32} /></span>
-              <span className="lang-row-body">
-                <span className="lang-row-top">
-                  <b className="lang-name">{t(c.name)}</b>
-                  {dueByLang[c.lang] ? <span className="chip">{t('{n} de repetat', { n: dueByLang[c.lang] })}</span> : null}
-                </span>
-                <Progress value={x.all.length ? x.n / x.all.length : 0} />
-                <small className="muted">{x.next ? nextLabel(x) : `${t(course.name)}: ${t('totul e gata 🎉')}`}</small>
+            <button
+              key={c.lang}
+              className={`lang-card glass-tile ${big ? 'big' : ''} lang-${c.lang}`}
+              style={{ ['--lt-h' as string]: LANG_HUE[c.lang] ?? 210 }}
+              onClick={(e) => zoomGo({ name: 'course', lang: c.lang }, e.currentTarget)}
+            >
+              <span className="glass-tile-flag"><Flag lang={c.lang} size={big ? 40 : 30} /></span>
+              <span className="glass-tile-body">
+                <b>{t(c.name)}</b>
+                {big ? (
+                  <>
+                    <small>{x.next ? nextLabel(x) : t('totul e gata 🎉')}</small>
+                    <span className="glass-tile-bar"><i style={{ width: `${frac * 100}%` }} /></span>
+                  </>
+                ) : (
+                  <small>{t('Începe')} →</small>
+                )}
               </span>
+              {dueByLang[c.lang] ? <span className="glass-tile-badge">{dueByLang[c.lang]}</span> : null}
             </button>
           )
-        })}
-      </div>
+        }
+        return (
+          <>
+            {mine.length > 0 && (
+              <>
+                <h2 className="section-title">{t('Limbile tale')}</h2>
+                <div className="glass-grid mine">{mine.map((x) => tile(x, true))}</div>
+              </>
+            )}
+            {others.length > 0 && (
+              <>
+                <h2 className="section-title">{mine.length ? t('Începe o limbă nouă') : t('Alege o limbă')}</h2>
+                <div className="glass-grid others">{others.map((x) => tile(x, false))}</div>
+              </>
+            )}
+          </>
+        )
+      })()}
 
       <h2 className="section-title">{t('Explorează')}</h2>
       <div className="explore-row">
