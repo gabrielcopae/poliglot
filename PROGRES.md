@@ -184,7 +184,7 @@ Poveștile B2: 67: 1480 · 68: 1511 · 69: 1540 · 70: 1572 · 71: 1579 · 72: 1
 | 10 | ～ています, e voie / nu e voie | 20 | înainte / după, recapitularea N5 |
 
 - **Firul poveștii în japoneză:** excursia lui Mihai și a Anei în Japonia (Tokyo, Kyoto, Hiroshima). Doamna Suzuki se împacă cu sora ei, Fumiko. Mihai o cere în căsătorie pe Ana la poarta torii de la Miyajima (capitolul 20).
-- **N4 — în lucru: 13 din 30 de capitole gata (21–33).** Unitatea „N4 · Pregătiri de nuntă”:
+- **N4 — COMPLET (capitolele 21–50)**, fiecare scris de un agent și verificat de altul. Unitatea „N4 · Pregătiri de nuntă”:
 
 | Cap. | Temă |
 |---|---|
@@ -211,7 +211,8 @@ Poveștile B2: 67: 1480 · 68: 1511 · 69: 1540 · 70: 1572 · 71: 1579 · 72: 1
 
 - **Firul poveștii 26–33:** a doua zi după nuntă, Sakura pleacă acasă și îi lasă Anei poza cu hora (26). Luna de miere la bunicul Gheorghe, în Carpați: mămăligă, calul Sura, poveștile de lângă sobă (27); șorțul bunicii Ileana și prietenia din armată (1952) dintre Gheorghe și Vasile, cu fluierul cioplit (28). Yuki pleacă la o editură din Tokyo (29–30). Mihai, medic, primește un post de 2 ani la un spital din București; Ana spune „じゃあ、いこう” (30). Mutarea în Cotroceni, vecina Doina (31); portofelul furat în tramvai și studenta Ioana, care îl aduce înapoi și învață japoneză (32); prima lecție a Anei la școala de limbi, cu Andrei care desenează (33).
 - **Lungimea poveștilor (numărătoarea nouă):** 26: 565 · 27: 583 · 28: 595 · 29: 612 · 30: 620 · 31: 643 · 32: 655 · **33: 664**.
-- **Urmează:** 34–35 (în lucru), apoi 36–50 (keigo, nașterea Rosei Elena, primul an), apoi N3, N2, N1.
+- **34–50:** 34 cauzativ-pasivul, 35 recapitulare + vestea sarcinii (unitatea „Două orașe”); 36–40 keigo (尊敬語, 謙譲語, お～ください, ～ば～ほど), vizita surorilor Suzuki și Fumiko la București (unitatea „Politețe”); 41–45 はず, かもしれない, ことにする/なる, ため/のに, nașterea Rosei Elena pe 15 ianuarie, porecla Hana-chan (unitatea „Așteptarea”); 46–50 ところ, ばかり, verbe compuse/すぎる/やすい, かどうか, Mihai ia N4 (128/180), aniversarea de 50 de ani a ceainăriei lui Fumiko la Kyoto + recapitularea N4 (unitatea „Primul an”).
+- **N3 — în lucru (51–90)**, planul în ja-write/PLAN-N3.md: Ioana pleacă un an la Kyoto, nunta lui Yuki, grădinița, vara la Hiroshima, schimbări, rădăcini. Kanji introduse treptat (câte 5–6 pe capitol). Explicațiile se traduc în toate limbile după verificare (capitolele 27–33 așteaptă încă traducerile).
 
 ---
 
