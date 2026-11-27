@@ -219,7 +219,7 @@ export const enCap13 = lesson({
       },
       {
         kind: 'reading',
-        title: 'Text de citit: Afișul lui Ruby',
+        title: 'Text de citit: Povestea lui Ruby pentru școală',
         instructions: 'Ascultă textul de 2 ori, apoi citește-l cu voce tare. La final urmează 4 întrebări.',
         reading: {
           title: 'Ruby’s story for school',
