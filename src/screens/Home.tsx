@@ -3,6 +3,7 @@ import { useLiveQuery } from 'dexie-react-hooks'
 import { COURSES } from '../content'
 import { db, streakInfo } from '../db'
 import { useSettings } from '../settings'
+import { Mascot, homeMood, type Mood } from '../components/Mascot'
 import { today } from '../util'
 
 /** Cercul obiectivului zilnic: se umple încet pe măsură ce înveți azi. */
@@ -121,12 +122,27 @@ export function Home({ go, zoomGo, user }: { go: Go; zoomGo: ZoomGo; season: Sea
           <p className="hero-line">
             🔥 <b>{streak}</b> {tn(streak, 'zi la rând', 'zile la rând')} <span className="sep">·</span> 📚 <b>{cardCount}</b> {t('cuvinte')}
           </p>
-          {restYesterday && !learnedToday && (
-            <p className="hero-note">{t('Ieri ai avut zi liberă. Învață azi și seria merge mai departe.')}</p>
-          )}
         </div>
         <GoalRing value={xpToday} goal={goal} />
       </section>
+
+      {(() => {
+        const mood = homeMood({ goalDone: xpToday >= goal, learnedToday, restYesterday, streak })
+        const say: Record<Mood, string> = {
+          cheer: t('Ai atins obiectivul de azi! Bravo!'),
+          happy: t('Bună treabă azi! Mai facem una?'),
+          sad: t('Ieri ai avut zi liberă. Învață azi și seria merge mai departe.'),
+          wave: t('Salut! Sunt Mr. Poli. Hai să începem!'),
+          sleepy: t('E târziu… dar o repetiție scurtă tot merge.'),
+          idle: t('Te aștept la lecția de azi!'),
+        }
+        return (
+          <div className="poli-row">
+            <Mascot mood={mood} size={92} />
+            <div className="mascot-say">{say[mood]}</div>
+          </div>
+        )
+      })()}
 
       {cont && cont.next && (
         <button className="card continue-home" onClick={() => go(cont.next!.route)}>

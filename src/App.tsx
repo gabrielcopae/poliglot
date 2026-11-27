@@ -11,6 +11,7 @@ import { isNight, seasonFor } from './season'
 import { localGet, localSet, switchSettingsUser, useSettings } from './settings'
 import { today } from './util'
 import { Intro } from './components/Intro'
+import { MascotDemo } from './components/MascotDemo'
 import { SeasonScene } from './components/SeasonScene'
 import { BottomNav } from './components/ui'
 import { Home } from './screens/Home'
@@ -67,6 +68,7 @@ export default function App() {
   const night = settings.time === 'auto' ? isNight(now) : settings.time === 'night'
   const [intro, setIntro] = useState(() => shouldShowIntro(settings.calm && settings.intro === 'daily' ? 'never' : settings.intro))
   const [session, setSession] = useState<Session | null>(initialSession)
+  const [poliDemo, setPoliDemo] = useState(() => new URLSearchParams(location.search).has('poli'))
   // traducerile de conținut ale limbii alese se încarcă la cerere; apoi redesenăm
   const [, setContentReady] = useState('')
   const ui = settings.ui ?? 'ro'
@@ -109,6 +111,7 @@ export default function App() {
     <>
       <SeasonScene season={season} night={night} particles={settings.particles && !settings.calm} calm={settings.calm} />
       {intro && <Intro onDone={endIntro} />}
+      {poliDemo && <MascotDemo onClose={() => { setPoliDemo(false); history.replaceState(history.state, '', location.pathname) }} />}
       {session ? (
         <MainApp key={session.key} session={session} season={season} signOut={signOut} />
       ) : (

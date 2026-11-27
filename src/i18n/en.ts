@@ -543,5 +543,10 @@ const d: Record<string, string> = {
   'Începe': "Start",
   'Începe o limbă nouă': "Start a new language",
   'Alege o limbă': "Choose a language",
+  'Ai atins obiectivul de azi! Bravo!': "You reached today’s goal! Well done!",
+  'Bună treabă azi! Mai facem una?': "Great work today! One more?",
+  'Salut! Sunt Mr. Poli. Hai să începem!': "Hi! I’m Mr. Poli. Let’s get started!",
+  'E târziu… dar o repetiție scurtă tot merge.': "It’s late… but a short review still works.",
+  'Te aștept la lecția de azi!': "I’m waiting for you at today’s lesson!",
 }
 export default d

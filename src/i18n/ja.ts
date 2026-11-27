@@ -543,5 +543,10 @@ const d: Record<string, string> = {
   'Începe': "始める",
   'Începe o limbă nouă': "新しい言語を始める",
   'Alege o limbă': "言語を選ぶ",
+  'Ai atins obiectivul de azi! Bravo!': "今日の目標を達成しました！すばらしい！",
+  'Bună treabă azi! Mai facem una?': "今日はよくがんばりました！もう1つやりますか？",
+  'Salut! Sunt Mr. Poli. Hai să începem!': "こんにちは！ぼくはMr. ポリ。さあ、始めよう！",
+  'E târziu… dar o repetiție scurtă tot merge.': "もう遅いけど…短い復習ならまだできます。",
+  'Te aștept la lecția de azi!': "今日のレッスンで待っています！",
 }
 export default d

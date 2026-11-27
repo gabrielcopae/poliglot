@@ -10,6 +10,7 @@ import { addWords } from '../srs'
 import { similarity } from '../util'
 import { Progress, SpeakButton, TopBar } from '../components/ui'
 import { digitIndex, playFeedback, playFinish } from '../feedback'
+import { Mascot } from '../components/Mascot'
 
 type Phase = 'intro' | 'learn' | 'practice' | 'done'
 
@@ -198,7 +199,8 @@ export function Practice({ course, exercises, back, onDone }: { course: Course; 
       </div>
       {feedback && (
         <div className={`feedback ${feedback.ok ? 'ok' : 'bad'}`}>
-          <div>
+          <Mascot mood={feedback.ok ? 'happy' : 'sad'} size={56} />
+          <div className="feedback-text">
             <b>{feedback.ok ? `✔ ${t('Excelent!')}` : `✘ ${t('Nu chiar')}`}</b>
             {feedback.note && <div>{feedback.note}</div>}
             {feedback.diff && <div className="accent-fix">{t('Răspuns corect:')} {feedback.diff.parts.map((p, i) => p.bad ? <mark key={i}>{p.text}</mark> : <span key={i}>{p.text}</span>)}</div>}
