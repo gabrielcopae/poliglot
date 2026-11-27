@@ -472,7 +472,7 @@ function Done({ lesson, result, back, retry }: { lesson: Lesson; result: { score
   const pct = Math.round(result.score * 100)
   return (
     <div className="done">
-      <div className="done-emoji">{pct >= 90 ? '🏆' : pct >= 60 ? '🎉' : '💪'}</div>
+      <div className="done-poli"><Mascot mood={pct >= 90 ? 'cheer' : pct >= 60 ? 'happy' : 'sad'} size={140} /></div>
       <h2>{t('Lecție terminată!')}</h2>
       <p className="done-score">{t('{p}% corect din prima', { p: pct })}</p>
       <p className="muted">

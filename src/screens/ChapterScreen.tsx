@@ -12,6 +12,7 @@ import { shuffle } from '../util'
 import { Reader } from '../components/Reader'
 import { Progress, SpeakButton, TopBar } from '../components/ui'
 import { Learn, MicCheck, Practice } from './LessonScreen'
+import { Mascot } from '../components/Mascot'
 
 function useChapter(lang: LangCode, lessonId: string) {
   const course = getCourse(lang)
@@ -268,7 +269,7 @@ export function SessionScreen({ lang, lessonId, session, startStep, back, toChap
   if (finished) {
     return (
       <div className="screen done">
-        <div className="done-emoji">{session === 1 ? '🎧' : (finished.score ?? 0) >= 0.75 ? '🏆' : '💪'}</div>
+        <div className="done-poli"><Mascot mood={session === 1 || (finished.score ?? 0) >= 0.75 ? 'cheer' : 'happy'} size={140} /></div>
         <h2>{t('Ședința {n} terminată!', { n: session })}</h2>
         {session === 1 ? (
           <p>{t('Cele {n} cuvinte noi sunt în repetiție. Mâine (sau după o pauză) continuă cu Ședința 2: gramatica.', { n: lesson.words.length })}</p>
@@ -604,7 +605,7 @@ function HomeworkTask({ task, course, ch, row, save, close }: {
   if (stage === 'done') {
     return (
       <div className="screen done">
-        <div className="done-emoji">{(score ?? 0) >= 0.75 ? '🌟' : '👍'}</div>
+        <div className="done-poli"><Mascot mood={(score ?? 0) >= 0.75 ? 'cheer' : 'happy'} size={140} /></div>
         <h2>{t('Temă terminată!')}</h2>
         <p className="done-score">{t('{p}% corect din prima', { p: Math.round((score ?? 0) * 100) })}</p>
         <div className="sticky-actions">

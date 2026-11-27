@@ -9,6 +9,7 @@ import { drillToExercise } from '../exercises'
 import { levelChapters } from '../journey'
 import { shuffle } from '../util'
 import { Practice } from './LessonScreen'
+import { Mascot } from '../components/Mascot'
 
 const QUESTIONS = 30
 const PASS = 60
@@ -73,7 +74,7 @@ export function ExamScreen({ lang, level, back }: { lang: LangCode; level: strin
         </article>
       ) : (
         <article className="card exam-card">
-          <div className="done-emoji">{score >= PASS ? '🛂' : '📚'}</div>
+          <div className="done-poli"><Mascot mood={score >= PASS ? 'cheer' : 'sad'} size={140} /></div>
           <h2>{score}%</h2>
           {score >= PASS ? (
             <>

@@ -10,6 +10,7 @@ import { speak } from '../speech'
 import { GRADES, grade, preview } from '../srs'
 import { formatInterval } from '../util'
 import { Progress, SpeakButton, TopBar } from '../components/ui'
+import { Mascot } from '../components/Mascot'
 
 /** Un cuvânt scos din conținut între timp: îl sărim. */
 function SkipMissing({ onSkip }: { onSkip: () => void }) {
@@ -61,7 +62,7 @@ export function ReviewScreen({ lang, back }: { lang?: LangCode; back?: () => voi
       <div className="screen">
         <TopBar title={title} onBack={back} />
         <div className="card empty">
-          <div className="done-emoji">{doneCount ? '✨' : '🌿'}</div>
+          <div className="done-poli"><Mascot mood={doneCount ? 'cheer' : 'idle'} size={140} /></div>
           <h2>{doneCount ? t('Gata! Ai repetat {n} cuvinte.', { n: doneCount }) : t('Nimic de repetat acum')}</h2>
           <p className="muted">{t('Fă o lecție nouă sau revino mai târziu. Aplicația îți arată fiecare cuvânt chiar înainte să-l uiți.')}</p>
         </div>
