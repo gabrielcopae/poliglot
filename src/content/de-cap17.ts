@@ -246,7 +246,7 @@ export const deCap17 = lesson({
           title: 'Berlin in Zahlen',
           cast: { Narrator: 'f' },
           lines: [
-            { t: 'Berlin ist die größte Stadt Deutschlands. Hier wohnen fast vier Millionen Menschen, mehr als in Hamburg und München zusammen… na ja, fast.', ro: 'Berlinul e cel mai mare oraș din Germania. Aici locuiesc aproape patru milioane de oameni, mai mulți decât la Hamburg și München la un loc… mă rog, aproape.' },
+            { t: 'Berlin ist die größte Stadt Deutschlands. Hier wohnen fast vier Millionen Menschen, mehr als in Hamburg und München zusammen.', ro: 'Berlinul e cel mai mare oraș din Germania. Aici locuiesc aproape patru milioane de oameni, mai mulți decât la Hamburg și München la un loc.' },
             { t: 'Berlin hat mehr Brücken als Venedig: ungefähr tausendsiebenhundert!', ro: 'Berlinul are mai multe poduri decât Veneția: aproximativ o mie șapte sute!' },
             { t: 'Der höchste Punkt ist der Fernsehturm mit 368 Metern. Die Aussichtsplattform liegt auf 203 Metern.', ro: 'Cel mai înalt punct e turnul de televiziune, cu 368 de metri. Platforma de observație e la 203 metri.' },
             { t: 'Die älteste Kirche ist die Nikolaikirche, aus dem 13. Jahrhundert.', ro: 'Cea mai veche biserică e Nikolaikirche, din secolul al XIII-lea.' },
