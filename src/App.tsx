@@ -1,9 +1,12 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { originOf, zoomTransition, type ZoomOrigin } from './zoom'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { saveSession, savedSession, type Session } from './accounts'
 import { findLesson, getCourse } from './content'
 import { db, openUserDb } from './db'
-import type { Go, Route } from './nav'
+import type { Go, Route, ZoomGo } from './nav'
+
+type ZRoute = Route & { __z?: ZoomOrigin }
 import { isNight, seasonFor } from './season'
 import { localGet, localSet, switchSettingsUser, useSettings } from './settings'
 import { today } from './util'
@@ -117,10 +120,18 @@ export default function App() {
 
 function MainApp({ session, season, signOut }: { session: Session; season: ReturnType<typeof seasonFor>; signOut: () => void }) {
   const [route, setRoute] = useState<Route>(() => (history.state as Route | null) ?? { name: 'home' })
+  // ecranul curent ține minte iconița din care s-a deschis (__z), ca la Înapoi să se strângă în ea
+  const routeRef = useRef<ZRoute>(route)
+  routeRef.current = route
 
   useEffect(() => {
     if (!history.state) history.replaceState({ name: 'home' }, '')
-    const onPop = (e: PopStateEvent) => setRoute((e.state as Route | null) ?? { name: 'home' })
+    const onPop = (e: PopStateEvent) => {
+      const nextRoute = (e.state as Route | null) ?? { name: 'home' }
+      const z = routeRef.current.__z
+      if (z) zoomTransition('out', z, () => setRoute(nextRoute))
+      else setRoute(nextRoute)
+    }
     window.addEventListener('popstate', onPop)
     return () => window.removeEventListener('popstate', onPop)
   }, [])
@@ -129,6 +140,15 @@ function MainApp({ session, season, signOut }: { session: Session; season: Retur
     history.pushState(r, '')
     setRoute(r)
     window.scrollTo(0, 0)
+  }, [])
+  const zoomGo: ZoomGo = useCallback((r, from) => {
+    const z = originOf(from)
+    const zr: ZRoute = { ...r, __z: z }
+    zoomTransition('in', z, () => {
+      history.pushState(zr, '')
+      setRoute(zr)
+      window.scrollTo(0, 0)
+    })
   }, [])
   const back = useCallback(() => history.back(), [])
   // înlocuiește ecranul curent (ex. o ședință terminată) fără să-l lase în istoric
@@ -145,7 +165,7 @@ function MainApp({ session, season, signOut }: { session: Session; season: Retur
     <>
       <main className={`app ${showNav ? 'with-nav' : ''}`}>
         {route.name === 'home' && <Home go={go} season={season} user={session.name} />}
-        {route.name === 'course' && <CourseScreen lang={route.lang} go={go} back={back} />}
+        {route.name === 'course' && <CourseScreen key={`${route.lang}-${route.level ?? ''}`} lang={route.lang} level={route.level} go={go} zoomGo={zoomGo} back={back} />}
         {route.name === 'lesson' && (findLesson(getCourse(route.lang), route.lessonId)?.chapter
           ? <ChapterOverview key={route.lessonId} lang={route.lang} lessonId={route.lessonId} go={go} back={back} />
           : <LessonScreen key={route.lessonId} lang={route.lang} lessonId={route.lessonId} back={back} />)}

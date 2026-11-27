@@ -2,7 +2,7 @@ import type { LangCode } from './content/types'
 
 export type Route =
   | { name: 'home' }
-  | { name: 'course'; lang: LangCode }
+  | { name: 'course'; lang: LangCode; level?: string }
   | { name: 'lesson'; lang: LangCode; lessonId: string }
   | { name: 'session'; lang: LangCode; lessonId: string; session: 1 | 2; step?: number; fromChapter?: boolean }
   | { name: 'homework'; lang: LangCode; lessonId: string }
@@ -25,3 +25,5 @@ export type Route =
   | { name: 'kanjiOne'; char: string }
 
 export type Go = (r: Route) => void
+/** Navigare cu tranziția de mărire din elementul apăsat (iconiță, cerc). */
+export type ZoomGo = (r: Route, from: Element | null) => void

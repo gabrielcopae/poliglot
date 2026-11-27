@@ -1,12 +1,10 @@
-import { useState } from 'react'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { Flag } from '../components/Flag'
 import { getCourse } from '../content'
 import type { LangCode, Lesson } from '../content/types'
 import { db, type ChapterRow, type HomeworkRow } from '../db'
-import type { Go, Route } from '../nav'
+import type { Go, Route, ZoomGo } from '../nav'
 import { Progress, TopBar } from '../components/ui'
-import { localGet, localSet } from '../settings'
 import { t, tc, tn } from '../i18n'
 
 type Status = 'done' | 'progress' | 'todo'
@@ -62,7 +60,12 @@ export function buildSyllabus(lang: LangCode, chapters: ChapterRow[], homework: 
   }))
 }
 
-export function CourseScreen({ lang, go, back }: { lang: LangCode; go: Go; back: () => void }) {
+/** Culoarea fiecărui nivel (cercul sticlos și iconițele capitolelor lui). */
+const LEVEL_HUE: Record<string, number> = { A1: 145, A2: 180, B1: 212, B2: 268, C1: 24, C2: 340, N5: 145, N4: 180, N3: 212, N2: 268, N1: 24 }
+/** Numele scurt pe iconiță: la titlurile „original — traducere” rămâne traducerea. */
+const shortName = (s: string) => (s.includes(' — ') ? s.split(' — ').pop()! : s)
+
+export function CourseScreen({ lang, level, go, zoomGo, back }: { lang: LangCode; level?: string; go: Go; zoomGo: ZoomGo; back: () => void }) {
   const course = getCourse(lang)
   const lessons = useLiveQuery(() => db.lessons.where('lang').equals(lang).toArray(), [lang], [])
   const chapters = useLiveQuery(() => db.chapters.where('lang').equals(lang).toArray(), [lang], [])
@@ -73,16 +76,82 @@ export function CourseScreen({ lang, go, back }: { lang: LangCode; go: Go; back:
   const all = syllabus.flatMap((u) => u.lessons.flatMap((l) => l.items))
   const next = all.find((x) => x.status === 'progress') ?? all.find((x) => x.status === 'todo')
   const doneCount = all.filter((x) => x.status === 'done').length
-  // nivelul afișat: cel ales ultima dată sau cel la care ești acum
-  const levelKey = `poliglot.courseLevel.${lang}`
   const nextLevel = next ? syllabus.find((u) => u.lessons.some((l) => l.lesson.id === next.lesson.id))?.unit.level : undefined
-  const [levelPick, setLevelPick] = useState<string | null>(() => localGet(levelKey))
-  const level = course.plan.some((p) => p.level === levelPick) ? levelPick! : (nextLevel ?? course.plan[0]?.level)
-  const chooseLevel = (lv: string) => { setLevelPick(lv); localSet(levelKey, lv) }
-  // un singur capitol deschis odată; implicit cel la care ești
-  const [openId, setOpenId] = useState<string | null | undefined>(undefined)
-  const openChapter = openId === undefined ? next?.lesson.id ?? null : openId
 
+  const continueCard = next && (
+    <button className="card continue-home" onClick={() => go(next.route)}>
+      <span className="continue-n">{next.n}</span>
+      <span className="continue-home-body">
+        <small>{next.status === 'progress' ? t('Continuă de unde ai rămas') : t('Următoarea ședință')}</small>
+        <b>{next.title}</b>
+        <span className="continue-sub">{next.lesson.chapter ? `${t('Capitolul {n}', { n: next.lesson.chapter.number })}: ${tc(next.lesson.title)}` : tc(next.lesson.title)}</span>
+      </span>
+      <span className="continue-home-go">▶</span>
+    </button>
+  )
+
+  // ——— un nivel deschis: grila de iconițe a capitolelor ———
+  const plan = level ? course.plan.find((p) => p.level === level) : undefined
+  if (level && plan) {
+    const units = syllabus.filter((u) => u.unit.level === level)
+    const items = units.flatMap((u) => u.lessons.flatMap((l) => l.items))
+    const written = units.reduce((k, u) => k + u.lessons.filter((l) => l.lesson.chapter).length, 0)
+    const total = Math.max(plan.chapters * 3, items.length)
+    const levelDone = items.filter((x) => x.status === 'done').length
+    const hue = LEVEL_HUE[level] ?? 200
+    return (
+      <div className="screen course-calm level-screen" style={{ ['--lv-h' as string]: hue }}>
+        <TopBar title={<><span className="lv-badge">{level}</span> {tc(plan.title)}</>} onBack={back} />
+        <div className="course-summary">
+          <Progress value={total ? levelDone / total : 0} />
+          <small>{t('{n} / {all} ședințe', { n: levelDone, all: total })}</small>
+        </div>
+        {nextLevel === level && continueCard}
+        {units.map(({ unit, lessons: ls }, ui) => (
+          <section key={unit.id} className="icon-unit" style={{ ['--lv-h' as string]: hue + ui * 38 }}>
+            <h3 className="icon-unit-title">{tc(unit.title).replace(/^([A-C][12]|N[1-5])\s*·\s*/, '')}</h3>
+            <div className="icon-grid">
+              {ls.map(({ lesson, items: its }) => {
+                const allDone = its.every((x) => x.status === 'done')
+                const any = its.some((x) => x.status !== 'todo')
+                const isCurrent = next?.lesson.id === lesson.id
+                const st = allDone ? 'done' : isCurrent ? 'current' : any ? 'progress' : 'todo'
+                const doneN = its.filter((x) => x.status === 'done').length
+                const route: Route = lesson.chapter ? { name: 'lesson', lang, lessonId: lesson.id } : its[0].route
+                const label = lesson.chapter ? t('Capitolul {n}', { n: lesson.chapter.number }) : tc(lesson.title)
+                return (
+                  <button
+                    key={lesson.id}
+                    className={`app-icon st-${st}`}
+                    onClick={(e) => zoomGo(route, e.currentTarget.querySelector('.app-icon-tile'))}
+                    aria-label={`${label}: ${tc(lesson.title)}`}
+                  >
+                    <span className="app-icon-tile">
+                      <span className="app-icon-emoji" aria-hidden="true">{lesson.emoji}</span>
+                      {lesson.chapter && <span className="app-icon-num">{lesson.chapter.number}</span>}
+                      {allDone && <span className="app-icon-badge ok" aria-hidden="true">✓</span>}
+                      {!allDone && any && <span className="app-icon-badge part" aria-hidden="true">{doneN}/{its.length}</span>}
+                    </span>
+                    <span className="app-icon-name">{shortName(tc(lesson.title))}</span>
+                  </button>
+                )
+              })}
+            </div>
+          </section>
+        ))}
+        {written > 0 && (
+          <button className="exam-link" onClick={() => go({ name: 'exam', lang, level })}>📝 {t('Test de nivel {level}', { level })} <span>({t('30 de întrebări · viză în pașaport')})</span></button>
+        )}
+        {written < plan.chapters && (
+          <div className="syl-planned">
+            🔒 {written ? t('Capitolele {a}–{b} ale nivelului {level} ({n} ședințe) sunt în pregătire și se adaugă pe parcurs.', { a: written + 1, b: plan.chapters, level, n: (plan.chapters - written) * 3 }) : t('Cele {b} capitole ale nivelului {level} ({n} ședințe) sunt în pregătire și se adaugă pe parcurs.', { b: plan.chapters, level, n: (plan.chapters - written) * 3 })}
+          </div>
+        )}
+      </div>
+    )
+  }
+
+  // ——— ecranul cursului: nivelurile ca cercuri sticloase ———
   return (
     <div className="screen course-calm">
       <TopBar
@@ -112,115 +181,36 @@ export function CourseScreen({ lang, go, back }: { lang: LangCode; go: Go; back:
         </button>
       )}
 
-      {next && (
-        <button className="card continue-home" onClick={() => go(next.route)}>
-          <span className="continue-n">{next.n}</span>
-          <span className="continue-home-body">
-            <small>{next.status === 'progress' ? t('Continuă de unde ai rămas') : t('Următoarea ședință')}</small>
-            <b>{next.title}</b>
-            <span className="continue-sub">{next.lesson.chapter ? `${t('Capitolul {n}', { n: next.lesson.chapter.number })}: ${tc(next.lesson.title)}` : tc(next.lesson.title)}</span>
-          </span>
-          <span className="continue-home-go">▶</span>
-        </button>
-      )}
+      {continueCard}
 
-      <div className="level-chips" role="tablist" aria-label={t('Nivel')}>
+      <div className="orb-grid">
         {course.plan.map((p) => {
           const its = syllabus.filter((u) => u.unit.level === p.level).flatMap((u) => u.lessons.flatMap((l) => l.items))
           const total = Math.max(p.chapters * 3, its.length)
           const d = its.filter((x) => x.status === 'done').length
+          const frac = total ? d / total : 0
+          const r = 47
+          const c = 2 * Math.PI * r
           return (
-            <button key={p.level} role="tab" aria-selected={level === p.level} className={`level-chip ${level === p.level ? 'on' : ''}`} onClick={() => chooseLevel(p.level)}>
-              <b>{p.level}</b>
-              <i style={{ width: `${total ? (d / total) * 100 : 0}%` }} />
+            <button
+              key={p.level}
+              className={`orb ${nextLevel === p.level ? 'current' : ''} ${its.length ? '' : 'soon'}`}
+              style={{ ['--lv-h' as string]: LEVEL_HUE[p.level] ?? 200 }}
+              onClick={(e) => zoomGo({ name: 'course', lang, level: p.level }, e.currentTarget.querySelector('.orb-ball'))}
+            >
+              <span className="orb-wrap">
+                <svg className="orb-ring" viewBox="0 0 100 100" aria-hidden="true">
+                  <circle cx="50" cy="50" r={r} className="orb-ring-track" />
+                  <circle cx="50" cy="50" r={r} className="orb-ring-fill" strokeDasharray={c} strokeDashoffset={c * (1 - frac)} transform="rotate(-90 50 50)" />
+                </svg>
+                <span className="orb-ball"><b>{p.level}</b></span>
+              </span>
+              <span className="orb-name">{tc(p.title)}</span>
+              <small className="orb-count">{its.length ? t('{n} / {all} ședințe', { n: d, all: total }) : t('în pregătire')}</small>
             </button>
           )
         })}
       </div>
-
-      {course.plan.filter((p) => p.level === level).map((p) => {
-        const units = syllabus.filter((u) => u.unit.level === p.level)
-        const items = units.flatMap((u) => u.lessons.flatMap((l) => l.items))
-        const written = units.reduce((k, u) => k + u.lessons.filter((l) => l.lesson.chapter).length, 0)
-        const total = Math.max(p.chapters * 3, items.length)
-        const levelDone = items.filter((x) => x.status === 'done').length
-        return (
-          <section key={p.level} className="path-level">
-            <header className="path-level-head">
-              <h2>{tc(p.title)}</h2>
-              <small>{t('{n} / {all} ședințe', { n: levelDone, all: total })}</small>
-            </header>
-            {units.map(({ unit, lessons: ls }) => {
-              const chDone = ls.filter((l) => l.items.every((x) => x.status === 'done')).length
-              return (
-                <div key={unit.id} className="path-unit">
-                  <h3 className="path-unit-title">
-                    <span>{tc(unit.title).replace(/^[A-C][12]\s*·\s*/, '')}</span>
-                    <small>{chDone} / {ls.length}</small>
-                  </h3>
-                  <ol className="path">
-                    {ls.map(({ lesson, items: its }) => {
-                      const allDone = its.every((x) => x.status === 'done')
-                      const any = its.some((x) => x.status !== 'todo')
-                      const isCurrent = next?.lesson.id === lesson.id
-                      const st = allDone ? 'done' : isCurrent ? 'current' : any ? 'progress' : 'todo'
-                      const doneN = its.filter((x) => x.status === 'done').length
-                      if (!lesson.chapter) {
-                        const it = its[0]
-                        return (
-                          <li key={lesson.id} className={`path-node st-${st}`}>
-                            <button className="path-head" onClick={() => go(it.route)}>
-                              <span className="path-dot">{allDone ? '✓' : lesson.emoji}</span>
-                              <span className="path-body"><b>{tc(lesson.title)}</b><small>{it.detail}</small></span>
-                            </button>
-                          </li>
-                        )
-                      }
-                      const isOpen = openChapter === lesson.id
-                      return (
-                        <li key={lesson.id} className={`path-node st-${st} ${isOpen ? 'open' : ''}`}>
-                          <button className="path-head" aria-expanded={isOpen} onClick={() => setOpenId(isOpen ? null : lesson.id)}>
-                            <span className="path-dot">{allDone ? '✓' : lesson.chapter.number}</span>
-                            <span className="path-body">
-                              <small className="path-kicker">{lesson.emoji} {t('Capitolul {n}', { n: lesson.chapter.number })}</small>
-                              <b>{tc(lesson.title)}</b>
-                              <span className="path-meter">{its.map((it) => <i key={it.n} className={`st-${it.status}`} />)}<em>{t('{n} din {all}', { n: doneN, all: its.length })}</em></span>
-                            </span>
-                            <span className="path-chev" aria-hidden="true">›</span>
-                          </button>
-                          {isOpen && (
-                            <div className="path-sessions">
-                              {its.map((it) => (
-                                <button key={it.n} className={`path-session st-${it.status}`} onClick={() => go(it.route)}>
-                                  <span className="path-session-n">{it.status === 'done' ? '✓' : it.n}</span>
-                                  <span className="path-session-body">
-                                    <b>{it.title}</b>
-                                    <small>{it.note ?? it.detail}</small>
-                                  </span>
-                                  <span className="path-session-go" aria-hidden="true">{it.status === 'done' ? '' : '▶'}</span>
-                                </button>
-                              ))}
-                              <button className="path-toc" onClick={() => go({ name: 'lesson', lang, lessonId: lesson.id })}>{t('Cuprinsul capitolului →')}</button>
-                            </div>
-                          )}
-                        </li>
-                      )
-                    })}
-                  </ol>
-                </div>
-              )
-            })}
-            {written > 0 && (
-              <button className="exam-link" onClick={() => go({ name: 'exam', lang, level: p.level })}>📝 {t('Test de nivel {level}', { level: p.level })} <span>({t('30 de întrebări · viză în pașaport')})</span></button>
-            )}
-            {written < p.chapters && (
-              <div className="syl-planned">
-                🔒 {written ? t('Capitolele {a}–{b} ale nivelului {level} ({n} ședințe) sunt în pregătire și se adaugă pe parcurs.', { a: written + 1, b: p.chapters, level: p.level, n: (p.chapters - written) * 3 }) : t('Cele {b} capitole ale nivelului {level} ({n} ședințe) sunt în pregătire și se adaugă pe parcurs.', { b: p.chapters, level: p.level, n: (p.chapters - written) * 3 })}
-              </div>
-            )}
-          </section>
-        )
-      })}
     </div>
   )
 }
