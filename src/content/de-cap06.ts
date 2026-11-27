@@ -232,7 +232,7 @@ export const deCap06 = lesson({
       },
       {
         kind: 'reading',
-        title: 'Text de citit: Ziua lui Fritz',
+        title: 'Text de citit: Ziua domnului Brandt',
         instructions: 'Ascultă textul de 2 ori, apoi citește-l cu voce tare. Caută toate verbele separabile. La final urmează 4 întrebări.',
         reading: {
           title: 'Herr Brandts Tag',
