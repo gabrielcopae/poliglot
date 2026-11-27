@@ -39,6 +39,7 @@ import { jaCap36 } from './ja-cap36'
 import { jaCap37 } from './ja-cap37'
 import { jaCap38 } from './ja-cap38'
 import { jaCap39 } from './ja-cap39'
+import { jaCap40 } from './ja-cap40'
 
 /** Tabelul hiragana (rând cu rând). Celulele goale sunt `null`. */
 export const HIRAGANA: (readonly [string, string] | null)[][] = [
@@ -401,7 +402,7 @@ export const ja: Course = {
       id: 'ja-u8',
       title: 'N4 · Politețe',
       level: 'N4',
-      lessons: [jaCap36, jaCap37, jaCap38, jaCap39],
+      lessons: [jaCap36, jaCap37, jaCap38, jaCap39, jaCap40],
     },
   ],
 }
