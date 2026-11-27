@@ -64,6 +64,8 @@ import { jaCap61 } from './ja-cap61'
 import { jaCap62 } from './ja-cap62'
 import { jaCap63 } from './ja-cap63'
 import { jaCap64 } from './ja-cap64'
+import { jaCap65 } from './ja-cap65'
+import { jaCap66 } from './ja-cap66'
 
 /** Tabelul hiragana (rând cu rând). Celulele goale sunt `null`. */
 export const HIRAGANA: (readonly [string, string] | null)[][] = [
@@ -456,7 +458,13 @@ export const ja: Course = {
       id: 'ja-u13',
       title: 'N3 · Grădinița',
       level: 'N3',
-      lessons: [jaCap61, jaCap62, jaCap63, jaCap64],
+      lessons: [jaCap61, jaCap62, jaCap63, jaCap64, jaCap65],
+    },
+    {
+      id: 'ja-u14',
+      title: 'N3 · Asemănări',
+      level: 'N3',
+      lessons: [jaCap66],
     },
   ],
 }
