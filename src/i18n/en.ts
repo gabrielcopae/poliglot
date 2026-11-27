@@ -548,5 +548,6 @@ const d: Record<string, string> = {
   'Salut! Sunt Mr. Poli. Hai să începem!': "Hi! I’m Mr. Poli. Let’s get started!",
   'E târziu… dar o repetiție scurtă tot merge.': "It’s late… but a short review still works.",
   'Te aștept la lecția de azi!': "I’m waiting for you at today’s lesson!",
+  'Se încarcă versiunea nouă…': "Loading the new version…",
 }
 export default d

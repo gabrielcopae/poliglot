@@ -548,5 +548,6 @@ const d: Record<string, string> = {
   'Salut! Sunt Mr. Poli. Hai să începem!': "こんにちは！ぼくはMr. ポリ。さあ、始めよう！",
   'E târziu… dar o repetiție scurtă tot merge.': "もう遅いけど…短い復習ならまだできます。",
   'Te aștept la lecția de azi!': "今日のレッスンで待っています！",
+  'Se încarcă versiunea nouă…': "新しいバージョンを読み込み中…",
 }
 export default d
