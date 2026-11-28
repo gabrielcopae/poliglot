@@ -72,6 +72,8 @@ import { jaCap69 } from './ja-cap69'
 import { jaCap70 } from './ja-cap70'
 import { jaCap71 } from './ja-cap71'
 import { jaCap72 } from './ja-cap72'
+import { jaCap73 } from './ja-cap73'
+import { jaCap74 } from './ja-cap74'
 
 /** Tabelul hiragana (rând cu rând). Celulele goale sunt `null`. */
 export const HIRAGANA: (readonly [string, string] | null)[][] = [
@@ -476,7 +478,7 @@ export const ja: Course = {
       id: 'ja-u15',
       title: 'N3 · Vara la Hiroshima',
       level: 'N3',
-      lessons: [jaCap71, jaCap72],
+      lessons: [jaCap71, jaCap72, jaCap73, jaCap74],
     },
   ],
 }
