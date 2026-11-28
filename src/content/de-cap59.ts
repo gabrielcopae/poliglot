@@ -246,7 +246,7 @@ export const deCap59 = lesson({
             { t: 'An erster Stelle stehen Bus und Bahn mit 38 Prozent. Im Vergleich zu 2022 ist der Anteil leicht gestiegen.', ro: 'Pe primul loc sunt autobuzul și trenul cu 38 la sută. În comparație cu 2022, proporția a crescut ușor.' },
             { t: 'Auffällig ist das Fahrrad: Sein Anteil hat sich in zehn Jahren fast verdoppelt, von 15 auf 28 Prozent.', ro: 'Remarcabilă este bicicleta: ponderea ei aproape s-a dublat în zece ani, de la 15 la 28 la sută.' },
             { t: 'Das Auto dagegen verliert deutlich: Nur noch ein Fünftel fährt mit dem Auto zur Arbeit.', ro: 'Mașina, în schimb, pierde clar: doar o cincime mai merge cu mașina la muncă.' },
-            { t: 'Zusammenfassend lässt sich sagen: Berlin wird grüner. Aber die Straßenbahn bleibt die Nummer eins.', ro: 'În concluzie se poate spune: Berlinul devine mai verde. Dar tramvaiul rămâne numărul unu.' },
+            { t: 'Zusammenfassend lässt sich sagen: Berlin wird grüner. Aber Bus und Bahn bleiben die Nummer eins.', ro: 'În concluzie se poate spune: Berlinul devine mai verde. Dar autobuzul și trenul rămân numărul unu.' },
           ],
           gloss: { senats: 'Senatului (guvernul Berlinului)', stelle: 'loc', vergleich: 'comparație', leicht: 'ușor', auffällig: 'remarcabil', verdoppelt: 'dublat', dagegen: 'în schimb', deutlich: 'clar', fünftel: 'cincime', zusammenfassend: 'în concluzie' },
         },
