@@ -62,7 +62,7 @@ export const deCap48 = lesson({
         { who: 'Klaus', t: 'Und jetzt kommt das Seltsamste. Der Investor will hier aufgewachsen sein. In Prenzlauer Berg. Er will sogar Ludwig kennen.', ro: 'Și acum vine partea cea mai ciudată. Investitorul pretinde că a crescut aici. În Prenzlauer Berg. Pretinde chiar că îl cunoaște pe Ludwig.' },
         { who: 'Ludwig', t: 'Mich? Ich kenne keinen Investor aus München. Wie heißt er denn?', ro: 'Pe mine? Nu cunosc niciun investitor din München. Cum îl cheamă?' },
         { who: 'Klaus', t: 'Michael Kühn. Angeblich kommt er morgen, um sich das Haus anzusehen.', ro: 'Michael Kühn. Chipurile vine mâine să vadă casa.' },
-        { who: 'Ludwig', t: 'Brandt… Brandt… Es gab einen kleinen Michael Kühn. In den Neunzigern. Er soll… nein. Das kann nicht derselbe sein.', ro: 'Brandt… Brandt… Era un Michael Kühn mic. În anii nouăzeci. Se spune că… nu. Nu poate fi același.' },
+        { who: 'Ludwig', t: 'Kühn… Kühn… Es gab einen kleinen Michael Kühn. In den Neunzigern. Er soll… nein. Das kann nicht derselbe sein.', ro: 'Kühn… Kühn… Era un Michael Kühn mic. În anii nouăzeci. Se spune că… nu. Nu poate fi același.' },
         { who: 'Lena', t: 'Opa, was weißt du?', ro: 'Bunicule, ce știi?' },
         { who: 'Ludwig', t: 'Noch nichts. Aber morgen werde ich ihn fragen. Und dann werden wir die Wahrheit wissen, nicht nur das, was Frau Becker erzählt.', ro: 'Încă nimic. Dar mâine îl întreb. Și atunci vom ști adevărul, nu doar ce povestește doamna Becker.' },
       ],
